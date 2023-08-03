@@ -107,7 +107,7 @@
             width: 20vw;
             display: table;
             text-align: center;
-            color: #c6dd17;
+            color: #ffffff;
             background-color: #27411c;
             background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
             background-size: 100% 100%;
@@ -173,10 +173,11 @@
         }
         
         .inventar-item {
-            height: 8.3vh;
-            width: 5vw;
+            height: 7.7vh;
+            width: 5.5vw;
             padding: 3px;
             display: flex;
+            margin-top: 2.5vh;
             font-size: larger;
             font-weight: bold;
             align-self: center;
@@ -193,6 +194,7 @@
             width: 100%;
             /* Das Bild auf die volle Breite des DIVs skalieren */
             height: 100%;
+            border-radius: 100%;
             /* Das Bild auf die volle Höhe des DIVs skalieren */
             object-fit: fill;
             /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
@@ -236,10 +238,12 @@
             background-blend-mode: lighten;
             justify-content: center;
             margin-top: 12vh;
+            margin-left: -1.5vw;
             text-align: center;
             align-content: center;
             font-size: 3.0vh;
-            font-weight: 800;
+            font-weight: 885;
+            text-shadow: 5px 5px rgba(0, 0, 0, 0.795);
             grid-column-start: 4;
             grid-column-end: 5;
             grid-row-start: 2;
@@ -389,19 +393,19 @@
         }
         
         .nameTag {
-            height: 7vh;
+            height: 7.5vh;
             width: 7vw;
-            font-size: medium;
-            font-weight: bold;
+            background-color: #ffffff00;
             display: inline-block;
         }
         
         .btn-6 {
-            height: 6.9vh;
-            width: 5.5vw;
+            height: 7.4vh;
+            width: 5.8vw;
             font-size: 2.3vh;
-            font-weight: 900;
+            font-weight: 750;
             padding: 3px;
+            padding-bottom: 12px;
             border-color: #7c7c7c;
             background: linear-gradient(top, rgba(38, 38, 38, 0.5), #e6e6e6 25%, #ffffff 38%, rgba(133, 133, 133, 0.731) 63%, #e6e6e6 87%, rgba(38, 38, 38, 0.4));
             background: -webkit-linear-gradient(top, rgba(38, 38, 38, 0.5), #e6e6e6 25%, #ffffff 38%, rgba(133, 133, 133, 0.731) 63%, #e6e6e6 87%, rgba(38, 38, 38, 0.4));
@@ -493,7 +497,7 @@
 
         </div>
         <div>
-            <audio controls id="doorSound" src="https://dl.dropbox.com/scl/fi/ex7icx8frpb0mwjvz4rpu/open-metaldoor-opened-with-chains.mp3?rlkey=nqmct9mp3lx4a2hqboc699v7d&dl=0" type="audio/ogg">
+            <audio id="doorSound" src="https://dl.dropbox.com/scl/fi/ex7icx8frpb0mwjvz4rpu/open-metaldoor-opened-with-chains.mp3?rlkey=nqmct9mp3lx4a2hqboc699v7d&dl=0" type="audio/ogg">
                 
               </audio>
             <audio id="winSound" src="https://dl.dropbox.com/scl/fi/vs25denfn7uugstoyuuz4/ka-ching.mp3?rlkey=dczqzq3ukr61xgc3vtdprzux6&dl=0" type="audio/mpeg">
@@ -605,10 +609,10 @@
     let newInvi;
     const heroValues = {
         Level: 1,
-        Lp: 25,
-        Dmg: 97,
+        Lp: 32,
+        Dmg: 13,
         Dodge: 9, // has +2 or so on standard DX+KO/4 ;)
-        Def: 2,
+        Def: 3,
         Hit: 13,
         Exp: 0,
         Gold: 1,
@@ -670,7 +674,7 @@
     let d3 = 'Goldnugget';
     let d4 = 'Diamant';
     const inventar = [ // hier für mehr slots ändern ++undefined einsetzen
-        undefined, undefined, undefined, undefined,
+        undefined, undefined, undefined, undefined, undefined, undefined,
     ];
     let oldInviString = JSON.stringify(inventar);
 
@@ -805,7 +809,7 @@
                 // Füge das Bild des gefundenen Items in das entsprechende DIV ein
                 inventarDivs[i].innerHTML = `<img src="${foundItem.image}" alt="${foundItem.name}"  id="${foundItem.name}" />`;
             } else {
-                inventarDivs[i].innerHTML = `<img src="" alt="" />`;
+                inventarDivs[i].innerHTML = ``;
 
                 console.log(`Item "${itemInInventar}" ist NICHT in der globalen Liste der Items vorhanden.`);
             }
