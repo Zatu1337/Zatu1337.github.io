@@ -5,39 +5,7 @@ const verpflegung = [{ // ich arbeite mit dem begriff savedMoney aus loadcoins u
     anzahl: ""
 
 }];
-     function updateLPDisplay() {
-        document.getElementById("heroLp").innerText = heroValues.Lp;
-
-    };
-
-    function checkEnemyLife() {
-        if (enemyHp <= 0 || enemyHp === 0) {
-            document.getElementById("GegnerLeben").innerHTML = "Du bist siegreich!!";
-            document.getElementById("loot").innerHTML = loot; // button 
-            console.log("Der Kampf is vorbei");
-            updateLPDisplay();
-
-            return;
-        } else {
-            updateLPDisplay();
-            console.log("Der Kampf geht weiter");
-            return;
-        }
-    };
-
-    function checkYourLife() {
-        if (heroValues.Lp <= 0 || heroValues.Lp === 0) {
-            document.getElementById("DeinLeben").innerHTML = "Du wirst (im ganzen) gefressen!";
-            updateLPDisplay();
-            setTimeout(backToBegin, 3000);
-            console.log("Der Kampf is vorbei DU TOT");
-            return;
-        } else {
-            updateLPDisplay();
-            console.log("Der Kampf geht weiter");
-            return;
-        }
-    };
+    
 
 function setViewportHeight() {
 
