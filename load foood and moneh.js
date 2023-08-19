@@ -5,7 +5,18 @@ const verpflegung = [{ // ich arbeite mit dem begriff savedMoney aus loadcoins u
     anzahl: ""
 
 }];
-
+    function checkYourLife() {
+        if (heroValues.Lp <= 0 || heroValues.Lp === 0) {
+            document.getElementById("fightButton").style.visibility = "hidden";
+            document.getElementById("heroLp").innerHTML = "Du wirst (im ganzen) gefressen!";
+            playFailSound();
+            clearFight();
+            setTimeout(backToBegin, 3000);
+            console.log("Der Kampf is vorbei DU TOT");
+        } else {
+            console.log("Der Kampf geht weiter");
+        }
+    }
 // JavaScript
 function setViewportHeight() {
   // Get the viewport height
