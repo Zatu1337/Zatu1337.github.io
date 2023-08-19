@@ -8,7 +8,7 @@ const verpflegung = [{ // ich arbeite mit dem begriff savedMoney aus loadcoins u
      function updateLPDisplay() {
         document.getElementById("heroLp").innerText = heroValues.Lp;
 
-    }
+    };
 
     function checkEnemyLife() {
         if (enemyHp <= 0 || enemyHp === 0) {
@@ -23,7 +23,7 @@ const verpflegung = [{ // ich arbeite mit dem begriff savedMoney aus loadcoins u
             console.log("Der Kampf geht weiter");
             return;
         }
-    }
+    };
 
     function checkYourLife() {
         if (heroValues.Lp <= 0 || heroValues.Lp === 0) {
@@ -37,23 +37,19 @@ const verpflegung = [{ // ich arbeite mit dem begriff savedMoney aus loadcoins u
             console.log("Der Kampf geht weiter");
             return;
         }
-    }
-// JavaScript
+    };
+
 function setViewportHeight() {
-  // Get the viewport height
+
   let vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) * 0.01;
   
-  // Set the value in the --vh custom property to the root of the document
+
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 
-// Call the function to set the initial viewport height
 setViewportHeight();
 
-// Listen for window resize events to update the viewport height
 window.addEventListener('resize', setViewportHeight);
-
-
 function handleTouchButton(buttonSelector) {
   const button = document.querySelector(buttonSelector);
   let isTouched = false;
@@ -71,13 +67,13 @@ function handleTouchButton(buttonSelector) {
 }
 
 function loadRation() {
-    const savedRationString = localStorage.getItem("Verpflegung"); // objekt wieder holen um damit zu arbeiten
+    const savedRationString = localStorage.getItem("Verpflegung"); 
     const savedRation = JSON.parse(savedRationString);
     document.getElementById("rations").innerHTML = savedRation;
     verpflegung[0].anzahl = savedRation;
 
 }
-const reichtum = [{ // ich arbeite mit dem begriff savedMoney aus loadcoins und reichtum[0].wert!
+const reichtum = [{
     name: 'Goldmünzen',
     image: 'https://www.geiger-edelmetalle.de/media/d4/4e/29/1680794041/b659f881b1e5a2f78f09f912f211a5e5.png',
     wert: ""
@@ -89,12 +85,9 @@ function loadCoins() {
     const savedMoney = JSON.parse(savedMoneyString);
     document.getElementById("wallet").innerText = savedMoney;
     reichtum[0].wert = savedMoney;
-
 }
 function showGold(){
     document.getElementById("wallet").innerText = reichtum[0].wert;
-
-
 }     
 
     const buttons = document.querySelectorAll('button[value="lol"]');
