@@ -76,6 +76,28 @@ function showGold(){
 
 }     
 
+    const buttons = document.querySelectorAll('button[value="lol"]');
+
+    function itemTooltip(event) {
+        const itemNameTooltip = event.target.id
+        const itemName2Tooltip = event.target.name
+        let tooltipText;
+        const selectedItem = allItems.find(item => item.name === itemNameTooltip);
+        const selectedItem2 = allItems.find(item => item.name === itemName2Tooltip);
+        if (selectedItem) {
+            tooltipText = selectedItem.tooltip; // Angenommen, du hast das Tooltip-Attribut im Objekt
+            document.getElementById("tooltipBox").innerHTML = tooltipText;
+        } else if (selectedItem2) {
+            tooltipText2 = selectedItem2.tooltip;
+            document.getElementById("tooltipBox").innerHTML = tooltipText2;
+        } else document.getElementById("tooltipBox").innerHTML = 'gibbet nich!';
+    }
+
+
+    buttons.forEach(button => {
+        button.addEventListener("mouseover", itemTooltip);
+    });
+
  function compareInventarWithAllItems() { // match qith quest item compare ??
         const inventarDivs = document.querySelectorAll('.inventar-item');
         for (let i = 0; i < 4; i++) { //egal wenn nur 4 divs da ?
