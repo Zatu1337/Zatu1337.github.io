@@ -70,3 +70,8 @@ function loadCoins() {
     reichtum[0].wert = savedMoney;
 
 }
+function showGold(){
+    document.getElementById("wallet").innerText = reichtum[0].wert;
+
+
+}     
