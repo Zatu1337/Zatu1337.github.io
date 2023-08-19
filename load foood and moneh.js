@@ -75,3 +75,25 @@ function showGold(){
 
 
 }     
+
+   function compareInventarWithAllItems() { // match qith quest item compare ??
+        const inventarDivs = document.querySelectorAll('.inventar-item');
+        for (let i = 0; i < 4; i++) { //egal wenn nur 4 divs da ?
+            const itemInInventar = inventar[i];
+            const foundItem = itemInInventar && allItems.find(item => item.name === itemInInventar.name);
+            for (let i = 0; i < inventar.length; i++) {
+                if (inventar[i] === null) {
+                    inventar[i] = undefined;
+                }
+            }
+            if (foundItem) {
+                console.log(`Item "${itemInInventar.name}"JA`);
+                inventarDivs[i].innerHTML = `<img src="${foundItem.image}" id="${foundItem.name}" />`;
+                inventarDivs[i].addEventListener("mouseover", itemTooltip); // wichtig
+            } else {
+                inventarDivs[i].innerHTML = `<img src="" alt="" />`;
+                inventarDivs[i].addEventListener("mouseover", itemTooltip); // wichtig
+                console.log(`Item "${itemInInventar}" NEEEIN :(`);
+            }
+        }
+    }
