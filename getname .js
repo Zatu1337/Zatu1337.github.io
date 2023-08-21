@@ -38,14 +38,14 @@ function loadRace() { // nach hero aufrufen?
     const savedRaceString = localStorage.getItem("Race");
     const savedRace = JSON.parse(savedRaceString); // Check if savedHero is not null or undefined
     if (savedRace === "Nord") {
-        heroaAvatar.style.backgroundImage = "url('https://dl.dropbox.com/s/kncxtg33cqssp82/schildmaid%203.png?dl=0')"; // Ändere die Hintergrundgrafik
+        heroAvatar.style.backgroundImage = "url('https://dl.dropbox.com/s/kncxtg33cqssp82/schildmaid%203.png?dl=0')"; // Ändere die Hintergrundgrafik
         console.log("Maid");
     } else if (savedRace === "Tribesmen") {
-        heroaAvatar.style.backgroundImage = "url('https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0')";
+        heroAvatar.style.backgroundImage = "url('https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0')";
         console.log("lizard");
 
     } else if (savedRace === "Gothe") {
-        heroaAvatar.style.backgroundImage = "url('https://dl.dropbox.com/s/ykkap0o6r00b478/char1%201.png?dl=0')";
+        heroAvatar.style.backgroundImage = "url('https://dl.dropbox.com/s/ykkap0o6r00b478/char1%201.png?dl=0')";
         console.log("knight");
     }
 }
