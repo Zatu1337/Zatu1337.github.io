@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="em">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+
+    <title> Das Abenteuer beginnt</title>
+
+    <link rel="icon" type="image/png" href="https://dl.dropbox.com/s/sl54d6vtws25ok0/webp_net_resizeimage__1__UMO_1.ico?dl=0">
+    <!-- ✅ load jQuery ✅ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- ✅ load Bootstrap JS ✅ -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+    <style>
+        html {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 4% 31% 40% 23% 4%;
+            grid-template-rows: 5% 73% 10% 13%;
+            min-width: 300px;
+        }
+        
+        .container div {
+            padding: 5px;
+            border: 5px, solid, black;
+        }
+        
+        body {
+            height: 100vh;
+            background: lavender;
+            width: 100vw;
+            margin: 0;
+            background-image: url("https://dl.dropbox.com/s/65loah7hbyfyxm3/wald%203.jpg?dl=0");
+            background-color: #27411c;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 92%;
+        }
+        
+        .links {
+            height: 85vh;
+            width: 25vw;
+            display: table;
+            text-align: center;
+            padding-bottom: 0.9vh;
+            color: #ffffff;
+            background-color: #27411c;
+            background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-size: 2.8vh;
+            font-weight: 900;
+            margin-left: -2vw;
+            border-color: #97803496;
+            border-width: 4px;
+            border-style: ridge;
+            border-radius: 8%;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        
+        .Hero {
+            height: 23vh;
+            width: 15vw;
+            position: relative;
+            color: rgb(247, 247, 247);
+            text-decoration: underline overline;
+            font-weight: bold;
+            border-color: rgba(182, 182, 182, 0.845);
+            border-width: 2.5px;
+            border-style: solid;
+            margin-top: 2.5vh;
+            margin-bottom: 1.5vh;
+            border-radius: 100%;
+            background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .avatar-corner {
+            position: absolute;
+            height: 8.5vh;
+            width: 7.0vw;
+            background-color: #d3252500;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+        }
+        
+        .imgLp {
+            height: 4.7vh;
+            width: 1.8vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/x189pyk1hn12whbirwyf3/lebenspunkte.png?rlkey=32dppnf2u6a3vowc00uai8yci&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.1vh;
+            width: 3.0vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .top-left {
+            top: 0;
+            left: 0;
+            margin-top: -6vh;
+            margin-left: -4.8vw;
+        }
+        
+        .top-right {
+            top: 0;
+            right: 0;
+            margin-top: -6vh;
+            margin-right: -4.3vw;
+        }
+        
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            margin-bottom: -5.5vh;
+            margin-left: -4.8vw;
+        }
+        
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            margin-bottom: -5.5vh;
+            margin-right: -4.6vw;
+        }
+        
+        .corner-icon {
+            margin-left: 4px;
+            display: inline-block;
+        }
+        
+        .imgHit {
+            height: 5.8vh;
+            width: 2.8vw;
+            margin-left: -1px;
+            background-image: url("https://dl.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0https://www.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.3vh;
+            width: 3.0vw;
+            margin-left: -2px;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDmg {
+            height: 6.0vh;
+            width: 3.7vw;
+            margin-left: -4px;
+            background-image: url("https://dl.dropbox.com/scl/fi/ot3uf0hm3035blizmxyap/sword_icon.png?rlkey=iobjdbq5wk13c4aib2adkb32u&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .corner-number {
+            height: 2.8vh;
+            width: 2.8vw;
+            font-size: 2.5vh;
+            font-weight: 800;
+            border-color: #978034;
+            border-width: 14px;
+            border-style: ridge;
+            border-radius: 100%;
+        }
+        
+        .enemyLoot {
+            height: 6vh;
+            width: 75%;
+            font-size: 2.5vh;
+            font-weight: 800;
+            color: rgb(255, 247, 247);
+            align-self: center;
+            justify-self: center;
+            justify-content: center;
+            justify-items: center;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .heroName {
+            height: 3.0vh;
+            width: 14vw;
+            margin-top: 0.7vh;
+            color: rgb(247, 247, 247);
+            font-size: 2.5vh;
+            font-weight: 700;
+            text-decoration: underline;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .heroAttri {
+            height: 2.8vh;
+            width: 12vw;
+            color: rgb(247, 247, 247);
+            font-size: 2.3vh;
+            font-weight: 777;
+            border-radius: 8%;
+            text-decoration: underline;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .inventar {
+            height: 28vh;
+            width: 15.5vw;
+            display: grid;
+            margin-bottom: 0.5vh;
+            margin-top: 0.5vh;
+            grid-template-rows: repeat(3, 8vh);
+            row-gap: 10px;
+            grid-template-columns: repeat(2, 5.5vw);
+            border-color: rgb(60, 157, 92);
+            border-width: 13px;
+            border-style: none;
+            justify-content: center;
+            align-content: center;
+            background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .inventar-item {
+            height: 7.3vh;
+            width: 4.4vw;
+            display: flex;
+            margin-top: 2.5vh;
+            font-size: larger;
+            font-weight: bold;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            background-color: rgba(250, 235, 215, 0);
+            border-color: rgba(255, 237, 186, 0.315);
+            border-width: 5px;
+            border-style: ridge;
+        }
+        /* Stil der Bilder innerhalb der DIV-Bereiche */
+        
+        .inventar-item img {
+            width: 100%;
+            /* Das Bild auf die volle Breite des DIVs skalieren */
+            height: 100%;
+            border-radius: 100%;
+            /* Das Bild auf die volle Höhe des DIVs skalieren */
+            object-fit: fill;
+            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
+        }
+        
+        .inviWrap {
+            height: 7vh;
+            width: 19.8vw;
+        }
+        
+        .iconwrapper {
+            height: 4.3vh;
+            width: 9.5vw;
+            padding: 3px;
+            margin-left: 2.3vw;
+            margin-right: 2.3vw;
+            display: flex;
+            background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
+            background-size: 100% 100%;
+        }
+        
+        .inventarHead {
+            height: 4.8vh;
+            width: 18vw;
+            display: flex;
+            margin-left: -1.2vw;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            font-size: 2.5vh;
+        }
+        
+        .walletIcon {
+            height: 2.0vh;
+            width: 1.0vw;
+            margin-left: -0.3vw;
+            margin-right: 1vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+        
+        .walletText {
+            height: 3.3vh;
+            width: 3.0vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+            display: inline-block;
+        }
+        
+        .rationIcon {
+            height: 2.0vh;
+            width: 1.0vw;
+            margin-left: -0.3vw;
+            margin-right: 1vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/qcna317ped0sk3swo42mh/marker-nahrung.PNG?rlkey=p4v13qjskk3kltd7vrpv1nlr0&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+        
+        .rationText {
+            height: 3.3vh;
+            width: 3.2vw;
+            margin-left: 0.5vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+            display: inline-block;
+        }
+        
+        .toggl {
+            margin-top: 3vh;
+            margin-bottom: 1.3vh;
+        }
+        
+        .Text1 {
+            width: 38vw;
+            height: 60vh;
+            margin-left: -3.5vw;
+            margin-top: 5vh;
+            border-radius: 8%;
+            padding: 3vh;
+            display: table;
+            background-color: #27411c;
+            align-content: center;
+            align-items: flex;
+            border: ridge rgba(93, 97, 93, 0.685) 6px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(255, 255, 255);
+            font-size: 2.5vh;
+            font-weight: 900;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .fightStart {
+            height: 3vh;
+            width: 32vw;
+            padding: 2vh;
+            margin-bottom: 2vh;
+        }
+        
+        .rechts {
+            height: 55vh;
+            width: 25vw;
+            color: rgb(255, 0, 0);
+            display: table;
+            margin-bottom: 3vh;
+            box-sizing: border-box;
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+            justify-self: center;
+            background-color: #a6a6a6de;
+            background-image: url("https://previews.123rf.com/images/drogatnev/drogatnev1603/drogatnev160300153/54365273-beautiful-spring-background-with-grass-and-bokeh-lights-vector-background-summer-design-green.jpg");
+            background-size: 100% 100%;
+            padding: 15px;
+            font-size: 2.8vh;
+            font-weight: 900;
+            border-radius: 8%;
+            border-color: #97803496;
+            border-width: 4px;
+            border-style: ridge;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        
+        .monster {
+            height: 24vh;
+            width: 16vw;
+            color: rgb(255, 0, 0);
+            margin-top: 0.5vh;
+            border-radius: 100%;
+        }
+        
+        .top-left2 {
+            top: 0;
+            left: 0;
+            margin-top: -6vh;
+            margin-left: -3.3vw;
+        }
+        
+        .top-right2 {
+            top: 0;
+            right: 0;
+            margin-top: -6vh;
+            margin-right: -3.3vw;
+        }
+        
+        .bottom-left2 {
+            bottom: 0;
+            left: 0;
+            margin-bottom: -6vh;
+            margin-left: -3.3vw;
+        }
+        
+        .bottom-right2 {
+            bottom: 0;
+            right: 0;
+            margin-bottom: -6vh;
+            margin-right: -3.3vw;
+        }
+        
+        .monsteraAvatar {
+            height: 25vh;
+            width: 16vw;
+            background-image: url("https://i.pinimg.com/originals/d0/19/20/d019204b11de9b05d910284d6771836e.gif");
+            background-size: 100% 100%;
+            border-radius: 100%;
+            border-color: rgba(182, 182, 182, 0.845);
+            border-width: 2.5px;
+            border-style: solid;
+            margin-top: 2.5vh;
+            margin-bottom: 1.5vh;
+            position: relative;
+        }
+        
+        .monsterAttri {
+            height: 4.0vh;
+            width: 96%;
+            border-radius: 8%;
+            text-decoration: underline;
+            text-align: center;
+            font-weight: bold;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        a {
+            position: relative;
+            padding: 2% 0 1% 1%;
+            font-size: 2.5vh;
+            font-weight: bold;
+            color: #c50b0b;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+        
+        a span {
+            position: absolute;
+            display: block;
+        }
+        
+        .next {
+            background-color: green;
+        }
+        
+        .enemyLoot {
+            height: 6vh;
+            width: 75%;
+            font-size: 2.5vh;
+            font-weight: 800;
+            color: rgb(255, 247, 247);
+            align-self: center;
+            justify-self: center;
+            justify-content: center;
+            justify-items: center;
+            visibility: hidden;
+            background-color: #0bb12fd3;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .buttonLoot {
+            width: 80%;
+            height: 5vh;
+            font-size: 2.5vh;
+            font-weight: 600;
+            align-self: center;
+            justify-self: center;
+            justify-content: center;
+            justify-items: center;
+            color: rgb(6, 4, 19);
+            background-color: #6cf830;
+        }
+        
+        .haudraufButton {
+            height: 7vh;
+            width: 55%;
+            color: chocolate;
+            background-color: black;
+            font-weight: 800;
+            text-decoration: dashed;
+            text-decoration: blue;
+            text-decoration: solid;
+            font-family: cursive 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .lootBild {
+            width: 24vw;
+            height: 25vh;
+            border-radius: 100%;
+            background-image: url("https://www.axis-mundi-fundus.de/media/image/97/ff/b3/b10154800Ew9PaLAIKptnq_600x600.jpg");
+            background-color: black;
+            background-size: cover;
+            background-repeat: round;
+        }
+        
+        .shake {
+            background-color: #3498db;
+            animation: shake 2s ease-in-out;
+            /* 3 Sekunden Shake-Dauer */
+        }
+        
+        @keyframes shake {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+            10%,
+            90% {
+                transform: translateX(-5px);
+                /* Langsameres Wackeln */
+            }
+            20%,
+            80% {
+                transform: translateX(5px);
+                /* Langsameres Wackeln */
+            }
+            30%,
+            70% {
+                transform: translateX(-3px);
+                /* Langsameres Wackeln */
+            }
+            40%,
+            60% {
+                transform: translateX(3px);
+                /* Langsameres Wackeln */
+            }
+            50% {
+                transform: translateX(0);
+                /* Mittelpunkt des Wackelns */
+            }
+        }
+        
+        .avatar2 {
+            background-color: #3498db;
+            animation: shake-rotate 3s ease-in;
+            position: relative;
+        }
+        
+        @keyframes shake-rotate {
+            0%,
+            100% {
+                transform: translateX(0) rotate(0deg);
+            }
+            10%,
+            90% {
+                transform: translateX(-5px) rotate(-10deg);
+                /* Wackeln und Rotation gegen den Uhrzeigersinn */
+            }
+            20%,
+            80% {
+                transform: translateX(5px) rotate(10deg);
+                /* Wackeln und Rotation im Uhrzeigersinn */
+            }
+            30%,
+            70% {
+                transform: translateX(-3px) rotate(-5deg);
+                /* Wackeln und Rotation gegen den Uhrzeigersinn */
+            }
+            40%,
+            60% {
+                transform: translateX(3px) rotate(5deg);
+                /* Wackeln und Rotation im Uhrzeigersinn */
+            }
+            50% {
+                transform: translateX(0) rotate(0deg);
+                /* Mittelpunkt des Wackelns und Rotation zurück auf Normal */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="links" id="linkesFenster">
+            <center>
+
+                <div class="heroName" id="heroName"> | Lizord |(Level 1) </div>
+                <div class="heroTitle" id="heroTitle"> Schnitzler
+                </div>
+
+                <div class="Hero" id="heroAvatar">
+                    <div class="avatar-corner top-left">
+                        <div class="corner-number" id="heroLp"></div>
+                        <div class="corner-icon imgLp"></div>
+
+                    </div>
+                    <div class="avatar-corner top-right">
+                        <div class="corner-number" id="heroDmg"></div>
+                        <div class="corner-icon imgDmg"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-left">
+                        <div class="corner-number" id="heroDef"></div>
+                        <div class="corner-icon imgDef"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-right">
+                        <div class="corner-number" id="heroHit"></div>
+                        <div class="corner-icon imgHit"></div>
+
+                    </div>
+                </div>
+
+
+            </center>
+
+            <center>
+
+                <button class="toggl" id="toggleButton">Inventar ein-/ausblenden</button>
+                <div class="inviWrap" id="inviwrapper">
+
+                    <div class="inventarHead">
+                        <div class="iconwrapper">
+                            <div class="walletText" id="wallet">232</div>
+                            <div class="walletIcon"></div>
+                        </div>
+
+                        <div class="iconwrapper">
+                            <div class="rationText" id="rations">123</div>
+                            <div class="rationIcon"></div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="inventar" id="invi">
+
+                        <div class="inventar-item" id="g1"> </div>
+                        <div class="inventar-item" id="g2"> </div>
+                        <div class="inventar-item" id="g3"> </div>
+                        <div class="inventar-item" id="g4"></div>
+                        <div class="inventar-item" id="g5"> </div>
+                        <div class="inventar-item" id="g6"> </div>
+                    </div>
+
+                </div>
+
+                <!--   <div class="heroAttri" id="goldCoins">Goldmünzen im Beutel -->
+            </center>
+
+        </div>
+        <div class="Text1">
+            <center><br><br>
+                <div id="delayedText1" class="fightStart" style="visibility:hidden">
+                    Geifernd und die Zähne fletschend steht dir dieses räudige Fellbüschel gegenüber! </div>
+                <br> Verteidige Dich!: <br>
+                <div id="haudrauf"><button id="haudraufButton" class="haudraufButton">Hau druff!</button>
+
+
+                </div>
+                <div class="heroFightbox">
+                    <div class="coolerText" id="heroAttacke"> </div>
+                    <div class="coolerText" id="heroVerteidigung"> </div>
+                    <div id="DeinLeben">Deine Lebenspunkte </div>
+                </div>
+
+                <div class="enemyFightbox">
+
+                    <div class="coolerText" id="enemyAttacke"> </div>
+                    <div class="coolerText" id="enemyVerteidigung"> </div>
+                    <div id="GegnerLeben">Gegners LP </div>
+                </div>
+                <p class="coolerText" id="attacke"> </p>
+
+            </center>
+        </div>
+
+        <div class="rechts" id="rechtesFenster">
+            <center>
+                <div class="monsterAttri" id="monsterLevel">Level/Stufe </div>
+                <div class="monsterAttri" id="monsterName">
+                    Monster erscheine! </div>
+
+                <div class="monsteraAvatar" id="wolfi">
+                    <div class="avatar-corner top-left2">
+                        <div class="corner-number" id="monsterDmg">???</div>
+                        <div class="corner-icon imgDmg"></div>
+
+                    </div>
+                    <div class="avatar-corner top-right2">
+
+
+
+                        <div class="corner-number" id="monsterLp">???</div>
+                        <div class="corner-icon imgLp"></div>
+                    </div>
+                    <div class="avatar-corner bottom-left2">
+                        <div class="corner-number" id="monsterDef">???</div>
+                        <div class="corner-icon imgDef"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-right2">
+                        <div class="corner-number" id="monsterHit">???</div>
+                        <div class="corner-icon imgHit"></div>
+
+                    </div>
+                    <div class="monster" id="monsterTyp"></div>
+
+
+                    <center>
+                        <div class="enemyLoot" id="loot">
+
+                        </div>
+                    </center>
+
+                </div>
+            </center>
+
+
+
+        </div>
+
+</body>
+<script src="https://rawcdn.githack.com/Zatu1337/Zatu1337.github.io/44fd06e9405012057b6b28dd187f9615bb379a1f/load%20foood%20and%20moneh.js"></script>
+
+<script src="https://raw.githack.com/Zatu1337/Zatu1337.github.io/main/getname%20.js"></script>
+
+
+<script>
+    document.getElementById("haudraufButton").addEventListener("click", attackflee);
+
+    document.getElementById("GegnerLeben").innerHTML = "Dein Feind ist UNVERLETZT";
+
+    document.getElementById("DeinLeben").innerHTML = "(Trefferpunkte) Unversehrt gehst du in den Kampf";
+
+
+
+    function showHero() { //rest infos 
+
+        document.getElementById("heroLp").innerText = heroValues.Lp;
+        document.getElementById("heroDmg").innerText = heroValues.Dmg;
+        document.getElementById("heroDef").innerText = heroValues.Def;
+        document.getElementById("heroHit").innerText = heroValues.Hit;
+    }
+
+
+    const wolfValues = {
+        Name: "Waldwolf",
+        Level: 2,
+        Exp: 15,
+        Lp: 32,
+        Dmg: 3,
+        Dodge: 5, //
+        Def: 2,
+        Hit: 12
+    }
+
+    wolfValues.Lp
+    let enemyDmg = wolfValues.Dmg;
+    let enemyDef = wolfValues.Def;
+    const enemyHit = wolfValues.Hit;
+    let enemyDodge = wolfValues.Dodge;
+    // soon dodge und hit
+    const enemyName = wolfValues.Name;
+    const enemyLevel = wolfValues.Level;
+
+    function showEnemy() {
+        document.getElementById("monsterLevel").innerText = "Level: " + enemyLevel;
+        document.getElementById("monsterLp").innerText = wolfValues.Lp; // divs erstellen
+        document.getElementById("monsterName").innerText = enemyName; // variablen hier nehmen...
+        document.getElementById("monsterDef").innerText = enemyDef;
+        document.getElementById("monsterDmg").innerText = enemyDmg;
+        document.getElementById("monsterHit").innerText = enemyHit;
+    }
+    showEnemy();
+    const toggleButton = document.getElementById('toggleButton');
+    const DivInventar = document.getElementById('inviwrapper');
+
+    let inventarVisible = false; // Startzustand: ausgeblendet
+
+    toggleButton.addEventListener('click', function() {
+        if (inventarVisible) {
+            DivInventar.style.display = 'block'; // Inventar ausblenden 
+            //     DivInventar.classList.add('inviWrap'); // Klasse hinzufügen
+        } else {
+            DivInventar.style.display = 'none'; // Inventar einblenden
+            //   DivInventar.classList.remove('inviWrap'); // Klasse entfe}
+
+        }
+        inventarVisible = !inventarVisible; // Zustand umkehren
+    });
+    const inventar = [
+        undefined, undefined, undefined, undefined,
+    ];
+
+    const allItems = [{
+        name: 'Mehlsack',
+        image: 'https://dl.dropbox.com/scl/fi/60c0xfn7lj5qelaam34oq/mehl.png?rlkey=3rxsy8mbe8e4mysfyfl1dddo6&dl=0',
+        wert: 1,
+        tooltip: "Ein Sack schweres frisch gemahlenes Mehl(1LP)"
+    }, {
+        name: 'Wolfsfell',
+        image: 'https://www.axis-mundi-fundus.de/media/image/97/ff/b3/b10154800Ew9PaLAIKptnq_600x600.jpg',
+        wert: 15,
+        tooltip: "Das hast du dem Waldwolf abgezogen, nachdem er versucht hat dich zu fressen!"
+    }];
+    const allQuestItems = [{
+            name: 'Schlangentrophäe',
+            image: 'https://dl.dropbox.com/s/2i1y7d15e24iznw/snake%20head%20loot%20.jpg?dl=0',
+            wert: "?",
+            effekt: "wer weiss?"
+        }, //  buff/ +stats
+
+        {
+            name: "Wolfstrophäe",
+            wert: "?",
+            effekt: "lockSmith"
+        }, // checkstate wörter effekt or name?
+        {
+            name: "",
+            wert: "?",
+            effekt: ""
+        },
+    ]
+
+    const questItemsFound = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, ]; // erste schlange..
+
+    const questItemSchlange1Position = allQuestItems.findIndex(item => item.name === 'Schlangentrophäe'); // Schlangentrophäe
+    const questItemWolf1Position = allQuestItems.findIndex(item => item.name === 'Wolfstrophäe'); // 
+    // const questItemKarte1Position = allQuestItems.findIndex(item => item.name === 'Name'); // 
+    // const questItemMetall1Position = allQuestItems.findIndex(item => item.name === 'Name'); //  
+
+    function addToQuestInventar(itemName) {
+        const foundqItem = allQuestItems.find(item => item.name === itemName);
+
+        if (foundqItem) {
+            const firstEmptyIndex = questItemsFound.findIndex(item => item === undefined || item.name === null);
+            if (firstEmptyIndex !== -1) {
+                questItemsFound[firstEmptyIndex] = foundqItem;
+            } else {
+                console.log('Inventar ist voll. Es kann kein weiteres Item hinzugefügt werden.');
+            }
+        } else {
+            console.log(`Item "${itemName}" ist NICHT in der globalen Liste der Items vorhanden.`);
+        }
+    }
+
+    function addToInventar(itemName) { // diese kann ich auch auf gold und anderes anpassen
+        const foundItem = allItems.find(item => item.name === itemName);
+        if (foundItem) {
+            const firstEmptyIndex = inventar.findIndex(item => item === undefined || item.name === null);
+            if (firstEmptyIndex !== -1) {
+                inventar[firstEmptyIndex] = foundItem;
+                //  reichtum[0].wert -= foundItem.wert; HÄNDLEER
+                //   saveCoins();
+            } else {
+                console.log('Inventar ist voll. Es kann kein weiteres Item hinzugefügt werden.');
+            }
+        } else {
+            console.log(`Item "${itemName}" ist NICHT in der globalen Liste der Items vorhanden.`);
+        }
+    }
+
+    function saveProgress() {
+
+        let oldQuestString = JSON.stringify(questItemsFound);
+        localStorage.setItem("Progress", oldQuestString);
+    }
+
+
+
+    function showText(id, delay) {
+        var elem = document.getElementById(id);
+        setTimeout(function() {
+            elem.style.visibility = 'visible';
+        }, delay * 1000)
+    }
+    window.onload = function() {
+        showText('delayedText1', 1);
+
+
+    }
+
+
+    function saveInvi() {
+        let oldInviString = JSON.stringify(inventar);
+        localStorage.setItem("Inventar", oldInviString);
+    }
+
+
+    function saveHero() {
+        let oldHeroString = JSON.stringify(heroValues);
+        localStorage.setItem("Attribute", oldHeroString);
+        showHero();
+    }
+
+
+
+    function goToLoot() {
+        document.getElementById("loot").style.visibility = "visible";
+        document.getElementById("haudrauf").setAttribute("disabled", true);
+        document.getElementById("wolfi").setAttribute("class", "lootBild");
+        addToQuestInventar("Wolfstrophäe");
+        saveProgress();
+        addToInventar("Wolfsfell");
+        heroValues.Exp += 15;
+        saveInvi();
+
+        document.getElementById("loot").innerHTML = "<button onclick=\"window.location.href = 'Wald1.html?slide=5'\" class=\"buttonLoot\" id=\"getIt\">Nimm deine Trophäe</button> ";
+
+    };
+
+    function updateLPDisplay() {
+        document.getElementById("heroLp").innerText = heroValues.Lp;
+        document.getElementById("monsterLp").innerText = wolfValues.Lp;
+    };
+
+    function checkEnemyLife() {
+        if (wolfValues.Lp <= 0 || wolfValues.Lp === 0) {
+            document.getElementById("GegnerLeben").innerHTML = "Du bist siegreich!!";
+            goToLoot();
+            //document.getElementById("loot").innerHTML = loot; // button 
+            console.log("Der Kampf is vorbei");
+            updateLPDisplay();
+            return;
+        } else {
+            updateLPDisplay();
+            console.log("Der Kampf geht weiter");
+            return;
+        }
+    };
+
+    function checkYourLife() {
+        if (heroValues.Lp <= 0 || heroValues.Lp === 0) {
+            document.getElementById("DeinLeben").innerHTML = "Du wirst (im ganzen) gefressen!";
+            updateLPDisplay();
+
+
+            console.log("Der Kampf is vorbei DU TOT");
+            document.getElementById("loot").innerHTML = "<button onclick=\"window.location.href = 'Wald1.html?slide=4'\" class=\"buttonLoot\" id=\"getIt\">Nimm deine Trophäe</button> ";
+
+            return;
+        } else {
+            updateLPDisplay();
+            console.log("Der Kampf geht weiter");
+            return;
+        }
+    };
+
+    function attackflee() {
+
+        attack();
+        checkEnemyLife();
+
+        enemyAttack();
+
+        checkYourLife();
+    }
+
+
+    function attack() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+        let attack = Math.floor(Math.random() * (18 - 4) + 4); // evtl const attack damit enemyFlee weis das ich zb crit gewürfelt habe in attack
+
+
+        if (attack <= 4) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff: MEISTERLICHER Schlag!";
+            enemyFlee();
+            enemyFlee(); //2. attacke für crit //lifecheck evtl in flee ??
+            checkEnemyLife();
+            return;
+        } else if (attack >= 5 && attack <= heroValues.Hit) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff: Gut angezielter Schlag!";
+            enemyFlee();
+            checkEnemyLife();
+            return;
+        } else if (attack >= heroValues.Hit && attack <= 17) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff:  Knapp daneben is' auch vorbei";
+        } else if (attack >= 17) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff: FURCHTBAR daneben, das war dein eigener Fuß!";
+            heroValues.Lp -= 1;
+            checkYourLife();
+
+        }
+    };
+
+    function flee() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+        const takeDmg = enemyDmg - heroValues.Def;
+        let flee = Math.floor(Math.random() * (18 - 4) + 4);
+
+        if (flee <= 4 || flee === 4) { //evtl +1 hp... oder so
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Meisterlich ausgewichen!";
+            heroValues.Lp += 1;
+        } else if (flee >= 5 && flee <= heroValues.Dodge) {
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung:  Du bist wie der WIND!!";
+        } else if (flee >= heroValues.Dodge && flee <= 16) {
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Voll auf die 12!";
+            heroValues.Lp -= takeDmg;
+            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte " + heroValues.Lp;
+        } else if (flee >= 17) {
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: FURCHTBAR erwischt worden! ";
+            heroValues.Lp -= takeDmg * 1.5;
+            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte betragen " + heroValues.Lp;
+        }
+    };
+
+    function enemyAttack() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+
+        let enemyAttack = Math.floor(Math.random() * (18 - 4) + 4);
+        const giveHeroDmg = enemyDmg - heroValues.Def;
+
+        if (enemyAttack <= 4 || enemyAttack === 4) {
+            document.getElementById("enemyAttacke").innerHTML = "Angriff: MEISTERLICHER Angriff!";
+            wolfValues.Lp -= 1.5 * giveHeroDmg; //garantierter treffer für crit
+            flee();
+            checkYourLife();
+            return;
+        } else if (enemyAttack >= 5 && enemyAttack <= enemyHit) {
+            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Feind attackiert dich gezielt!";
+            flee();
+            checkYourLife();
+            return;
+        } else if (enemyAttack >= enemyHit && enemyAttack <= 17) {
+            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Fend schwingt weit an dir vorbei!";
+            return;
+        } else if (enemyAttack >= 17) {
+            document.getElementById("enemyAttacke").innerHTML = "FURCHTBAR daneben, der Feind verletzt sich selbst in seiner Rage!";
+            wolfValues.Lp -= 1;
+            checkEnemyLife();
+            return;
+        }
+    }
+
+    function enemyFlee() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+        const takeHeroDmg = heroValues.Dmg - enemyDef;
+        let enemyFlee = Math.floor(Math.random() * (18 - 4) + 4);
+
+        if (enemyFlee <= 4 || enemyFlee === 4) { //evtl +1 hp... oder so
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Meisterlich ausgewichen - keine Ahnung wo du hingezielt hast!";
+            wolfValues.Lp += 1;
+            return;
+        } else if (enemyFlee >= 5 && enemyFlee <= enemyDodge) {
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Das Vieh duckt sich!";
+            return;
+        } else if (enemyFlee >= enemyDodge && enemyFlee <= 16) {
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Du schlitzt den Gegner auf!";
+            wolfValues.Lp -= takeHeroDmg;
+            document.getElementById("GegnerLeben").innerHTML = "Vieh Lebenspunkte betragen " + wolfValues.Lp;
+            return;
+        } else if (enemyFlee >= 17) {
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Voll in deine Waffe gerannt! ";
+            wolfValues.Lp -= takeHeroDmg * 1.5;
+            document.getElementById("GegnerLeben").innerHTML = "Vieh Lebenspunkte betragen " + wolfValues.Lp;
+            return;
+        }
+    };
+
+    function battleLoop() {
+        while (heroValues.Lp > 0 && wolfValues.Lp > 0) {
+            attackflee();
+            if (heroValues.Lp <= 0 || wolfValues.Lp <= 0) {
+                break; // Beende die Schleife, wenn einer der Kämpfer besiegt wurde
+            }
+        }
+
+        if (heroValues.Lp <= 0) {
+            console.log("Du hast den Kampf verloren.");
+        } else {
+            console.log("Du hast den Kampf gewonnen.");
+        }
+    }
+
+
+
+    function loadHero() {
+        const savedHeroString = localStorage.getItem("Attribute");
+        const savedHero = JSON.parse(savedHeroString);
+        showHero();
+    }
+
+    function showGold() {
+        document.getElementById("wallet").innerText = reichtum[0].wert;
+
+
+    }
+
+
+    function showinvi() {
+        const savedInventarString = localStorage.getItem('Inventar');
+
+        if (savedInventarString) {
+            const savedInventar = JSON.parse(savedInventarString);
+
+            // Übertrage die gespeicherten Daten in das Inventar-Array
+            savedInventar.forEach((item, index) => {
+                inventar[index] = item;
+            });
+
+            console.log('Das Inventar wurde aus dem LocalStorage geladen:');
+            console.log(inventar);
+        } else {
+            console.log('Es wurden keine gespeicherten Inventardaten gefunden.');
+        } {
+
+            loadHero();
+            showHero();
+            loadRation();
+            loadCoins();
+            showGold();
+            console.log("Lp");
+            console.log(heroValues.Lp);
+            console.log("maxLp");
+            console.log(heroValues.maxLp);
+        }
+
+
+    }
+    showinvi();
+    compareInventarWithAllItems();
+</script>
+
+
+</html>

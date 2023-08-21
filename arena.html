@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <style>
+        html {
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        body {
+            height: 100vh;
+            width: auto;
+            margin: 0;
+        }
+        
+        .container1 {
+            height: 100vh;
+            width: auto;
+            display: grid;
+            color: rgb(255, 255, 255);
+            font-size: 5vh;
+            background-image: url("https://i.pinimg.com/originals/8c/83/42/8c8342b7b3176cc8fc6c4d190ed004d0.jpg");
+            background-size: cover;
+            background-position: center;
+            grid-template-columns: 5% 10% 14% 45% 25% 2%;
+            grid-template-rows: 9% 68% 12% 11%;
+        }
+        
+        .headBar {
+            height: 9vh;
+            background-color: #999;
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            display: inline-block;
+            visibility: hidden;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        
+        .Icon {
+            border-color: rgb(41, 99, 226);
+            border-style: solid;
+            border-width: 5px;
+            display: inline-block;
+            background-size: contain;
+        }
+        
+        .Icon:nth-child( 1) {
+            background-image: url("");
+        }
+        
+        .imgGastrolith {
+            height: 11.5vh;
+            width: 7.5vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/23djomyvve2txazimhegd/gastrlith.jpg?rlkey=ejht72m67b9pobt67qbu5h2dy&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgSilbermünze {
+            height: 11.5vh;
+            width: 7.5vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/nwbc2gv1jyoxa6oqwjm91/silber-drachenm-nze.png?rlkey=q7f1a01l56kpcdwcves9ztipc&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgGoldnugget {
+            height: 11.5vh;
+            width: 7.5vw;
+            background-image: url("https://shorturl.at/aexF4");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDiamant {
+            height: 11.5vh;
+            width: 7.5vw;
+            background-image: url("https://shorturl.at/uzKPZ");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .lootImage {
+            height: 16vh;
+            width: 8vw;
+            margin-top: -4vh;
+        }
+        
+        .idText {
+            height: 8.3vh;
+            width: 24vw;
+            color: rgb(247, 247, 247);
+            background-color: #97803465;
+            align-self: center;
+            justify-self: center;
+            font-style: italic;
+            font-size: 2.7vh;
+            font-weight: 800;
+            margin-top: 2.5vh;
+        }
+        
+        .links {
+            height: 82vh;
+            width: 22vw;
+            display: table;
+            text-align: center;
+            padding-bottom: 0.9vh;
+            color: #ffffff;
+            background-color: #27411c;
+            background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-size: 2.8vh;
+            font-weight: 900;
+            margin-left: -2vw;
+            border-color: #97803496;
+            border-width: 4px;
+            border-style: ridge;
+            border-radius: 8%;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        
+        .inviWrap {
+            height: 7vh;
+            width: 19.8vw;
+        }
+        
+        .inventarHead {
+            height: 6vh;
+            width: 19.5vw;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            align-self: center;
+            text-align: center;
+            justify-self: center;
+            font-size: 2.5vh;
+        }
+        
+        .iconwrapper {
+            height: 5.3vh;
+            width: 9.5vw;
+            padding: 3px;
+            margin-left: 0.5vw;
+            margin-right: 0.5vw;
+            display: flex;
+            background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
+            background-size: 100% 100%;
+        }
+        
+        .walletIcon {
+            height: 2.9vh;
+            width: 1.7vw;
+            margin-top: 0.8vh;
+            margin-left: -0.8vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .walletText {
+            height: 3.0vh;
+            width: 1.2vw;
+            margin-top: 0.9vh;
+            margin-left: 1.0vw;
+            margin-right: 1.9vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+        }
+        
+        .rationIcon {
+            height: 3.3vh;
+            width: 1.9vw;
+            margin-top: 0.6vh;
+            margin-left: -0.7vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/qcna317ped0sk3swo42mh/marker-nahrung.PNG?rlkey=p4v13qjskk3kltd7vrpv1nlr0&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .rationText {
+            height: 3.3vh;
+            width: 1.2vw;
+            margin-top: 0.9vh;
+            margin-left: 0.8vw;
+            margin-right: 1.9vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+        }
+        
+        .toggl {
+            margin-bottom: 1.3vh;
+        }
+        
+        .Hero {
+            height: 23vh;
+            width: 16vw;
+            position: relative;
+            color: rgb(247, 247, 247);
+            text-decoration: underline overline;
+            font-weight: bold;
+            border-color: rgba(182, 182, 182, 0.845);
+            border-width: 2.5px;
+            border-style: solid;
+            margin-top: 2.5vh;
+            margin-bottom: 1.5vh;
+            border-radius: 100%;
+            background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .avatar-corner {
+            position: absolute;
+            height: 6.5vh;
+            width: 5.8vw;
+            background-color: #7c777700;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+        }
+        
+        .imgLp {
+            height: 4.7vh;
+            width: 1.8vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/x189pyk1hn12whbirwyf3/lebenspunkte.png?rlkey=32dppnf2u6a3vowc00uai8yci&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.1vh;
+            width: 3.0vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .top-left {
+            top: 0;
+            left: 0;
+            margin-top: -2vh;
+            margin-left: -2.6vw;
+        }
+        
+        .top-right {
+            top: 0;
+            right: 0;
+            margin-top: -2vh;
+            margin-right: -2.3vw;
+        }
+        
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            margin-bottom: -2vh;
+            margin-left: -2.0vw;
+        }
+        
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            margin-bottom: -2.5vh;
+            margin-right: -2.0vw;
+        }
+        
+        .corner-icon {
+            margin-left: 4px;
+            display: inline-block;
+        }
+        
+        .imgHit {
+            height: 5.8vh;
+            width: 2.8vw;
+            margin-left: -1px;
+            background-image: url("https://dl.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0https://www.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.3vh;
+            width: 3.0vw;
+            margin-left: -2px;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDmg {
+            height: 6.0vh;
+            width: 3.7vw;
+            margin-left: -4px;
+            background-image: url("https://dl.dropbox.com/scl/fi/ot3uf0hm3035blizmxyap/sword_icon.png?rlkey=iobjdbq5wk13c4aib2adkb32u&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .corner-number {
+            font-size: 2.6vh;
+            font-weight: 800;
+            font-weight: bold;
+        }
+        
+        .heroName {
+            height: 3.5vh;
+            width: 96%;
+            margin-top: 2vh;
+            color: rgb(247, 247, 247);
+            font-size: 2.4vh;
+            font-weight: 800;
+            border-radius: 8%;
+            text-decoration: underline;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .heroAttri {
+            height: 3.5vh;
+            width: 96%;
+            color: rgb(247, 247, 247);
+            font-size: 2.4vh;
+            font-weight: 800;
+            border-radius: 8%;
+            text-decoration: underline;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .inventar {
+            height: 34vh;
+            width: 16.5vw;
+            margin-top: 0.5vh;
+            display: grid;
+            grid-template-rows: repeat(3, 8vh);
+            row-gap: 10px;
+            grid-template-columns: repeat(2, 5.5vw);
+            border-color: rgb(60, 157, 92);
+            border-width: 13px;
+            border-style: none;
+            justify-content: center;
+            align-content: center;
+            background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .inventar-item {
+            height: 7.3vh;
+            width: 4.4vw;
+            display: flex;
+            margin-top: 2.5vh;
+            font-size: larger;
+            font-weight: bold;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            background-color: rgba(250, 235, 215, 0);
+            border-color: rgba(255, 237, 186, 0.315);
+            border-width: 5px;
+            border-style: ridge;
+        }
+        /* Stil der Bilder innerhalb der DIV-Bereiche */
+        
+        .inventar-item img {
+            width: 100%;
+            /* Das Bild auf die volle Breite des DIVs skalieren */
+            height: 100%;
+            border-radius: 100%;
+            /* Das Bild auf die volle Höhe des DIVs skalieren */
+            object-fit: fill;
+            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
+        }
+        
+        .tooltip {
+            height: 12.5vh;
+            width: 22.5vw;
+            display: flex;
+            font-size: 2.2;
+            font-weight: 555;
+            background-color: #504f4fe5;
+            color: rgb(240, 240, 240);
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+            justify-self: center;
+            border-color: rgba(228, 213, 13, 0.877);
+            border-width: 3px;
+            border-style: ridge;
+            visibility: hidden;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        
+        .kampftext {
+            /*  mid   */
+            box-sizing: border-box;
+            height: 62vh;
+            width: 47vw;
+            padding: 10px;
+            color: rgb(255, 255, 255);
+            background-image: url("https://dl.dropbox.com/scl/fi/uht7l0y1aax5kef9kfp72/arenazoom.jpg?rlkey=usnkacvksw6wf7ooohtdjky0e&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-color: rgba(160, 154, 147, 0.342);
+            background-blend-mode: lighten;
+            justify-content: center;
+            margin-top: 12vh;
+            margin-left: -1.5vw;
+            text-align: center;
+            align-content: center;
+            border-color: #97803496;
+            border-width: 4px;
+            border-style: ridge;
+            border-radius: 8%;
+            font-size: 3.0vh;
+            font-weight: 999;
+            text-shadow: 7px 7px rgba(0, 0, 0, 0.795);
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        
+        .arenaShout {
+            padding: 3px;
+            opacity: 100%;
+        }
+        
+        .doText {
+            font-size: 2.6vh;
+            font-weight: 700;
+            font-style: italic;
+        }
+        
+        .monsterLoot {
+            text-align: center;
+            height: 3vh;
+            width: auto;
+        }
+        
+        .fightButton {
+            height: 7vh;
+            width: auto;
+            font-size: 3.0vh;
+            background-color: rgb(246, 9, 9);
+            font-weight: 700;
+        }
+        
+        .row {
+            display: flex;
+            clear: both;
+            align-self: center;
+            justify-self: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .column {
+            float: left;
+            width: 48%;
+        }
+        
+        .fightInfo {
+            height: 7vh;
+            width: 95%;
+            padding: 3px;
+            border-color: rgba(0, 0, 0, 0);
+            border-width: 2px;
+            border-style: solid;
+            text-align: center;
+            font-size: 2.6vh;
+            font-weight: 900;
+        }
+        
+        .rechts {
+            height: 50vh;
+            width: 23vw;
+            color: rgb(255, 0, 0);
+            display: table;
+            margin-bottom: 3vh;
+            box-sizing: border-box;
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+            justify-self: center;
+            background-color: #a6a6a6de;
+            background-image: url("https://dl.dropbox.com/scl/fi/y2eyom35szpoiy6ng5gj9/brick-wall-1.jpg?rlkey=odvub4gmvrwdz96e1d1lq8266&dl=0");
+            background-size: contain;
+            padding: 15px;
+            font-size: 2.8vh;
+            font-weight: 900;
+            border-radius: 8%;
+            border-color: #97803496;
+            border-width: 4px;
+            border-style: ridge;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        
+        .monster {
+            height: 24vh;
+            width: 16vw;
+            color: rgb(255, 0, 0);
+            margin-top: 0.5vh;
+            border-radius: 100%;
+        }
+        
+        .top-left2 {
+            top: 0;
+            left: 0;
+            margin-top: -2vh;
+            margin-left: -2.0vw;
+        }
+        
+        .top-right2 {
+            top: 0;
+            right: 0;
+            margin-top: -2vh;
+            margin-right: -2.3vw;
+        }
+        
+        .bottom-left2 {
+            bottom: 0;
+            left: 0;
+            margin-bottom: -2.88vh;
+            margin-left: -2vw;
+        }
+        
+        .bottom-right2 {
+            bottom: 0;
+            right: 0;
+            margin-bottom: -2.88vh;
+            margin-right: -2.4vw;
+        }
+        
+        .monsteraAvatar {
+            height: 25vh;
+            width: 18vw;
+            border-radius: 100%;
+            border-color: rgba(182, 182, 182, 0.845);
+            border-width: 2.5px;
+            border-style: solid;
+            margin-top: 2.5vh;
+            margin-bottom: 1.5vh;
+            position: relative;
+        }
+        
+        .monsterAttri {
+            height: 4.0vh;
+            width: 96%;
+            border-radius: 8%;
+            text-decoration: underline;
+            text-align: center;
+            font-weight: bold;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .bottomLine {
+            height: 19.87vh;
+            width: 22.0vw;
+            padding-top: 10px;
+            margin-left: 2.15vw;
+            background-color: #928c844f;
+            border-color: #97803496;
+            border-width: 4px;
+            border-style: ridge;
+            border-radius: 8%;
+            text-align: center;
+            font-size: medium;
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        
+        .nameTag {
+            height: 7.5vh;
+            width: 7vw;
+            background-color: #ffffff00;
+            display: inline-block;
+        }
+        
+        .btn-6 {
+            height: 7.4vh;
+            width: 5.8vw;
+            font-size: 2.3vh;
+            font-weight: 750;
+            padding: 3px;
+            padding-bottom: 12px;
+            border-color: #7c7c7c;
+            background: linear-gradient(top, rgba(38, 38, 38, 0.5), #e6e6e6 25%, #ffffff 38%, rgba(133, 133, 133, 0.731) 63%, #e6e6e6 87%, rgba(38, 38, 38, 0.4));
+            background: -webkit-linear-gradient(top, rgba(38, 38, 38, 0.5), #e6e6e6 25%, #ffffff 38%, rgba(133, 133, 133, 0.731) 63%, #e6e6e6 87%, rgba(38, 38, 38, 0.4));
+        }
+        
+        .bildTag {
+            height: 5.5vh;
+            width: 7vw;
+            font-size: medium;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .bildUntenKampf {
+            height: 11.5vh;
+            width: 5.5vw;
+            display: inline-block;
+            border-radius: 8%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("https://img.freepik.com/free-vector/viking-skull-without-jaw-helmet_225004-1940.jpg?w=740&t=st=1681737301~exp=1681737901~hmac=874041f3b0da3332f7bfdc0e77c052ae4f811444b1966783349f199b17e29764");
+        }
+        
+        .bildUntenHealer {
+            height: 11.5vh;
+            width: 5.5vw;
+            display: inline-block;
+            border-radius: 8%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f0ee88f6-e46a-4d64-aadc-d94715ef8a89/ddrnwj5-fc426c8d-1ee1-46bd-9d85-36558cf56f8b.jpg/v1/fill/w_256,h_350,q_70,strp/healer__threads_of_fate__by_feael_ddrnwj5-350t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTIyOSIsInBhdGgiOiJcL2ZcL2YwZWU4OGY2LWU0NmEtNGQ2NC1hYWRjLWQ5NDcxNWVmOGE4OVwvZGRybndqNS1mYzQyNmM4ZC0xZWUxLTQ2YmQtOWQ4NS0zNjU1OGNmNTZmOGIuanBnIiwid2lkdGgiOiI8PTkwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.Ton9GWlAXvszOkJJyCZwquCxzxgBXb-4W5HAi_aZz9c");
+        }
+        
+        .bildUntenRaus {
+            height: 11.5vh;
+            width: 5.5vw;
+            display: inline-block;
+            border-radius: 8%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("https://img.freepik.com/premium-photo/big-metal-door-within-walls-castle_74648-280.jpg?w=740");
+        }
+        /* für alle buttons einstellen evtl icon ausgrauen ?*/
+    </style>
+
+</head>
+
+<body onload>
+
+
+
+    <div class="container1">
+        <div class="headBar">
+            <div class="Icon"> Treffer</div>
+            <div class="Icon"> Gegner</div>
+            <div class="Icon"> Fans?</div>
+        </div>
+
+
+        <div class="links" id="linkesFenster">
+            <center>
+
+                <div class="heroName" id="heroName"> | Lizord |(Level 1)
+
+                </div>
+                <div class="heroTitle" id="heroTitle"> Schnitzler
+                </div>
+
+                <div class="Hero" id="heroAvatar">
+                    <div class="avatar-corner top-left">
+                        <div class="corner-number" id="heroLp"></div>
+                        <div class="corner-icon imgLp"></div>
+
+                    </div>
+                    <div class="avatar-corner top-right">
+                        <div class="corner-number" id="heroDmg"></div>
+                        <div class="corner-icon imgDmg"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-left">
+                        <div class="corner-number" id="heroDef"></div>
+                        <div class="corner-icon imgDef"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-right">
+                        <div class="corner-number" id="heroHit"></div>
+                        <div class="corner-icon imgHit"></div>
+
+                    </div>
+                </div>
+
+
+            </center>
+
+            <center>
+
+                <button class="toggl" id="toggleButton">Inventar ein-/ausblenden</button>
+                <div class="inviWrap" id="inviwrapper">
+
+                    <div class="inventarHead">
+                        <div class="iconwrapper">
+                            <div class="walletText" id="wallet">232</div>
+                            <div class="walletIcon"></div>
+                        </div>
+                        Inventar
+                        <div class="iconwrapper">
+                            <div class="rationText" id="rations">123</div>
+                            <div class="rationIcon"></div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="inventar" id="invi">
+
+                        <div class="inventar-item" id="g1"> </div>
+                        <div class="inventar-item" id="g2"> </div>
+                        <div class="inventar-item" id="g3"> </div>
+                        <div class="inventar-item" id="g4"></div>
+                        <div class="inventar-item" id="g5"> </div>
+                        <div class="inventar-item" id="g6"> </div>
+                    </div>
+
+                </div>
+
+                <!--   <div class="heroAttri" id="goldCoins">Goldmünzen im Beutel -->
+            </center>
+
+        </div>
+        <div>
+            <audio id="doorSound" src="https://dl.dropbox.com/scl/fi/ex7icx8frpb0mwjvz4rpu/open-metaldoor-opened-with-chains.mp3?rlkey=nqmct9mp3lx4a2hqboc699v7d&dl=0" type="audio/ogg">
+                
+              </audio>
+            <audio id="winSound" src="https://dl.dropbox.com/scl/fi/vs25denfn7uugstoyuuz4/ka-ching.mp3?rlkey=dczqzq3ukr61xgc3vtdprzux6&dl=0" type="audio/mpeg">
+            
+              </audio>
+            <audio src="https://dl.dropbox.com/scl/fi/vy4jdkjaqpzt11fm4l9u2/spongebob-fail.mp3?rlkey=wogb02ot2kuo1cs7uw4avuamp&dl=0" type="audio/mpeg" id="failSound"></audio>
+
+        </div>
+
+        <div class="kampftext" id="mitte">
+
+            <p class="arenaShout" id="arenaText">Willkommen in der Arena von Paroksan!<br> Kommt her und staunet - wir haben wieder einen mutigen Anwärter auf den Champion-Titel! </p>
+            <!--*Getöse sounds-->
+            <p class="doText" id="textAction">Du betrittst den sandigen Grund der Arena.<br> Hier und dort sind rotbraune Flecken im Sand zu sehen, in einer dieser trocknenden Blutlachen liegt sogar noch ein Finger...</p>
+            <center>
+                <div id="insertButton" class=""> </div>
+                <div id="insertButton2" class=""> </div>
+                <div class="row" id="kampfInfos">
+                    <div class="column" id="heroColumn">
+
+                        <div class="heroFightbox">
+                            <div class="coolerText" id="heroAttacke"> </div>
+                            <div class="coolerText" id="heroVerteidigung"> </div>
+                            <div id="DeinLeben">Deine Lebenspunkte </div>
+                        </div>
+
+                    </div>
+                    <div class="column" id="enemyColumn">
+
+
+                        <div class="enemyFightbox">
+
+                            <div class="coolerText" id="enemyAttacke"> </div>
+                            <div class="coolerText" id="enemyVerteidigung"> </div>
+                            <div id="GegnerLeben"> </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+
+
+
+
+            <center>
+                <div class="lootImage" id="lootImage"> </div>
+            </center>
+            <br>
+            <div class="monsterLoot" id="monsterLoot"> </div>
+            <!-- text passnd zum loot image-->
+        </div>
+
+
+        <div class="rechts" id="rechtesFenster">
+            <center>
+                <div class="monsterAttri" id="monsterLevel">Level/Stufe </div>
+                <div class="monsterAttri" id="monsterName">
+                    Monster erscheine! </div>
+
+                <div class="monsteraAvatar">
+                    <div class="avatar-corner top-left2">
+                        <div class="corner-number" id="monsterDmg">???</div>
+                        <div class="corner-icon imgDmg"></div>
+
+                    </div>
+                    <div class="avatar-corner top-right2">
+
+
+
+                        <div class="corner-number" id="monsterLp">???</div>
+                        <div class="corner-icon imgLp"></div>
+                    </div>
+                    <div class="avatar-corner bottom-left2">
+                        <div class="corner-number" id="monsterDef">???</div>
+                        <div class="corner-icon imgDef"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-right2">
+                        <div class="corner-number" id="monsterHit">???</div>
+                        <div class="corner-icon imgHit"></div>
+
+                    </div>
+                    <div class="monster" id="monsterTyp"></div>
+
+
+
+
+                </div>
+            </center>
+
+
+
+        </div>
+        <div class="bottomLine" id="buttonsUnten">
+
+
+            <div class="bildTag">
+                <div class="bildUntenKampf"> </div>
+            </div>
+
+            <div class="bildTag">
+                <div class="bildUntenHealer"> </div>
+            </div>
+
+            <div class="bildTag">
+                <div class="bildUntenRaus"> </div>
+            </div>
+
+
+
+            <div class="nameTag">
+
+                <button id="nextEnemyButton" class="btn-6">  
+                    In den Kampf
+                </button>
+
+            </div>
+            <div class="nameTag">
+                <a href="Lazarett.html">
+                    <button id="healerButton" class="btn-6">  
+                    Zum Heiler
+                </button>
+                </a>
+            </div>
+            <div class="nameTag">
+                <a href="7Dorf1.html">
+                    <button id="leaveArenaButton" type="submit" class="btn-6">  
+                    Raus Hier
+                 </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="https://rawcdn.githack.com/Zatu1337/Zatu1337.github.io/44fd06e9405012057b6b28dd187f9615bb379a1f/load%20foood%20and%20moneh.js"></script>
+<script src="https://raw.githack.com/Zatu1337/Zatu1337.github.io/main/getname%20.js"></script>
+
+<script>
+    let monsterid1 = "<img class=monster src=\"https://media.tenor.com/InPdM5wgnhkAAAAM/dog-smile-angry.gif\" border-radius-100%  height=350px width=auto>";
+    let monsterid2 = "<img class=monster src=\"https://dl.dropbox.com/s/bct858oz5nm3e5n/schlange%201.gif?dl=0\" border-radius-100%   height=350px width=auto>";
+    let monsterid3 = "<img class=monster src=\"https://media.tenor.com/Ht_9U6CkjXoAAAAM/leopard-roar.gif\" border-radius-100% w height=350px width=auto>";
+    let monsterid4 = "<img class=monster src=\"https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTY1NjU4MTJhZDg0Nzc2YjIxNWMyYTNiNTJlNjhlOGZjNDMzNzE3YyZjdD1n/c5iMjFfrUFpza/giphy.gif\" border-radius-100%  height=250px width=auto>";
+    let arenaMonsterLootArray1 = [];
+    const inventar = [ // hier für mehr slots ändern ++undefined einsetzen
+        undefined, undefined, undefined, undefined, undefined
+    ];
+    let arenaLootItem;
+
+
+
+    const percentHp = (heroValues.maxLp / 100);
+
+
+    let enemyHp; // in arena doppelvariable, sonst monsterValue...
+    let enemyDef;
+    let enemyDmg;
+    let enemyExp;
+    let enemyHit;
+    let enemyDodge;
+    let attackRoll;
+    let fleeRoll;
+    let enemyAttackRoll;
+    let enemyFleeRoll;
+    let arenaRandomID = Math.floor(Math.random() * 9999);
+    const lootBox = document.getElementById("lootImage");
+    const slot1 = document.getElementById("g1");
+    const slot2 = document.getElementById("g2");
+    const slot3 = document.getElementById("g3");
+    const slot4 = document.getElementById("g4");
+    const slot5 = document.getElementById("g5");
+    const slot6 = document.getElementById("g6");
+
+    let arenaLootRoll;
+
+
+
+
+    const toggleButton = document.getElementById('toggleButton');
+    const DivInventar = document.getElementById('inviwrapper');
+
+    let inventarVisible = false; // Startzustand: ausgeblendet
+
+    toggleButton.addEventListener('click', function() {
+        if (inventarVisible) {
+            DivInventar.a = 'grid'; // Inventar ausblenden
+        } else {
+            DivInventar.style.display = 'none'; // Inventar einblenden
+        }
+        inventarVisible = !inventarVisible; // Zustand umkehren
+    });
+    // handleTouchButton('#myButton');
+    const allItems = [{
+        name: 'Gastrolith',
+        image: 'https://dl.dropbox.com/scl/fi/23djomyvve2txazimhegd/gastrlith.jpg?rlkey=ejht72m67b9pobt67qbu5h2dy&dl=0',
+        wert: 1,
+        id: 'GastrolithID'
+
+
+    }, {
+        name: 'Silbermünze',
+        image: 'https://dl.dropbox.com/scl/fi/nwbc2gv1jyoxa6oqwjm91/silber-drachenm-nze.png?rlkey=q7f1a01l56kpcdwcves9ztipc&dl=0',
+        wert: 3,
+        id: 'SilbermünzeID'
+
+    }, {
+        name: 'Goldnugget',
+        image: 'https://dl.dropbox.com/scl/fi/1lclcx57m6hymb4strpub/704x396-removebg-preview.png?rlkey=r6i4pinslz8iy1xz9x37mokbh&dl=0',
+        wert: 5,
+        id: 'GoldnuggetID'
+
+    }, {
+        name: 'Diamant',
+        image: 'https://shorturl.at/uzKPZ',
+        wert: 10,
+        id: 'DiamantID'
+
+
+    }];
+
+    const GastrolithPosition = allItems.findIndex(item => item.name === 'Gastrolith');
+    const SilbermünzePosition = allItems.findIndex(item => item.name === 'Silbermünze');
+    const GoldnuggetPosition = allItems.findIndex(item => item.name === 'Goldnugget');
+    const DiamantPosition = allItems.findIndex(item => item.name === 'Diamant');
+
+    function showGold() {
+        document.getElementById("wallet").innerHTML = reichtum[0].wert;
+    }
+
+    function showinvi() {
+        const savedInventarString = localStorage.getItem('Inventar');
+
+        if (savedInventarString) {
+            const savedInventar = JSON.parse(savedInventarString);
+            savedInventar.forEach((item, index) => {
+                inventar[index] = item;
+            });
+            console.log('Das Inventar wurde aus dem LocalStorage geladen:');
+        } else {
+            console.log('Es wurden keine gespeicherten Inventardaten gefunden.');
+        } {
+            showArena();
+            loadHero();
+            loadRation();
+            loadCoins();
+
+        }
+
+        compareInventarWithAllItems();
+    }
+
+    function saveInvi() {
+
+        let oldInviString = JSON.stringify(inventar);
+        localStorage.setItem("Inventar", oldInviString);
+    }
+
+    function showArena() {
+        document.querySelector('#nextEnemyButton').addEventListener('click', playTorSound);
+        document.querySelector('#nextEnemyButton').addEventListener('click', randomArenaMonster);
+        document.querySelector('#leaveArenaButton').addEventListener('click', playTorSound);
+
+        //   handleTouchButton('#nextEnemyButton');
+        //   handleTouchButton('#nextEnemyButton');
+        //    handleTouchButton('#leaveArenaButton');
+
+    }
+
+
+
+    function addToInventar(itemName) {
+        const foundItem = allItems.find(item => item.name === itemName);
+        if (foundItem) {
+            console.log(`Item "${itemName}" wurde dem Inventar hinzugefügt.`);
+            const firstEmptyIndex = inventar.findIndex(item => item === undefined || item === null);
+            if (firstEmptyIndex !== -1) {
+                inventar[firstEmptyIndex] = foundItem;
+            } else {
+                console.log('Inventar ist voll. Es kann kein weiteres Item hinzugefügt werden.');
+            }
+        } else {
+            console.log(`Item "${itemName}" ist NICHT in der globalen Liste der Items vorhanden.`);
+        }
+    }
+
+    function removeFromInventar(itemToRemove) {
+        let indexToRemove;
+        if (typeof itemToRemove === 'number') {
+            indexToRemove = itemToRemove;
+        } else if (typeof itemToRemove === 'string') {
+            indexToRemove = inventar.findIndex(item => item && item.name === itemToRemove);
+        }
+        if (indexToRemove !== -1) {
+            const removedItem = inventar[indexToRemove];
+            console.log(`Item "${removedItem.name}" wurde aus dem Inventar entfernt.`);
+            inventar[indexToRemove] = undefined;
+        } else {
+            console.log(`Item "${itemToRemove}" ist NICHT im Inventar gefunden oder ungültiger Index.`);
+        }
+    }
+
+
+    function loot() {
+        addToInventar(arenaMonsterLootArray1[0]);
+        compareInventarWithAllItems();
+        saveInvi();
+        saveHero();
+        // fight counter zähler schleife als state check?
+        location.reload();
+    };
+
+    function compareInventarWithAllItems() {
+        const inventarDivs = document.querySelectorAll('.inventar-item');
+        for (let i = 0; i < 6; i++) {
+            const itemInInventar = inventar[i];
+            const foundItem = itemInInventar && allItems.find(item => item.name === itemInInventar.name);
+            if (foundItem) {
+                console.log(`Item "${itemInInventar.name}" ist in der globalen Liste der Items vorhanden.`);
+                inventarDivs[i].innerHTML = `<img src="${foundItem.image}" alt="${foundItem.name}"  id="${foundItem.name}" />`;
+            } else {
+                inventarDivs[i].innerHTML = ``;
+                console.log(`Item "${itemInInventar}" ist NICHT in der globalen Liste der Items vorhanden.`);
+            }
+        }
+
+    }
+
+    function loadCoins() {
+        const savedMoneyString = localStorage.getItem("Reichtum");
+        const savedMoney = JSON.parse(savedMoneyString);
+        document.getElementById("wallet").innerText = savedMoney;
+        reichtum[0].wert = savedMoney;
+
+    }
+
+    function saveHero() { // nach jeder änderung an den zugehörigen werten!
+        let oldHeroString = JSON.stringify(heroValues);
+        localStorage.setItem("Attribute", oldHeroString);
+        showHero();
+    } // show hero muss mit aktualisierten werten arbeiten
+
+
+    function showHero() { //rest infos 
+
+        document.getElementById("heroLp").innerText = heroValues.Lp;
+        document.getElementById("heroDmg").innerText = heroValues.Dmg;
+        document.getElementById("heroDef").innerText = heroValues.Def;
+        document.getElementById("heroHit").innerText = heroValues.Hit;
+    }
+
+
+    showHero();
+
+
+
+
+    function loadRation() {
+        const savedRationString = localStorage.getItem("Verpflegung"); // objekt wieder holen um damit zu arbeiten
+        const savedRation = JSON.parse(savedRationString);
+        document.getElementById("rations").innerHTML = savedRation;
+        verpflegung[0].anzahl = savedRation;
+
+    }
+
+    function showFight() {
+        document.getElementById("enemyVerteidigung").innerHTML = "Der Gegner macht sich bereit dir auszweichen";
+        document.getElementById("GegnerLeben").innerHTML = "Der Gegner hat " + enemyHp + "Lebenspunkte";
+        document.getElementById("enemyAttacke").innerHTML = "Du gehst erneut in Angriffsstellung!";
+        document.getElementById("DeinLeben").innerHTML = "Du hast zur Zeit " + heroValues.Lp + " Lebenspunkte";
+    };
+
+    function clearFight() { // noch keine schöne lösung wegen repeat?
+        document.getElementById("kampfInfos").innerText = "";
+        //  document.getElementById("monsterInfo").innerHTML = "";
+        document.getElementById("monsterName").innerText = "";
+    };
+
+    function disableDown() {
+        document.getElementById('leaveArenaButton').setAttribute("disabled", "disabled");
+        document.getElementById('healerButton').setAttribute("disabled", "disabled");
+        document.getElementById('nextEnemyButton').setAttribute("disabled", "disabled");
+    };
+
+    function enableDown() {
+        document.getElementById('leaveArenaButton').removeAttribute("disabled");
+        document.getElementById('healerButton').removeAttribute("disabled");
+        document.getElementById('nextEnemyButton').removeAttribute("disabled");
+    };
+
+
+
+    function arenaMonster1() {
+        const arenaDog = {
+            name: 'Kläffender Köter',
+            Dmg: 2,
+            Def: 1,
+            Lp: 25,
+            Dodge: 6,
+            Hit: 5,
+            Level: 1,
+            Exp: 3
+        };
+        enemyDef = arenaDog.Def;
+        enemyHp = arenaDog.Lp;
+        enemyDmg = arenaDog.Dmg;
+        enemyExp = arenaDog.Exp;
+        enemyHit = arenaDog.Hit;
+        enemyDodge = arenaDog.Dodge;
+        document.getElementById("monsterTyp").innerHTML = monsterid1;
+        document.getElementById("monsterLevel").innerText = "Level: " + arenaDog.Level;
+        document.getElementById("monsterLp").innerText = arenaDog.Lp;
+        document.getElementById("monsterName").innerText = arenaDog.name; // variablen hier nehmen...
+        document.getElementById("monsterDef").innerText = arenaDog.Def;
+        document.getElementById("monsterDmg").innerText = arenaDog.Dmg
+    };
+
+    function arenaMonster2() {
+
+        const arenaSnake = {
+            name: 'Schreckliche Schlange',
+            Dmg: 3,
+            Def: 2,
+            Lp: 32,
+            Dodge: 8,
+            Hit: 5,
+            Level: 2,
+            Exp: 6
+        };
+        enemyDef = arenaSnake.Def;
+        enemyHp = arenaSnake.Lp;
+        enemyDmg = arenaSnake.Dmg;
+        enemyExp = arenaSnake.Exp;
+        enemyHit = arenaSnake.Hit;
+        enemyDodge = arenaSnake.Dodge;
+        document.getElementById("monsterTyp").innerHTML = monsterid2;
+        document.getElementById("monsterLevel").innerText = "Level: " + arenaSnake.Level;
+        document.getElementById("monsterLp").innerText = arenaSnake.Lp;
+        document.getElementById("monsterDef").innerText = arenaSnake.Def;
+        document.getElementById("monsterDmg").innerText = arenaSnake.Dmg;
+
+        document.getElementById("monsterName").innerText = arenaSnake.name;
+    };
+
+    function arenaMonster3() {
+        const arenaCat = {
+            name: 'Gierige Großkatze',
+            Dmg: 4,
+            Def: 3,
+            Lp: 39,
+            Dodge: 9,
+            Hit: 5,
+            Level: 3,
+            Exp: 9
+        };
+
+        enemyDef = arenaCat.Def;
+        enemyHp = arenaCat.Lp;
+        enemyDmg = arenaCat.Dmg;
+        enemyExp = arenaCat.Exp;
+        enemyHit = arenaCat.Hit;
+        enemyDodge = arenaCat.Dodge;
+        document.getElementById("monsterTyp").innerHTML = monsterid3;
+        document.getElementById("monsterName").innerText = arenaCat.name;
+        document.getElementById("monsterLevel").innerText = "Level: " + arenaCat.Level;
+
+        document.getElementById("monsterLp").innerText = arenaCat.Lp;
+        document.getElementById("monsterDef").innerText = arenaCat.Def;
+        document.getElementById("monsterDmg").innerText = arenaCat.Dmg;
+
+
+    };
+
+    function arenaMonster4() {
+        const arenaFant = {
+            name: 'Ominöser Ottifant',
+            Dmg: 5,
+            Def: 3,
+            Lp: 45,
+            Dodge: 7,
+            Hit: 5,
+            Level: 4,
+            Exp: 13
+        };
+        enemyDef = arenaFant.Def;
+        enemyHp = arenaFant.Lp;
+        enemyDmg = arenaFant.Dmg;
+        enemyExp = arenaFant.Exp;
+        enemyHit = arenaFant.Hit;
+        enemyDodge = arenaFant.Dodge;
+        document.getElementById("monsterTyp").innerHTML = monsterid4;
+        document.getElementById("monsterName").innerText = arenaFant.name;
+        document.getElementById("monsterLevel").innerText = "Level: " + arenaFant.Level;
+        document.getElementById("monsterLp").innerText = arenaFant.Lp;
+
+        document.getElementById("monsterDef").innerText = arenaFant.Def;
+        document.getElementById("monsterDmg").innerText = arenaFant.Dmg;
+
+    };
+
+
+    function randomArenaMonster() {
+        document.getElementById("arenaText").innerHTML = "Beide Kontrahenten haben den Sand der Arena betreten und sind bereit auf leben und Tod zu kämpfen!";
+        document.getElementById("textAction").innerHTML = "Du nickst dem Handlanger am Tor grimmig zu und das Eisentor wird über ein schweres Holzrad mit einer rasselnden Kette so dick wie dein Unterarm heruntergelassen.";
+        document.getElementById("insertButton").innerHTML = " <button class=\"fightButton\" id=\"fightButton\"  >  FIIIIGHT!     </button>";
+        //   document.getElementById("insertButton2").innerHTML = " <button class=\"fightButton\" id=\"fightButton2\"  >  FIIIIGHT!     </button>";
+
+
+        document.querySelector('#fightButton').addEventListener('click', attackflee);
+        //  handleTouchButton('#fightButton');
+        //   document.querySelector('#fightButton2').addEventListener('click', battleLoop);
+
+        let arenaGegner = Math.floor(Math.random() * 99) + 1;
+
+        if (arenaGegner === 101) {
+            alert("Heute keiner da");
+        } else if (arenaGegner >= 0 && arenaGegner <= 35) {
+            arenaMonster1();
+        } else if (arenaGegner >= 36 && arenaGegner <= 55) {
+            arenaMonster2();
+        } else if (arenaGegner >= 56 && arenaGegner <= 85) {
+            arenaMonster3();
+
+        } else if (arenaGegner >= 86 && arenaGegner <= 101) {
+            arenaMonster4();
+        };
+
+        disableDown();
+        showFight();
+        document.getElementById("arenaText").innerHTML = ""; // text verschwinden lassen damit ring frei..
+        document.getElementById("textAction").innerHTML = "";
+
+    };
+
+
+    function arenaMonsterLoot1() {
+        document.getElementById("lootImage").innerHTML = "   DEINE BEUTE!" + "     <button class=\"imgGastrolith\"  id=\"btnLoot\"> </button>";
+        document.getElementById("monsterLoot").innerHTML = "  <button class=\"idText\" id=\"arenaLootChestText\" >       </button>";
+        document.getElementById("arenaLootChestText").innerHTML = "Stein der Verdauung im Wert von " + allItems[GastrolithPosition].wert + " Goldtaler !";
+        arenaMonsterLootArray1.push(allItems[GastrolithPosition].name);
+
+    };
+
+    function arenaMonsterLoot2() { // 'Silber Drachmé',
+        document.getElementById("lootImage").innerHTML = "   DEINE BEUTE!" + "     <button class=\"imgSilbermünze\"  id=\"btnLoot\"> </button>";
+        document.getElementById("monsterLoot").innerHTML = "  <button class=\"idText\" id=\"arenaLootChestText\" >       </button>";
+        document.getElementById("arenaLootChestText").innerHTML = "Eine polierte Silberdrachmé  im Wert von " + allItems[SilbermünzePosition].wert + " Goldtaler !";
+        arenaMonsterLootArray1.push(allItems[SilbermünzePosition].name);
+
+    };
+
+    function arenaMonsterLoot3() {
+        document.getElementById("lootImage").innerHTML = "   DEINE BEUTE!" + "<button class=\"imgGoldnugget\"  id=\"btnLoot\"> </button>";
+        document.getElementById("monsterLoot").innerHTML = "  <button class=\"idText\" id=\"arenaLootChestText\" >       </button>";
+        document.getElementById("arenaLootChestText").innerHTML = "Ein fettes Goldnugget im Wert von " + allItems[GoldnuggetPosition].wert + " Goldtaler !";
+        arenaMonsterLootArray1.push(allItems[GoldnuggetPosition].name);
+
+    };
+
+    function arenaMonsterLoot4() {
+        document.getElementById("lootImage").innerHTML = "   DEINE BEUTE!" + "     <button class=\"imgDiamant\"  id=\"btnLoot\"> </button>";
+        document.getElementById("monsterLoot").innerHTML = "  <button class=\"idText\" id=\"arenaLootChestText\" >       </button>";
+        document.getElementById("arenaLootChestText").innerHTML = "Ein strahlender Klunker im Wert von " + allItems[DiamantPosition].wert + " Goldtaler !";
+        arenaMonsterLootArray1.push(allItems[DiamantPosition].name);
+    };
+
+    function randomArenaLoot() {
+        arenaLootRoll = Math.floor(Math.random() * 99) + 1;
+
+        if (arenaLootRoll === 0) {
+            document.getElementById("monsterLoot").innerHTML = "Echt jetzt? GAR NIX??";
+        } else if (arenaLootRoll >= 0 && arenaLootRoll <= 28) {
+            arenaMonsterLoot1();
+        } else if (arenaLootRoll >= 29 && arenaLootRoll <= 63) {
+            arenaMonsterLoot2();
+        } else if (arenaLootRoll >= 64 && arenaLootRoll <= 87) {
+            arenaMonsterLoot3();
+
+        } else if (arenaLootRoll >= 88 && arenaLootRoll <= 101) {
+            arenaMonsterLoot4();
+        }
+        console.log(arenaLootRoll + "+itemId");
+        heroValues.Exp += enemyExp;
+        console.log(heroValues.Exp);
+        document.querySelector('#btnLoot').addEventListener('click', loot);
+
+        document.querySelector('#btnLoot').addEventListener('click', disableLoot);
+        handleTouchButton('#btnLoot');
+
+        document.getElementById("GegnerLeben").innerHTML = "Du bist siegreich!!";
+    };
+
+
+    function disableLoot() {
+        document.querySelector('#btnLoot').disabled = true;
+    };
+
+
+
+    //  document.getElementById("enemyavatar").style.background =
+    function attackflee() {
+
+        attack();
+        console.log("ich habe angegriffen");
+        checkEnemyLife();
+
+        enemyAttack();
+        console.log("gegenangriff");
+        checkYourLife();
+    }
+
+    function updateLPDisplay() {
+        document.getElementById("heroLp").innerText = heroValues.Lp;
+        document.getElementById("monsterLp").innerText = enemyHp;
+    }
+
+    function checkEnemyLife() {
+        if (enemyHp <= 0 || enemyHp === 0) {
+            document.getElementById("fightButton").style.visibility = "hidden";
+            document.getElementById("fightButton2").style.visibility = "hidden";
+            document.getElementById("monsterTyp").innerHTML = "<img src=\"https://media.istockphoto.com/id/1458385998/de/vektor/freih%C3%A4ndig-gezeichneter-cartoon-knochenhaufen.jpg?s=1024x1024&w=is&k=20&c=5chcPNMYixtK9pkw-xBTJ854lXJdFe3gi6BQwgZDWuQ=\" width=100px height=150px>";
+            console.log("Der Kampf is vorbei");
+            updateLPDisplay();
+            randomArenaLoot();
+            playWinSound();
+            clearFight();
+            return;
+        } else {
+            updateLPDisplay();
+            console.log("Der Kampf geht weiter");
+            return;
+        }
+    }
+
+    function checkYourLife() {
+        if (heroValues.Lp <= 0 || heroValues.Lp === 0) {
+            document.getElementById("fightButton").style.visibility = "hidden";
+            document.getElementById("heroLp").innerHTML = "Du wirst (im ganzen) gefressen!";
+            playFailSound();
+            updateLPDisplay();
+            clearFight();
+            setTimeout(backToBegin, 3000);
+            console.log("Der Kampf is vorbei DU TOT");
+            return;
+        } else {
+            updateLPDisplay();
+            console.log("Der Kampf geht weiter");
+            return;
+        }
+    }
+
+
+    function attack() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+        attackRoll = Math.floor(Math.random() * (18 - 4) + 4); // evtl const attack damit enemyFlee weis das ich zb crit gewürfelt habe in attack
+        console.log(attackRoll);
+        console.log("hero haut zu!");
+        if (attackRoll <= 4) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff: MEISTERLICHER Schlag!";
+            enemyFlee();
+            enemyFlee(); //2. attacke für crit //lifecheck evtl in flee ??
+
+            return;
+        } else if (attackRoll >= 5 && attackRoll <= heroValues.Hit) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff: Gut angezielter Schlag!";
+            enemyFlee();
+
+            return;
+        } else if (attackRoll >= heroValues.Hit && attackRoll <= 17) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff:  Knapp daneben is' auch vorbei";
+            return;
+        } else if (attackRoll >= 17) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff: FURCHTBAR daneben, das war dein eigener Fuß!";
+            heroValues.Lp -= 1;
+            checkYourLife();
+
+            return;
+        }
+    };
+
+    function flee() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+        const takeDmg = enemyDmg - heroValues.Def;
+        fleeRoll = Math.floor(Math.random() * (18 - 4) + 4);
+        console.log("hero weicht aus");
+        console.log(fleeRoll);
+        if (fleeRoll <= 4 || fleeRoll === 4) { //evtl +1 hp... oder so
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Meisterlich ausgewichen!";
+            heroValues.Lp += 1;
+            return;
+        } else if (fleeRoll >= 5 && fleeRoll <= heroValues.Dodge) {
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung:  Du bist wie der WIND!!";
+            return;
+        } else if (fleeRoll >= heroValues.Dodge && fleeRoll <= 16) {
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Voll auf die 12!";
+            heroValues.Lp -= takeDmg;
+            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte: " + heroValues.Lp;
+            return;
+        } else if (fleeRoll >= 17) {
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: FURCHTBAR erwischt worden! ";
+            heroValues.Lp -= takeDmg * 1.5;
+            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte betragen: " + heroValues.Lp;
+            return;
+        }
+    };
+
+    function enemyAttack() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+
+        enemyAttackRoll = Math.floor(Math.random() * (18 - 4) + 4);
+        const giveHeroDmg = enemyDmg - heroValues.Def;
+        console.log("gegner greift an ");
+        console.log(enemyAttackRoll);
+        if (enemyAttackRoll <= 4 || enemyAttackRoll === 4) {
+            document.getElementById("enemyAttacke").innerHTML = "Angriff: MEISTERLICHER Angriff!";
+            enemyHp -= (1.5 * giveHeroDmg); //garantierter treffer für crit
+            flee();
+
+            return;
+        } else if (enemyAttackRoll >= 5 && enemyAttackRoll <= enemyHit) {
+            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Feind attackiert dich gezielt!";
+            flee();
+
+            return;
+        } else if (enemyAttackRoll >= enemyHit && enemyAttackRoll <= 17) {
+            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Fend schwingt weit an dir vorbei!";
+            return;
+        } else if (enemyAttackRoll >= 17) {
+            document.getElementById("enemyAttacke").innerHTML = "FURCHTBAR daneben, der Feind verletzt sich selbst in seiner Rage!";
+            enemyHp -= 1;
+            checkEnemyLife();
+            return;
+        }
+    }
+
+
+    function enemyFlee() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+        const takeHeroDmg = heroValues.Dmg - enemyDef;
+        enemyFleeRoll = Math.floor(Math.random() * (18 - 4) + 4);
+        console.log("gegner weicht aus");
+        console.log(enemyFleeRoll);
+        if (enemyFleeRoll <= 4 || enemyFleeRoll === 4) { //evtl +1 hp... oder so
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Meisterlich ausgewichen - keine Ahnung wo du hingezielt hast!";
+            enemyHp += 1;
+            return;
+        } else if (enemyFleeRoll >= 5 && enemyFleeRoll <= enemyDodge) {
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Das Vieh duckt sich!";
+            return;
+        } else if (enemyFleeRoll >= enemyDodge && enemyFleeRoll <= 16) {
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Du schlitzt den Gegner auf!";
+            enemyHp -= takeHeroDmg;
+            document.getElementById("GegnerLeben").innerHTML = "Vieh hat " + enemyHp + "Lebenspunkte!";
+            return;
+        } else if (enemyFleeRoll >= 17) {
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Voll in deine Waffe gerannt! ";
+            enemyHp -= (takeHeroDmg * 1.5);
+            document.getElementById("GegnerLeben").innerHTML = "Vieh hat " + enemyHp + "Lebenspunkte!";
+            return;
+        }
+    };
+
+    function backToBegin() {
+        location.reload();
+    }
+
+
+    function playAudioOnLoad(audioElement, volume) {
+        audioElement.volume = volume;
+
+        audioElement.addEventListener('load', () => {
+            audioElement.play();
+        });
+
+        if (audioElement.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) {
+
+            audioElement.play();
+        }
+    }
+
+
+    const door = document.getElementById("doorSound");
+
+
+    function playTorSound() {
+        playAudioOnLoad(door, 0.17);
+    }
+    const fail = document.getElementById("failSound");
+
+    function playFailSound() {
+
+        playAudioOnLoad(fail, 0.34);
+    };
+    const win = document.getElementById("winSound");
+
+    function playWinSound() {
+
+        playAudioOnLoad(win, 0.33);
+    };
+
+
+
+    function battleLoop() {
+        while (heroValues.Lp > 0 && enemyHp > 0) {
+            attackflee();
+            if (heroValues.Lp <= 0 || enemyHp <= 0) {
+                break; // Beende die Schleife, wenn einer der Kämpfer besiegt wurde
+            }
+        }
+
+        if (heroValues.Lp <= 0) {
+            console.log("Du hast den Kampf verloren.");
+        } else {
+            console.log("Du hast den Kampf gewonnen.");
+        }
+    }
+    showinvi();
+</script>
+
+
+
+
+</html>

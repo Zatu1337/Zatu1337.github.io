@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="em">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+
+    <title> Das Abenteuer beginnt</title>
+
+    <link rel="icon" type="image/png" href="https://dl.dropbox.com/s/sl54d6vtws25ok0/webp_net_resizeimage__1__UMO_1.ico?dl=0">
+
+
+
+
+    <style>
+        html {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            grid-template-rows: 1fr 1fr 1fr;
+            width: 100%;
+            height: 100vh;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            min-width: 300px;
+        }
+        
+        .container div {
+            padding: 5px;
+            border: 5px, solid, black;
+        }
+        
+        .header {
+            width: 100%;
+            height: 5vh;
+            display: block;
+            background-image: url("https://dl.dropbox.com/s/0u2napy9j3yb6on/Download%20%281%29.jpg?dl=0");
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: space-between;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        
+        .headline {
+            color: rgb(85, 190, 58);
+            font-size: 2vh;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        body {
+            height: auto;
+            width: 100%;
+            background: lavender;
+            margin: auto auto auto auto;
+            background-image: url("https://dl.dropbox.com/s/i9atx4eoqpptsbz/2019-09-26-waldgipfel.jpg?dl=0");
+            background-color: #27411c;
+            opacity: 95%;
+            background-position: center, center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .links {
+            height: 52vh;
+            width: 22vw;
+            display: table;
+            text-align: center;
+            padding-bottom: 0.9vh;
+            color: #ffffff;
+            background-color: #27411c;
+            background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-size: 2.6vh;
+            font-weight: 800;
+            margin-left: 4vw;
+            border-color: #97803496;
+            border-width: 4px;
+            border-style: ridge;
+            border-radius: 8%;
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .Hero {
+            height: 29vh;
+            width: 18vw;
+            margin-top: 2vh;
+            align-self: center;
+            justify-self: center;
+            border-radius: 100%;
+            background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
+            background-repeat: round;
+            border-color: rgba(255, 255, 255, 0.507);
+            border-width: 2px;
+            border-style: solid;
+        }
+        
+        .Text1 {
+            height: 18vh;
+            width: 28vw;
+            display: table;
+            text-align: justify;
+            text-justify: auto;
+            align-content: center;
+            align-self: center;
+            justify-self: center;
+            color: rgb(255, 255, 255);
+            background-color: #27411c;
+            border-color: rgba(29, 187, 31, 0.703);
+            border-width: 3px;
+            border-style: solid;
+            margin: 0 15% 0 0;
+            font-size: 2.5vh;
+            font-weight: 800;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        a {
+            height: 2.5vh;
+            width: auto;
+            position: relative;
+            font-size: 2.5vh;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 1px;
+        }
+        
+        a span {
+            position: absolute;
+            display: block;
+        }
+        
+        .next {
+            height: 15vh;
+            width: 15vw;
+            font-size: small;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        button {
+            height: 4.5vh;
+            width: 23vw;
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+
+<body id="body"> <audio autoplay src="https://dl.dropbox.com/scl/fi/sy46m464tqviebx27pnrw/Bl-tterrascheln.mp3?rlkey=p60efjkbkjucml8x882gshbhl&dl=0" type="audio/ogg" id="geraschel">
+           
+</audio>
+    <div class="container">
+
+
+        <div class="links" id="linkesFenster">
+            <div class="heroName" id="heroName"> | Lizord |(Level 1) </div>
+            <div class="heroName" id="heroTitle"> </div>
+            <center>
+                <div class="Hero" id="heroAvatar">
+
+
+                </div>
+            </center>
+        </div>
+        <div class="next">
+            <img src="https://dl.dropbox.com/s/15e5sxczz9hznxe/waldh%C3%BCtte.jpg?dl=0" width="285px" height="255px" id="hütte" />
+
+            <center>
+                <form action=" 3StartSzene2.html ">
+                    <button>Zur Hütte  </button>
+                </form>
+            </center>
+        </div>
+
+        <div class="Text1">
+            <div id="delayedText1" style="visibility:hidden">Du schlägst dich nach einem verwirrenden Traum durch den Dickicht des Waldes....
+            </div>
+            <div id="delayedText2" style="visibility:hidden">Irgendwann würdest du gerne ein schönes Plätzchen für eine Rast finden,<br> da siehst du auch schon in der ferne eine kleine Block-Hütte.</div>
+            <div id="delayedText3" style="visibility:hidden">Wer da wohl wohnt..?</div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+<script src="https://raw.githack.com/Zatu1337/Zatu1337.github.io/main/getname%20.js"></script>
+
+
+<script>
+    function playAudioOnLoad(audioElement) {
+        // Warte auf das Laden des Audio-Elements
+        audioElement.addEventListener('load', () => {
+            // Das Audio-Element ist jetzt geladen und bereit, abgespielt zu werden
+            audioElement.play();
+        });
+
+        // Wenn das Audio-Element bereits geladen ist, wird das 'load'-Ereignis möglicherweise nicht ausgelöst.
+        // In diesem Fall kannst du es sofort abspielen:
+        if (audioElement.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) {
+            audioElement.play();
+        }
+    }
+
+
+
+
+    document.body.addEventListener('mouseover', (event) => {
+        playBlätterrschelSound();
+    });
+    document.body.addEventListener('touchstart', (event) => {
+        playBlätterrschelSound();
+    });
+
+    function playBlätterrschelSound() {
+        var blätterRaschel = document.getElementById("geraschel");
+        blätterRaschel.play();
+    };
+
+    function showText(id, delay) {
+        var elem = document.getElementById(id);
+        setTimeout(function() {
+            elem.style.visibility = 'visible';
+        }, delay * 1000)
+    }
+    window.onload = function() {
+        showText('delayedText1', 1);
+        showText('delayedText2', 2);
+        showText('delayedText3', 4);
+
+    }
+    loadHero();
+
+    function goin() {
+
+        document.getElementById("hütte").src = "https://dl.dropbox.com/s/mk6pp9wbj8p4en1/h%C3%BCtte2.png?dl=0"
+    }
+</script>
+
+</html>
+
+
+
+
+
+
+
+<!--COPYRIGHT SEBASTIAN HAMBURGER, 2023 PLAYBURGER INC -->

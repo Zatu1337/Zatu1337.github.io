@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            overflow: hidden;
+        }
+        
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: chocolate;
+            background-image: url("https://as1.ftcdn.net/v2/jpg/05/57/03/76/1000_F_557037669_UXqDLCa0BMHlsIb5UEhXLUhHVuHOZOe3.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .contain {
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 10% 23% 33% 24% 10%;
+            grid-template-rows: 5% 38% 38% 10%;
+            column-gap: 2px;
+            row-gap: 2px;
+            color: black;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3vh;
+            padding-top: 4vh;
+        }
+        
+        .links {
+            height: 78vh;
+            width: 18vw;
+            display: table;
+            text-align: center;
+            color: #ffffff;
+            border-radius: 10%;
+            background-color: #6f6e74b6;
+            background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-size: 1.6vh;
+            font-weight: 800;
+            border-color: rgba(151, 156, 163, 0.762);
+            border-width: 5px;
+            border-style: solid;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .inventarHead {
+            height: 9vh;
+            width: 23vw;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            align-self: center;
+            text-align: center;
+            justify-self: center;
+            font-size: 2.5vh;
+        }
+        
+        .walletIcon {
+            height: 2.8vh;
+            width: 1.5vw;
+            margin-top: 1.2vh;
+            margin-left: -1.1vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+        
+        .walletText {
+            height: 3.3vh;
+            width: 3.0vw;
+            margin-left: -0.9vw;
+            margin-right: 1.0vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+            display: inline-block;
+        }
+        
+        .rationIcon {
+            height: 2.8vh;
+            width: 1.5vw;
+            margin-top: 1.2vh;
+            margin-left: -1.5vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/qcna317ped0sk3swo42mh/marker-nahrung.PNG?rlkey=p4v13qjskk3kltd7vrpv1nlr0&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+        
+        .rationText {
+            height: 3.3vh;
+            width: 3.2vw;
+            margin-left: 0.5vw;
+            margin-right: 1.0vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+            display: inline-block;
+        }
+        
+        .Hero {
+            height: 23vh;
+            width: 16vw;
+            position: relative;
+            color: rgb(247, 247, 247);
+            text-decoration: underline overline;
+            font-weight: bold;
+            border-color: rgba(182, 182, 182, 0.845);
+            border-width: 2.5px;
+            border-style: solid;
+            margin-top: 2.5vh;
+            margin-bottom: 1.5vh;
+            border-radius: 100%;
+            background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .avatar-corner {
+            position: absolute;
+            height: 6.5vh;
+            width: 5.8vw;
+            background-color: #7c777700;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+        }
+        
+        .imgLp {
+            height: 4.7vh;
+            width: 1.8vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/x189pyk1hn12whbirwyf3/lebenspunkte.png?rlkey=32dppnf2u6a3vowc00uai8yci&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.1vh;
+            width: 3.0vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .top-left {
+            top: 0;
+            left: 0;
+            margin-top: -2vh;
+            margin-left: -2.6vw;
+        }
+        
+        .top-right {
+            top: 0;
+            right: 0;
+            margin-top: -2vh;
+            margin-right: -2.3vw;
+        }
+        
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            margin-bottom: -2vh;
+            margin-left: -2.0vw;
+        }
+        
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            margin-bottom: -2.5vh;
+            margin-right: -2.0vw;
+        }
+        
+        .corner-icon {
+            margin-left: 4px;
+            display: inline-block;
+        }
+        
+        .imgHit {
+            height: 5.8vh;
+            width: 2.8vw;
+            margin-left: -1px;
+            background-image: url("https://dl.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0https://www.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.3vh;
+            width: 3.0vw;
+            margin-left: -2px;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDmg {
+            height: 6.0vh;
+            width: 3.7vw;
+            margin-left: -4px;
+            background-image: url("https://dl.dropbox.com/scl/fi/ot3uf0hm3035blizmxyap/sword_icon.png?rlkey=iobjdbq5wk13c4aib2adkb32u&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .corner-number {
+            font-size: 2.6vh;
+            font-weight: 800;
+            font-weight: bold;
+        }
+        
+        .heroName {
+            height: 3.5vh;
+            width: 96%;
+            margin-top: 2vh;
+            color: rgb(247, 247, 247);
+            font-size: 2.4vh;
+            font-weight: 800;
+            border-radius: 8%;
+            text-decoration: underline;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .heroAttri {
+            border-radius: 8%;
+            text-decoration: underline;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .title {
+            height: 3.5vh;
+            width: 14vw;
+            color: rgb(247, 247, 247);
+            font-size: 2.4vh;
+            font-weight: 800;
+        }
+        
+        .inventar {
+            height: 28vh;
+            width: 15.5vw;
+            margin-top: 1.2vh;
+            display: grid;
+            grid-template-rows: repeat(3, 8vh);
+            row-gap: 10px;
+            grid-template-columns: repeat(2, 7vw);
+            justify-content: center;
+            align-content: center;
+            background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .inventar-item {
+            height: 6.3vh;
+            width: 4vw;
+            padding: 3px;
+            display: flex;
+            font-size: larger;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            border: 3px ridge rgba(77, 77, 77, 0.123);
+        }
+        /* Stil der Bilder innerhalb der DIV-Bereiche */
+        
+        .inventar-item img {
+            width: 100%;
+            /* Das Bild auf die volle Breite des DIVs skalieren */
+            height: 100%;
+            /* Das Bild auf die volle Höhe des DIVs skalieren */
+            object-fit: fill;
+            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
+        }
+        
+        .vendorText {
+            height: 57.6vh;
+            width: 43vw;
+            display: flex;
+            color: #f8f8f8;
+            font-size: 2.3vh;
+            border-radius: 8%;
+            font-weight: 900;
+            padding: 18px 18px 18px 12px;
+            visibility: visible;
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            margin-left: -7vw;
+            margin-top: -15vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/6wdq30wdh133h88qr629w/sprech_2_grey-removebg-preview.png?rlkey=9kb3zk7cfr3x4697da49qbff0&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        
+        .shout {
+            display: inline-block;
+            height: 15.8vh;
+            width: 12.8vw;
+            color: #000;
+            margin-top: 2vh;
+            margin-left: 2.3vw;
+            margin-right: -2.4vw;
+            background-color: #94949400;
+        }
+        
+        .thekenTisch {
+            height: 28vh;
+            width: 32vw;
+            display: table;
+            border-radius: 10%;
+            border: 8px ridge rgba(151, 156, 163, 0.762);
+            background-image: url("https://dl.dropbox.com/scl/fi/8axj3iy2z30tejrjd5ehm/brett-quer.jpg?rlkey=sg2z8qfasj2noehmokxnryw34&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #d68f0a00;
+            color: rgb(255, 255, 255);
+            font-size: 3.0vh;
+            font-weight: bolder;
+            letter-spacing: 0.1vw;
+            margin-left: -4vw;
+            margin-top: 15vh;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        
+        .fancymetal {
+            height: 5.8vh;
+            width: 14.8vw;
+            margin-top: 1vh;
+            border-radius: 8%;
+            font-size: 2.3vh;
+            color: #ffffff;
+            font-weight: bold;
+            background-color: rgba(0, 255, 255, 0);
+            border: none;
+            background-image: url("https://dl.dropbox.com/scl/fi/9aahhht3x598vo9ogvrqh/blau_long_button.png?rlkey=3jyvlm10x94c7spa0vmxpi9ga&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .items {
+            height: 5vh;
+            width: 11vw;
+            /* für kaufbare items farbiger Rand oder ausgrauen soldout ? */
+            color: #f00e0e;
+            text-align: center;
+        }
+        
+        .warenBild {
+            height: 11.5vh;
+            width: 10vw;
+        }
+        
+        .warenText {
+            height: 5.8vh;
+            width: 22vw;
+            font-size: 2.8vh;
+            font-weight: 900;
+            font-style: italic;
+        }
+        
+        .ladenInventar {
+            height: 73.9vh;
+            width: 22vw;
+            display: grid;
+            border-radius: 10%;
+            grid-template-rows: repeat(3, 3.5vh);
+            color: rgb(255, 255, 255);
+            text-decoration: underline;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            padding-top: 4vh;
+            margin-left: 9vw;
+            background-color: rgba(77, 78, 78, 0.644);
+            font-size: 3.0vh;
+            font-weight: 800;
+            background-image: url("https://dl.dropbox.com/scl/fi/bv466xipscj7wpkilcuvt/istockphoto-1201918805-612x612.jpg?rlkey=uq9gazkfy3s9giq5wavfgan39&dl=0");
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .sortiment {
+            height: 72vh;
+            width: 18vw;
+            display: flex;
+            font-size: 2.3vh;
+            font-weight: bolder;
+        }
+        
+        .menueSpalten {
+            height: 75vh;
+            width: 14vw;
+            text-align: center;
+            font-size: 2.5vh;
+        }
+        
+        .iconwrapper {
+            height: 5.3vh;
+            width: 6.7vw;
+            display: inline-block;
+            background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
+            background-size: 100% 100%;
+        }
+        
+        .goldIcon {
+            height: 3.0vh;
+            width: 1.8vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
+        
+        .prices {
+            margin-top: 0.84vh;
+            height: 3.3vh;
+            font-size: 3.0vh;
+            font-weight: 888;
+            width: 1.5vw;
+            display: inline-block;
+            justify-self: center;
+            align-self: center;
+        }
+        
+        .storeTooltip {
+            height: 14.6vh;
+            width: 22.5vw;
+            margin-left: 8.6vw;
+            display: flex;
+            font-size: 2.3;
+            font-weight: 666;
+            border-radius: 10%;
+            background-color: #504f4fe5;
+            color: rgb(240, 240, 240);
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+            border-color: rgba(228, 213, 13, 0.877);
+            border-width: 7px;
+            border-style: ridge;
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 4;
+            grid-row-end: 4;
+        }
+        
+        .imgGastrolith {
+            height: 12vh;
+            width: 10vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/23djomyvve2txazimhegd/gastrlith.jpg?rlkey=ejht72m67b9pobt67qbu5h2dy&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .imgSilbermünze {
+            height: 12vh;
+            width: 10vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/nwbc2gv1jyoxa6oqwjm91/silber-drachenm-nze.png?rlkey=q7f1a01l56kpcdwcves9ztipc&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgGoldnugget {
+            height: 12vh;
+            width: 10vw;
+            background-image: url("https://shorturl.at/aexF4");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDiamant {
+            height: 12vh;
+            width: 10vw;
+            background-image: url("https://shorturl.at/uzKPZ");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .salt {
+            height: 11vh;
+            width: 6vw;
+            margin-top: 0.5vh;
+            background-image: url("https://shorturl.at/eyAC9");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .brot {
+            height: 11vh;
+            width: 6vw;
+            margin-top: 0.5vh;
+            background-image: url("https://shorturl.at/aPR35");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .wasser {
+            height: 11vh;
+            width: 6vw;
+            margin-top: 0.5vh;
+            background-image: url("https://shorturl.at/ajvO1");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .fleisch {
+            height: 11vh;
+            width: 6vw;
+            margin-top: 0.5vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/cyp45cv4bqfsglgv618sp/Lamb_chops.jpg?rlkey=y76hoa03jz3twiykc0rr21127&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .salat {
+            height: 11vh;
+            width: 6vw;
+            margin-top: 0.5vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/jhr315pdcwgu30iwt10se/salat.jpg?rlkey=cvg90osrdai7865blu572tvx4&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .heiltrank1 {
+            height: 10vh;
+            width: 6.5vw;
+            margin-top: 0.5vh;
+            background-image: url("https://feywildgame.com/wp-content/uploads/2020/10/feywild-healing-potion-500x500.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .alteKarte {
+            height: 10vh;
+            width: 6.5vw;
+            margin-top: 0.5vh;
+            background-image: url("https://previews.123rf.com/images/tanshy/tanshy1702/tanshy170200020/72961295-alte-karte-rolle-fantasiespiele-zeichnung.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .stärkungstonikum1 {
+            height: 10vh;
+            width: 6.5vw;
+            margin-top: 0.5vh;
+            background-image: url("https://previews.123rf.com/images/tanshy/tanshy1702/tanshy170200229/73014729-elixier-von-fantasy-spiele-f%C3%BCr-eine-flasche.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .RostigesMesser {
+            height: 12vh;
+            width: 8.5vw;
+            margin-bottom: 0.3vh;
+            background-image: url("Https://dl.dropbox.com/scl/fi/dcwjgyk1mkst5n95a6rhq/rostiges-K-chenmesser.jpg?rlkey=ylgzl0yo0ny0d0ijrfayt75us&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .Gambeson {
+            height: 12vh;
+            width: 8.5vw;
+            margin-bottom: 0.3vh;
+            background-image: url("https://shorturl.at/guyY7");
+            background-size: 100% 220%;
+            background-repeat: no-repeat;
+        }
+        
+        .FassBuckler {
+            height: 12vh;
+            width: 8.5vw;
+            margin-bottom: 0.3vh;
+            background-image: url("https://shorturl.at/crvGY");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .Nagelkeule {
+            height: 12vh;
+            width: 8.5vw;
+            margin-bottom: 0.3vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/j47ovo09jt4nahlu8d23u/wpn2-wood-spike-club.png?rlkey=xydwr5abqv2a2qbn9d1cdl2y2&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .Holzrüstung {
+            height: 12vh;
+            width: 8.5vw;
+            margin-bottom: 0.3vh;
+            background-image: url("https://shorturl.at/lsN24");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .KreuzSchild {
+            height: 12vh;
+            width: 8.5vw;
+            margin-bottom: 0.3vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/h12l865dxgw5eqxu6rxfi/cutted-shield.jpg?rlkey=unf6yn02ico1wiahxi1xauqwq&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .rostigeAxt {
+            height: 12vh;
+            width: 8.5vw;
+            margin-bottom: 0.3vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/gtejqvrb6a0ggvxmhvxk1/wpn3-rost-axt.jpg?rlkey=ef9buczfcou0pvmsfssfjswjr&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .lässigeLederrüstung {
+            height: 12vh;
+            width: 8.5vw;
+            margin-bottom: 0.3vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/fgzjtwntlffnyvocxy17g/nice-leather-armor.jpg?rlkey=edv1raxg81l8cz1q3bg1pyfww&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .AntikerSchild {
+            height: 12vh;
+            width: 8.5vw;
+            margin-bottom: 0.3vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/8wq1ras96iyg8hrlkatil/greek-sparta-shieldrk.jpg?rlkey=6v571whu9q7qtasz02qv5scv1&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .mehl {
+            height: 11vh;
+            width: 6vw;
+            margin-top: 0.5vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/60c0xfn7lj5qelaam34oq/mehl.png?rlkey=3rxsy8mbe8e4mysfyfl1dddo6&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .heiltrank1 {
+            height: 11vh;
+            width: 6vw;
+            margin-top: 0.5vh;
+            background-image: url("https://feywildgame.com/wp-content/uploads/2020/10/feywild-healing-potion-500x500.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .alteKarte {
+            height: 11vh;
+            width: 6vw;
+            margin-top: 0.5vh;
+            background-image: url("https://previews.123rf.com/images/tanshy/tanshy1702/tanshy170200020/72961295-alte-karte-rolle-fantasiespiele-zeichnung.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .stärkungstonikum1 {
+            height: 11vh;
+            width: 6vw;
+            margin-top: 0.5vh;
+            background-image: url("https://previews.123rf.com/images/tanshy/tanshy1702/tanshy170200229/73014729-elixier-von-fantasy-spiele-f%C3%BCr-eine-flasche.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .icons {
+            height: 16vh;
+            width: 8vw;
+            margin-top: 1.7vh;
+            display: table;
+            align-self: center;
+            justify-self: center;
+        }
+        
+        .wahl {
+            font-size: 3vh;
+            height: 5vh;
+        }
+        
+        button {
+            height: 3.5vh;
+            width: 11.8vw;
+            margin-top: 1vh;
+            border: 3px grey ridge;
+            margin-bottom: 0.6vh;
+            font-size: 2.4vh;
+        }
+        
+        .Ausgang {
+            height: 11.5vh;
+            width: 8vw;
+            color: aliceblue;
+            font-size: 2.5vh;
+            font-weight: bold;
+            margin-left: -2vw;
+            margin-top: 4vh;
+            grid-column-start: 2;
+            grid-column-end: 2;
+            grid-row-start: 4;
+            grid-row-end: 4;
+        }
+        
+        .getOut {
+            height: 6.5vh;
+            width: 3.5vw;
+            background-color: chartreuse;
+            background-image: url("https://cdn.iconscout.com/icon/free/png-512/free-exit-2668119-2214245.png?f=avif&w=256");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+
+</head>
+
+<body onload="">
+    <div class="contain">
+
+
+        <div class="links">
+
+
+            <center>
+
+
+                <div class="heroName" id="heroName"> | Lizord |(Level 1)
+
+                </div>
+                <div class="title" id="heroTitle">
+                </div>
+                <div class="Hero" id="heroAvatar">
+                    <div class="avatar-corner top-left">
+                        <div class="corner-number" id="heroLp"></div>
+                        <div class="corner-icon imgLp"></div>
+
+                    </div>
+                    <div class="avatar-corner top-right">
+                        <div class="corner-number" id="heroDmg"></div>
+                        <div class="corner-icon imgDmg"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-left">
+                        <div class="corner-number" id="heroDef"></div>
+                        <div class="corner-icon imgDef"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-right">
+                        <div class="corner-number" id="heroHit"></div>
+                        <div class="corner-icon imgHit"></div>
+
+                    </div>
+                </div>
+
+            </center>
+            <center>
+
+
+                <div class="inventarHead">
+                    <div class="iconwrapper">
+                        <div class="walletText" id="wallet"></div>
+                        <div class="walletIcon"></div>
+                    </div>
+                    <span> Inventar  </span>
+                    <div class="iconwrapper">
+                        <div class="rationText" id="rations"></div>
+                        <div class="rationIcon"></div>
+                    </div>
+                </div>
+                <div class="inventar" id="invi">
+
+                    <div class="inventar-item" id="g1"> </div>
+                    <div class="inventar-item" id="g2"> </div>
+                    <div class="inventar-item" id="g3"> </div>
+                    <div class="inventar-item" id="g4"></div>
+                    <div class="inventar-item" id="g5"> </div>
+                    <div class="inventar-item" id="g6"> </div>
+                </div>
+
+        </div>
+        </center>
+
+        <div class="vendorText" id="vendorsay">
+            <div class="shout" id="delayedText1" style="visibility:hidden">
+                <p> <i>"WILLKOMMEN!</i> schallt es aus dem hinteren Raum des Ladens:" <br> </p>
+            </div>
+            <div class="shout" id="delayedText2" style="visibility:hidden">
+                <p> <i>" Schau dich um - Ich hab alles was du brauchst, und noch viel mehr!!</i> schallt es aus dem hinteren Raum des Ladens:"?<br> </p>
+            </div>
+        </div>
+
+
+
+        <div class="thekenTisch" id="ladenTheken">
+            <center> |Theke|
+
+
+
+
+                <div class="warenBild" id="waresImg"></div>
+                <div class="warenText" id="waresInfo"></div><button class="fancymetal" type="button" id="buttonBuy" onclick="checkBuy()">Das kaufe ich! </button>
+
+                <button id="noThx" class="fancymetal" onclick="clearTheke()">Ach neh, doch nich'. </button></center>
+        </div>
+
+        <div class="ladenInventar" id="ladenInventarItems">
+            <center>
+
+                <h1> |SORTIMENT| </h1>
+                <div class="sortiment" id="sortiment">
+                    <div class="menueSpalten">
+                        <div class="icons"> Wasser <button value="lol" name="Wasserschlauch" class="wasser" id="Wasserschlauch" onclick="buyWater()">  </button>
+                            <div class="iconwrapper">
+
+                                <div id="RostigesMesserPreisId" class="prices"> 1</div>
+                                <div class="goldIcon"> </div>
+                            </div>
+                        </div>
+                        <div class="icons"> Salat
+                            <button value="lol" class="fleisch" name="Fleisch" id="Fleisch" onclick="buyFleisch()">
+                                </button>
+                            <div class="iconwrapper">
+
+                                <div id="" class="prices"> 10</div>
+                                <div class="goldIcon"> </div>
+                            </div>
+                        </div>
+                        <div class="icons"> Heiltrank <button value="lol" class="heiltrank1" id="heiltrank1" onclick="buyHeiltrank1()">  
+
+                              
+                                
+                              </button>
+                            <div class="iconwrapper">
+
+                                <div id="" class="prices"> 15</div>
+                                <div class="goldIcon"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menueSpalten">
+                        <div class="icons" id="icons"> Brot <button value="lol" name='Brot' class="brot" id="Brot" onclick="buyBrot()">   </button>
+                            <div class="iconwrapper">
+
+                                <div id="" class="prices"> 3</div>
+                                <div class="goldIcon"> </div>
+                            </div>
+                        </div>
+                        <div class="icons"> Fleisch
+                            <button value="lol" class="salat" id="Salat" onclick="buySalat()">
+                                </button>
+                            <div class="iconwrapper">
+
+                                <div id="" class="prices"> 1</div>
+                                <div class="goldIcon"> </div>
+                            </div>
+                        </div>
+                        <div class="icons"> Krafttonikum <button value="lol" class="stärkungstonikum1" id="stärkungstonikum1" onclick="buyStärkungstonikum1()">   </button>
+                            <div class="iconwrapper">
+
+                                <div id="" class="prices"> 30</div>
+                                <div class="goldIcon"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        <div class="storeTooltip" id="tooltipBox"> Hier erfährst du mehr über das Sortiment </div>
+        </center>
+        <div class="Ausgang"> RAUS HIER
+            <button class="getOut" onclick="getOut()">  </button> </div>
+    </div>
+
+</body>
+
+<script src="https://raw.githack.com/Zatu1337/Zatu1337.github.io/main/getname%20.js"></script>
+
+<script>
+    function getOut() {
+        alert("Bis bald!");
+        window.location = "7Dorf1.html";
+    }
+
+    let theke = [];
+
+    const inventar = [
+        undefined, undefined, undefined, undefined
+    ];
+
+
+    const slot1 = document.getElementById("g1");
+    const slot2 = document.getElementById("g2");
+    const slot3 = document.getElementById("g3");
+    const slot4 = document.getElementById("g4");
+    const slot5 = document.getElementById("g5");
+    const slot6 = document.getElementById("g6");
+
+    const reichtum = [{
+        name: 'Goldmünzen',
+        image: 'https://www.geiger-edelmetalle.de/media/d4/4e/29/1680794041/b659f881b1e5a2f78f09f912f211a5e5.png',
+        wert: ""
+
+    }];
+
+
+    function saveHero() { // nach jeder änderung an den zugehörigen werten!
+        let oldHeroString = JSON.stringify(heroValues);
+        localStorage.setItem("Attribute", oldHeroString);
+        showHero();
+    }
+
+    function updateHeroValues(newValues) {
+        Object.assign(heroValues, newValues);
+        saveHero();
+    }
+
+
+
+    showHero();
+
+    function showText(id, delay) {
+        var elem = document.getElementById(id);
+        setTimeout(function() {
+            elem.style.visibility = 'visible';
+            elem.classList.add('shout'); // Add the "shout" class
+
+        }, delay * 1000);
+    }
+
+    window.onload = function() {
+        showText('delayedText1', 0.8);
+        showText('delayedText2', 1.6);
+    }
+
+    function vanishWords() {
+        document.getElementById("vendorsay").style.visibility = 'hidden';
+        document.getElementById("delayedText1").style.visibility = 'hidden';
+        document.getElementById("delayedText2").style.visibility = 'hidden';
+    }
+
+    function wordstimer() {
+        setTimeout(() => {
+            vanishWords();
+
+        }, 8000);
+
+    }
+    wordstimer();
+
+    const allItems = [{ //angleichen mit aktueller version - always
+        name: 'Mehlsack',
+        image: 'https://dl.dropbox.com/scl/fi/60c0xfn7lj5qelaam34oq/mehl.png?rlkey=3rxsy8mbe8e4mysfyfl1dddo6&dl=0',
+        wert: 1,
+        tooltip: "Ein Sack schweres frisch gemahlenes Mehl(1LP)"
+    }, {
+        name: 'Salat',
+        image: 'https://dl.dropbox.com/scl/fi/jhr315pdcwgu30iwt10se/salat.jpg?rlkey=cvg90osrdai7865blu572tvx4&dl=0',
+        wert: 1,
+        tooltip: "Ein riesiger grüner Salatkopf."
+    }, {
+        name: 'Fleisch',
+        image: 'https://dl.dropbox.com/scl/fi/cyp45cv4bqfsglgv618sp/Lamb_chops.jpg?rlkey=y76hoa03jz3twiykc0rr21127&dl=0',
+        wert: 10,
+        tooltip: "Ein paar fleischige Keulen von so'nem Vieh!"
+    }, {
+        name: 'Brot',
+        image: 'https://shorturl.at/aPR35',
+        wert: 1,
+        tooltip: "Ein Laib Brot frisch aus dem Ofen, Hmm duftet das gut! (gibt dir 3 LP zurück"
+    }, {
+        name: 'Salz',
+        image: 'https://shorturl.at/eyAC9',
+        wert: 1,
+        tooltip: "Salzkristalle in grob gemahlener Form. Zum kochen oder direkt lutschen.(1LP)"
+    }, {
+        name: 'Wasserschlauch',
+        image: 'https://shorturl.at/ajvO1',
+        wert: 1,
+        tooltip: "Klares Brunnenwasser, OHNE Stückchen(2LP)"
+    }, {
+        name: 'Gastrolith',
+        image: 'https://dl.dropbox.com/scl/fi/23djomyvve2txazimhegd/gastrlith.jpg?rlkey=ejht72m67b9pobt67qbu5h2dy&dl=0',
+        wert: 1,
+        tooltip: "Eine Verdaungshilfe..."
+
+    }, {
+        name: 'Silbermünze',
+        image: 'https://dl.dropbox.com/scl/fi/nwbc2gv1jyoxa6oqwjm91/silber-drachenm-nze.png?rlkey=q7f1a01l56kpcdwcves9ztipc&dl=0',
+        wert: 3,
+        tooltip: "Eine Sonderprägung mit einem Glücksdrachen!"
+
+    }, {
+        name: 'Nugget',
+        image: 'https://shorturl.at/aexF4',
+        wert: 5,
+        tooltip: "Gold in erdgebundener Form!"
+    }, {
+        name: 'Diamant',
+        image: 'https://shorturl.at/uzKPZ',
+        wert: 10,
+        tooltip: "Ein richtig fetter Klunker!"
+    }, {
+        name: 'Goldenes Schmuckstück',
+        image: "",
+        wert: 0,
+        tooltip: "Ein wunderschönes filigran gearbeitestes Schmuckstück. Dieses Werk muss ein Meister seiner Kunst geschaffen haben!"
+    }, {
+        name: 'heiltrank1', // aus datei kopiren
+        image: 'https://feywildgame.com/wp-content/uploads/2020/10/feywild-healing-potion-500x500.jpg',
+        wert: 15,
+        tooltip: "Diese nach rosenwasser duftende Flüssigkeit kuriert deine Wunden schneller als du 'aua' sagen kannst!(+20LP)"
+    }, {
+        name: 'alte karte',
+        image: 'https://dl.dropbox.com/s/wzsvhq82gxiqg30/New%20map1.jpg?dl=0',
+        wert: 15,
+        tooltip: "Hier scheint es sich um eine Karte der Gegend zu handeln"
+    }, {
+        name: 'stärkungstonikum1',
+        image: 'https://previews.123rf.com/images/tanshy/tanshy1702/tanshy170200229/73014729-elixier-von-fantasy-spiele-für-eine-flasche.jpg',
+        wert: 30,
+        tooltip: "Dieses Gebräu holt dich aus dem schlimmsten raus! Stellt 35% deiner Max. Lebenspunkte wieder her!"
+    }, {
+        name: 'Rostiges Messer',
+        image: 'https://dl.dropbox.com/scl/fi/dcwjgyk1mkst5n95a6rhq/rostiges-K-chenmesser.jpg?rlkey=ylgzl0yo0ny0d0ijrfayt75us&dl=0',
+        wert: 1,
+        tooltip: "Ein großes rostiges Messer. Hat dir das nicht der Waldkauz geschenkt..?"
+    }, {
+        name: 'Gambeson',
+        image: 'https://shorturl.at/guyY7',
+        wert: 5,
+
+        tooltip: "Ein oft weitergereichter Gambeson [Schrott] <br> Erhöht deinen Rüstungschutz um 2.<br>Er kostet 5 Goldstücke!",
+        equip: '',
+        def: '',
+        seltenheit: ''
+    }, {
+        name: 'Fass Buckler',
+        image: 'https://shorturl.at/crvGY',
+        wert: 3,
+        tooltip: "Fass-Buckler [Schrott] <br>Erhöht deinen  Rüstungschutz um 1.<br> Es kostet 3 Goldstücke!"
+    }, {
+        name: 'Holzkeule mit Nägeln',
+        image: 'https://dl.dropbox.com/scl/fi/j47ovo09jt4nahlu8d23u/wpn2-wood-spike-club.png?rlkey=xydwr5abqv2a2qbn9d1cdl2y2&dl=0',
+        wert: 17,
+        tooltip: "'Holzkeule mit Nägeln [Nützlich]<br> Erhöht dein Schadenspotential um 2-5.<br>Sie kostet 17 Goldstücke!<br>"
+    }, {
+        name: 'Holzrüstung',
+        image: 'https://shorturl.at/lsN24',
+        wert: 15,
+        tooltip: "Holzrüstung [Nützlich]<br> Erhöht deinen Rüstungschutz um 3.<br> Sie kostet 15 Goldstücke!<br>"
+    }, {
+        name: 'Kreuz-Schild',
+        image: 'https://dl.dropbox.com/scl/fi/h12l865dxgw5eqxu6rxfi/cutted-shield.jpg?rlkey=unf6yn02ico1wiahxi1xauqwq&dl=0',
+        wert: 9,
+        tooltip: "Schild [Nützlich]<br> Erhöht deinen Rüstungschutz um 2.<br> Es kostet 9 Goldstücke!<br>"
+    }, {
+        name: 'Rostige Axt',
+        image: 'https://dl.dropbox.com/scl/fi/gtejqvrb6a0ggvxmhvxk1/wpn3-rost-axt.jpg?rlkey=ef9buczfcou0pvmsfssfjswjr&dl=0',
+        wert: 45,
+        tooltip: "Rostige [Nützlich]<br> Erhöht dein Schadenspotential um 4-8.<br> Sie kostet 45 Goldstücke!<br>"
+    }, {
+        name: 'Lässige Lederrüstung',
+        image: 'https://dl.dropbox.com/scl/fi/fgzjtwntlffnyvocxy17g/nice-leather-armor.jpg?rlkey=edv1raxg81l8cz1q3bg1pyfww&dl=0',
+        wert: 37,
+        tooltip: "Lässige Lederrüstung [Selten]<br> Erhöht deinen Rüstungschutz um 6.<br> Sie kostet 37 Goldstücke!<br>"
+    }, {
+        name: 'Antiker Schild',
+        image: 'https://dl.dropbox.com/scl/fi/8wq1ras96iyg8hrlkatil/greek-sparta-shieldrk.jpg?rlkey=6v571whu9q7qtasz02qv5scv1&dl=0',
+        wert: 25,
+        tooltip: "Ein alter verzierter Metallschild [Selten] <br>Erhöht deinen Rüstungschutz um 4.<br> Es kostet 25 Goldstücke!<br>"
+    }, {
+        name: 'Rostiger Dolch',
+        image: 'https://dl.dropbox.com/s/r6r39tdyzmknxqq/rostdolch.jpg?dl=0',
+        wert: 10,
+        tooltip: "Erhöht dein Schadenspotential um 1-3.<br> Es kostet 10 Goldstücke.<br> Etwas schartig aber es wird gehen!"
+
+    }];
+
+    const buttons = document.querySelectorAll('button[value="lol"]');
+
+    function itemTooltip(event) {
+        const itemNameTooltip = event.target.id
+        const itemName2Tooltip = event.target.name
+        let tooltipText;
+        const selectedItem = allItems.find(item => item.name === itemNameTooltip);
+        const selectedItem2 = allItems.find(item => item.name === itemName2Tooltip);
+        if (selectedItem) {
+            tooltipText = selectedItem.tooltip; // Angenommen, du hast das Tooltip-Attribut im Objekt
+            document.getElementById("tooltipBox").innerHTML = tooltipText;
+        } else if (selectedItem2) {
+            tooltipText2 = selectedItem2.tooltip;
+            document.getElementById("tooltipBox").innerHTML = tooltipText2;
+        } else document.getElementById("tooltipBox").innerHTML = 'gibbet nich!';
+    }
+
+    function test2() {
+        alert("oioi");
+    }
+    buttons.forEach(button => {
+        button.addEventListener("mouseover", itemTooltip);
+    });
+    // document.getElementById("g1").addEventListener("mouseover", tooltip);
+
+    const brothPosition = allItems.findIndex(item => item.name === 'Brot');
+    const salatPosition = allItems.findIndex(item => item.name === 'Salat');
+    const fleischPosition = allItems.findIndex(item => item.name === 'Fleisch');
+    const WasserschlauchPosition = allItems.findIndex(item => item.name === 'Wasserschlauch');
+    const heiltrank1Position = allItems.findIndex(item => item.name === 'heiltrank1');
+    const stärkungstonikum1Position = allItems.findIndex(item => item.name === 'stärkungstonikum1');
+    const alteKartePosition = allItems.findIndex(item => item.name === 'AlteKarte');
+    const qShiny = allItems.findIndex(item => item.name === 'Goldenes Schmuckstück');
+
+
+
+    function buyHeiltrank1() {
+        theke.push(allItems[heiltrank1Position].name); // oder  [heiltrank1Position].name  ??!
+        buttonBuy.removeAttribute("disabled", false);
+        document.getElementById("waresImg").innerHTML = "<button class=\"heiltrank1\" id=\"btnBuy\"> </button>";
+        document.getElementById("waresInfo").innerHTML = JSON.stringify("Portion " + [heiltrank1Position].name + " im Wert von " + allItems[heiltrank1Position].wert + " Goldtalern!");
+        disableSortiment();
+    }
+
+    function buyStärkungstonikum1() {
+        theke.push(allItems[stärkungstonikum1Position].name);
+        buttonBuy.removeAttribute("disabled", false);
+        document.getElementById("waresImg").innerHTML = "<button class=\"stärkungstonikum1\" id=\"btnBuy\"> </button>";
+        document.getElementById("waresInfo").innerHTML = JSON.stringify("Portion " + allItems[stärkungstonikum1Position].name + " im Wert von " + allItems[stärkungstonikum1Position].wert + " Goldtalern!");
+        disableSortiment();
+    }
+
+    function buyAlteKarte() {
+        theke.push(allItems[alteKartePosition].name);
+        buttonBuy.removeAttribute("disabled", false);
+        document.getElementById("waresImg").innerHTML = "<button class=\"alteKarte\" id=\"btnBuy\"> </button>";
+        document.getElementById("waresInfo").innerHTML = JSON.stringify("Portion " + allItems[alteKartePosition].name + " im Wert von " + allItems[alteKartePosition].wert + " Goldtalern!");
+        disableSortiment();
+    }
+
+    function saveCoins() {
+        let saveAsche = JSON.stringify((reichtum[0].wert));
+        localStorage.setItem("Reichtum", saveAsche);
+    }
+
+
+    function loadCoins() {
+        const savedMoneyString = localStorage.getItem('Reichtum');
+        const savedMoney = JSON.parse(savedMoneyString);
+        reichtum[0].wert = savedMoney;
+        document.getElementById("wallet").innerHTML = savedMoney;
+
+
+    }
+
+    function showGold() {
+        document.getElementById("wallet").innerText = reichtum[0].wert;
+
+    }
+
+    function setGold1000() {
+        localStorage.setItem("Reichtum", 1000);
+        localStorage.setItem("Verpflegung", 100);
+
+        const savedMoneyString = localStorage.getItem('Reichtum');
+        const savedMoney = JSON.parse(savedMoneyString);
+        document.getElementById("goldCoins").innerHTML = "Du besitzt " + savedMoney + " Goldmünzen.";
+        reichtum[0].wert = savedMoney;
+        const savedRationString = localStorage.getItem("Verpflegung"); // objekt wieder holen um damit zu arbeiten
+        const savedRation = JSON.parse(savedRationString);
+        verpflegung[0].anzahl = JSON.parse(savedRation);
+        showRation();
+    }
+
+    function saveInvi() {
+
+        let oldInviString = JSON.stringify(inventar);
+        localStorage.setItem("Inventar", oldInviString);
+    }
+
+
+
+    function showHero() { //rest infos 
+
+        document.getElementById("heroLp").innerText = heroValues.Lp;
+        document.getElementById("heroDmg").innerText = heroValues.Dmg;
+        document.getElementById("heroDef").innerText = heroValues.Def;
+        document.getElementById("heroHit").innerText = heroValues.Hit;
+    }
+
+
+    function loadInvi() {
+        loadCoins();
+        showGold();
+        loadRation();
+        showRation();
+        loadHero();
+        showHero();
+        const savedInventarString = localStorage.getItem('Inventar');
+        buttonBuy.setAttribute("disabled", true);
+        if (savedInventarString) {
+            const savedInventar = JSON.parse(savedInventarString);
+
+            savedInventar.forEach((item, index) => {
+                inventar[index] = item;
+            });
+            for (let i = 0; i < inventar.length; i++) {
+
+                if (inventar[i] === null) {
+                    inventar[i] = undefined;
+                }
+            }
+            console.log('Das Inventar wurde aus dem LocalStorage geladen:');
+
+        } else {
+            console.log('Es wurden keine gespeicherten Inventardaten gefunden.');
+        }
+
+
+        compareInventarWithAllItems();
+
+    }
+
+    function removeFromInventar(itemToRemove) { // für jeden slot div einzeln? 
+        let indexToRemove;
+        if (typeof itemToRemove === 'number') {
+            indexToRemove = itemToRemove;
+        } else if (typeof itemToRemove === 'string') {
+            indexToRemove = inventar.findIndex(item => item && item.name === itemToRemove);
+        }
+        if (indexToRemove !== -1) {
+            const removedItem = inventar[indexToRemove];
+            console.log(`Item wurde aus dem Inventar entfernt.`);
+            inventar[indexToRemove] = undefined;
+
+        } else {
+            console.log(`Item "${itemToRemove}" ist NICHT im Inventar gefunden oder ungültiger Index.`);
+        }
+    }
+    slot1.addEventListener('click', function() {
+        handleSlotClick(1);
+    });
+
+    slot2.addEventListener('click', function() {
+        handleSlotClick(2);
+    });
+
+    slot3.addEventListener('click', function() {
+        handleSlotClick(3);
+    });
+
+    slot4.addEventListener('click', function() {
+        handleSlotClick(4);
+    });
+
+    slot5.addEventListener('click', function() {
+        handleSlotClick(5);
+    });
+
+
+    slot6.addEventListener('click', function() {
+        handleSlotClick(6);
+    });
+
+
+    function handleSlotClick(slotNumber) { // additem part
+        const arrayIndex = slotNumber - 1;
+        const itemInSlot = inventar[arrayIndex];
+        const vendorWillBuy = confirm("Verkaufst du das Teil?");
+        if (itemInSlot === allItems[qShiny].name) {
+            alert("Ohh, das ist echt schön, aber ich kaufe es dir nicht ab. Besuche doch mal das Lazarett in der Arena.. ")
+        } else if (vendorWillBuy) {
+            if (itemInSlot) {
+                const itemName = itemInSlot.name;
+                const itemImage = itemInSlot.image;
+                const itemValue = itemInSlot.wert;
+                console.log(`Slot ${slotNumber} wurde angeklickt und zeigt das Objekt "${itemName}" an.`);
+                console.log(`Wert des Objekts: ${itemValue}`);
+                const matchingItems = allItems.filter(item => item.name === itemName);
+                reichtum[0].wert += itemValue;
+                saveCoins();
+                showGold();
+                removeFromInventar(itemName);
+                saveInvi();
+                compareInventarWithAllItems();
+                alert("OK - Deal!");
+            } else {
+                alert("Dann behalt das Teil ruhig noch etwas, mein Guder.");
+            };
+        } else {
+            console.log(`Slot ${slotNumber} zeigt noch nichts an.`);
+        }
+    }
+
+    function compareInventarWithAllItems() {
+        const inventarDivs = document.querySelectorAll('.inventar-item');
+        for (let i = 0; i < 6; i++) {
+            const itemInInventar = inventar[i];
+            const foundItem = itemInInventar && allItems.find(item => item.name === itemInInventar.name);
+            for (let i = 0; i < inventar.length; i++) {
+                if (inventar[i] === null) {
+                    inventar[i] = undefined;
+                }
+            }
+            if (foundItem) {
+                console.log(`Item "${itemInInventar.name}"JA`);
+                inventarDivs[i].innerHTML = `<img src="${foundItem.image}" id="${foundItem.name}" />`;
+                inventarDivs[i].addEventListener("mouseover", itemTooltip); // wichtig
+            } else {
+                inventarDivs[i].innerHTML = `<img src="" alt="" />`;
+                inventarDivs[i].addEventListener("mouseover", itemTooltip); // wichtig
+                console.log(`Item "${itemInInventar}" NEEEIN :(`);
+            }
+        }
+    }
+
+
+
+    function enableSortiment() {
+        Wasserschlauch.disabled = false;
+        Brot.disabled = false;
+        heiltrank1.disabled = false;
+        Salat.disabled = false;
+        Fleisch.disabled = false;
+        stärkungstonikum1.disabled = false;
+    }
+
+    function disableSortiment() {
+        Wasserschlauch.disabled = true;
+        Brot.disabled = true;
+        heiltrank1.disabled = true;
+        Salat.disabled = true;
+        Fleisch.disabled = true;
+        stärkungstonikum1.disabled = true;
+    }
+
+
+
+
+    function clearTheke() {
+
+
+        document.getElementById("waresImg").innerHTML = "";
+        document.getElementById("waresInfo").innerHTML = "";
+        theke.splice([0]);
+        buttonBuy.setAttribute("disabled", true);
+        enableSortiment();
+    }
+
+
+
+    function buyWater() {
+
+        theke.push(allItems[WasserschlauchPosition].name); // name beachten
+
+        buttonBuy.removeAttribute("disabled", false);
+        document.getElementById("waresImg").innerHTML = "<button class=\"wasser\"  id=\"btnBuy\"> </button>";
+        document.getElementById("waresInfo").innerHTML = JSON.stringify("Ein prall gefüllter Wasserschlauch im Wert von " + WasserschlauchPosition.wert + " Goldtaler !");
+
+        disableSortiment();
+
+    }
+
+    function buySalat() {
+
+        theke.push(allItems[salatPosition].name);
+
+        buttonBuy.removeAttribute("disabled", false);
+        document.getElementById("waresImg").innerHTML = "<button class=\"salat\"  id=\"btnBuy\"> </button>";
+        document.getElementById("waresInfo").innerHTML = JSON.stringify("Ein saftiger großer Salatokopf im Wert von " + salatPosition.wert + " Goldtaler !");
+
+        disableSortiment();
+
+    }
+
+    function buyBrot() {
+
+        theke.push(allItems[brothPosition].name);
+        buttonBuy.removeAttribute("disabled", false);
+        document.getElementById("waresImg").innerHTML = "<button class=\"brot\"  id=\"btnBuy\"> </button>";
+        document.getElementById("waresInfo").innerText = JSON.stringify("Ein frisches Graubrot im Wert von " + brothPosition.wert + " Goldtaler !");
+
+        console.log(theke);
+        disableSortiment();
+    }
+
+
+    function buyFleisch() {
+
+        theke.push(allItems[fleischPosition].name);
+        buttonBuy.removeAttribute("disabled", false);
+        document.getElementById("waresImg").innerHTML = "<button class=\"fleisch\"  id=\"btnBuy\"> </button>";
+        document.getElementById("waresInfo").innerHTML = JSON.stringify("Leckere Fleischappen im Wert von " + fleischPosition.wert + " Goldtaler !");
+
+
+        disableSortiment();
+    }
+    const button = document.querySelector('#buttonBuy');
+    const disableButton = () => {
+        button.disabled = false;
+    };
+
+
+
+    function addToInventar(itemName) { // diese kann ich auch auf gold und anderes anpassen
+        // Durchsuche die allItems-Liste nach dem gefundenen Item
+        const foundItem = allItems.find(item => item.name === itemName);
+
+        if (foundItem) {
+
+
+            // Suche nach dem ersten undefined-Platz ODER null im Inventar und ersetze ihn mit dem neuen Item
+            const firstEmptyIndex = inventar.findIndex(item => item === undefined || item.name === null);
+            if (firstEmptyIndex !== -1) {
+                inventar[firstEmptyIndex] = foundItem;
+
+                reichtum[0].wert -= foundItem.wert;
+                saveCoins();
+
+            } else {
+                console.log('Inventar ist voll. Es kann kein weiteres Item hinzugefügt werden.');
+            }
+        } else {
+            console.log(`Item "${itemName}" ist NICHT in der globalen Liste der Items vorhanden.`);
+        }
+    }
+
+    function buyItNow() { //   theke leer ? disable button !
+        console.log("ich nehm dein gold für" + theke[0]);
+
+
+        addToInventar(theke[0]);
+
+        clearTheke();
+
+        saveInvi();
+        showGold();
+        compareInventarWithAllItems();
+        enableSortiment();
+        button.disabled = true;
+
+    };
+
+    function checkBuy() {
+        const definedItemsCount = inventar.filter(item => item !== undefined).length;
+
+        const vendorAskingYou = confirm("Kaufst du das gute Stück?");
+        if (vendorAskingYou && !reichtum[0].wert <= 0 && definedItemsCount <= 3) {
+            buyItNow();
+
+            alert("Viel Freude mit dem Ding, komm bald wieder!");
+
+        } else {
+            alert("Dann eben nicht. Darf es etwas anderes sein?");
+            clearTheke();
+        }; //  stop when else
+    };
+
+
+
+
+
+    const verpflegung = [{ // ich arbeite mit dem begriff savedMoney aus loadcoins und reichtum[0].wert!
+        name: 'Rationen',
+        image: 'https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0',
+        wert: "",
+        anzahl: 0 // überall ändern..?
+
+    }];
+
+    function saveRation() {
+
+        let oldRationString = JSON.stringify(verpflegung[0].anzahl);
+        localStorage.setItem("Verpflegung", oldRationString);
+    }
+
+    function loadRation() {
+        const savedRationString = localStorage.getItem("Verpflegung"); // objekt wieder holen um damit zu arbeiten
+        const savedRation = JSON.parse(savedRationString);
+        verpflegung[0].anzahl = savedRation;
+        showRation();
+    }
+
+    function showRation() {
+        document.getElementById("rations").innerHTML = verpflegung[0].anzahl;
+
+    }
+
+
+    function schmeissWeg() {
+        const AskingYou = confirm("Wirklich ALLES aus dem Inventar WEGWERFEN?!");
+        if (AskingYou) {
+            localStorage.clear();
+            inventar.length = 0;
+            inventar.length = 4; // achtung...
+            saveInvi();
+            loadInvi();
+            compareInventarWithAllItems();
+            alert("Jetzt hast du wieder Platz für neuen Kram!");
+        } else {
+            alert("Oh, ich glaub das brauch ich noch, und das und das...");;
+        };
+    };
+    loadInvi();
+    console.table(inventar);
+</script>
+
+
+
+</html>

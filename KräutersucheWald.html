@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+    <title> Memory game</title>
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            background: blue;
+            background-image: url("https://dl.dropbox.com/s/65loah7hbyfyxm3/wald%203.jpg?dl=0");
+        }
+        
+        .memory-game {
+            width: 64%;
+            height: 640px;
+            margin: auto;
+            flex-wrap: wrap;
+            display: flex;
+            perspective: 1000px;
+        }
+        
+        .memory-card {
+            width: calc(21.5% - 10px);
+            height: calc(33.533% - 10px);
+            margin: 15px 5px 5p 5px;
+            position: relative;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+            transform: scale(1);
+            transform-style: preserve-3d;
+            transition: .5s;
+        }
+        
+        .memory-card:active {
+            transform: scale(.97);
+            transition: .2s;
+        }
+        
+        .memory-card.flip {
+            transform: rotateY(180deg)
+        }
+        
+        .front-face,
+        .back-face {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            position: absolute;
+            border-radius: 5px;
+            backface-visibility: hidden;
+        }
+        
+        .front-face {
+            color: black;
+        }
+        
+        .back-face {
+            color: rgb(56, 139, 17);
+            transform: rotateY(180deg);
+            font-size: 9px;
+            text-align: center;
+        }
+        
+        .Infos {
+            display: block;
+            background-color: rgb(73, 185, 63);
+            height: 46vh;
+            width: 15%;
+            font-size: 2.5;
+            margin: 3%;
+            font-size: 5vw;
+        }
+        
+        .Reset {
+            display: flex;
+            margin: 10px;
+            color: #3CF;
+            background-color: #003;
+            border: #320b69;
+            border-width: 4px;
+            border-style: solid;
+            padding: 1px;
+            margin: 5%;
+            font-size: 2.5vw;
+            width: 90%;
+            height: 10vh;
+        }
+        
+        .Versuche {
+            color: #3CF;
+            background-color: #003;
+            width: 90%;
+            border: #320b69;
+            border-width: 4px;
+            border-style: solid;
+            padding: 1px;
+            margin: 5%;
+            height: 10vh;
+            font-size: 1.5vw;
+        }
+        
+        .Pärchen {
+            color: #3CF;
+            background-color: #003;
+            width: 80%;
+            border: #320b69;
+            border-width: 4px;
+            border-style: solid;
+            padding: 1px;
+            margin: 5%;
+            font-size: 1.5vw;
+            height: 9vh;
+        }
+        
+        .Zeit {
+            font-size: medium;
+            color: #3CF;
+            height: 7vh;
+            background-color: #003;
+            width: fit-content;
+            border: #320b69;
+            border-width: 4px;
+            border-style: solid;
+            padding: 1px;
+            margin: 5%;
+            font-size: 2.2vw;
+            height: 7vh;
+        }
+        
+        h1 {
+            font-size: 2.5vw;
+        }
+        
+        .bn632-hover {
+            width: 85%;
+            font-size: 2.5vh;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px;
+            height: 4.5vh;
+            text-align: center;
+            border: none;
+            background-size: 300% 100%;
+            border-radius: 50px;
+            moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        
+        .bn632-hover:hover {
+            background-position: 100% 0;
+            moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        
+        .bn632-hover:focus {
+            outline: none;
+        }
+        
+        .bn632-hover.bn23 {
+            background-image: linear-gradient( to right, #009245, #fcee21, #00a8c5, #d9e021);
+            box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <section class="memory-game" id="Game">
+
+        <div class="memory-card" data-framework="Buche">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0 " alt="Buche " />
+            <img class="back-face" src="https://dl.dropbox.com/s/54avauufvk6ts3e/buche.jpg?dl=0 " alt="Memo card " />
+        </div>
+        <div class="memory-card" data-framework="Buche">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0" alt="Buche " />
+            <img class="back-face" src="https://dl.dropbox.com/s/54avauufvk6ts3e/buche.jpg?dl=0 " alt="Memo card " />
+        </div>
+
+
+        <div class="memory-card" data-framework="Eiche">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0 " alt="Eiche " />
+            <img class="back-face" src="https://dl.dropbox.com/s/w323y06cimsi5ln/eiche.jpg?dl=0 " alt="Memo card " />
+        </div>
+        <div class="memory-card" data-framework="Eiche">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0" alt="Eiche " />
+            <img class="back-face" src="https://dl.dropbox.com/s/w323y06cimsi5ln/eiche.jpg?dl=0 " alt="Memo card " />
+        </div>
+
+        <div class="memory-card" data-framework="kaktus">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0 " alt="Kaktus " />
+            <img class="back-face" src="https://dl.dropbox.com/s/w3mm9elxsz42ytt/Kaktus%201.png?dl=0 " alt="Memo card " />
+        </div>
+        <div class="memory-card" data-framework="kaktus">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0" alt="Kaktus " />
+            <img class="back-face" src="https://dl.dropbox.com/s/w3mm9elxsz42ytt/Kaktus%201.png?dl=0 " alt="Memo card " />
+        </div>
+
+
+        <div class="memory-card" data-framework="Ahorn">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0 " alt="Ahorn " />
+            <img class="back-face" src="https://dl.dropbox.com/s/79k5dltk2v8mz09/1aho.jpg?dl=0" alt="Memo card" />
+        </div>
+        <div class="memory-card" data-framework="Ahorn">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0 " alt="Ahorn " />
+            <img class="back-face" src="https://dl.dropbox.com/s/79k5dltk2v8mz09/1aho.jpg?dl=0" alt="Memo card " />
+        </div>
+
+
+        <div class="memory-card " data-framework="Esche">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0 " alt="Esche " />
+            <img class="back-face" src="https://dl.dropbox.com/s/rwjm638uc61iocj/esche.jpg?dl=0" alt="Memo card " />
+        </div>
+        <div class="memory-card " data-framework="Esche">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0 " alt="Esche " />
+            <img class="back-face" src="https://dl.dropbox.com/s/rwjm638uc61iocj/esche.jpg?dl=0" alt="Memo card " />
+        </div>
+
+        <div class="memory-card" data-framework="Robinie">
+            <img class="front-face" src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0 " alt="Robinie " />
+            <img class="back-face" src="https://dl.dropbox.com/s/qkxbmn4zx4l0s35/robinie.jpg?dl=0" alt="Memo card " />
+        </div>
+        <div class="memory-card " data-framework="Robinie">
+            <img class="front-face " src="https://dl.dropbox.com/s/bpi3grvcamzlbu2/skull%20card%20back%20plant.jpg?dl=0" alt="Robinie " />
+            <img class="back-face" src="https://dl.dropbox.com/s/qkxbmn4zx4l0s35/robinie.jpg?dl=0" alt="Memo card " />
+        </div>
+
+
+    </section>
+
+
+
+    <div class="Infos">
+        <div class="Reset"> <button id="reset-button" class="bn632-hover bn23" type="button" onclick="location.reload()"> Reset </button> </div>
+
+
+
+        <div class="Versuche">
+            <h3>
+                <center>Versuche Zähler</center>
+            </h3>
+            <div>
+                <center>
+                    <h3 id="counter-label">0</h3>
+                </center>
+            </div>
+            <center>
+
+            </center>
+        </div>
+
+        <div class="Pärchen" id="Pärchen"> Pärchen gefunden: 0</div>
+
+
+
+
+    </div>
+    </div>
+    </div>
+
+
+</body>
+
+<script>
+    const cards = document.querySelectorAll(".memory-card ");
+
+    let hasFlippedCard = false;
+    let lockBoard = false;
+    let firstCard, secondCard;
+
+    function flipCard() {
+        if (lockBoard) return;
+        if (this === firstCard) return;
+
+        this.classList.add("flip");
+
+        if (!hasFlippedCard) {
+            // first click
+            hasFlippedCard = true;
+            firstCard = this;
+            return;
+        }
+        hasFlippedCard = false;
+        secondCard = this;
+
+        console.log(firstCard.dataset.framework);
+        console.log(secondCard.dataset.framework);
+
+        checkMatch();
+    }
+
+    function checkMatch() {
+        let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+        isMatch ? disableCards() & matchCount() : unflipCards(); // if ismatch is true , disable, if not then unflip!
+        //counter hier von 'isMatch'?
+    }
+
+    function disableCards() {
+        firstCard.removeEventListener("click", flipCard);
+        secondCard.removeEventListener("click", flipCard);
+    }
+
+    function unflipCards() {
+        lockBoard = true;
+
+        setTimeout(() => {
+            firstCard.classList.remove("flip");
+            secondCard.classList.remove("flip");
+
+            lockBoard = false;
+        }, 1500);
+    }
+
+
+    function resetBoard() {
+        [hasFlippedCard, lockBoard] = [false, false];
+        [firstCard, secondCard] = [null, null];
+    }
+    (function shuffle() {
+        cards.forEach(card => {
+            let randomPos = Math.floor(Math.random() * 12);
+            card.style.order = randomPos;
+        });
+    })();
+
+
+    cards.forEach(card => card.addEventListener("click", flipCard));
+
+
+
+    function saveCoins() {
+        let saveAsche = JSON.stringify(reichtum[0].wert);
+        localStorage.setItem("Reichtum", saveAsche);
+    }
+
+    function winner() {
+        if (pairVal === 6) {
+            alert("win");
+            reichtum[0].wert += 10;
+            saveCoins();
+            window.location.href = "7Dorf1.html";
+
+        } else {
+            console.log("go on")
+        };
+
+
+    }
+
+    var pairVal = 0;
+
+    function matchCount() {
+        updateDisplay2(++pairVal);
+    }
+
+    function updateDisplay2(pairVal) {
+        document.getElementById("Pärchen").innerHTML = pairVal + "Pärchen gefunden";
+        winner();
+    }
+
+    window.onload = function() {
+        let clickDiv = document.getElementById("Game");
+        clickDiv.onclick = incrementClick;
+
+        let resetBtn = document.getElementById("reset-button");
+        resetBtn.onclick = resetCounter;
+    }
+
+    var counterVal = 0;
+
+    incrementClick = function() {
+        updateDisplay(++counterVal);
+    }
+
+    function resetCounter() {
+        counterVal = 0;
+        updateDisplay(counterVal);
+    }
+
+    function updateDisplay(val) {
+        document.getElementById("counter-label").innerHTML = val;
+    }
+</script>
+
+</html>

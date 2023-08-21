@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+
+    <title>Document</title>
+    <style>
+        * {
+            overflow: hidden;
+        }
+        
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgba(144, 238, 49, 0.403);
+            background-image: url("https://dl.dropbox.com/s/i9atx4eoqpptsbz/2019-09-26-waldgipfel.jpg?dl=0");
+        }
+        /* 3 spalten für canvas + infos links rechts erstellen*/
+        
+        canvas {
+            background-color: rgba(0, 0, 0, 0);
+        }
+        
+        .killCount {
+            height: 14vh;
+            width: 12vw;
+            margin-left: 0.3vw;
+            margin-right: 0.3vw;
+            background-color: rgba(71, 151, 61, 0.466);
+            border: 3px grey ridge;
+        }
+        
+        .start {
+            height: 7vh;
+            width: 8vw;
+        }
+        
+        .infoWrapper {
+            display: flex;
+            height: 15h;
+            width: 88vw;
+            color: aliceblue;
+            font-size: 2.5vh;
+            font-weight: 588;
+            background-color: #000000;
+            margin-bottom: 3vh;
+        }
+    </style>
+
+</head>
+
+<body onload="startGame()">
+
+    <center>
+        <div class="infoWrapper" id="infoGrid">
+            <p> Infos über deine Jagd: START "Automatisch"<br> Pfeiltaste OBEN = charakter hoch,<br> Pfeiltaste UNTEN = charakter runter,<br> LEERTASTE(SPACE) gedrückt halten bis Schuss (ca. 0.5sek.) = SCHIEßEN </p>
+
+
+            <div class="killCount" id="ammoCounter">Ammo: </div>
+            <div class="killCount" id="killCounter">Killed: </div>
+            <div class="killCount" id="shotsCount">Geschossen: </div>
+            <div class="killCount" id="enemyCounter">Viecher spawn: </div>
+
+            <div class="killCount" id="uhr">Zeit: 00.00.00 </div>
+        </div>
+
+        <canvas id="canvas" ClipToBounds="True" height="450" width="990" style="border:5px solid #000000;"></canvas>
+    </center>
+
+</body>
+<script>
+    let key_space = false; // shoot
+    let key_up = false; // move up
+    let key_down = false; // move down
+    let canvas = {
+        height: 500,
+        width: 600
+    };
+    let ctx;
+    let backgroundImage = new Image();
+
+    let key2; // werfe steine/sand
+    let key; // skill1 zwillingspfeil ?
+    let key3; // buff schneller schießen für 3 schuss
+
+    const dude = {
+        x: 45,
+        y: 290,
+        width: 99,
+        height: 135,
+        src: 'https://dl.dropbox.com/s/3pi6ukb43smmubm/maxresdefault.jpg?dl=0'
+
+    };
+
+    let ammo = {
+        x: dude.x + 5,
+        y: dude.y + 5,
+        width: 40,
+        height: 15,
+        src: 'https://dl.dropbox.com/s/qx95exy6rjffm8f/ammo1.jpg?dl=0',
+        img: new Image()
+    };
+
+    let animal = {
+        x: 550,
+        y: Math.random() * 55,
+        width: 60,
+        height: 80,
+        src: "https://dl.dropbox.com/s/qb8my267xoy11ey/%5Erattenm.jpg?dl=0 ",
+        img: new Image()
+    };
+
+    let animals = []; // spawned, killed, run into 
+    let ammos = []; // left, fired, hit 
+
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 32) {
+            key_space = true;
+        }
+
+        if (e.keyCode == 38) {
+            key_up = true;
+        }
+
+        if (e.keyCode == 40) {
+            key_down = true;
+        }
+    }; // andere keys hinzufügen .
+
+    document.onkeyup = function(e) {
+        if (e.keyCode == 32) {
+            key_space = false;
+        }
+
+        if (e.keyCode == 38) {
+            key_up = false;
+        }
+
+        if (e.keyCode == 40) {
+            key_down = false;
+        }
+    };
+
+
+
+
+    function startGame() {
+        canvas = document.getElementById('canvas');
+        ctx = canvas.getContext('2d');
+        loadImages();
+        setInterval(update, 550 / 25);
+        setInterval(checkShot, 800);
+        setInterval(createAnimals, 5000);
+
+        setInterval(checkForCollision, 1500 / 25);
+        draw();
+
+    }
+
+    var killedMonsters = 0;
+
+
+    function updateDisplay2(killedMonsters) {
+        document.getElementById("killCounter").innerHTML = killedMonsters + "Viecher abgeknallt";
+    }
+
+
+    function updateDisplay4(enemyNumber) {
+        document.getElementById("enemyCounter").innerHTML = enemyNumber + "Viecher erschein noch";
+    }
+
+
+
+
+    function checkForCollision() {
+        ammos.forEach(function(ammo) {
+            if (ammo.x + ammo.width > animal.x &&
+                ammo.y + ammo.height > animal.y &&
+                ammo.x < animal.x &&
+                ammo.y < animal.y + animal.height
+            ) {
+                console.log("bangboom");
+
+                animal.hit = true;
+                updateDisplay2(++killedMonsters);
+
+                animals = animals.filter(a => a != animal); // slice probiren!  
+
+
+
+
+
+            } else {
+                console.log("more");
+            }
+
+        })
+    }
+
+    let enemyNumber = 0;
+    let animalIdCounter = 0;
+
+    function createAnimals() {
+
+        if (enemyNumber < 5) {
+            updateDisplay4(++enemyNumber);
+            animal = {
+                id: animalIdCounter++,
+                x: 750,
+                y: Math.random() * 200 + 270,
+                width: 55,
+                height: 65,
+                src: "https://dl.dropbox.com/s/qb8my267xoy11ey/%5Erattenm.jpg?dl=0",
+                img: new Image()
+            }
+            animal.img.src = animal.src;
+            animals.push(animal);
+            console.log("rat spawn");
+            if (enemyNumber === 5) {
+                clearInterval(setInterval(createAnimals, 6000));
+                animals.length = 0;
+            }
+
+        }
+
+    }
+
+    function checkShot() { // solange der vorrat reicht...
+        if (key_space) {
+            ammo = {
+                x: dude.x - 5,
+                y: dude.y + 83,
+                width: 65,
+                height: 23, // scaling von bildern
+                src: 'https://dl.dropbox.com/s/qx95exy6rjffm8f/ammo1.jpg?dl=0',
+                img: new Image()
+            };
+
+            updateDisplay(++shotsFired);
+            updateDisplay3(--ammoLeft);
+
+            ammo.img.src = ammo.src;
+            ammos.push(ammo);
+            console.log(ammos);
+            console.log("zing");
+        }
+    }
+    var shotsFired = 0;
+
+    function updateDisplay(shotsFired) {
+        document.getElementById("shotsCount").innerHTML = "Schüsse:" + shotsFired;
+    }
+
+    var ammoLeft = 33;
+
+    function updateDisplay3(ammoLeft) {
+        document.getElementById("ammoCounter").innerHTML = "Reservegeschosse:" + ammoLeft;
+    }
+
+
+
+    function update() {
+
+
+
+        if (key_up) {
+            dude.y -= 9;
+        }
+
+        if (key_down) {
+            dude.y += 9;
+        }
+        // definiere geschwindigkeit in variable..
+        animals.forEach(function(animal) {
+            if (!animal.hit) {
+                animal.x -= 3;
+            }
+        });
+
+        ammos.forEach(function(ammo) {
+
+            ammo.x += 30;
+
+        });
+    }
+
+    function loadImages() {
+        backgroundImage.src = "https://dl.dropbox.com/s/65loah7hbyfyxm3/wald%203.jpg?dl=0";
+
+        dude.img = new Image()
+        dude.img.src = dude.src;
+        ammo.img = new Image(),
+            ammo.img.src = ammo.src;
+
+    };
+
+    function draw() {
+        ctx.drawImage(backgroundImage, 0, 0);
+        ctx.drawImage(dude.img, dude.x, dude.y, dude.width, dude.height);
+
+
+        animals.forEach(function(animal) {
+            ctx.drawImage(animal.img, animal.x, animal.y, animal.width, animal.height);
+        });
+
+        ammos.forEach(function(ammo) {
+            ctx.drawImage(ammo.img, ammo.x, ammo.y, ammo.width, ammo.height);
+        });
+
+        requestAnimationFrame(draw);
+    }
+</script>
+
+
+
+</html>

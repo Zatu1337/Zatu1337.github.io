@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="em">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+
+    <title> Das Abenteuer beginnt</title>
+
+    <link rel="icon" type="image/png" href="https://dl.dropbox.com/s/sl54d6vtws25ok0/webp_net_resizeimage__1__UMO_1.ico?dl=0">
+
+
+
+
+    <style>
+        html {
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+        
+        .container {
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-rows: 15% 30% 30% 25%;
+            min-width: 300px;
+        }
+        
+        .header {
+            height: 4vh;
+            width: 100vw;
+            color: white;
+            font-size: small;
+            height: 4vh;
+            margin-bottom: 0.1cm;
+            background: linear-gradient(#301515, #27411c, #1b2f53);
+            background-image: url("https://dl.dropbox.com/s/ytueykwig0dzk97/holzheader2.jpg?dl=0 ");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            justify-content: space-between;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        
+        a {
+            height: 3vh;
+            width: 1vw;
+            position: relative;
+            padding: 2% 0 1% 1%;
+            font-size: 2.5vh;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 1px;
+        }
+        
+        .headerHighlight {
+            text-decoration: overline underline;
+        }
+        
+        .headline {
+            color: rgb(0, 0, 0);
+            font-size: 2vh;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        /*Möchte hier den Background und buttons auch progressive - responsive evtl background img anpassen neue größe */
+        
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: auto auto auto auto;
+            background-image: url("https://dl.dropbox.com/s/i57t3noafl5f6bn/village1_square_by_vityar83_dbsuy7d-pre.jpg?dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+        }
+        
+        .Text1 {
+            height: 17vh;
+            width: 46vw;
+            display: block;
+            color: azure;
+            background-color: #92929400;
+            align-content: center;
+            align-self: center;
+            justify-self: center;
+            align-items: flex;
+            margin: 0 15% 5% 25%;
+            font-size: 2.9vh;
+            font-weight: 900;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 4;
+            grid-row-end: 4;
+        }
+        
+        .Krämer {
+            height: 8vh;
+            width: 40%;
+            color: #003;
+            background-color: rgba(240, 248, 255, 0);
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+        
+        .Taverne {
+            height: 8vh;
+            width: 40%;
+            color: #003;
+            background-color: rgba(240, 248, 255, 0);
+            position: sticky;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+        
+        .Schmiede {
+            height: 3.5vh;
+            width: 8vw;
+            justify-self: end;
+            color: #003;
+            background-color: rgba(240, 248, 255, 0.3);
+            margin-right: 2vw;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 4;
+            grid-row-end: 4;
+        }
+        
+        .SchmiedeTüre {
+            height: 24.5vh;
+            width: 4.5vw;
+            justify-self: end;
+            border: none;
+            background-color: rgba(95, 247, 65, 0);
+            margin-right: 6.5vw;
+            margin-top: 2vh;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        
+        .quest {
+            height: 8vh;
+            width: 40%;
+            justify-self: center;
+            align-self: center;
+            color: #003;
+            background-color: rgba(240, 248, 255, 0);
+            margin: 0% 0% 0% 0%;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+        
+        .Arena {
+            height: 8vh;
+            width: 35%;
+            justify-self: center;
+            align-self: center;
+            color: #003;
+            background-color: rgba(240, 248, 255, 0);
+            margin-left: 72%;
+            margin-bottom: 35%;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        
+        button {
+            height: 3.5vh;
+            width: 8vw;
+            color: black;
+            font-weight: 800;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container"> <audio loop src="https://dl.dropbox.com/scl/fi/o97uqz4ahyb48rfj9g219/Mall.ogg?rlkey=6ffel76bw0v31g1s10anb0l5f&dl=0" type="audio/ogg" id="citySound">
+    </audio>
+        <div class="header">
+            <center>
+                <a class="headerHighlight" href="#">Abenteuer
+                               </a>
+
+                <a href="inventar.html">Inventar
+                                    </a>
+
+                <a href="Charakter.html">Charakter
+                            </a>
+                <a href="#">Reisen
+                           </a>
+                <a href="#">Help
+                            </a>
+            </center>
+
+        </div>
+
+        <div class="quest">
+
+            <button id="Questboard" type="submit">Quest</button>
+
+        </div>
+
+        <div class="Krämer">
+            <form action="Krämer1.html">
+                <button type="submit">Krämer</button>
+            </form>
+        </div>
+        <div class="Taverne">
+            <form action="Taverne.html">
+                <button type="submit">Taverne</button>
+            </form>
+        </div>
+
+        <div class="Arena">
+            <form action="arena.html">
+                <button type="submit">Arena</button>
+            </form>
+        </div>
+
+        <div class="Schmiede">
+            <form action="schmied1.html">
+                <button id="smithy" type="submit">Schmiede</button>
+            </form>
+        </div>
+
+        <div class="SchmiedeTüre" id="schmiedeTüre">
+
+        </div>
+
+        <div class="Text1">
+            <div class="erzählung" id="teller">
+                <div id="delayedText1" style="visibility:hidden">Nach einer gefühlten Ewigkeit verlässt du den Wald. <br>Endlich siehst du die ersten Häuser am Horizont
+                </div>
+                <div id="delayedText2" style="visibility:hidden">Als du den Rand des Dorfes erreichst, scheint es dir zuerst sehr rustikal und nicht besonders groß zu sein...</div>
+                <div id="delayedText3" style="visibility:hidden">Egal, denkst du dir - Erstmal einen saufen gehen!!!</div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<script>
+    // welches script ist hier notwendig evtl nur tooltipfür schilder ?
+    function showText(id, delay) {
+        var elem = document.getElementById(id);
+        setTimeout(function() {
+            elem.style.visibility = 'visible';
+        }, delay * 1000)
+    }
+    window.onload = function() {
+            showText('delayedText1', 3);
+            showText('delayedText2', 5);
+            showText('delayedText3', 8);
+        }
+        // document.getElementById("smithy").setAttribute("disabled", true);
+    let volume;
+    document.getElementById("Questboard").setAttribute("disabled", true);
+
+    function playAudioOnLoad(audioElement, volume) {
+        audioElement.volume = volume; // Das Audio-Element ist jetzt geladen und bereit, abgespielt zu werden
+        // Warte auf das Laden des Audio-Elements
+        audioElement.addEventListener('load', () => {
+            audioElement.play();
+        });
+
+        if (audioElement.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) {
+
+            audioElement.play();
+        }
+    }
+
+    function keinerDa() {
+        document.getElementById("teller").innerText = "Du Klopfst an die verschlossene Türe, doch es scheint keiner zu öffnen...";
+
+    }
+
+    function schwarzesBrett() {
+        document.getElementById("teller").innerText = "Zur Zeit scheint es keine dringenden Aufträge aus dem Dorf zu geben, vielleicht solltest du die Taverne besuchen? ";
+    }
+    document.getElementById("smithy").addEventListener("mouseover", keinerDa);
+    document.getElementById("schmiedeTüre").addEventListener("mouseover", keinerDa);
+    document.getElementById("Questboard").addEventListener("mouseover", schwarzesBrett);
+
+
+    // handleTouchButton('#smithy');
+
+
+
+    //  handleTouchButton('#schmiedeTüre');
+
+
+
+    //  handleTouchButton('#Questboard');
+
+
+
+    let clickCount = 0;
+
+
+    function türKlopf() {
+        clickCount++; // Klickzähler erhöhen
+
+        if (clickCount === 3) {
+            const messageElement = document.getElementById("teller");
+            messageElement.textContent = "Onkel Armin ist nicht daaaa! - fiepst eine weibliche Stimme hinter der schweren Holztüre";
+            clickCount = 0;
+        }
+    }
+    document.getElementById("schmiedeTüre").addEventListener("click", türKlopf);
+    // handleTouchButton('#schmiedeTüre');
+
+    const villageSound = document.getElementById("citySound");
+    villageSound.play();
+    playAudioOnLoad(villageSound, 0.4); // Funktion zum Abspielen eines Audio-Elements mit einstellbarer Lautstärke, nachdem es geladen wurde
+</script>
+
+
+</html>

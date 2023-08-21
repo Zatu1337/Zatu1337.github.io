@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="em">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+
+    <title> Das Abenteuer beginnt</title>
+
+
+
+    <style>
+        html {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 15% 35% 35% 15%;
+            grid-template-rows: 15% 35% 35% 15%;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        
+        .container div {
+            padding: 5px;
+            border: 5px, solid, black;
+        }
+        
+        .header {
+            height: 4vh;
+            width: 100vw;
+            color: white;
+            font-weight: 666;
+            margin-bottom: 0.1cm;
+            background-image: url("https://dl.dropbox.com/s/ytueykwig0dzk97/holzheader2.jpg?dl=0 ");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            justify-content: space-between;
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        
+        .headerHighlight {
+            text-decoration: overline underline;
+        }
+        
+        body {
+            height: 100vh;
+            width: 100vw;
+            background: lavender;
+            margin: auto auto auto auto;
+            background-image: url("https://dl.dropbox.com/scl/fi/7urqj3s0prg4giw14ndgc/light-forest-bg-1.jpeg?rlkey=nipyguaofaxfev54eunc1w7gf&dl=0");
+            background-position: center, center;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            min-height: 10%;
+            max-height: fit-content;
+        }
+        
+        a {
+            height: 3vh;
+            width: 1vw;
+            position: relative;
+            padding: 2% 0 1% 1%;
+            font-size: 2.5vh;
+            text-decoration: none;
+            font-weight: 444;
+            color: #ffffff;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 1px;
+        }
+        
+        .left {
+            height: 18vh;
+            width: 18vw;
+            color: #3CF;
+            background-color: #003;
+            border: #320b69;
+            border-width: 1px;
+            border-style: solid;
+            padding: 1px;
+            margin-left: 2vw;
+            margin-top: 1.5cm;
+            font-size: medium;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        
+        .mid {
+            height: 88vh;
+            width: 64vw;
+            font-size: medium;
+            border-radius: 100%;
+            margin-top: 1.5cm;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            text-align: center;
+            justify-self: center;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        
+        .AttributeBox {
+            height: 3.5vh;
+            width: 16vw;
+            padding: 45px 45px;
+            font-size: 2.3vh;
+            font-weight: 800;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background-color: rgba(35, 35, 160, 0.774);
+            border: #320b69;
+            border-width: 8px;
+            border-radius: 8%;
+            border-style: ridge;
+        }
+        
+        .herowrap {
+            position: relative;
+            height: 86vh;
+            width: 64vw;
+        }
+        
+        .top {
+            top: 2vh;
+            left: 25.5vw;
+            position: absolute;
+        }
+        
+        .top2 {
+            top: 8vh;
+            left: 25.5vw;
+            position: absolute;
+        }
+        
+        .top-left {
+            top: 12vh;
+            left: 9.2vw;
+            position: absolute;
+        }
+        
+        .top-right {
+            top: 12.0vh;
+            right: 4.5vw;
+            position: absolute;
+        }
+        
+        .top-left2 {
+            top: 19vh;
+            left: 5.7vw;
+            position: absolute;
+        }
+        
+        .top-right2 {
+            top: 19vh;
+            right: 0;
+            position: absolute;
+        }
+        
+        .left {
+            /*   top: 0;*/
+            left: 0;
+            top: 17.0vh;
+            position: absolute;
+        }
+        
+        .right {
+            top: 26vh;
+            right: -4.3vw;
+            position: absolute;
+        }
+        
+        .bottom-left1 {
+            /*   set new style wenn skill gelernt;*/
+            bottom: 8.5vh;
+            left: 7.0vw;
+            color: #a6a6a7;
+            border: #676668;
+            border-width: 8px;
+            border-radius: 8%;
+            border-style: ridge;
+            background-color: rgba(92, 92, 92, 0.932);
+            position: absolute;
+        }
+        
+        .bottom-left2 {
+            bottom: 16vh;
+            left: 3.5vw;
+            color: #a6a6a7;
+            border: #676668;
+            border-width: 8px;
+            border-radius: 8%;
+            border-style: ridge;
+            background-color: rgba(92, 92, 92, 0.932);
+            position: absolute;
+        }
+        
+        .bottom-left3 {
+            bottom: 22vh;
+            left: 0.5vw;
+            color: #a6a6a7;
+            border: #676668;
+            border-width: 8px;
+            border-radius: 8%;
+            border-style: ridge;
+            background-color: rgba(92, 92, 92, 0.932);
+            position: absolute;
+        }
+        
+        .bottom-right1 {
+            bottom: 9.5vh;
+            right: 6.0vw;
+            color: #a6a6a7;
+            border: #676668;
+            border-width: 8px;
+            border-radius: 8%;
+            border-style: ridge;
+            background-color: rgba(92, 92, 92, 0.932);
+            position: absolute;
+        }
+        
+        .bottom-right2 {
+            bottom: 16vh;
+            right: 3.0vw;
+            color: #a6a6a7;
+            border: #676668;
+            border-width: 8px;
+            border-radius: 8%;
+            border-style: ridge;
+            background-color: rgba(92, 92, 92, 0.932);
+            position: absolute;
+        }
+        
+        .bottom-right3 {
+            bottom: 22vh;
+            right: 1.5vw;
+            color: #a6a6a7;
+            border: #676668;
+            border-width: 8px;
+            border-radius: 8%;
+            border-style: ridge;
+            background-color: rgba(92, 92, 92, 0.932);
+            position: absolute;
+        }
+        
+        .bottom {
+            bottom: 2.5vh;
+            left: 23.5vw;
+            position: absolute;
+        }
+        
+        .corner-icon {
+            margin-left: 4px;
+            display: inline-block;
+        }
+        
+        .hero {
+            height: 56vh;
+            width: 31.5vw;
+            color: rgb(247, 247, 247);
+            position: absolute;
+            top: 48%;
+            left: 47%;
+            transform: translate(-50%, -50%);
+            text-decoration: underline overline;
+            font-weight: bold;
+            align-self: center;
+            justify-self: center;
+            margin-top: 2.5vh;
+            margin-bottom: 1.5vh;
+            border-radius: 100%;
+            background-image: url("https://dl.dropbox.com/scl/fi/49acll3lt7mkj6a9bxdkv/char3_.png?rlkey=bo0epjci4v8ui5pe7h3wiw0f1&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .rechts {
+            height: 13vh;
+            width: 15vw;
+            background-color: #038fec;
+            color: rgb(255, 255, 255);
+            border: #320b69;
+            border-width: 2px;
+            border-style: solid;
+            margin-left: -2vw;
+            margin-top: 0.3cm;
+            font-size: medium;
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        
+        .TalenteBox {
+            height: 3vh;
+            max-height: 15vh;
+            width: auto;
+            color: #3CF;
+            background-color: #003;
+            border: #320b69;
+            border-width: 1px;
+            border-style: solid;
+            padding: 1px;
+            margin: 2px;
+            font-size: medium;
+            resize: vertical;
+            overflow: auto;
+        }
+        
+        .resize1 {
+            font-size: small;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+
+            <center>
+                <a href="#">Abenteuer
+           
+                    </a>
+
+                <a href="inventar.html">Inventar
+                
+                    </a>
+
+
+
+                <a class="headerHighlight" href="Charakter.html">Charakter
+                
+            </a>
+                <a href="#">Reisen
+               
+            </a>
+                <a href="#">Help
+                
+            </a>
+            </center>
+
+
+
+
+        </div>
+
+
+
+
+        <div class="mid">
+
+            <div class="herowrap">
+                <div class="AttributeBox top-left2" id="heroHit">Trefferquote: </div>
+                <div class="AttributeBox top-left" id="heroDmg"> Schadenspotential: </div>
+                <div class="AttributeBox left" id="heronext">Initiative: </div>
+                <div class="AttributeBox top-right" id="heroHp"> Lebenspunkte </div>
+                <div class="AttributeBox top-right2" id="heroDef"> Rüstungsschutz </div>
+                <div class="AttributeBox right" id="heroDodge"> Ausweichquote </div>
+
+                <div class="AttributeBox bottom-left3" id="talent5">Klettern </div>
+                <div class="AttributeBox bottom-left1" id="talent4">Kochen </div>
+                <div class="AttributeBox bottom-left2" id="talent6">Schwimmen </div>
+
+                <div class="AttributeBox bottom-right1" id="talent1"> Kräuterkunde </div>
+                <div class="AttributeBox bottom-right2" id="talent2"> Spurensuche</div>
+                <div class="AttributeBox bottom-right3" id="talent3"> Höhlenforschung </div>
+                <div class="AttributeBox top" id="heroName">Poyo </div>
+                <div class="AttributeBox top2" id="heroTitle"> Titel: </div>
+                <div class="AttributeBox bottom" id="heroLevel"> Level: (XP)
+
+                </div>
+
+                <div class="hero" id="heroImage"></div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+</body>
+<script src="https://raw.githack.com/Zatu1337/Zatu1337.github.io/main/getname%20.js"></script>
+
+<script>
+    function showHero() {
+
+        document.getElementById("heroHp").innerText = "Lebenspunkte: " + heroValues.Lp;
+        document.getElementById("heroDmg").innerText = "Schadenspotential " + heroValues.Dmg;
+        document.getElementById("heroDef").innerText = "Rüstungsschutz: " + heroValues.Def;
+        document.getElementById("heroDodge").innerText = "Ausweichquote: " + heroDodge;
+        document.getElementById("heroHit").innerText = "Trefferquote: " + heroValues.Hit;
+
+    }
+
+    showHero();
+</script>
+
+
+</html>

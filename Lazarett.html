@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="em">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+
+    <title>Deine heilige Queste</title>
+
+
+    <style>
+        html {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 4% 29% 2% 30% 2% 29% 4%;
+            grid-template-rows: 7.5% 43% 20% 25%;
+            min-width: 300px;
+        }
+        
+        .container div {
+            padding: 5px;
+            border: 5px, solid, black;
+        }
+        
+        a {
+            position: relative;
+            padding: 5% 0 1% 1%;
+            font-size: 2.8vh;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+        
+        .header {
+            height: 3.8vh;
+            width: 100vw;
+            font-size: 3vh;
+            display: block;
+            background: linear-gradient(#301515, #27411c, #1b2f53);
+            background-image: url("https://dl.dropbox.com/s/ytueykwig0dzk97/holzheader2.jpg?dl=0 ");
+            background-repeat: no-repeat;
+            background-size: cover;
+            justify-content: space-between;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        
+        .headline {
+            color: rgb(0, 0, 0);
+            font-size: 2vh;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: auto auto auto auto;
+            background: lavender;
+            background-image: url("https://dl.dropbox.com/s/amknsbzkoi5hj1k/heilerin2big.jpg?dl=0");
+            background-repeat: repeat;
+            background-position: center, center;
+            background-size: contain;
+            background-attachment: fixed;
+        }
+        
+        .links {
+            height: 72vh;
+            width: 14.5vw;
+            display: table;
+            text-align: center;
+            color: #ffffff;
+            align-self: center;
+            justify-self: center;
+            border-radius: 10%;
+            background-color: #6f6e74b6;
+            background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-size: 2.6vh;
+            font-weight: 800;
+            margin-top: -16vh;
+            border-color: rgba(151, 156, 163, 0.762);
+            border-width: 6px;
+            border-style: solid;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+        
+        .inventar {
+            height: 25vh;
+            width: 15.5vw;
+            display: grid;
+            margin-bottom: 0.5vh;
+            margin-top: 0.5vh;
+            grid-template-rows: repeat(3, 8vh);
+            row-gap: 10px;
+            grid-template-columns: repeat(2, 5.5vw);
+            border-color: rgb(60, 157, 92);
+            border-width: 13px;
+            border-style: none;
+            justify-content: center;
+            align-content: center;
+            background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .Hero {
+            height: 22vh;
+            width: 16vw;
+            color: #c50b0b;
+            text-decoration: underline overline;
+            font-weight: bold;
+            margin-top: 1.5vh;
+            border-radius: 100%;
+            background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
+            background-repeat: round;
+            border-color: rgba(131, 131, 131, 0.845);
+            border-width: 4.5px;
+            border-style: ridge;
+        }
+        
+        .heroAttri {
+            height: 2.8vh;
+            width: 16vw;
+            color: rgb(247, 247, 247);
+            font-size: 2.5vh;
+            font-weight: 800;
+            border-radius: 6%;
+            text-decoration: underline;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV8k364Fyza49sKwTBghUguvL23M_vJDWgBrriVJ7v6Nk0Fu56woaif_PM2l4jkEiJMfk&usqp=CAU");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .inventarHead {
+            height: 9vh;
+            width: 23vw;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            align-self: center;
+            text-align: center;
+            justify-self: center;
+            font-size: 2.5vh;
+        }
+        
+        .iconwrapper {
+            height: 5.3vh;
+            width: 8.5vw;
+            padding: 3px;
+            display: flex;
+            background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
+            background-size: 100% 100%;
+        }
+        
+        .walletIcon {
+            height: 2.5vh;
+            width: 1.3vw;
+            margin-top: 0.4vh;
+            background-image: url("https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .walletText {
+            height: 3.3vh;
+            width: 1.2vw;
+            margin-left: 0.5vw;
+            margin-right: 1.9vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+        }
+        
+        .rationIcon {
+            height: 3.5vh;
+            width: 1.8vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/qcna317ped0sk3swo42mh/marker-nahrung.PNG?rlkey=p4v13qjskk3kltd7vrpv1nlr0&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .rationText {
+            height: 3.3vh;
+            width: 1.2vw;
+            margin-left: 1.7vw;
+            margin-right: 1.3vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+        }
+        
+        .inventar-item {
+            height: 8.3vh;
+            width: 5vw;
+            padding: 3px;
+            margin-bottom: -2vh;
+            display: flex;
+            font-size: larger;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            align-self: flex-end;
+            justify-self: flex-end;
+            text-align: center;
+            border-color: rgba(195, 14, 14, 0);
+            border-width: 3px;
+            border-style: solid;
+        }
+        /* Stil der Bilder innerhalb der DIV-Bereiche */
+        
+        .inventar-item img {
+            width: 100%;
+            /* Das Bild auf die volle Breite des DIVs skalieren */
+            height: 100%;
+            /* Das Bild auf die volle Höhe des DIVs skalieren */
+            object-fit: fill;
+            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
+        }
+        
+        .mitte {
+            height: 87vh;
+            width: 25vw;
+            margin-left: 3vw;
+            background-image: url("");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            border-radius: 10%;
+            color: rgb(210, 255, 255);
+            background-color: #ffffff00;
+            text-align: center;
+            align-content: center;
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 5;
+        }
+        
+        .sortiment {
+            height: 84vh;
+            width: 18vw;
+            margin-top: 1vh;
+            color: rgb(167, 150, 59);
+            font-size: 2.3vh;
+            font-weight: bolder;
+            display: inline-block;
+            box-sizing: border-box;
+            justify-self: center;
+            text-align: center;
+            border-radius: 8%;
+            border-color: rgba(131, 131, 131, 0.845);
+            border-width: 6.5px;
+            border-style: ridge;
+            background-image: url("https://dl.dropbox.com/scl/fi/d3ostvhwghebojowgh8da/brett.jpg?rlkey=tvxpde1gfsj6aw4ljwjalcwgm&dl=0");
+        }
+        
+        .price {
+            height: 2.7vh;
+            width: 5vw;
+            font-size: 2.5;
+            font-weight: 888;
+            border-radius: 8%;
+            background-color: #c09b1f96;
+            color: #FFC;
+            justify-content: center;
+            align-content: center;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+        }
+        
+        .rechts {
+            height: 68vh;
+            width: 80%;
+            color: rgb(161, 251, 251);
+            font-size: 2.7vh;
+            font-weight: 800;
+            text-align: center;
+            align-content: center;
+            grid-column-start: 6;
+            grid-column-end: 6;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .lazarettPortrait {
+            height: 4vh;
+            width: 22vw;
+            border: #000000;
+            border-width: 4px;
+            border-style: solid;
+            color: rgb(255, 255, 255);
+            background-color: #921b70d8;
+            border-radius: 8%;
+            text-decoration: underline;
+        }
+        
+        .ladenText {
+            height: 44vh;
+            width: 21vw;
+            color: rgb(255, 255, 255);
+            margin: 4vh;
+            justify-content: center;
+            align-content: center;
+            align-self: center;
+        }
+        
+        .delayedText1 {
+            height: 44vh;
+            width: 19vw;
+            visibility: hidden;
+            line-height: 1.3;
+            border-radius: 100%;
+            text-align: center;
+            font-size: 2.5vh;
+            margin-left: -6vw;
+            background-color: rgba(173, 126, 39, 0.733);
+            border: #cea214;
+            border-width: 8px;
+            border-style: ridge;
+        }
+        
+        button {
+            height: 4vh;
+            width: 12vw;
+        }
+        
+        .button1 {
+            height: 4vh;
+            width: 2vw;
+        }
+        
+        .Ausgang {
+            height: 12.5vh;
+            width: 6vw;
+            color: aliceblue;
+            font-size: 2.2vh;
+            margin-left: -5vw;
+            margin-top: 13vh;
+            grid-column-start: 7;
+            grid-column-end: 7;
+            grid-row-start: 4;
+            grid-row-end: 4;
+        }
+        
+        .getOut {
+            height: 8.5vh;
+            width: 95%;
+            background-color: chartreuse;
+            background-image: url("https://cdn.iconscout.com/icon/free/png-512/free-exit-2668119-2214245.png?f=avif&w=256");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .verband {
+            height: 15vh;
+            width: 12vw;
+            border-color: rgba(131, 131, 131, 0.845);
+            border-width: 4.5px;
+            border-style: ridge;
+            border-radius: 8%;
+            background-color: #7a390000;
+            background-image: url("https://cdn.pixabay.com/photo/2016/10/24/23/40/kermit-1767614_1280.jpg");
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .healMe {
+            height: 15vh;
+            width: 11vw;
+            border-radius: 8%;
+            border-color: rgba(131, 131, 131, 0.845);
+            border-width: 4.5px;
+            border-style: ridge;
+            background-color: #7a390000;
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/54/Splinting-an-arm.png");
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .fullHeal {
+            height: 15vh;
+            width: 11vw;
+            border-radius: 8%;
+            border-color: rgba(131, 131, 131, 0.845);
+            border-width: 4.5px;
+            border-style: ridge;
+            background-color: #7a390000;
+            background-image: url("https://media.istockphoto.com/id/1217756783/th/เวคเตอร์/ดาวแห่งชีวิตที่มีแท่งสัญลักษณ์-asclepius.jpg?s=612x612&w=0&k=20&c=Zh2ROQYAzlq3IjBOiWhfmTmEQbaFqMzd6Or1ieHn22E=");
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .headerHighlight {
+            text-decoration: overline underline;
+        }
+        
+        .angebot {
+            margin-bottom: 0.3vh;
+            border-radius: 25%;
+            text-decoration: underline;
+            background-color: #000000;
+        }
+    </style>
+
+</head>
+
+<body onload="">
+
+    <div class="container">
+
+        <div class="header">
+            <center>
+                <a class="headerHighlight" href="#">Abenteuer
+                                           </a>
+
+                <a href="inventar.html">Inventar
+                                                </a>
+
+                <a href="Charakter.html">Charakter
+                                        </a>
+                <a href="#">Reisen
+                                       </a>
+                <a href="#">Help
+                                        </a>
+            </center>
+
+        </div>
+        <div class="links">
+
+            <center>
+                <div class="heroAttri" id="heroName"> | Schnitzler| </div>
+                <div class="heroAttri" id="heroTitle"> </div>
+                <div class="heroAttri" id="heroLp"> |LP | </div>
+                <div class="Hero" id="heroAvatar">
+                </div>
+
+            </center>
+            <div class="inventarHead">
+                <div class="iconwrapper">
+                    <div class="walletText" id="wallet">0</div>
+                    <div class="walletIcon"></div>
+                </div>
+                Inventar
+                <div class="iconwrapper">
+                    <div class="rationText" id="rations">0</div>
+                    <div class="rationIcon"></div>
+                </div>
+            </div>
+
+
+            <center>
+                <div class="inventar" id="invi">
+
+                    <div class="inventar-item" id="g1"> </div>
+                    <div class="inventar-item" id="g2"> </div>
+                    <div class="inventar-item" id="g3"> </div>
+                    <div class="inventar-item" id="g4"></div>
+                    <div class="inventar-item" id="g5"></div>
+                    <div class="inventar-item" id="g6"></div>
+                </div>
+
+            </center>
+        </div>
+
+        <div class="mitte">
+            <div class="sortiment">
+                <center>
+                    <div>
+                        <p class="angebot"> Erste Hilfe! (35%)</p><button class="verband" onclick="heal35P()"></button>
+                        <div class="price"> 5 Gold </div>
+                    </div>
+
+
+                    <div>
+                        <p class="angebot"> Heil mich bitte! (70%)</p><button class="healMe" onclick="heal70P()"></button>
+                        <div class="price"> 15 Gold </div>
+                    </div>
+
+
+                    <div>
+                        <p class="angebot">Lass uns "beten"! (100%)</p><button class="fullHeal" onclick="healFull()"></button></div>
+                    <div class="price"> 25 Gold </div>
+                </center>
+            </div>
+
+        </div>
+
+        <div class="rechts">
+            <div class="lazarettPortrait"> Heilerin Hildegardt Herjemine</div>
+
+
+            <div class="ladenText">
+
+                <div class="delayedText1" id="delayedText1"> <br><br>
+                    <p class="herText" id="ladenText">Schön, dass du es noch hergeschafft hast! Ich werde alle deine Wehwehchen behandeln, von Fieber über Akne und Hammerzeh, sogar Hammer-auf-dem-Zeh, kann ich kurieren!
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="Ausgang"> RAUS HIER
+            <button class="getOut" onclick="getOut()">  </button> </div>
+    </div>
+
+
+</body>
+
+<script src="https://rawcdn.githack.com/Zatu1337/Zatu1337.github.io/44fd06e9405012057b6b28dd187f9615bb379a1f/load%20foood%20and%20moneh.js"></script>
+<script src="https://raw.githack.com/Zatu1337/Zatu1337.github.io/main/getname%20.js"></script>
+
+
+
+<script>
+    const percentHp = (heroValues.maxLp / 100);
+
+
+
+    const slot1 = document.getElementById("g1");
+    const slot2 = document.getElementById("g2");
+    const slot3 = document.getElementById("g3");
+    const slot4 = document.getElementById("g4");
+    const slot5 = document.getElementById("g5");
+    const slot6 = document.getElementById("g6");
+    const allQuestItems = [{
+            name: 'Schlangentrophäe',
+            image: 'https://dl.dropbox.com/s/2i1y7d15e24iznw/snake%20head%20loot%20.jpg?dl=0',
+            wert: "?",
+            effekt: "wer weiss?"
+        }, //  buff/ +stats
+
+        {
+            name: "Wolfstrophäe",
+            wert: "?",
+            effekt: "lockSmith"
+        }, // checkstate wörter effekt or name?
+        {
+            name: 'Goldenes Schmuckstück',
+            image: '',
+            wert: 0
+        },
+    ]
+    const questItemsFound = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, ]; // erste schlange..
+
+    const inventar = [
+        undefined, undefined, undefined, undefined
+    ];
+
+    const allItems = [{ //angleichen mit aktueller version - always
+        name: 'Mehlsack',
+        image: 'https://dl.dropbox.com/scl/fi/60c0xfn7lj5qelaam34oq/mehl.png?rlkey=3rxsy8mbe8e4mysfyfl1dddo6&dl=0',
+        wert: 1,
+        tooltip: "Ein Sack schweres frisch gemahlenes Mehl(1LP)"
+    }, {
+        name: 'Salat',
+        image: 'https://dl.dropbox.com/scl/fi/jhr315pdcwgu30iwt10se/salat.jpg?rlkey=cvg90osrdai7865blu572tvx4&dl=0',
+        wert: 1,
+        tooltip: "Ein riesiger grüner Salatkopf."
+    }, {
+        name: 'Fleisch',
+        image: 'https://dl.dropbox.com/scl/fi/cyp45cv4bqfsglgv618sp/Lamb_chops.jpg?rlkey=y76hoa03jz3twiykc0rr21127&dl=0',
+        wert: 10,
+        tooltip: "Ein paar fleischige Keulen von so'nem Vieh!"
+    }, {
+        name: 'Brot',
+        image: 'https://shorturl.at/aPR35',
+        wert: 1,
+        tooltip: "Ein Laib Brot frisch aus dem Ofen, Hmm duftet das gut! (gibt dir 3 LP zurück"
+    }, {
+        name: 'Salz',
+        image: 'https://shorturl.at/eyAC9',
+        wert: 1,
+        tooltip: "Salzkristalle in grob gemahlener Form. Zum kochen oder direkt lutschen.(1LP)"
+    }, {
+        name: 'Wasserschlauch',
+        image: 'https://shorturl.at/ajvO1',
+        wert: 1,
+        tooltip: "Klares Brunnenwasser, OHNE Stückchen(2LP)"
+    }, {
+        name: 'Gastrolith',
+        image: 'https://dl.dropbox.com/scl/fi/23djomyvve2txazimhegd/gastrlith.jpg?rlkey=ejht72m67b9pobt67qbu5h2dy&dl=0',
+        wert: 1,
+        tooltip: "Eine Verdaungshilfe..."
+
+    }, {
+        name: 'Silbermünze',
+        image: 'https://dl.dropbox.com/scl/fi/nwbc2gv1jyoxa6oqwjm91/silber-drachenm-nze.png?rlkey=q7f1a01l56kpcdwcves9ztipc&dl=0',
+        wert: 3,
+        tooltip: "Eine Sonderprägung mit einem Glücksdrachen!"
+
+    }, {
+        name: 'Nugget',
+        image: 'https://shorturl.at/aexF4',
+        wert: 5,
+        tooltip: "Gold in erdgebundener Form!"
+    }, {
+        name: 'Diamant',
+        image: 'https://shorturl.at/uzKPZ',
+        wert: 10,
+        tooltip: "Ein richtig fetter Klunker!"
+    }, {
+        name: 'Goldenes Schmuckstück',
+        image: "",
+        wert: 0,
+        tooltip: "Ein wunderschönes filigran gearbeitestes Schmuckstück. Dieses Werk muss ein Meister seiner Kunst geschaffen haben!"
+    }, {
+        name: 'heiltrank1', // aus datei kopiren
+        image: 'https://feywildgame.com/wp-content/uploads/2020/10/feywild-healing-potion-500x500.jpg',
+        wert: 15,
+        tooltip: "Diese nach rosenwasser duftende Flüssigkeit kuriert deine Wunden schneller als du 'aua' sagen kannst!(+20LP)"
+    }, {
+        name: 'alte karte',
+        image: 'https://dl.dropbox.com/s/wzsvhq82gxiqg30/New%20map1.jpg?dl=0',
+        wert: 15,
+        tooltip: "Hier scheint es sich um eine Karte der Gegend zu handeln"
+    }, {
+        name: 'stärkungstonikum1',
+        image: 'https://previews.123rf.com/images/tanshy/tanshy1702/tanshy170200229/73014729-elixier-von-fantasy-spiele-für-eine-flasche.jpg',
+        wert: 30,
+        tooltip: "Dieses Gebräu holt dich aus dem schlimmsten raus! Stellt 35% deiner Max. Lebenspunkte wieder her!"
+    }, {
+        name: 'Rostiges Messer',
+        image: 'https://dl.dropbox.com/scl/fi/dcwjgyk1mkst5n95a6rhq/rostiges-K-chenmesser.jpg?rlkey=ylgzl0yo0ny0d0ijrfayt75us&dl=0',
+        wert: 1,
+        tooltip: "Ein großes rostiges Messer. Hat dir das nicht der Waldkauz geschenkt..?"
+    }, {
+        name: 'Gambeson',
+        image: 'https://shorturl.at/guyY7',
+        wert: 5,
+
+        tooltip: "Ein oft weitergereichter Gambeson [Schrott] <br> Erhöht deinen Rüstungschutz um 2.<br>Er kostet 5 Goldstücke!",
+        equip: '',
+        def: '',
+        seltenheit: ''
+    }, {
+        name: 'Fass Buckler',
+        image: 'https://shorturl.at/crvGY',
+        wert: 3,
+        tooltip: "Fass-Buckler [Schrott] <br>Erhöht deinen  Rüstungschutz um 1.<br> Es kostet 3 Goldstücke!"
+    }, {
+        name: 'Holzkeule mit Nägeln',
+        image: 'https://dl.dropbox.com/scl/fi/j47ovo09jt4nahlu8d23u/wpn2-wood-spike-club.png?rlkey=xydwr5abqv2a2qbn9d1cdl2y2&dl=0',
+        wert: 17,
+        tooltip: "'Holzkeule mit Nägeln [Nützlich]<br> Erhöht dein Schadenspotential um 2-5.<br>Sie kostet 17 Goldstücke!<br>"
+    }, {
+        name: 'Holzrüstung',
+        image: 'https://shorturl.at/lsN24',
+        wert: 15,
+        tooltip: "Holzrüstung [Nützlich]<br> Erhöht deinen Rüstungschutz um 3.<br> Sie kostet 15 Goldstücke!<br>"
+    }, {
+        name: 'Kreuz-Schild',
+        image: 'https://dl.dropbox.com/scl/fi/h12l865dxgw5eqxu6rxfi/cutted-shield.jpg?rlkey=unf6yn02ico1wiahxi1xauqwq&dl=0',
+        wert: 9,
+        tooltip: "Schild [Nützlich]<br> Erhöht deinen Rüstungschutz um 2.<br> Es kostet 9 Goldstücke!<br>"
+    }, {
+        name: 'Rostige Axt',
+        image: 'https://dl.dropbox.com/scl/fi/gtejqvrb6a0ggvxmhvxk1/wpn3-rost-axt.jpg?rlkey=ef9buczfcou0pvmsfssfjswjr&dl=0',
+        wert: 45,
+        tooltip: "Rostige [Nützlich]<br> Erhöht dein Schadenspotential um 4-8.<br> Sie kostet 45 Goldstücke!<br>"
+    }, {
+        name: 'Lässige Lederrüstung',
+        image: 'https://dl.dropbox.com/scl/fi/fgzjtwntlffnyvocxy17g/nice-leather-armor.jpg?rlkey=edv1raxg81l8cz1q3bg1pyfww&dl=0',
+        wert: 37,
+        tooltip: "Lässige Lederrüstung [Selten]<br> Erhöht deinen Rüstungschutz um 6.<br> Sie kostet 37 Goldstücke!<br>"
+    }, {
+        name: 'Antiker Schild',
+        image: 'https://dl.dropbox.com/scl/fi/8wq1ras96iyg8hrlkatil/greek-sparta-shieldrk.jpg?rlkey=6v571whu9q7qtasz02qv5scv1&dl=0',
+        wert: 25,
+        tooltip: "Ein alter verzierter Metallschild [Selten] <br>Erhöht deinen Rüstungschutz um 4.<br> Es kostet 25 Goldstücke!<br>"
+    }, {
+        name: 'Rostiger Dolch',
+        image: 'https://dl.dropbox.com/s/r6r39tdyzmknxqq/rostdolch.jpg?dl=0',
+        wert: 10,
+        tooltip: "Erhöht dein Schadenspotential um 1-3.<br> Es kostet 10 Goldstücke.<br> Etwas schartig aber es wird gehen!"
+
+    }];
+
+    const buttons = document.querySelectorAll('button[value="lol"]');
+
+    function compareInventarWithAllItems() {
+        const inventarDivs = document.querySelectorAll('.inventar-item');
+
+
+        for (let i = 0; i < 6; i++) {
+            const itemInInventar = inventar[i];
+
+            // Durchsuche die allItems-Liste nach dem gefundenen Item
+            const foundItem = itemInInventar && allItems.find(item => item.name === itemInInventar.name);
+
+            if (foundItem) {
+                console.log(`Item "${itemInInventar.name}" ist in der globalen Liste der Items vorhanden.`);
+                // Füge das Bild des gefundenen Items in das entsprechende DIV ein
+                inventarDivs[i].innerHTML = `<img src="${foundItem.image}" alt="${foundItem.name}" />`;
+            } else {
+                inventarDivs[i].innerHTML = `<img src="" alt="" />`;
+
+                console.log(`Item "${itemInInventar}" ist NICHT in der globalen Liste der Items vorhanden.`);
+            }
+        }
+    }
+
+
+
+    function setGold1000() {
+        localStorage.setItem("Reichtum", 1000);
+        localStorage.setItem("Verpflegung", 100);
+
+        const savedMoneyString = localStorage.getItem('Reichtum');
+        const savedMoney = JSON.parse(savedMoneyString);
+        document.getElementById("wallet").innerHTML = savedMoney;
+        reichtum[0].wert = savedMoney;
+        const savedRationString = localStorage.getItem("Verpflegung"); // objekt wieder holen um damit zu arbeiten
+        const savedRation = JSON.parse(savedRationString);
+        verpflegung[0].anzahl = JSON.parse(savedRation);
+        showRation();
+    }
+
+    function saveHero() {
+
+        let oldHeroString = JSON.stringify(heroValues);
+        localStorage.setItem("Attribute", oldHeroString);
+        showHero();
+    }
+    //  saveHero();
+
+    function updateHeroValues(newValues) {
+        Object.assign(savedHero, newValues);
+        saveHero();
+    }
+
+
+
+    showHero();
+
+
+    function showHero() { //rest infos 
+
+        const heroDmg = heroValues.Dmg;
+        const heroDef = heroValues.Def;
+        const heroDodge = heroValues.Dodge;
+        const heroHit = heroValues.Hit;
+        document.getElementById("heroLp").innerHTML = "Lebenspunkte: " + heroValues.Lp;
+
+
+    }
+
+
+
+    function loadRation() {
+        const savedRationString = localStorage.getItem("Verpflegung"); // objekt wieder holen um damit zu arbeiten
+        const savedRation = JSON.parse(savedRationString);
+        verpflegung[0].anzahl = savedRation;
+        showRation();
+    }
+
+    function showRation() {
+        document.getElementById("rations").innerHTML = verpflegung[0].anzahl;
+
+    }
+
+    function saveCoins() {
+        let saveAsche = JSON.stringify((reichtum[0].wert));
+        localStorage.setItem("Reichtum", saveAsche);
+    }
+
+    function showGold() {
+        document.getElementById("wallet").innerHTML = reichtum[0].wert;
+    }
+
+    function showinvi() {
+        const savedInventarString = localStorage.getItem('Inventar');
+
+        if (savedInventarString) {
+            const savedInventar = JSON.parse(savedInventarString);
+
+            // Übertrage die gespeicherten Daten in das Inventar-Array
+            savedInventar.forEach((item, index) => {
+                inventar[index] = item;
+            });
+
+            console.log('Das Inventar wurde aus dem LocalStorage geladen:');
+            console.log(inventar);
+        } else {
+            console.log('Es wurden keine gespeicherten Inventardaten gefunden.');
+        } {
+
+            loadHero();
+            loadRation();
+            loadCoins();
+            showGold();
+            console.log("Lp");
+            console.log(heroValues.Lp);
+            console.log("maxLp");
+            console.log(heroValues.maxLp);
+        }
+
+        compareInventarWithAllItems();
+    }
+
+    function goldForHp() {
+        saveHero(); // values 
+        saveCoins();
+        showHero();
+        showGold();
+    }
+
+
+
+    function aua() {
+        heroValues.Lp -= 15;
+        showHero();
+        saveHero();
+    }
+
+    function limitDmgTaken() { // wenn Dmg dich unter 0 treibt 
+
+        console.log(heroValues.Lp);
+
+
+        if (heroValues.Lp >= 0 || heroValues.Lp === 0) {
+            heroValues.Lp = 0;
+        }
+
+    }
+
+    function limitHp() { // wenn heilung mehr als max heilt
+
+        console.log(heroValues.Lp);
+        console.log(heroValues.maxLp);
+
+        if (heroValues.Lp >= heroValues.maxLp || heroValues.Lp === heroValues.maxLp || heroValues.maxLp <= heroValues.Lp) {
+            heroValues.Lp = heroValues.maxLp;
+        }
+
+    }
+
+    function heal35P() {
+
+
+        const heal35 = Math.ceil(35 * percentHp);
+        if (reichtum[0].wert === 5 || reichtum[0].wert >= 5) {
+            heroValues.Lp += heal35;
+
+            console.log(heroValues.Lp);
+            limitHp();
+            reichtum[0].wert -= 5;
+            goldForHp();
+            document.getElementById("delayedText1").innerHTML = "<br><br> Das sollte fürs Erste reichen um dich vor dem Schlimmsten zu bewahen.<br> Ich konnte 10% deiner Lebenskraft wiederherstellen mein Held!";
+
+        } else
+            document.getElementById("delayedText1").innerHTML = "<br><br><br><br><br>Dies steht nicht in meiner Macht, sorry my dear!";
+    }
+
+    function heal70P() {
+        const heal70 = Math.ceil(70 * percentHp);
+        if (reichtum[0].wert === 15 || reichtum[0].wert >= 15) {
+            heroValues.Lp += heal70;
+            limitHp();
+            reichtum[0].wert -= 15;
+            goldForHp();
+            document.getElementById("delayedText1").innerHTML = "<br><br> Das bringt dich schnell wieder auf die Beine.<br>Ich konnte 70% deiner Lebenskraft wiederherstellen, mein Held!";
+        } else document.getElementById("delayedText1").innerHTML = "<br><br><br><br><br>Dies steht nicht in meiner Macht, sorry my dear!";
+    }
+
+    function healFull() {
+        const heal100 = Math.ceil(100 * percentHp);
+        if (reichtum[0].wert === 30 || reichtum[0].wert >= 30 && heroValues.Lp <= 99) {
+            heroValues.Lp += heal100;
+
+            limitHp();
+            reichtum[0].wert -= 30;
+            goldForHp();
+
+            if (heroValues.Lp === 99) {
+                document.getElementById("delayedText1").innerHTML = "<br><br><br>Etwas dekadent aber nun biste fit wie ein Turnschuh -  mein Held im Erdbeerfeld!";
+            } else document.getElementById("delayedText1").innerHTML = "<br><br> Damit bist du wie neugeboren!<br>Ich konnte deine gesamte Lebenskraft wiederherstellen, mein Held!";
+        } else document.getElementById("delayedText1").innerHTML = "<br><br><br><br><br>Dies steht nicht in meiner Macht, sorry my dear!";
+    }
+
+    function showText(id, delay) {
+        var elem = document.getElementById(id);
+        setTimeout(function() {
+            elem.style.visibility = 'visible';
+            elem.setAttribute("class", "delayedText1")
+        }, delay * 1000)
+    }
+    window.onload = function() {
+        showText('delayedText1', 0.8);
+
+    }
+
+    function getOut() {
+        alert("Bis bald!");
+        window.location = "7Dorf1.html";
+    }
+    loadProgress();
+    showinvi();
+
+    function loadProgress() {
+        const savedQuestString = localStorage.getItem("Progress");
+        if (savedQuestString) {
+            const savedProgress = JSON.parse(savedQuestString);
+
+            savedProgress.forEach((item, index) => {
+                questItemsFound[index] = item;
+            });
+            for (let i = 0; i < questItemsFound.length; i++) {
+                // Überprüfe, ob das Element den Wert 'null' hat und ersetze es mit 'undefined'
+                if (questItemsFound[i] === null) {
+                    questItemsFound[i] = undefined;
+                }
+            }
+            console.log('Das Q wurde aus dem LocalStorage geladen:');
+
+        } else {
+            console.log('Keine  Q gefunden.');
+        }
+        //     compareProgressWithQuestitems(); wo überall vergleich bzw aktualisieren nötig... richtige variable benutzen
+    }
+    const shinyPosition = allQuestItems.findIndex(item => item.name === 'Goldenes Schmuckstück'); // Schlangentrophäe
+
+    function checkQuest1() {
+
+
+        for (let i = 0; i < 6; i++) {
+
+            const questItemInInventar = questItemsFound[i];
+            const foundQItem = questItemInInventar && allQuestItems.find(item => item.name === questItemInInventar.name);
+            for (let i = 0; i < questItemsFound.length; i++) {
+
+                if (questItemsFound[i] === null) {
+                    questItemsFound[i] = undefined;
+                }
+            }
+            if (foundQItem === "Goldenes Schmuckstück") {
+
+                document.getElementById("ladenText").innerHTML = "geiler reis";
+
+                questItemsFound.splice(shinyPosition, 1);
+
+                reichtum[0].wert += 30;
+                showGold();
+                healFull();
+            } else {
+
+
+                console.log(`Item "${questItemInInventar}" ist NICHT in Q Liste der Items vorhanden.`);
+            }
+        }
+    }
+    checkQuest1();
+</script>
+
+</html>

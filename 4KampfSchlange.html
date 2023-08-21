@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="em">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+
+    <title> Das Abenteuer beginnt</title>
+
+    <link rel="icon" type="image/png" href="https://dl.dropbox.com/s/sl54d6vtws25ok0/webp_net_resizeimage__1__UMO_1.ico?dl=0">
+
+
+    <script>
+        function showText(id, delay) {
+            var elem = document.getElementById(id);
+            setTimeout(function() {
+                elem.style.visibility = 'visible';
+            }, delay * 1000)
+        }
+        window.onload = function() {
+            showText('delayedText1', 1);
+
+
+        }
+    </script>
+
+
+    <style>
+        html {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 4% 31% 35% 28% 4%;
+            grid-template-rows: 13% 65% 10% 13%;
+            width: 100%;
+            height: 100vh;
+            min-width: 300px;
+            box-sizing: border-box;
+        }
+        
+        .container div {
+            padding: 5px;
+            border: 5px, solid, black;
+        }
+        
+        .header {
+            display: block;
+            background-image: url("https://dl.dropbox.com/s/0u2napy9j3yb6on/Download%20%281%29.jpg?dl=0");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: fit-content;
+            justify-content: space-between;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        
+        .headline {
+            color: rgb(0, 0, 0);
+            font-size: 2vh;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        body {
+            height: 100vh;
+            background: lavender;
+            width: 100%;
+            margin: auto auto auto auto;
+            background-image: url("https://dl.dropbox.com/s/65loah7hbyfyxm3/wald%203.jpg?dl=0");
+            background-color: #27411c;
+            opacity: 92%;
+            background-position: center, center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 10%;
+            max-height: fit-content;
+        }
+        
+        .links {
+            height: 52vh;
+            width: 24vw;
+            display: table;
+            text-align: center;
+            padding-bottom: 0.9vh;
+            color: #ffffff;
+            background-color: #27411c;
+            background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-size: 2.8vh;
+            font-weight: 900;
+            margin-left: 3vw;
+            border: ridge 4px #817f7fd3;
+            border-radius: 8%;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+        
+        .Hero {
+            height: 29vh;
+            width: 18vw;
+            position: relative;
+            color: rgb(247, 247, 247);
+            text-decoration: underline overline;
+            font-weight: bold;
+            border-color: rgba(182, 182, 182, 0.845);
+            border-width: 2.5px;
+            border-style: solid;
+            margin-top: 2.5vh;
+            margin-bottom: 1.5vh;
+            border-radius: 100%;
+            background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .avatar-corner {
+            position: absolute;
+            height: 6.5vh;
+            width: 5.8vw;
+            background-color: #7c777700;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+        }
+        
+        .imgLp {
+            height: 4.7vh;
+            width: 1.8vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/x189pyk1hn12whbirwyf3/lebenspunkte.png?rlkey=32dppnf2u6a3vowc00uai8yci&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.1vh;
+            width: 3.0vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .top-left {
+            top: 0;
+            left: 0;
+            margin-top: -2vh;
+            margin-left: -4.1vw;
+        }
+        
+        .top-right {
+            top: 0;
+            right: 0;
+            margin-top: -2vh;
+            margin-right: -3.5vw;
+        }
+        
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            margin-bottom: -2vh;
+            margin-left: -3.5vw;
+        }
+        
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            margin-bottom: -2.5vh;
+            margin-right: -3.3vw;
+        }
+        
+        .corner-icon {
+            margin-left: 4px;
+            display: inline-block;
+        }
+        
+        .imgHit {
+            height: 5.8vh;
+            width: 2.8vw;
+            margin-left: -1px;
+            background-image: url("https://dl.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0https://www.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.3vh;
+            width: 3.0vw;
+            margin-left: -2px;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDmg {
+            height: 6.0vh;
+            width: 3.7vw;
+            margin-left: -4px;
+            background-image: url("https://dl.dropbox.com/scl/fi/ot3uf0hm3035blizmxyap/sword_icon.png?rlkey=iobjdbq5wk13c4aib2adkb32u&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .corner-number {
+            font-size: 2.6vh;
+            font-weight: 800;
+            font-weight: bold;
+        }
+        
+        .heroName {
+            height: 3.5vh;
+            width: 12.5vw;
+            margin-top: 0.7vh;
+            color: rgb(247, 247, 247);
+            font-size: 2.4vh;
+            font-weight: 800;
+            border-radius: 8%;
+            border: 2.5px ridge rgba(255, 255, 255, 0.507);
+            text-decoration: underline;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .heroAttri {
+            height: 3.5vh;
+            width: 12.5vw;
+            color: rgb(247, 247, 247);
+            border: 2.5px ridge rgba(255, 255, 255, 0.507);
+            font-size: 2.4vh;
+            font-weight: 800;
+            border-radius: 8%;
+            text-decoration: underline;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .Text1 {
+            width: 33vw;
+            height: 68vh;
+            display: block;
+            background-color: #27411c;
+            margin-left: -2vw;
+            align-content: center;
+            align-items: flex;
+            border: 4px ridge rgba(255, 255, 255, 0.507);
+            border-radius: 8%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(255, 255, 255);
+            font-size: 2.5vh;
+            font-weight: 900;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .rechts {
+            font-weight: bold;
+            width: 96%;
+            height: 25vh;
+            align-self: center;
+            justify-self: center;
+            border-radius: 8%;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .gegnerAvatar {
+            width: 25vw;
+            height: 28vh;
+            border-radius: 100%;
+            border: ridge 4px #817f7fd3;
+            background-image: url("https://dl.dropbox.com/s/bct858oz5nm3e5n/schlange%201.gif?dl=0");
+            background-color: black;
+            background-size: 100% 100%;
+            background-repeat: round;
+        }
+        
+        a {
+            position: relative;
+            padding: 2% 0 1% 1%;
+            font-size: 2.5vh;
+            font-weight: bold;
+            color: #c50b0b;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+        
+        a span {
+            position: absolute;
+            display: block;
+        }
+        
+        .next {
+            background-color: green;
+        }
+        
+        .enemyLoot {
+            height: 6vh;
+            width: 75%;
+            font-size: 2.5vh;
+            font-weight: 800;
+            color: rgb(255, 247, 247);
+            align-self: center;
+            justify-self: center;
+            justify-content: center;
+            justify-items: center;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        
+        .buttonLoot {
+            height: 9.5vh;
+            width: 19.5vw;
+            padding-top: 1.3vh;
+            font-size: 2.5vh;
+            font-weight: 600;
+            align-self: center;
+            justify-self: center;
+            justify-content: center;
+            justify-items: center;
+            color: rgb(6, 4, 19);
+            background-color: rgba(127, 255, 212, 0);
+            background-image: url("https://dl.dropbox.com/scl/fi/rddmrugpm3393et6sbk1y/green_button_plakette-removebg-preview.png?rlkey=vdrdbfwujbdz3pa9kmmrymcuy&dl=0");
+            background-size: 100% 100%;
+            border: none;
+        }
+        
+        .haudraufButton {
+            height: 7vh;
+            width: 55%;
+            color: rgb(255, 0, 0);
+            background-color: black;
+            font-size: large;
+            font-weight: 800;
+            border: ridge 6px #ff0000d3;
+            font-family: cursive 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        .lootBild {
+            width: 96%;
+            height: 25vh;
+            border-radius: 100%;
+            background-image: url("https://dl.dropbox.com/s/2i1y7d15e24iznw/snake%20head%20loot%20.jpg?dl=0");
+            background-color: black;
+            background-size: cover;
+            background-repeat: round;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="links" id="linkesFenster">
+            <center>
+                <div class="heroAttri" id="heroName"> </div>
+                <div class="heroName" id="heroTitle"> </div>
+
+                <div class="Hero" id="heroAvatar">
+                    <div class="avatar-corner top-left">
+                        <div class="corner-number" id="heroLp"></div>
+                        <div class="corner-icon imgLp"></div>
+
+                    </div>
+                    <div class="avatar-corner top-right">
+                        <div class="corner-number" id="heroDmg"></div>
+                        <div class="corner-icon imgDmg"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-left">
+                        <div class="corner-number" id="heroDef"></div>
+                        <div class="corner-icon imgDef"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-right">
+                        <div class="corner-number" id="heroHit"></div>
+                        <div class="corner-icon imgHit"></div>
+
+                    </div>
+                </div>
+
+
+            </center>
+        </div>
+        <div class="Text1">
+            <center>
+                <div>
+                    <p id="delayedText1" style="visibility:hidden">
+                        Gefährlich zischend spannt sich dieses grüne Mistvieh in seine S-förmige Angriffstellung um dich zu attackieren!<br> In Windeseile schnappst du dir einen dicken Ast um dich zu wappnen!
+                    </p>
+                </div>
+
+                <div id="haudrauf">
+                    <button id="haudraufButton" class="haudraufButton">Hau drauf</button>
+
+
+
+
+
+                </div>
+
+                <div class="heroFightbox">
+                    <div class="coolerText" id="heroAttacke"> </div>
+                    <div class="coolerText" id="heroVerteidigung"> </div>
+                    <div id="DeinLeben">Deine Lebenspunkte </div>
+                </div>
+
+                <br>
+
+                <div class="enemyFightbox">
+
+                    <div class="coolerText" id="enemyAttacke"> </div>
+                    <div class="coolerText" id="enemyVerteidigung"> </div>
+                    <div id="GegnerLeben">Lebenspunkte d. Gegners </div>
+                </div>
+
+            </center>
+        </div>
+        <div class="rechts" id="rechteSeite">
+
+
+
+            <div class="gegnerAvatar" id="Gegner">
+
+            </div>
+            <center>
+                <div class="enemyLoot" id="loot">
+
+                </div>
+            </center>
+        </div>
+
+</body>
+<script src="https://raw.githack.com/Zatu1337/Zatu1337.github.io/main/getname%20.js"></script>
+
+
+
+<script>
+    document.getElementById("haudraufButton").addEventListener("click", attackflee);
+
+    function showHero() { //rest infos 
+
+        document.getElementById("heroLp").innerText = heroValues.Lp;
+        document.getElementById("heroDmg").innerText = heroValues.Dmg;
+        document.getElementById("heroDef").innerText = heroValues.Def;
+        document.getElementById("heroHit").innerText = heroValues.Hit;
+    }
+    document.getElementById("GegnerLeben").innerHTML = "Dein Feind ist UNVERLETZT";
+
+    document.getElementById("DeinLeben").innerHTML = "(Trefferpunkte) Unversehrt gehst du in den Kampf";
+
+
+
+    function saveHero() { // nach jeder änderung an den zugehörigen werten!
+        let oldHeroString = JSON.stringify(heroValues);
+        localStorage.setItem("Attribute", oldHeroString);
+        showHero();
+    }
+    // handleTouchButton('#haudraufButton');
+
+    function goToLoot() {
+        document.getElementById("haudrauf").innerHTML = "";
+        document.getElementById("Gegner").setAttribute("class", "lootBild");
+        document.getElementById("loot").innerHTML = "<button onclick=\"window.location.href = '5waldkauzhütte.html'\" class=\"buttonLoot\" id=\"getIt\">Nimm deine Trophäe</button> ";
+        handleTouchButton('#getIt');
+        // buttn ausführen und hidden - visible schalten... document.getElementById("getit").
+        /* hier änderung im local storage anhängen für loot ereignis*/
+    };
+
+    function respawn() {
+        document.getElementById("haudrauf").innerHTML = "RESPAWN!! ZURÜCK ZU ANFANG";
+        document.getElementById("Hero").innerHTML = "<img src=\"https://dl.dropbox.com/s/ukqe88vvybcf3we/ankh.jpg?dl=0\" width=400px height=150px>";
+    };
+    let enemyHp = 21;
+    const enemyDodge = 5;
+    const enemyDef = 1;
+    const enemyDmg = 3;
+    const enemyHit = 11;
+
+    function attackflee() {
+
+        attack();
+        console.log("ich habe angegriffen");
+        checkEnemyLife();
+        saveHero();
+        enemyAttack();
+        console.log("gegenangriff");
+        checkYourLife();
+        saveHero();
+    }
+
+    function updateLPDisplay() {
+        document.getElementById("heroLp").innerText = heroValues.Lp;
+        document.getElementById("GegnerLeben").innerText = enemyHp;
+    };
+
+    function checkEnemyLife() {
+        if (enemyHp <= 0 || enemyHp === 0) {
+            document.getElementById("GegnerLeben").innerHTML = "Du bist siegreich!!";
+            document.getElementById("loot").innerHTML = loot; // button 
+            console.log("Der Kampf is vorbei");
+            updateLPDisplay();
+            goToLoot();
+            return;
+        } else {
+            updateLPDisplay();
+            console.log("Der Kampf geht weiter");
+            return;
+        }
+    }
+
+    function checkYourLife() {
+        if (heroValues.Lp <= 0 || heroValues.Lp === 0) {
+            document.getElementById("DeinLeben").innerHTML = "Du wirst (im ganzen) gefressen!";
+
+            updateLPDisplay();
+
+            setTimeout(backToBegin, 3000);
+            console.log("Der Kampf is vorbei DU TOT");
+            return;
+        } else {
+            updateLPDisplay();
+            console.log("Der Kampf geht weiter");
+            return;
+        }
+    }
+
+
+    function attack() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+        attackRoll = Math.floor(Math.random() * (18 - 4) + 4); // evtl const attack damit enemyFlee weis das ich zb crit gewürfelt habe in attack
+        console.log(attackRoll);
+        console.log("hero haut zu!");
+        if (attackRoll <= 4) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff: MEISTERLICHER Schlag!";
+            enemyFlee();
+            enemyFlee(); //2. attacke für crit //lifecheck evtl in flee ??
+
+            return;
+        } else if (attackRoll >= 5 && attackRoll <= heroValues.Hit) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff: Gut angezielter Schlag!";
+            enemyFlee();
+
+            return;
+        } else if (attackRoll >= heroValues.Hit && attackRoll <= 17) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff:  Knapp daneben is' auch vorbei";
+            return;
+        } else if (attackRoll >= 17) {
+            document.getElementById("heroAttacke").innerHTML = "Angriff: FURCHTBAR daneben, das war dein eigener Fuß!";
+            heroValues.Lp -= 1;
+            checkYourLife();
+
+            return;
+        }
+    };
+
+    function flee() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+        const takeDmg = enemyDmg - heroValues.Def;
+        fleeRoll = Math.floor(Math.random() * (18 - 4) + 4);
+        console.log("hero weicht aus");
+        console.log(fleeRoll);
+        if (fleeRoll <= 4 || fleeRoll === 4) { //evtl +1 hp... oder so
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Meisterlich ausgewichen!";
+            heroValues.Lp += 1;
+            return;
+        } else if (fleeRoll >= 5 && fleeRoll <= heroValues.Dodge) {
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung:  Du bist wie der WIND!!";
+            return;
+        } else if (fleeRoll >= heroValues.Dodge && fleeRoll <= 16) {
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Voll auf die 12 kassiert!";
+            heroValues.Lp -= takeDmg;
+            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte: " + heroValues.Lp;
+            return;
+        } else if (fleeRoll >= 17) {
+            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: FURCHTBAR erwischt worden! ";
+            heroValues.Lp -= (takeDmg * 1.5);
+            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte betragen: " + heroValues.Lp;
+            return;
+        }
+    };
+
+    function enemyAttack() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+
+        enemyAttackRoll = Math.floor(Math.random() * (18 - 4) + 4);
+        const giveHeroDmg = enemyDmg - heroValues.Def;
+        console.log("gegner greift an ");
+        console.log(enemyAttackRoll);
+        if (enemyAttackRoll <= 4 || enemyAttackRoll === 4) {
+            document.getElementById("enemyAttacke").innerHTML = "Angriff: MEISTERLICHER Angriff!";
+            enemyHp -= (1.5 * giveHeroDmg); //garantierter treffer für crit
+            flee();
+
+            return;
+        } else if (enemyAttackRoll >= 5 && enemyAttackRoll <= enemyHit) {
+            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Feind attackiert dich gezielt!";
+            flee();
+
+            return;
+        } else if (enemyAttackRoll >= enemyHit && enemyAttackRoll <= 17) {
+            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Fend schwingt weit an dir vorbei!";
+            return;
+        } else if (enemyAttackRoll >= 17) {
+            document.getElementById("enemyAttacke").innerHTML = "FURCHTBAR daneben, der Feind verletzt sich selbst in seiner Rage!";
+            enemyHp -= 1;
+            checkEnemyLife();
+            return;
+        }
+    }
+
+
+    function enemyFlee() {
+        function randomInteger(min, max) {
+            min = Math.ceil(4);
+            max = Math.floor(18);
+        }
+        const takeHeroDmg = heroValues.Dmg - enemyDef;
+        enemyFleeRoll = Math.floor(Math.random() * (18 - 4) + 4);
+        console.log("gegner weicht aus");
+        console.log(enemyFleeRoll);
+        if (enemyFleeRoll <= 4 || enemyFleeRoll === 4) { //evtl +1 hp... oder so
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Meisterlich ausgewichen - keine Ahnung wo du hingezielt hast!";
+            enemyHp += 1;
+            return;
+        } else if (enemyFleeRoll >= 5 && enemyFleeRoll <= enemyDodge) {
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Das Vieh duckt sich!";
+            return;
+        } else if (enemyFleeRoll >= enemyDodge && enemyFleeRoll <= 16) {
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Du schlitzt den Gegner auf!";
+            enemyHp -= takeHeroDmg;
+            document.getElementById("GegnerLeben").innerHTML = "Vieh hat " + enemyHp + "Lebenspunkte!";
+            return;
+        } else if (enemyFleeRoll >= 17) {
+            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Voll in deine Waffe gerannt! ";
+            enemyHp -= (takeHeroDmg * 1.5);
+            document.getElementById("GegnerLeben").innerHTML = "Vieh hat " + enemyHp + "Lebenspunkte!";
+            return;
+        }
+    };
+    loadHero();
+    getStoredName();
+
+    showHero();
+
+    function backToBegin() {
+        location.reload();
+    }
+</script>
+
+</html>
