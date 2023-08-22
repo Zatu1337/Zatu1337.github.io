@@ -949,7 +949,7 @@
 
     toggleButton.addEventListener('click', function() {
         if (inventarVisible) {
-            DivInventar.a = 'grid'; // Inventar ausblenden
+            DivInventar.style.display = 'block'; // Inventar ausblenden
         } else {
             DivInventar.style.display = 'none'; // Inventar einblenden
         }
@@ -1382,7 +1382,7 @@
     function checkEnemyLife() {
         if (enemyHp <= 0 || enemyHp === 0) {
             document.getElementById("fightButton").style.visibility = "hidden";
-            document.getElementById("fightButton2").style.visibility = "hidden";
+            //  document.getElementById("fightButton2").style.visibility = "hidden";
             document.getElementById("monsterTyp").innerHTML = "<img src=\"https://media.istockphoto.com/id/1458385998/de/vektor/freih%C3%A4ndig-gezeichneter-cartoon-knochenhaufen.jpg?s=1024x1024&w=is&k=20&c=5chcPNMYixtK9pkw-xBTJ854lXJdFe3gi6BQwgZDWuQ=\" width=100px height=150px>";
             console.log("Der Kampf is vorbei");
             updateLPDisplay();
