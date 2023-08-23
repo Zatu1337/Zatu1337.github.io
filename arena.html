@@ -7,43 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
     <style>
         html {
-            height: 100vh;
+            font-size: clamp(18px, 2.5vh, 3.5vh);
             overflow: hidden;
         }
         
-        body {
-            height: 100vh;
-            width: auto;
-            margin: 0;
-        }
-        
-        .container1 {
-            height: 100vh;
-            width: auto;
+        .container {
+            width: clamp(300px, 100vw, 101vw);
+            height: clamp(300px, 100vh, 101vh);
             display: grid;
+            box-sizing: border-box;
             color: rgb(255, 255, 255);
-            font-size: 5vh;
-            background-image: url("https://i.pinimg.com/originals/8c/83/42/8c8342b7b3176cc8fc6c4d190ed004d0.jpg");
-            background-size: cover;
-            background-position: center;
             grid-template-columns: 5% 10% 14% 45% 25% 2%;
             grid-template-rows: 9% 68% 12% 11%;
         }
         
-        .headBar {
-            height: 9vh;
-            background-color: #999;
-            border-color: black;
-            border-style: solid;
-            border-width: 1px;
-            display: inline-block;
-            visibility: hidden;
-            grid-column-start: 2;
-            grid-column-end: 4;
-            grid-row-start: 1;
-            grid-row-end: 1;
+        body {
+            width: clamp(300px, 100vw, 101vw);
+            height: clamp(300px, 100vh, 101vh);
+            margin: 0;
+            background-image: url("https://i.pinimg.com/originals/8c/83/42/8c8342b7b3176cc8fc6c4d190ed004d0.jpg");
+            background-size: 100% 100%;
+            background-position: center, center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
         
         .Icon {
@@ -108,14 +99,13 @@
             align-self: center;
             justify-self: center;
             font-style: italic;
-            font-size: 2.7vh;
             font-weight: 800;
             margin-top: 2.5vh;
         }
         
         .links {
-            height: 82vh;
-            width: 22vw;
+            width: clamp(200px, 22vw, 25vw);
+            height: clamp(150px, 85vh, 90vh);
             display: table;
             text-align: center;
             padding-bottom: 0.9vh;
@@ -125,12 +115,11 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
-            font-size: 2.8vh;
+            font-size: clamp(13px, 2.3vh, 2.5vh);
             font-weight: 900;
-            margin-left: -2vw;
-            border-color: #97803496;
-            border-width: 4px;
-            border-style: ridge;
+            margin-left: -3vw;
+            margin-top: -5vh;
+            border: 3.3px ridge #97803496;
             border-radius: 8%;
             grid-column-start: 2;
             grid-column-end: 3;
@@ -158,8 +147,8 @@
         }
         
         .iconwrapper {
-            height: 5.3vh;
-            width: 9.5vw;
+            height: clamp(8px, 3.5vh, 5vh);
+            width: clamp(15px, 6vw, 9.5vw);
             padding: 3px;
             margin-left: 0.5vw;
             margin-right: 0.5vw;
@@ -211,12 +200,14 @@
         }
         
         .toggl {
+            font-size: clamp(9px, 0.5vh, 1.5vh);
+            height: clamp(15px, 0.5vh, 1.5vh);
             margin-bottom: 1.3vh;
         }
         
         .Hero {
-            height: 23vh;
-            width: 16vw;
+            height: clamp(70px, 22vh, 25vh);
+            width: clamp(70px, 15vw, 17vw);
             position: relative;
             color: rgb(247, 247, 247);
             text-decoration: underline overline;
@@ -253,41 +244,32 @@
             background-position: center;
         }
         
-        .imgDef {
-            height: 6.1vh;
-            width: 3.0vw;
-            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        
         .top-left {
             top: 0;
             left: 0;
             margin-top: -2vh;
-            margin-left: -2.6vw;
+            margin-left: -3.8vw;
         }
         
         .top-right {
             top: 0;
             right: 0;
             margin-top: -2vh;
-            margin-right: -2.3vw;
+            margin-right: -3.8vw;
         }
         
         .bottom-left {
             bottom: 0;
             left: 0;
             margin-bottom: -2vh;
-            margin-left: -2.0vw;
+            margin-left: -3.2vw;
         }
         
         .bottom-right {
             bottom: 0;
             right: 0;
             margin-bottom: -2.5vh;
-            margin-right: -2.0vw;
+            margin-right: -3.5vw;
         }
         
         .corner-icon {
@@ -318,8 +300,38 @@
         .imgDmg {
             height: 6.0vh;
             width: 3.7vw;
-            margin-left: -4px;
+            margin-right: 2px;
             background-image: url("https://dl.dropbox.com/scl/fi/ot3uf0hm3035blizmxyap/sword_icon.png?rlkey=iobjdbq5wk13c4aib2adkb32u&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .attackSign {
+            height: 5.0vh;
+            width: 3.3vw;
+            display: inline-block;
+            background-image: url("https://dl.dropbox.com/scl/fi/ot3uf0hm3035blizmxyap/sword_icon.png?rlkey=iobjdbq5wk13c4aib2adkb32u&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .defendSign {
+            height: 5.5vh;
+            width: 2.7vw;
+            display: inline-block;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .lifepointSign {
+            height: 4.5vh;
+            width: 1.6vw;
+            display: inline-block;
+            background-image: url("https://dl.dropbox.com/scl/fi/x189pyk1hn12whbirwyf3/lebenspunkte.png?rlkey=32dppnf2u6a3vowc00uai8yci&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
@@ -336,7 +348,6 @@
             width: 96%;
             margin-top: 2vh;
             color: rgb(247, 247, 247);
-            font-size: 2.4vh;
             font-weight: 800;
             border-radius: 8%;
             text-decoration: underline;
@@ -387,9 +398,7 @@
             justify-self: center;
             text-align: center;
             background-color: rgba(250, 235, 215, 0);
-            border-color: rgba(255, 237, 186, 0.315);
-            border-width: 5px;
-            border-style: ridge;
+            border-color: 3px ridge rgba(255, 237, 186, 0.315);
         }
         /* Stil der Bilder innerhalb der DIV-Bereiche */
         
@@ -430,7 +439,7 @@
         .kampftext {
             /*  mid   */
             box-sizing: border-box;
-            height: 62vh;
+            height: 65vh;
             width: 47vw;
             padding: 10px;
             color: rgb(255, 255, 255);
@@ -440,17 +449,14 @@
             background-color: rgba(160, 154, 147, 0.342);
             background-blend-mode: lighten;
             justify-content: center;
-            margin-top: 12vh;
-            margin-left: -1.5vw;
-            text-align: center;
             align-content: center;
-            border-color: #97803496;
-            border-width: 4px;
-            border-style: ridge;
+            margin-top: 12vh;
+            margin-left: clamp(-1.5vw, -2.5vw, -3.8vw);
+            text-align: center;
+            border: 3.3px ridge #97803496;
             border-radius: 8%;
-            font-size: 3.0vh;
-            font-weight: 999;
-            text-shadow: 7px 7px rgba(0, 0, 0, 0.795);
+            font-size: clamp(12px, 1.5vh, 2.8vh);
+            font-weight: 888;
             grid-column-start: 4;
             grid-column-end: 5;
             grid-row-start: 2;
@@ -459,11 +465,12 @@
         
         .arenaShout {
             padding: 3px;
+            font-size: clamp(16px, 1.5vh, 3.5vh);
             opacity: 100%;
         }
         
         .doText {
-            font-size: 2.6vh;
+            font-size: clamp(16px, 1.5vh, 3.5vh);
             font-weight: 700;
             font-style: italic;
         }
@@ -475,11 +482,19 @@
         }
         
         .fightButton {
-            height: 7vh;
-            width: auto;
-            font-size: 3.0vh;
-            background-color: rgb(246, 9, 9);
-            font-weight: 700;
+            height: 11.5vh;
+            width: 15vw;
+            padding-top: 3px;
+            background-color: rgba(246, 9, 9, 0);
+            background-image: url("https://dl.dropbox.com/scl/fi/ozt5uwik5xetbv004iygm/red_buttn-remiew.png?rlkey=6jz2ryf10kq2ln2xwh1sbwajw&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 2.8vh;
+            border: none;
+            font-weight: 777;
         }
         
         .row {
@@ -495,7 +510,7 @@
         }
         
         .column {
-            float: left;
+            float: none;
             width: 48%;
         }
         
@@ -514,9 +529,10 @@
         .rechts {
             height: 50vh;
             width: 23vw;
-            color: rgb(255, 0, 0);
+            color: rgba(255, 0, 0, 0.759);
             display: table;
-            margin-bottom: 3vh;
+            margin-right: clamp(-10px, -30px, -50px);
+            margin-top: -3.5vh;
             box-sizing: border-box;
             text-align: center;
             align-content: center;
@@ -529,9 +545,7 @@
             font-size: 2.8vh;
             font-weight: 900;
             border-radius: 8%;
-            border-color: #97803496;
-            border-width: 4px;
-            border-style: ridge;
+            border: 3.3px ridge #97803496;
             grid-column-start: 5;
             grid-column-end: 6;
             grid-row-start: 2;
@@ -599,8 +613,8 @@
         }
         
         .bottomLine {
-            height: 19.87vh;
-            width: 22.0vw;
+            width: clamp(110px, 24vw, 27vw);
+            height: clamp(11vh, 21vh, 22vh);
             padding-top: 10px;
             margin-left: 2.15vw;
             background-color: #928c844f;
@@ -676,6 +690,22 @@
             background-image: url("https://img.freepik.com/premium-photo/big-metal-door-within-walls-castle_74648-280.jpg?w=740");
         }
         /* für alle buttons einstellen evtl icon ausgrauen ?*/
+        
+        .blinkborder {
+            border: 2px solid yellow;
+            animation: blink-animation 1s infinite;
+        }
+        
+        @keyframes blink-animation {
+            0%,
+            50% {
+                opacity: 1;
+            }
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
     </style>
 
 </head>
@@ -684,12 +714,8 @@
 
 
 
-    <div class="container1">
-        <div class="headBar">
-            <div class="Icon"> Treffer</div>
-            <div class="Icon"> Gegner</div>
-            <div class="Icon"> Fans?</div>
-        </div>
+    <div class="container">
+
 
 
         <div class="links" id="linkesFenster">
@@ -729,7 +755,7 @@
 
             <center>
 
-                <button class="toggl" id="toggleButton">Inventar ein-/ausblenden</button>
+                <button class="toggl" id="toggleButton">Inventar ein-/aus</button>
                 <div class="inviWrap" id="inviwrapper">
 
                     <div class="inventarHead">
@@ -780,14 +806,15 @@
             <p class="doText" id="textAction">Du betrittst den sandigen Grund der Arena.<br> Hier und dort sind rotbraune Flecken im Sand zu sehen, in einer dieser trocknenden Blutlachen liegt sogar noch ein Finger...</p>
             <center>
                 <div id="insertButton" class=""> </div>
-                <div id="insertButton2" class=""> </div>
+
                 <div class="row" id="kampfInfos">
                     <div class="column" id="heroColumn">
 
                         <div class="heroFightbox">
                             <div class="coolerText" id="heroAttacke"> </div>
-                            <div class="coolerText" id="heroVerteidigung"> </div>
-                            <div id="DeinLeben">Deine Lebenspunkte </div>
+                            <br>
+                            <div class="coolerText" id="heroVerteidigung"> </div> <br>
+                            <div class="coolerText" id="DeinLeben"></div>
                         </div>
 
                     </div>
@@ -796,9 +823,9 @@
 
                         <div class="enemyFightbox">
 
-                            <div class="coolerText" id="enemyAttacke"> </div>
-                            <div class="coolerText" id="enemyVerteidigung"> </div>
-                            <div id="GegnerLeben"> </div>
+                            <div class="coolerText" id="enemyAttacke"> </div> <br>
+                            <div class="coolerText" id="enemyVerteidigung"> </div> <br>
+                            <div class="coolerText" id="GegnerLeben"> </div>
                         </div>
                     </div>
                 </div>
@@ -913,7 +940,21 @@
     ];
     let arenaLootItem;
 
+    function handleTouchButton(buttonSelector) {
+        const button = document.querySelector(buttonSelector);
+        let isTouched = false;
 
+        button.addEventListener('touchstart', () => {
+            isTouched = true;
+        });
+
+        button.addEventListener('touchend', () => {
+            if (isTouched) {
+                button.click();
+                isTouched = false;
+            }
+        });
+    }
 
     const percentHp = (heroValues.maxLp / 100);
 
@@ -955,7 +996,7 @@
         }
         inventarVisible = !inventarVisible; // Zustand umkehren
     });
-    // handleTouchButton('#myButton');
+
     const allItems = [{
         name: 'Gastrolith',
         image: 'https://dl.dropbox.com/scl/fi/23djomyvve2txazimhegd/gastrlith.jpg?rlkey=ejht72m67b9pobt67qbu5h2dy&dl=0',
@@ -1026,9 +1067,9 @@
         document.querySelector('#nextEnemyButton').addEventListener('click', randomArenaMonster);
         document.querySelector('#leaveArenaButton').addEventListener('click', playTorSound);
 
-        //   handleTouchButton('#nextEnemyButton');
-        //   handleTouchButton('#nextEnemyButton');
-        //    handleTouchButton('#leaveArenaButton');
+        handleTouchButton('#nextEnemyButton');
+        handleTouchButton('#nextEnemyButton');
+        handleTouchButton('#leaveArenaButton');
 
     }
 
@@ -1128,14 +1169,8 @@
 
     }
 
-    function showFight() {
-        document.getElementById("enemyVerteidigung").innerHTML = "Der Gegner macht sich bereit dir auszweichen";
-        document.getElementById("GegnerLeben").innerHTML = "Der Gegner hat " + enemyHp + "Lebenspunkte";
-        document.getElementById("enemyAttacke").innerHTML = "Du gehst erneut in Angriffsstellung!";
-        document.getElementById("DeinLeben").innerHTML = "Du hast zur Zeit " + heroValues.Lp + " Lebenspunkte";
-    };
 
-    function clearFight() { // noch keine schöne lösung wegen repeat?
+    function clearFight() {
         document.getElementById("kampfInfos").innerText = "";
         //  document.getElementById("monsterInfo").innerHTML = "";
         document.getElementById("monsterName").innerText = "";
@@ -1158,11 +1193,11 @@
     function arenaMonster1() {
         const arenaDog = {
             name: 'Kläffender Köter',
-            Dmg: 2,
+            Dmg: 5,
             Def: 1,
             Lp: 25,
-            Dodge: 6,
-            Hit: 5,
+            Dodge: 7,
+            Hit: 7,
             Level: 1,
             Exp: 3
         };
@@ -1184,11 +1219,11 @@
 
         const arenaSnake = {
             name: 'Schreckliche Schlange',
-            Dmg: 3,
+            Dmg: 6,
             Def: 2,
             Lp: 32,
             Dodge: 8,
-            Hit: 5,
+            Hit: 8,
             Level: 2,
             Exp: 6
         };
@@ -1210,11 +1245,11 @@
     function arenaMonster3() {
         const arenaCat = {
             name: 'Gierige Großkatze',
-            Dmg: 4,
+            Dmg: 7,
             Def: 3,
             Lp: 39,
             Dodge: 9,
-            Hit: 5,
+            Hit: 9,
             Level: 3,
             Exp: 9
         };
@@ -1239,11 +1274,11 @@
     function arenaMonster4() {
         const arenaFant = {
             name: 'Ominöser Ottifant',
-            Dmg: 5,
+            Dmg: 9,
             Def: 3,
             Lp: 45,
             Dodge: 7,
-            Hit: 5,
+            Hit: 8,
             Level: 4,
             Exp: 13
         };
@@ -1267,7 +1302,7 @@
     function randomArenaMonster() {
         document.getElementById("arenaText").innerHTML = "Beide Kontrahenten haben den Sand der Arena betreten und sind bereit auf leben und Tod zu kämpfen!";
         document.getElementById("textAction").innerHTML = "Du nickst dem Handlanger am Tor grimmig zu und das Eisentor wird über ein schweres Holzrad mit einer rasselnden Kette so dick wie dein Unterarm heruntergelassen.";
-        document.getElementById("insertButton").innerHTML = " <button class=\"fightButton\" id=\"fightButton\"  >  FIIIIGHT!     </button>";
+        document.getElementById("insertButton").innerHTML = " <button class=\"fightButton\" id=\"fightButton\"  >FIIIIGHT!!!</button>";
         //   document.getElementById("insertButton2").innerHTML = " <button class=\"fightButton\" id=\"fightButton2\"  >  FIIIIGHT!     </button>";
 
 
@@ -1360,7 +1395,26 @@
         document.querySelector('#btnLoot').disabled = true;
     };
 
+    function showFight() {
 
+
+        document.getElementById("GegnerLeben").innerHTML = '<div class=\"lifepointSign\"></div>' + "<br>Gegner hat " + enemyHp;
+        document.getElementById("enemyAttacke").innerHTML = "Gegner geht in Angriffsstellung!";
+        document.getElementById("DeinLeben").innerHTML = '<div class=\"lifepointSign\"></div>' + "<br>Du hast " + heroValues.Lp + "Lebenspunkte";
+        document.getElementById("heroAttacke").innerHTML = "Du machst dich bereit für den Schlagabtausch!";
+
+    };
+
+    const klasseAElement = document.querySelector('.imgDmg');
+
+    const klasseBElement = document.querySelector('.imgDef');
+
+    const klasseCElement = document.querySelector('.imgLp');
+
+
+    const klasseAStyles = getComputedStyle(klasseAElement); // Bekomme die berechneten Styles der Klasse A
+    const klasseBStyles = getComputedStyle(klasseBElement);
+    const klasseCStyles = getComputedStyle(klasseCElement);
 
     //  document.getElementById("enemyavatar").style.background =
     function attackflee() {
@@ -1381,9 +1435,10 @@
 
     function checkEnemyLife() {
         if (enemyHp <= 0 || enemyHp === 0) {
+            enemyHp = 0;
             document.getElementById("fightButton").style.visibility = "hidden";
             //  document.getElementById("fightButton2").style.visibility = "hidden";
-            document.getElementById("monsterTyp").innerHTML = "<img src=\"https://media.istockphoto.com/id/1458385998/de/vektor/freih%C3%A4ndig-gezeichneter-cartoon-knochenhaufen.jpg?s=1024x1024&w=is&k=20&c=5chcPNMYixtK9pkw-xBTJ854lXJdFe3gi6BQwgZDWuQ=\" width=100px height=150px>";
+            document.getElementById("monsterTyp").innerHTML = "<img src=\"https://media.istockphoto.com/id/1458385998/de/vektor/freih%C3%A4ndig-gezeichneter-cartoon-knochenhaufen.jpg?s=1024x1024&w=is&k=20&c=5chcPNMYixtK9pkw-xBTJ854lXJdFe3gi6BQwgZDWuQ=\" width=100px height=50px>";
             console.log("Der Kampf is vorbei");
             updateLPDisplay();
             randomArenaLoot();
@@ -1397,8 +1452,18 @@
         }
     }
 
+    function carebear() {
+        if (heroValues.Lp <= (percentHp * 10) || heroValues.Lp === (percentHp * 10)) {
+
+            alert("Achtung es wird brenzlig...oder blutig...?");
+
+            $(healerButton).addClass("blinkborder");
+        }
+    }
+
     function checkYourLife() {
         if (heroValues.Lp <= 0 || heroValues.Lp === 0) {
+            heroValues.Lp = 0;
             document.getElementById("fightButton").style.visibility = "hidden";
             document.getElementById("heroLp").innerHTML = "Du wirst (im ganzen) gefressen!";
             playFailSound();
@@ -1408,6 +1473,7 @@
             console.log("Der Kampf is vorbei DU TOT");
             return;
         } else {
+            carebear();
             updateLPDisplay();
             console.log("Der Kampf geht weiter");
             return;
@@ -1423,22 +1489,22 @@
         attackRoll = Math.floor(Math.random() * (18 - 4) + 4); // evtl const attack damit enemyFlee weis das ich zb crit gewürfelt habe in attack
         console.log(attackRoll);
         console.log("hero haut zu!");
-        if (attackRoll <= 4) {
-            document.getElementById("heroAttacke").innerHTML = "Angriff: MEISTERLICHER Schlag!";
+        if (attackRoll <= 4) { //merker imgDmg statt angriff:
+            document.getElementById("heroAttacke").innerHTML = '<div class=\"attackSign\">    </div>' + "<br> MEISTERLICHER Schlag!" + "<br> [Gewürfelt = " + attackRoll + " ]";
             enemyFlee();
             enemyFlee(); //2. attacke für crit //lifecheck evtl in flee ??
 
             return;
         } else if (attackRoll >= 5 && attackRoll <= heroValues.Hit) {
-            document.getElementById("heroAttacke").innerHTML = "Angriff: Gut angezielter Schlag!";
+            document.getElementById("heroAttacke").innerHTML = '<div class=\"attackSign\">    </div>' + "<br>Gut angezielter Schlag!" + "<br> [Gewürfelt = " + attackRoll + " ]";;
             enemyFlee();
 
             return;
         } else if (attackRoll >= heroValues.Hit && attackRoll <= 17) {
-            document.getElementById("heroAttacke").innerHTML = "Angriff:  Knapp daneben is' auch vorbei";
+            document.getElementById("heroAttacke").innerHTML = '<div class=\"attackSign\">    </div>' + "<br> Knapp daneben is' auch vorbei" + "<br> [Gewürfelt = " + attackRoll + " ]";;
             return;
         } else if (attackRoll >= 17) {
-            document.getElementById("heroAttacke").innerHTML = "Angriff: FURCHTBAR daneben, das war dein eigener Fuß!";
+            document.getElementById("heroAttacke").innerHTML = '<div class=\"attackSign\">    </div>' + "<br>FURCHTBAR daneben, das war dein eigener Fuß!" + "<br> [Gewürfelt = " + attackRoll + " ]";;
             heroValues.Lp -= 1;
             checkYourLife();
 
@@ -1456,21 +1522,21 @@
         console.log("hero weicht aus");
         console.log(fleeRoll);
         if (fleeRoll <= 4 || fleeRoll === 4) { //evtl +1 hp... oder so
-            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Meisterlich ausgewichen!";
+            document.getElementById("heroVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Meisterlich ausgewichen!" + "<br> [Gewürfelt = " + fleeRoll + " ]";;
             heroValues.Lp += 1;
             return;
         } else if (fleeRoll >= 5 && fleeRoll <= heroValues.Dodge) {
-            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung:  Du bist wie der WIND!!";
+            document.getElementById("heroVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Du bist wie der WIND!!" + "<br> [Gewürfelt = " + fleeRoll + " ]";;
             return;
         } else if (fleeRoll >= heroValues.Dodge && fleeRoll <= 16) {
-            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Voll auf die 12!";
+            document.getElementById("heroVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Voll auf die 12!" + "<br> [Gewürfelt = " + fleeRoll + " ]";;
             heroValues.Lp -= takeDmg;
-            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte: " + heroValues.Lp;
+            document.getElementById("DeinLeben").innerHTML = '<div class=\"lifepointSign\"  ></div>' + "<br>Deine Lebenspunkte!";
             return;
         } else if (fleeRoll >= 17) {
-            document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: FURCHTBAR erwischt worden! ";
+            document.getElementById("heroVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>FURCHTBAR erwischt worden! " + "<br> [Gewürfelt = " + fleeRoll + " ]";;
             heroValues.Lp -= takeDmg * 1.5;
-            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte betragen: " + heroValues.Lp;
+            document.getElementById("DeinLeben").innerHTML = '<div class=\"lifepointSign\"  ></div>' + "<br> Deine Lebenspunkte!";
             return;
         }
     };
@@ -1486,21 +1552,21 @@
         console.log("gegner greift an ");
         console.log(enemyAttackRoll);
         if (enemyAttackRoll <= 4 || enemyAttackRoll === 4) {
-            document.getElementById("enemyAttacke").innerHTML = "Angriff: MEISTERLICHER Angriff!";
+            document.getElementById("enemyAttacke").innerHTML = '<div class=\"attackSign\" >    </div>' + "<br> MEISTERLICHER Angriff!" + "<br> [Gewürfelt = " + enemyAttackRoll + " ]";
             enemyHp -= (1.5 * giveHeroDmg); //garantierter treffer für crit
             flee();
 
             return;
         } else if (enemyAttackRoll >= 5 && enemyAttackRoll <= enemyHit) {
-            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Feind attackiert dich gezielt!";
+            document.getElementById("enemyAttacke").innerHTML = '<div class=\"attackSign\" >    </div>' + "<br> Feind trifft dich gezielt!" + "<br> [Gewürfelt = " + enemyAttackRoll + " ]";
             flee();
 
             return;
         } else if (enemyAttackRoll >= enemyHit && enemyAttackRoll <= 17) {
-            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Fend schwingt weit an dir vorbei!";
+            document.getElementById("enemyAttacke").innerHTML = '<div class=\"attackSign\" >    </div>' + "<br>Feind verfehlt!" + "<br> [Gewürfelt = " + enemyAttackRoll + " ]";
             return;
         } else if (enemyAttackRoll >= 17) {
-            document.getElementById("enemyAttacke").innerHTML = "FURCHTBAR daneben, der Feind verletzt sich selbst in seiner Rage!";
+            document.getElementById("enemyAttacke").innerHTML = '<div class=\"attackSign\" >    </div>' + "<br>FURCHTBAR daneben, der Feind verletzt sich!" + "<br> [Gewürfelt = " + enemyAttackRoll + " ]";
             enemyHp -= 1;
             checkEnemyLife();
             return;
@@ -1518,21 +1584,21 @@
         console.log("gegner weicht aus");
         console.log(enemyFleeRoll);
         if (enemyFleeRoll <= 4 || enemyFleeRoll === 4) { //evtl +1 hp... oder so
-            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Meisterlich ausgewichen - keine Ahnung wo du hingezielt hast!";
+            document.getElementById("enemyVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Wo zielst du denn hin?!<br>(Meisterlich ausgewichen)" + "<br> [Gewürfelt = " + enemyFleeRoll + " ]";
             enemyHp += 1;
             return;
         } else if (enemyFleeRoll >= 5 && enemyFleeRoll <= enemyDodge) {
-            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Das Vieh duckt sich!";
+            document.getElementById("enemyVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Das Vieh duckt sich!" + "<br> [Gewürfelt = " + enemyFleeRoll + " ]";
             return;
         } else if (enemyFleeRoll >= enemyDodge && enemyFleeRoll <= 16) {
-            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Du schlitzt den Gegner auf!";
+            document.getElementById("enemyVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Du schlitzt den Gegner auf!" + "<br> [Gewürfelt = " + enemyFleeRoll + " ]";
             enemyHp -= takeHeroDmg;
-            document.getElementById("GegnerLeben").innerHTML = "Vieh hat " + enemyHp + "Lebenspunkte!";
+            document.getElementById("GegnerLeben").innerHTML = '<div class=\"lifepointSign\">       </div>' + "<br>" + enemyHp + "Gegnerische Lebenspunkte!";
             return;
         } else if (enemyFleeRoll >= 17) {
-            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Voll in deine Waffe gerannt! ";
+            document.getElementById("enemyVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Voll in deine Waffe gerannt! " + "<br> [Gewürfelt = " + enemyFleeRoll + " ]";
             enemyHp -= (takeHeroDmg * 1.5);
-            document.getElementById("GegnerLeben").innerHTML = "Vieh hat " + enemyHp + "Lebenspunkte!";
+            document.getElementById("GegnerLeben").innerHTML = '<div class=\"lifepointSign\">       </div>' + "<br>" + enemyHp + "Gegnerische Lebenspunkte!";
             return;
         }
     };
