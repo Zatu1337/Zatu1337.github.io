@@ -16,44 +16,13 @@
 
     <style>
         html {
-            overflow-y: hidden;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 100vw;
-            height: 100vh;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            display: grid;
-            grid-template-columns: 20% 60% 20%;
-            grid-template-rows: 33% 34% 28% 5%;
-            box-sizing: border-box;
-        }
-        
-        .header {
-            display: block;
-            background: linear-gradient(#301515, #27411c, #1b2f53);
-            background-image: url("https://dl.dropbox.com/s/0u2napy9j3yb6on/Download%20%281%29.jpg?dl=0");
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 100%;
-            height: 6vh;
-            justify-content: space-between;
-            grid-column-start: 1;
-            grid-column-end: 4;
-            grid-row-start: 1;
-            grid-row-end: 1;
-        }
-        
-        .headline {
-            color: rgb(0, 0, 0);
-            font-size: 2vh;
-            font-family: 'Courier New', Courier, monospace;
+            font-size: clamp(14px, 2.2vh, 3.5vh);
+            overflow: hidden;
         }
         
         body {
-            width: 100vw;
-            height: 100vh;
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
             margin: auto auto auto auto;
             background-image: url("https://dl.dropbox.com/s/65loah7hbyfyxm3/wald%203.jpg?dl=0");
             opacity: 92%;
@@ -63,9 +32,19 @@
             background-attachment: fixed;
         }
         
+        .container {
+            width: clamp(300px, 99vw, 100vw);
+            height: clamp(120px, 95vh, 100vh);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            grid-template-rows: 33% 34% 28% 5%;
+            box-sizing: border-box;
+        }
+        
         .links {
-            height: 50vh;
-            width: 22vw;
+            height: clamp(72px, 48vh, 55vh);
+            width: clamp(60px, 22vw, 34vw);
             display: table;
             text-align: center;
             padding-bottom: 0.9vh;
@@ -75,7 +54,7 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
-            font-size: 2.6vh;
+            font-size: clamp(14px, 2.6vh, 3.5vh);
             font-weight: 800;
             margin-left: 4vw;
             border: 4px ridge rgba(255, 255, 255, 0.507);
@@ -87,23 +66,23 @@
         }
         
         .Hero {
-            height: 29vh;
-            width: 18vw;
+            height: clamp(52px, 35vh, 39vh);
+            width: clamp(60px, 18vw, 31vw);
             margin-top: 2vh;
             align-self: center;
             justify-self: center;
             border-radius: 100%;
             background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
             background-repeat: round;
-            border: 4px ridge rgba(255, 255, 255, 0.507);
+            border: 2px ridge rgba(255, 255, 255, 0.507);
         }
         
         .Text1 {
-            height: 62vh;
-            width: 35vw;
+            width: clamp(150px, 42vw, 61vw);
+            height: clamp(110px, 62vh, 71vh);
+            margin-left: clamp(24px, 5.6vh, 9.5vh);
             padding: 2.5vh;
             border-radius: 8%;
-            margin-right: 2vw;
             background-color: #27411cd2;
             text-align: center;
             align-content: center;
@@ -111,7 +90,7 @@
             justify-self: center;
             border: 4px ridge rgba(255, 255, 255, 0.507);
             color: rgb(247, 247, 247);
-            font-size: 2.55vh;
+            font-size: clamp(14px, 2.6vh, 3.5vh);
             font-weight: 800;
             grid-column-start: 2;
             grid-column-end: 2;
@@ -127,14 +106,14 @@
         }
         
         .snake {
-            height: 20vh;
-            width: 15vw;
+            height: clamp(52px, 28vh, 34vh);
+            width: clamp(60px, 14vw, 21vw);
             border-radius: 100%;
             background-image: url("https://dl.dropbox.com/s/dq2ve2s074lov1h/schlangemini.png?dl=0");
-            background-size: 100% auto;
+            background-size: 100% 100%;
             background-repeat: no-repeat;
             align-self: flex-end;
-            margin-top: 5vh;
+            margin-top: clamp(9px, 10vh, 15vh);
         }
         
         .bounce-1 {
@@ -208,25 +187,7 @@
 
     <div class="container">
 
-        <div class="header">
 
-
-            <div>
-
-                </a>
-
-                <a href="/StartSzene1.html">1
-                
-            </a>
-
-                <a href="/StartSzene2.html">2
-           
-            </a>
-
-
-            </div>
-
-        </div>
 
 
 
@@ -267,12 +228,12 @@
         </div>
 
         <div class="next">
-            <div class="button">
-                <form action="4KampfSchlange.html ">
-                    <button id="goOn">WEHRE DICH!!   </button>
-                    <!--touch dingens-->
-                </form>
-            </div>
+
+            <form action="4KampfSchlange.html ">
+                <button id="goOn">WEHRE DICH!!   </button>
+                <!--touch dingens-->
+            </form>
+
         </div>
 
 
@@ -299,6 +260,11 @@
         showText('delayedText4', 10.1);
     }
 
+    function clickersatz() {
+        document.getElementById('goOn').click(); // Löse das Click-Event aus
+    }
+
+    document.getElementById("goOn").addEventListener('touchstart', clickersatz);
 
 
 
