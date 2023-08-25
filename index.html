@@ -13,24 +13,13 @@
 
     <style>
         html {
-            font-size: clamp(12px, 2.2vh, 3.5vh);
+            font-size: clamp(16px, 2.5vh, 3.9vh);
             overflow: hidden;
         }
         
-        .container {
-            width: clamp(300px, 100vw, 101vw);
-            height: clamp(300px, 100vh, 101vh);
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            display: grid;
-            grid-template-columns: 6% 28% 30% 30% 6%;
-            grid-template-rows: 8% 15% 2% 47% 28%;
-            min-width: 300px;
-            box-sizing: border-box;
-        }
-        
         .header {
-            width: clamp(300px, 100vw, 101vw);
-            height: clamp(35px, 1.5vh, 2.5vh);
+            width: clamp(200px, 99vw, 101vw);
+            height: clamp(45px, 1.5vh, 2.5vh);
             color: #ffffff;
             margin-bottom: clamp(50px, 9.5vh, 12.5vh);
             background-color: rgba(71, 71, 71, 0.801);
@@ -42,8 +31,8 @@
         }
         
         body {
-            width: clamp(300px, 100vw, 101vw);
-            height: clamp(300px, 100vh, 101vh);
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
             margin: auto auto auto auto;
             background-image: url("https://dl.dropbox.com/s/1uuaw2aenozkzxj/taverne%202.jpg?dl=0");
             background-size: 100% 100%;
@@ -52,23 +41,33 @@
             background-attachment: fixed;
         }
         
+        .container {
+            width: clamp(300px, 97vw, 100vw);
+            height: clamp(120px, 78vh, 100vh);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 6% 28% 30% 30% 6%;
+            grid-template-rows: 5% 2% 17% 17% 58%;
+            box-sizing: border-box;
+        }
+        
         .Charas {
-            width: clamp(100px, 77vw, 61vw);
-            height: clamp(100px, 55vh, 61vh);
+            width: clamp(50px, 67vw, 61vw);
+            height: clamp(50px, 35vh, 61vh);
             display: flex;
-            margin-top: 15vh;
             align-content: center;
             justify-content: space-evenly;
             align-self: center;
             justify-self: center;
             color: azure;
             font-size: clamp(1.5vh, 3.2vh, 3.5vh);
+            margin-top: clamp(-1vh, -17.2vh, -28.5vh);
             font-weight: 800;
             text-decoration: underline;
             grid-column-start: 2;
             grid-column-end: 5;
-            grid-row-start: 4;
-            grid-row-end: 4;
+            grid-row-start: 5;
+            grid-row-end: 5;
         }
         
         button:focus,
@@ -78,9 +77,9 @@
         }
         
         .char1 {
-            width: clamp(70px, 14vw, 14vw);
-            height: clamp(70px, 45vh, 49vh);
-            border: ridge #828285 5px;
+            width: clamp(40px, 12vw, 14vw);
+            height: clamp(40px, 35vh, 49vh);
+            border: ridge #828285 3px;
             background-color: rgba(62, 243, 38, 0.357);
             background-image: url("https://dl.dropbox.com/s/kncxtg33cqssp82/schildmaid%203.png?dl=0");
             background-size: 100% 100%;
@@ -101,9 +100,9 @@
         }
         
         .char2 {
-            width: clamp(70px, 14vw, 14vw);
-            height: clamp(70px, 45vh, 49vh);
-            border: ridge #828285 5px;
+            width: clamp(40px, 12vw, 14vw);
+            height: clamp(40px, 35vh, 49vh);
+            border: ridge #828285 3px;
             text-align: center;
             background-color: rgba(230, 23, 23, 0.377);
             background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
@@ -119,9 +118,9 @@
         }
         
         .char3 {
-            width: clamp(70px, 14vw, 14vw);
-            height: clamp(70px, 45vh, 49vh);
-            border: ridge #828285 5px;
+            width: clamp(40px, 12vw, 14vw);
+            height: clamp(40px, 35vh, 49vh);
+            border: ridge #828285 3px;
             background-color: rgb(35, 17, 233, 0.377);
             background-image: url("https://dl.dropbox.com/s/ykkap0o6r00b478/char1%201.png?dl=0");
             background-size: 100% 100%;
@@ -158,8 +157,8 @@
             border: solid #626263 8px;
             grid-column-start: 2;
             grid-column-end: 5;
-            grid-row-start: 2;
-            grid-row-end: 2;
+            grid-row-start: 4;
+            grid-row-end: 4;
         }
         
         a {
@@ -175,16 +174,9 @@
             width: 100%;
         }
         
-        input[type=text],
-        input[type=password] {
-            height: 7vh;
-            width: 18vw;
-            display: inline-block;
-            box-sizing: border-box;
-            border: ridge #c2b508c9 4px;
-        }
-        
         .wahlButton {
+            height: clamp(25px, 2.5vh, 3.5vh);
+            width: clamp(140px, 12vw, 17vw);
             height: 4.5vh;
             width: 11vw;
             align-self: center;
@@ -195,8 +187,8 @@
         }
         
         .audioControls {
-            height: 3.2vh;
-            width: 10vw;
+            width: clamp(20px, 15vw, 101vw);
+            height: clamp(45px, 1.5vh, 3.5vh);
         }
         
         .audioControls:focus,
@@ -206,16 +198,23 @@
         }
         
         .bottomRow {
-            height: 6vh;
-            width: 25vw;
+            width: clamp(45px, 22vw, 24vw);
+            height: clamp(10px, 35vh, 49vh);
             color: rgb(190, 151, 21);
-            margin-left: 7.5vw;
+            margin-left: clamp(25px, 6vw, 7.5vh);
+            margin-top: clamp(15px, 4.8vw, 6.5vw);
             font-weight: 900;
-            margin-top: -9vh;
             grid-column-start: 3;
             grid-column-end: 5;
             grid-row-start: 6;
             grid-row-end: 6;
+        }
+        
+        input[type=text],
+        input[type=password] {
+            height: clamp(25px, 6.5vh, 8.5vh);
+            width: clamp(140px, 25vw, 33vw);
+            border: ridge #c2b508c9 4px;
         }
         
         #inputContainer,
@@ -430,16 +429,15 @@
 
     cp2.addEventListener("mouseover", myFunction1);
     cp2.addEventListener("touchstart", myFunction1);
-    cp2.addEventListener("ontouchmove", myFunction1);
+
 
     cp3.addEventListener("mouseover", myFunction2);
     cp3.addEventListener("touchstart", myFunction2);
-    cp3.addEventListener("ontouchmove", myFunction2);
 
-    cp2.addEventListener("touchstart", (e) => {
-        myFunction
 
-    });
+
+
+
     $(document).ready(function() {
         function touchOrTapHandler() {
             alert("Du hast berührt oder getippt!");
@@ -459,11 +457,8 @@
         });
     });
 
-    document.getElementById("b1").addEventListener('onpointerdown', buttonClick);
-    document.getElementById("b2").addEventListener('onpointerdown', buttonClick);
-    document.getElementById("b3").addEventListener('onpointerdown', buttonClick);
 
-    document.getElementById("nameInput").addEventListener('onpointerdown', buttonClick);
+
     // grüß funktion und tooltip ^
 
     //hero werte v 
@@ -577,7 +572,7 @@
     document.getElementById("b2").addEventListener('click', buttonClick);
     document.getElementById("b3").addEventListener('click', buttonClick);
 
-
+    document.getElementById("nameInput").addEventListener('touchstart', buttonClick);
 
 
 
