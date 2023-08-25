@@ -44,16 +44,45 @@
         
         .container {
             width: clamp(300px, 97vw, 100vw);
-            height: clamp(120px, 78vh, 100vh);
+            height: clamp(120px, 95vh, 100vh);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             display: grid;
             grid-template-columns: 6% 28% 30% 30% 6%;
-            grid-template-rows: 7% 2% 12% 20% 58%;
+            grid-template-rows: 13% 42% 20% 9% 5%;
             box-sizing: border-box;
         }
         
+        .bottomRow {
+            width: clamp(45px, 22vw, 24vw);
+            height: clamp(10px, 35vh, 49vh);
+            color: rgb(190, 151, 21);
+            margin-left: clamp(25px, 6vw, 7.5vh);
+            margin-top: clamp(19px, 6.8vw, 8.5vw);
+            font-weight: 900;
+            grid-column-start: 3;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+        
+        input[type=text],
+        input[type=password] {
+            height: clamp(25px, 6.5vh, 8.5vh);
+            width: clamp(140px, 25vw, 33vw);
+            border: ridge #c2b508c9 4px;
+        }
+        
+        #inputContainer,
+        #greetingContainer {
+            display: none;
+        }
+        
+        .nmes {
+            width: 24vw;
+        }
+        
         .Charas {
-            width: clamp(150px, 67vw, 61vw);
+            width: clamp(150px, 50vw, 61vw);
             height: clamp(50px, 30vh, 61vh);
             display: flex;
             align-content: center;
@@ -67,8 +96,8 @@
             text-decoration: underline;
             grid-column-start: 2;
             grid-column-end: 5;
-            grid-row-start: 5;
-            grid-row-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 2;
         }
         
         button:focus,
@@ -142,11 +171,10 @@
         }
         
         .tooltip {
-            height: clamp(35px, 2vh, 10vh);
-            width: clamp(150px, 48vw, 55vw);
+            height: clamp(90px, 5vh, 10vh);
+            width: clamp(50px, 12vw, 25vw);
             font-size: clamp(12px, 2.2vh, 2.8vh);
-            margin-top: clamp(40px, 12.5vh, 15.5vh);
-            margin-bottom: clamp(30px, 3.5vh, 5.5vh);
+            margin-left: clamp(40px, 12.5vw, 15.5vw);
             color: blanchedalmond;
             background-color: black;
             text-justify: center;
@@ -156,10 +184,10 @@
             display: block;
             text-align: center;
             border: ridge #626263 2.5px;
-            grid-column-start: 2;
+            grid-column-start: 4;
             grid-column-end: 5;
-            grid-row-start: 4;
-            grid-row-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 3;
         }
         
         a {
@@ -197,37 +225,6 @@
             border-color: yellow;
             outline: none;
         }
-        
-        .bottomRow {
-            width: clamp(45px, 22vw, 24vw);
-            height: clamp(10px, 35vh, 49vh);
-            color: rgb(190, 151, 21);
-            margin-left: clamp(25px, 6vw, 7.5vh);
-            margin-top: clamp(15px, 4.8vw, 6.5vw);
-            font-weight: 900;
-            grid-column-start: 3;
-            grid-column-end: 5;
-            grid-row-start: 6;
-            grid-row-end: 6;
-        }
-        
-        input[type=text],
-        input[type=password] {
-            height: clamp(25px, 6.5vh, 8.5vh);
-            width: clamp(140px, 25vw, 33vw);
-            border: ridge #c2b508c9 4px;
-        }
-        
-        #inputContainer,
-        #greetingContainer {
-            display: none;
-        }
-        
-        .nmes {
-            width: 24vw;
-        }
-        /*<audio loop controls id="SpringSound" class="audioControls" src="https://dl.dropbox.com/scl/fi/hfo0wn5lidwlyoda7lqlz/Spring-Village.ogg?rlkey=qjeqicnq53bmpvt3b3px63up9&dl=0" type="audio/ogg">
-            </audio> richtig anordnen + input auf handy sichtbar machen*/
     </style>
 
 </head>
@@ -240,7 +237,7 @@
             <center>
                 <p> Entdecke dein eigenes Abenteuer auf dieser Welt.. </p>
             </center>
-            <audio loop controls id="SpringSound" class="audioControls" src="https://dl.dropbox.com/scl/fi/hfo0wn5lidwlyoda7lqlz/Spring-Village.ogg?rlkey=qjeqicnq53bmpvt3b3px63up9&dl=0" type="audio/ogg">
+            <audio autoplay loop controls id="SpringSound" class="audioControls" src="https://dl.dropbox.com/scl/fi/hfo0wn5lidwlyoda7lqlz/Spring-Village.ogg?rlkey=qjeqicnq53bmpvt3b3px63up9&dl=0" type="audio/ogg">
             </audio> </div>
         <div class="tooltip" id="tooltip1">
             “Es wird eine lange Reise, doch wenigstens habt ihr dann, wenn ihr alt und grau seid, etwas zu erzählen....”
