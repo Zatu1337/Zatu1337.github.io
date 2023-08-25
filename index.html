@@ -289,28 +289,9 @@
 
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.js" integrity="sha512-gRg3MTbqGUwZiqkDRUj7BJOqiYX6tQDAkZVq6zCHfRUxBhoW0kRG4ASllaK31PIe+I+xdaJhLcZXbs2O2r8SRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    function handleTouchButton(buttonSelector) {
-        const button = document.querySelector(buttonSelector);
-        let isTouched = false;
-
-        button.addEventListener('touchstart', () => {
-            isTouched = true;
-        });
-
-        button.addEventListener('touchend', () => {
-            if (isTouched) {
-                button.click();
-                isTouched = false;
-            }
-        });
-    }
-
-    handleTouchButton('#b2');
-    handleTouchButton('#b3');
-    handleTouchButton('#b1');
-
-
     document.getElementById("b1").setAttribute("disabled", true);
     document.getElementById("b2").setAttribute("disabled", true);
     document.getElementById("b3").setAttribute("disabled", true);
@@ -334,8 +315,7 @@
 
 
         // Usage
-        handleTouchButton('#nameInput');
-        handleTouchButton('#char1');
+
 
         nameInput.addEventListener("keydown", function(event) {
             if (event.key === "Enter") {
@@ -424,19 +404,6 @@
 
 
 
-
-    var element = document.getElementById("char3");
-
-    element.addEventListener("mouseover", myFunction2);
-    element.addEventListener("touchstart", myFunction2);
-
-    if ("ontouchstart" in window || navigator.msMaxTouchPoints) {
-        // Berührung wird unterstützt
-        myFunction2(event);
-    } else {
-        console.log("nex");
-    }
-
     function myFunction(e) {
 
         let tooltip2 = '<br>Der Tribesman ist ein furchtloser Krieger.(+2 Angriff /+2 Verteidigung) ';
@@ -454,7 +421,49 @@
         let tooltip3 = '<br>Der Ritter lässt seinen Glauben durch NICHTS erschüttern.(+4 Angriff)';
         document.getElementById("tooltip1").innerHTML = tooltip3;
     }
+    cp1 = document.getElementById("char1");
+    cp2 = document.getElementById("char2");
+    cp3 = document.getElementById("char3");
+    cp1.addEventListener("mouseover", myFunction); // berühren der portrait
 
+
+
+    cp2.addEventListener("mouseover", myFunction1);
+    cp2.addEventListener("touchstart", myFunction1);
+    cp2.addEventListener("ontouchmove", myFunction1);
+
+    cp3.addEventListener("mouseover", myFunction2);
+    cp3.addEventListener("touchstart", myFunction2);
+    cp3.addEventListener("ontouchmove", myFunction2);
+
+    cp2.addEventListener("touchstart", (e) => {
+        myFunction
+
+    });
+    $(document).ready(function() {
+        function touchOrTapHandler() {
+            alert("Du hast berührt oder getippt!");
+            // Hier kannst du weitere Aktionen ausführen
+        }
+
+        function swipeHandler() {
+            alert("Du hast über den Bereich gewischt!");
+            // Hier kannst du weitere Aktionen ausführen
+        }
+
+        $("#char1").on("touchstart click", touchOrTapHandler);
+
+        $("#char1").swipe({
+            swipe: swipeHandler,
+            tap: touchOrTapHandler
+        });
+    });
+
+    document.getElementById("b1").addEventListener('onpointerdown', buttonClick);
+    document.getElementById("b2").addEventListener('onpointerdown', buttonClick);
+    document.getElementById("b3").addEventListener('onpointerdown', buttonClick);
+
+    document.getElementById("nameInput").addEventListener('onpointerdown', buttonClick);
     // grüß funktion und tooltip ^
 
     //hero werte v 
@@ -567,6 +576,11 @@
     document.getElementById("b1").addEventListener('click', buttonClick);
     document.getElementById("b2").addEventListener('click', buttonClick);
     document.getElementById("b3").addEventListener('click', buttonClick);
+
+
+
+
+
 
     function saveRace() {
         let oldRaceString = JSON.stringify(heroValues.race);
