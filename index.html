@@ -171,10 +171,10 @@
         }
         
         .tooltip {
-            height: clamp(90px, 5vh, 10vh);
-            width: clamp(50px, 12vw, 25vw);
+            height: clamp(110px, 14vh, 15vh);
+            width: clamp(125px, 14vw, 25vw);
             font-size: clamp(12px, 2.2vh, 2.8vh);
-            margin-left: clamp(40px, 12.5vw, 15.5vw);
+            margin-left: clamp(90px, 12.5vw, 1.5vw);
             color: blanchedalmond;
             background-color: black;
             text-justify: center;
@@ -434,30 +434,11 @@
     cp3.addEventListener("mouseover", myFunction2);
     cp3.addEventListener("touchstart", myFunction2);
 
+    function clickersatz() {
+        document.getElementById('nameInput').click(); // Löse das Click-Event aus
+    }
 
-
-
-
-    $(document).ready(function() {
-        function touchOrTapHandler() {
-            alert("Du hast berührt oder getippt!");
-            // Hier kannst du weitere Aktionen ausführen
-        }
-
-        function swipeHandler() {
-            alert("Du hast über den Bereich gewischt!");
-            // Hier kannst du weitere Aktionen ausführen
-        }
-
-        $("#char1").on("touchstart click", touchOrTapHandler);
-
-        $("#char1").swipe({
-            swipe: swipeHandler,
-            tap: touchOrTapHandler
-        });
-    });
-
-
+    document.getElementById("nameInput").addEventListener('touchstart', clickersatz);
 
     // grüß funktion und tooltip ^
 
@@ -571,8 +552,6 @@
     document.getElementById("b1").addEventListener('click', buttonClick);
     document.getElementById("b2").addEventListener('click', buttonClick);
     document.getElementById("b3").addEventListener('click', buttonClick);
-
-    document.getElementById("nameInput").addEventListener('touchstart', buttonClick);
 
 
 
