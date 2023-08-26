@@ -12,13 +12,25 @@
 
     <style>
         html {
-            overflow-y: hidden;
-            overflow-x: hidden;
+            font-size: clamp(14px, 2.2vh, 3.5vh);
+            overflow: hidden;
+        }
+        
+        body {
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
+            margin: auto auto auto auto;
+            background: lavender;
+            background-image: url("https://dl.dropbox.com/s/amknsbzkoi5hj1k/heilerin2big.jpg?dl=0");
+            background-repeat: repeat;
+            background-position: center, center;
+            background-size: contain;
+            background-attachment: fixed;
         }
         
         .container {
-            width: 100vw;
-            height: 100vh;
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             display: grid;
             grid-template-columns: 4% 29% 2% 30% 2% 29% 4%;
@@ -31,95 +43,58 @@
             border: 5px, solid, black;
         }
         
-        a {
-            position: relative;
-            padding: 5% 0 1% 1%;
-            font-size: 2.8vh;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-weight: bold;
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: 0.5s;
-            letter-spacing: 1px;
-            width: 100%;
-        }
-        
         .header {
-            height: 3.8vh;
-            width: 100vw;
-            font-size: 3vh;
-            display: block;
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(12px, 4vh, 9vh);
+            color: white;
+            font-size: clamp(12.5px, 2.2vh, 3.5vh);
+            margin-bottom: 0.3vh;
             background: linear-gradient(#301515, #27411c, #1b2f53);
             background-image: url("https://dl.dropbox.com/s/ytueykwig0dzk97/holzheader2.jpg?dl=0 ");
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: 100% 100%;
             justify-content: space-between;
+            grid-column-start: 1;
+            grid-column-end: 5;
             grid-row-start: 1;
             grid-row-end: 1;
         }
         
-        .headline {
-            color: rgb(0, 0, 0);
-            font-size: 2vh;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        
-        body {
-            height: 100vh;
-            width: 100vw;
-            margin: auto auto auto auto;
-            background: lavender;
-            background-image: url("https://dl.dropbox.com/s/amknsbzkoi5hj1k/heilerin2big.jpg?dl=0");
-            background-repeat: repeat;
-            background-position: center, center;
-            background-size: contain;
-            background-attachment: fixed;
+        a {
+            height: 3vh;
+            width: 1vw;
+            position: relative;
+            padding: 2% 0 1% 1%;
+            font-size: clamp(12px, 2.3vh, 3.5vh);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 666;
+            color: #ffffff;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 1px;
         }
         
         .links {
-            height: 72vh;
-            width: 14.5vw;
+            width: clamp(200px, 18vw, 25vw);
+            height: clamp(150px, 79vh, 80vh);
+            border: 2.3px ridge #97803496;
+            border-radius: 8%;
             display: table;
             text-align: center;
             color: #ffffff;
             align-self: center;
             justify-self: center;
-            border-radius: 10%;
+            margin-top: clamp(170px, 42vh, 47vh);
             background-color: #6f6e74b6;
             background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
-            font-size: 2.6vh;
-            font-weight: 800;
-            margin-top: -16vh;
-            border-color: rgba(151, 156, 163, 0.762);
-            border-width: 6px;
-            border-style: solid;
+            font-weight: 700;
             grid-column-start: 2;
             grid-column-end: 3;
-            grid-row-start: 3;
+            grid-row-start: 2;
             grid-row-end: 3;
-        }
-        
-        .inventar {
-            height: 25vh;
-            width: 15.5vw;
-            display: grid;
-            margin-bottom: 0.5vh;
-            margin-top: 0.5vh;
-            grid-template-rows: repeat(3, 8vh);
-            row-gap: 10px;
-            grid-template-columns: repeat(2, 5.5vw);
-            border-color: rgb(60, 157, 92);
-            border-width: 13px;
-            border-style: none;
-            justify-content: center;
-            align-content: center;
-            background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
         }
         
         .Hero {
@@ -138,11 +113,11 @@
         }
         
         .heroAttri {
-            height: 2.8vh;
-            width: 16vw;
+            height: 2.4vh;
+            width: 14vw;
             color: rgb(247, 247, 247);
-            font-size: 2.5vh;
-            font-weight: 800;
+            font-size: clamp(11.5px, 2.1vh, 2.5vh);
+            font-weight: 700;
             border-radius: 6%;
             text-decoration: underline;
             background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV8k364Fyza49sKwTBghUguvL23M_vJDWgBrriVJ7v6Nk0Fu56woaif_PM2l4jkEiJMfk&usqp=CAU");
@@ -211,11 +186,27 @@
             font-weight: 777;
         }
         
+        .inventar {
+            height: 25vh;
+            width: 15.5vw;
+            display: grid;
+            margin-bottom: 0.5vh;
+            margin-top: 0.5vh;
+            grid-template-rows: repeat(2, 8vh);
+            row-gap: 5px;
+            grid-template-columns: repeat(2, 5.5vw);
+            justify-content: center;
+            align-content: center;
+            background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
         .inventar-item {
             height: 8.3vh;
             width: 5vw;
             padding: 3px;
-            margin-bottom: -2vh;
+            margin-bottom: -7vh;
             display: flex;
             font-size: larger;
             font-weight: bold;
@@ -223,33 +214,20 @@
             align-self: flex-end;
             justify-self: flex-end;
             text-align: center;
-            border-color: rgba(195, 14, 14, 0);
-            border-width: 3px;
-            border-style: solid;
+            border: rgba(195, 14, 14, 0) solid 1px;
         }
-        /* Stil der Bilder innerhalb der DIV-Bereiche */
         
         .inventar-item img {
             width: 100%;
-            /* Das Bild auf die volle Breite des DIVs skalieren */
             height: 100%;
-            /* Das Bild auf die volle Höhe des DIVs skalieren */
             object-fit: fill;
-            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
         }
         
         .mitte {
-            height: 87vh;
-            width: 25vw;
-            margin-left: 3vw;
-            background-image: url("");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
+            height: clamp(192px, 87vh, 95vh);
+            width: clamp(150px, 26.5vw, 34vw);
             border-radius: 10%;
-            color: rgb(210, 255, 255);
-            background-color: #ffffff00;
             text-align: center;
-            align-content: center;
             grid-column-start: 4;
             grid-column-end: 4;
             grid-row-start: 2;
@@ -257,28 +235,29 @@
         }
         
         .sortiment {
-            height: 84vh;
-            width: 18vw;
-            margin-top: 1vh;
-            color: rgb(167, 150, 59);
-            font-size: 2.3vh;
-            font-weight: bolder;
+            height: clamp(192px, 85vh, 95vh);
+            width: clamp(28px, 19.5vw, 34vw);
+            margin-top: 0.31vh;
+            color: rgb(255, 255, 255);
+            font-size: clamp(10px, 2.1vh, 3.3vh);
+            font-weight: 666;
             display: inline-block;
             box-sizing: border-box;
             justify-self: center;
             text-align: center;
             border-radius: 8%;
-            border-color: rgba(131, 131, 131, 0.845);
-            border-width: 6.5px;
-            border-style: ridge;
+            border: rgba(131, 131, 131, 0.845) ridge 2.5px;
             background-image: url("https://dl.dropbox.com/scl/fi/d3ostvhwghebojowgh8da/brett.jpg?rlkey=tvxpde1gfsj6aw4ljwjalcwgm&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
         
         .price {
-            height: 2.7vh;
+            height: clamp(11px, 2.2vh, 3.5vh);
             width: 5vw;
-            font-size: 2.5;
-            font-weight: 888;
+            font-size: clamp(10px, 2.1vh, 3.3vh);
+            margin-bottom: clamp(6px, 12px, 45px);
+            font-weight: 777;
             border-radius: 8%;
             background-color: #c09b1f96;
             color: #FFC;
@@ -293,7 +272,7 @@
             height: 68vh;
             width: 80%;
             color: rgb(161, 251, 251);
-            font-size: 2.7vh;
+            font-size: clamp(12px, 2.4vh, 3.5vh);
             font-weight: 800;
             text-align: center;
             align-content: center;
@@ -306,9 +285,7 @@
         .lazarettPortrait {
             height: 4vh;
             width: 22vw;
-            border: #000000;
-            border-width: 4px;
-            border-style: solid;
+            border: solid rgba(182, 182, 182, 0.845)2.5px;
             color: rgb(255, 255, 255);
             background-color: #921b70d8;
             border-radius: 8%;
@@ -332,12 +309,10 @@
             line-height: 1.3;
             border-radius: 100%;
             text-align: center;
-            font-size: 2.5vh;
+            font-size: clamp(12px, 2.2vh, 3.5vh);
             margin-left: -6vw;
             background-color: rgba(173, 126, 39, 0.733);
-            border: #cea214;
-            border-width: 8px;
-            border-style: ridge;
+            border: 4px ridge #cea214;
         }
         
         button {
@@ -374,11 +349,9 @@
         }
         
         .verband {
-            height: 15vh;
-            width: 12vw;
-            border-color: rgba(131, 131, 131, 0.845);
-            border-width: 4.5px;
-            border-style: ridge;
+            height: clamp(45px, 15vh, 19vh);
+            width: clamp(99px, 11.5vw, 34vw);
+            border: 1.2px ridge rgba(131, 131, 131, 0.845);
             border-radius: 8%;
             background-color: #7a390000;
             background-image: url("https://cdn.pixabay.com/photo/2016/10/24/23/40/kermit-1767614_1280.jpg");
@@ -388,13 +361,10 @@
         }
         
         .healMe {
-            height: 15vh;
-            width: 11vw;
+            height: clamp(45px, 15vh, 19vh);
+            width: clamp(99px, 11.5vw, 34vw);
+            border: 1.2px ridge rgba(131, 131, 131, 0.845);
             border-radius: 8%;
-            border-color: rgba(131, 131, 131, 0.845);
-            border-width: 4.5px;
-            border-style: ridge;
-            background-color: #7a390000;
             background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/54/Splinting-an-arm.png");
             background-position: center;
             background-size: 100% 100%;
@@ -402,13 +372,10 @@
         }
         
         .fullHeal {
-            height: 15vh;
-            width: 11vw;
+            height: clamp(45px, 15vh, 19vh);
+            width: clamp(99px, 11.5vw, 34vw);
+            border: 1.2px ridge rgba(131, 131, 131, 0.845);
             border-radius: 8%;
-            border-color: rgba(131, 131, 131, 0.845);
-            border-width: 4.5px;
-            border-style: ridge;
-            background-color: #7a390000;
             background-image: url("https://media.istockphoto.com/id/1217756783/th/เวคเตอร์/ดาวแห่งชีวิตที่มีแท่งสัญลักษณ์-asclepius.jpg?s=612x612&w=0&k=20&c=Zh2ROQYAzlq3IjBOiWhfmTmEQbaFqMzd6Or1ieHn22E=");
             background-position: center;
             background-size: 100% 100%;
@@ -420,8 +387,10 @@
         }
         
         .angebot {
-            margin-bottom: 0.3vh;
-            border-radius: 25%;
+            font-size: clamp(11.5px, 2.2vh, 3.5vh);
+            font-weight: 666;
+            margin-bottom: 0.1vh;
+            border-radius: 8%;
             text-decoration: underline;
             background-color: #000000;
         }
@@ -490,20 +459,20 @@
         <div class="mitte">
             <div class="sortiment">
                 <center>
-                    <div>
-                        <p class="angebot"> Erste Hilfe! (35%)</p><button class="verband" onclick="heal35P()"></button>
-                        <div class="price"> 5 Gold </div>
-                    </div>
+
+                    <p class="angebot"> Erste Hilfe! (35%)</p><button class="verband" onclick="heal35P()"></button>
+                    <div class="price"> 5 Gold </div>
 
 
-                    <div>
-                        <p class="angebot"> Heil mich bitte! (70%)</p><button class="healMe" onclick="heal70P()"></button>
-                        <div class="price"> 15 Gold </div>
-                    </div>
 
 
-                    <div>
-                        <p class="angebot">Lass uns "beten"! (100%)</p><button class="fullHeal" onclick="healFull()"></button></div>
+                    <p class="angebot"> Heil mich bitte! (70%)</p><button class="healMe" onclick="heal70P()"></button>
+                    <div class="price"> 15 Gold </div>
+
+
+
+
+                    <p class="angebot">Bete für mich!(100%)</p><button class="fullHeal" onclick="healFull()"></button>
                     <div class="price"> 25 Gold </div>
                 </center>
             </div>
@@ -516,8 +485,8 @@
 
             <div class="ladenText">
 
-                <div class="delayedText1" id="delayedText1"> <br><br>
-                    <p class="herText" id="ladenText">Schön, dass du es noch hergeschafft hast! Ich werde alle deine Wehwehchen behandeln, von Fieber über Akne und Hammerzeh, sogar Hammer-auf-dem-Zeh, kann ich kurieren!
+                <div class="delayedText1" id="delayedText1">
+                    <p class="herText" id="ladenText"><br><br><br> Schön, dass du es noch hergeschafft hast! Ich werde alle deine Wehwehchen behandeln, von Fieber über Akne und Hammerzeh, sogar Hammer-auf-dem-Zeh, kann ich kurieren!
                     </p>
                 </div>
 
@@ -526,7 +495,7 @@
 
         </div>
         <div class="Ausgang"> RAUS HIER
-            <button class="getOut" onclick="getOut()">  </button> </div>
+            <button class="getOut" id="outa" onclick="getOut()">  </button> </div>
     </div>
 
 
@@ -540,8 +509,58 @@
 <script>
     const percentHp = (heroValues.maxLp / 100);
 
+    function clickersatz2() {
+        document.getElementById('outa').click(); // Löse das Click-Event aus
+    }
 
+    document.getElementById("outa").addEventListener('touchstart', clickersatz2);
 
+    function clickersatz(className) {
+        const element = document.querySelector(`.${className}`);
+        if (element) {
+            element.click(); // Löse das Click-Event auf dem Element aus
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const verbandButton = document.querySelector('.verband');
+        const healMeButton = document.querySelector('.healMe');
+        const fullHealButton = document.querySelector('.fullHeal');
+
+        if (verbandButton) {
+            verbandButton.addEventListener('touchstart', function(event) {
+                event.preventDefault(); // Verhindere das Standardverhalten
+                clickersatz('verband');
+            });
+        }
+
+        if (healMeButton) {
+            healMeButton.addEventListener('touchstart', function(event) {
+                event.preventDefault(); // Verhindere das Standardverhalten
+                clickersatz('healMe');
+            });
+        }
+
+        if (fullHealButton) {
+            fullHealButton.addEventListener('touchstart', function(event) {
+                event.preventDefault(); // Verhindere das Standardverhalten
+                clickersatz('fullHeal');
+            });
+        }
+    });
+
+    function clickersatz(event) {
+        event.preventDefault(); // Verhindere das Standardverhalten
+        const targetId = event.target.id; // Hole die ID des angeklickten Elements
+        const targetElement = document.getElementById(targetId); // Hole das Element mit der ID
+        targetElement.click(); // Löse das Click-Event auf dem Element aus
+    }
+
+    const links = document.querySelectorAll('a'); // Wähle alle Links aus
+
+    links.forEach(function(link) {
+        link.addEventListener('touchstart', clickersatz);
+    });
     const slot1 = document.getElementById("g1");
     const slot2 = document.getElementById("g2");
     const slot3 = document.getElementById("g3");
@@ -707,7 +726,7 @@
         const inventarDivs = document.querySelectorAll('.inventar-item');
 
 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 4; i++) {
             const itemInInventar = inventar[i];
 
             // Durchsuche die allItems-Liste nach dem gefundenen Item
@@ -831,12 +850,6 @@
     }
 
 
-
-    function aua() {
-        heroValues.Lp -= 15;
-        showHero();
-        saveHero();
-    }
 
     function limitDmgTaken() { // wenn Dmg dich unter 0 treibt 
 
