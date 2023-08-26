@@ -49,8 +49,7 @@
         }
 
         function urgl() {
-            document.getElementById("tümpel").style.backgroundImage = "url('https://cdnb.artstation.com/p/assets/images/images/005/151/451/large/travis-lacey-the-swamp-creature-and-boy-travis-lacey.jpg?1488864456')";
-
+            document.getElementById("tümpel").setAttribute("class", "urglmonster");
 
         }
 
@@ -76,13 +75,13 @@
 
     <style>
         * {
+            font-size: clamp(14px, 2.2vh, 3.5vh);
             overflow: hidden;
         }
         
         body {
-            height: 97vh;
-            height: calc(var(--vh, 1vh) * 100);
-            width: 100%;
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
             margin: 0;
             padding: 0;
             opacity: 92%;
@@ -104,29 +103,24 @@
             text-decoration: underline;
             border-radius: 10%;
             text-shadow: 6px;
-            font-size: 2.6vh;
+            font-size: clamp(14px, 2.7vh, 3.5vh);
             font-weight: 700;
             background-color: rgba(70, 78, 72, 0.781);
             padding: 10px;
         }
         
         .answers {
-            height: 6.4vh;
-            width: 72vw;
+            width: clamp(200px, 72vw, 80vw);
+            height: clamp(25px, 4.0vh, 7vh);
             border-radius: 9%;
             color: rgb(255, 255, 255);
-            font-size: 2.4;
-            font-weight: 550;
+            font-size: clamp(12px, 2.4vh, 3.5vh);
+            font-weight: 650;
             background-color: black;
-            border: solid;
+            border: solid rgb(114, 37, 37);
             margin-top: 0.25vh;
             margin-bottom: 0.25vh;
-            border-color: rgb(114, 37, 37);
             text-decoration: rgb(255, 255, 255) underline;
-        }
-        
-        .tour1 {
-            background-image: url("");
         }
         
         .carousel-control-prev,
@@ -255,6 +249,15 @@
             /* hier die pfeile an aus schalten*/
             display: none;
         }
+        
+        .urglmonster {
+            width: clamp(500px, 68vw, 25vw);
+            height: clamp(250px, 75vh, 90vh);
+            background-image: url("https://cdnb.artstation.com/p/assets/images/images/005/151/451/large/travis-lacey-the-swamp-creature-and-boy-travis-lacey.jpg?1488864456");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     </style>
 </head>
 
@@ -355,7 +358,7 @@
                     <div class="underText">
                         <div class="delayedText1" id="delayedText6" style="visibility:hidden"> <i>Nach ein paar Metern krabbeln kannst du fast aufrecht stehen und zündest eine Fackel an. Du schreckst ein paar Fledermäuse auf die durch den Eingang herausfliegen wollen. Sie müssen an dir vorbei und wollen dich scheinbar fressen!  </i>                            </div>
                         <!--  /-1 LP durch Kratzer und Haare ziehen!-->
-                        <div class="answers" id="answer15" type="button" style="visibility:hidden" onclick="caveChecked()">Raus hier - zurück bitte.</div>
+                        <div class="answers" id="answer15" type="button" style="visibility:hidden" onclick="caveChecked()">Schnell raus hier - Ich hab genug Guano gesehn für einen Tag!</div>
 
                         <div class="answers" id="answer16" type="button" onclick="dunklerBau()"> Den dunklen Bau erforschen? </div>
 
@@ -376,7 +379,7 @@
                                 vor sich hin. Die Labertasche aus der Kneipe hat wohl maßlos übertrieben und nur zu viel Sumpfgas geschnppert - als ob hier irgendwas Dolles wäre, was einen Helden wie dich auch nur im entferntesten interessieren könnte.
                                 Das Spannenste was du vorfindest ist die dichter werdende Entengrütze auf dem Tümpelteich..</p>
                         </div>
-                        <div class="answers" id="answer19" type="button" onclick="nix()">*Stein in den Tümpel werfen?* </div>
+                        <button class="answers" id="answer19" onclick="nix()">*Stein in den Tümpel werfen?* </button>
 
                         <div class="answers" id="answer20" type="button">
                             <button onclick="runaway()"> Warten und gaffen??? </button> </div>
@@ -404,9 +407,63 @@
 </body>
 <script src="https://rawcdn.githack.com/Zatu1337/Zatu1337.github.io/44fd06e9405012057b6b28dd187f9615bb379a1f/load%20foood%20and%20moneh.js"></script>
 
-<script src="https://raw.githack.com/Zatu1337/Zatu1337.github.io/main/getname%20.js"></script>
+
+
 
 <script>
+    const heroValues = {
+        Title: "",
+        race: "",
+        Level: 1,
+        Exp: 0,
+        maxLp: 32,
+        Lp: 32,
+        Dmg: 7,
+        Dodge: 6,
+        Def: 1,
+        Hit: 9,
+
+
+    };
+
+    function loadHero() {
+        const savedHeroString = localStorage.getItem("Attribute");
+        const savedHero = JSON.parse(savedHeroString); // Check if savedHero is not null or undefined
+        if (savedHero) {
+            heroValues.Title = savedHero.Title;
+            heroValues.race = savedHero.race;
+            heroValues.Level = savedHero.Level;
+            heroValues.Exp = savedHero.Exp;
+            heroValues.Lp = savedHero.Lp;
+            heroValues.maxLp = savedHero.maxLp;
+            heroValues.Dmg = savedHero.Dmg;
+            heroValues.Dodge = savedHero.Dodge;
+            heroValues.Def = savedHero.Def;
+            heroValues.Hit = savedHero.Hit;
+            loadRace();
+        }
+
+    }
+    loadHero();
+
+    function loadRace() { // nach hero aufrufen?
+
+        const savedRaceString = localStorage.getItem("Race");
+        const savedRace = JSON.parse(savedRaceString); // Check if savedHero is not null or undefined
+        if (savedRace === "Nord") {
+            heroAvatar.style.backgroundImage = "url('https://dl.dropbox.com/s/kncxtg33cqssp82/schildmaid%203.png?dl=0')"; // Ändere die Hintergrundgrafik
+            console.log("Maid");
+        } else if (savedRace === "Tribesmen") {
+            heroAvatar.style.backgroundImage = "url('https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0')";
+            console.log("lizard");
+
+        } else if (savedRace === "Gothe") {
+            heroAvatar.style.backgroundImage = "url('https://dl.dropbox.com/s/ykkap0o6r00b478/char1%201.png?dl=0')";
+            console.log("knight");
+        }
+    }
+
+
     function goAroundBack() {
         carousel.to(4);
     }
@@ -432,15 +489,18 @@
         window.alert("                ......nichts passiert...... ")
         document.getElementById("answer20").style.visibility = "visible";
         document.getElementById("answer19").innerText = "Grade als du dich umdrehen willst um wieder zu gehen, hörst du ein Blubbern im Teich.";
-
+        document.getElementById("answer19").setAttribute("disabled", true);
     }
+    const inventar = [
+        undefined, undefined, undefined, undefined
+    ];
 
     function kraut() {
-        window.location.href = KräutersucheWald.html
+        window.location.href = "KräutersucheWald.html";
     };
 
     function hunty() {
-        window.location.href = huntingPaw.html
+        window.location.href = "huntingPaw.html";
     };
 
     document.getElementById("krautStart").addEventListener("click", kraut);
@@ -453,8 +513,9 @@
     }
 
     function caveChecked() {
-        document.getElementById("answer13").innerText = "Der Höhleneingang ist frei von Wurzelwerk, als wäre erst vor kurzem Jemand so mutig gewesen hineinzuklettern...."
 
+        document.getElementById("answer13").innerText = "Der Höhleneingang ist frei von Wurzelwerk, als wäre erst vor kurzem Jemand so mutig gewesen hineinzuklettern....";
+        document.getElementById("answer13").setAttribute("disabled", true);
         document.getElementById("clickVorher").click();
 
     }
@@ -470,7 +531,7 @@
     }
 
     function saveInvi() {
-        // arenaMonsterLootArray1 = []; egal weil reload?
+
         let oldInviString = JSON.stringify(inventar);
         localStorage.setItem("Inventar", oldInviString);
     }
@@ -484,7 +545,20 @@
         console.log(inventar);
         saveInvi();
     }
-    // carousel.to(2);
+    carousel.to(4);
+    const ausgang = document.getElementById("answer15");
+
+    function showAusgang() {
+        ausgang.style.visibility = 'visible';
+    }
+
+    function caveOut() {
+        setTimeout(() => {
+            showAusgang();
+        }, 2650);
+    }
+
+
 
     function goAround() {
         // könnte von beiden seiten gehen... mit if
@@ -500,7 +574,6 @@
         document.getElementById('delayedText6').innerHTML = textBau;
         setTimeout(() => {
             shinyBlink();
-
         }, 1650);
     }
 
@@ -508,7 +581,6 @@
         document.getElementById('answer13').innerHTML = "Du reißt die Wurzeln zur Seite und kletterst voller Mut und Tatendrang in die Höhle hinein"
         setTimeout(() => {
             clickNext();
-
         }, 2000);
 
     }
@@ -521,15 +593,12 @@
 
 
     function hidewolf() {
-
-
         wolf.setAttribute("hidden", true);
         answer10.setAttribute("hidden", true);
         wolfButton1.setAttribute("hidden", true);
         wolfButton1.setAttribute("disabled", true);
         wolfButton2.setAttribute("hidden", true);
         wolfButton2.setAttribute("disabled", true);
-
     }
 
     function wolfAway() {
@@ -538,7 +607,7 @@
         setTimeout(() => {
             clickNext();
 
-        }, 5000);
+        }, 3500);
     }
 
     document.getElementById("seite1").style.backgroundImage = "url('https://dl.dropbox.com/s/dcaytc6tzwrjxkj/1%20wald%201%20starter%20%20maybegeheimpfad.jpg?dl=0')";
@@ -547,31 +616,13 @@
     document.getElementById("seite5").style.backgroundImage = "url('https://dl.dropbox.com/s/o5n9kz9l49ugh7z/3%20h%C3%B6hle%20eingang%20maybe%20ruine%20wald%20h%C3%B6hle.jpg?dl=0')";
 
     function blingbling() {
-
+        caveOut();
         document.getElementById("shiny").style.backgroundImage = "url('https://dl.dropbox.com/scl/fi/hl23bo7eph5byg04lnevv/bling-aus-h-hle.jpg?rlkey=2tb35v9mpe324s8lp01a3irba&dl=0')";
         document.getElementById("delayedText6").innerText = "Du findest ein wunderschönes goldglänzendes Schmuckstück und verstaust dirkt gut in deinem Beutel!";
     }
 
-
-    const ausgang = document.getElementById("answer15");
-
-    function showAusgang() {
-        ausgang.style.visibility = 'visible';
-    }
-
-    function caveOut() {
-        setTimeout(() => {
-            showAusgang();
-        }, 2650);
-    }
-
-    document.getElementById("caveDiv").addEventListener('mouseover', (event) => {
-        caveOut();
-    });
-
     function yummy() {
         alert("Köstliche Feldkost erfrischt dich um 1 Lebenspunkt!")
-
     }
 
 
