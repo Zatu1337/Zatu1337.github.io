@@ -348,6 +348,14 @@
     cards.forEach(card => card.addEventListener("click", flipCard));
 
 
+    function clickersatz() {
+        document.getElementById('memory-card').click();
+    }
+
+    const memoryCards = document.querySelectorAll('.memory-card');
+    memoryCards.forEach(card => {
+        card.addEventListener('touchstart', flipCard);
+    });
 
     function saveCoins() {
         let saveAsche = JSON.stringify(reichtum[0].wert);
