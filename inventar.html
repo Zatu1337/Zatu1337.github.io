@@ -13,15 +13,23 @@
 
     <style>
         html {
-            overflow-y: hidden;
-            overflow-x: hidden;
+            font-size: clamp(14px, 2.2vh, 3.5vh);
+            overflow: hidden;
+        }
+        
+        body {
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
+            margin: auto auto auto auto;
+            background-image: url("https://c.wallhere.com/photos/b3/8c/1920x1080_px_artwork_fantasy_Art_Lava-605592.jpg!d");
+            background-position: center, center;
+            background-size: 100% 100%;
+            background-attachment: fixed;
         }
         
         .container {
-            width: 100vw;
-            height: 100vh;
-            min-width: 300px;
-            /* zuletzt umgestellt  */
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             display: grid;
             box-sizing: border-box;
@@ -35,10 +43,10 @@
         }
         
         .header {
-            height: 4vh;
-            width: 100vw;
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(12.9px, 2.8vh, 4vh);
             color: white;
-            font-size: small;
+            font-size: clamp(12.5px, 2.2vh, 3.5vh);
             margin-bottom: 0.1cm;
             background-image: url("https://dl.dropbox.com/s/ytueykwig0dzk97/holzheader2.jpg?dl=0 ");
             background-repeat: no-repeat;
@@ -55,11 +63,11 @@
         }
         
         a {
-            height: 3vh;
+            height: 2.3vh;
             width: 1vw;
             position: relative;
             padding: 2% 0 1% 1%;
-            font-size: 2.5vh;
+            font-size: clamp(12.5px, 2.3vh, 3.5vh);
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: bold;
             color: #ffffff;
@@ -73,23 +81,6 @@
             color: rgb(0, 0, 0);
             font-size: 2vh;
             font-family: 'Courier New', Courier, monospace;
-        }
-        
-        body {
-            width: 100vw;
-            height: 100vh;
-            margin: auto auto auto auto;
-            background-image: url("https://c.wallhere.com/photos/b3/8c/1920x1080_px_artwork_fantasy_Art_Lava-605592.jpg!d");
-            background-position: center, center;
-            background-size: 100% 100%;
-            background-attachment: fixed;
-            min-height: 10%;
-            max-height: fit-content;
-        }
-        
-        .headline {
-            color: #F90;
-            background-color: aliceblue;
         }
         
         .left {
@@ -107,7 +98,7 @@
             justify-content: center;
             align-items: center;
             background-color: #1b2f53;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 3.5px ridge rgba(196, 170, 23, 0.767);
             grid-column-start: 1;
             grid-column-end: 2;
             grid-row-start: 3;
@@ -121,7 +112,7 @@
             margin-top: 1.7vh;
             margin-bottom: 1.5vh;
             display: grid;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 2.5px ridge rgba(196, 170, 23, 0.767);
             background-color: #1b2f53;
             grid-template-rows: repeat(3, 8vh);
             row-gap: 10px;
@@ -150,15 +141,11 @@
             border-width: 3px;
             border-style: solid;
         }
-        /* Stil der Bilder innerhalb der DIV-Bereiche */
         
         .inventar-item img {
             width: 100%;
-            /* Das Bild auf die volle Breite des DIVs skalieren */
             height: 100%;
-            /* Das Bild auf die volle Höhe des DIVs skalieren */
             object-fit: fill;
-            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
         }
         
         .inventarHead {
@@ -167,7 +154,7 @@
             display: flex;
             margin-top: 0.5vh;
             border-radius: 12%;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 1px ridge rgba(196, 170, 23, 0.767);
             background-color: #1b2f53;
             justify-content: center;
             align-content: center;
@@ -226,15 +213,15 @@
         }
         
         .mid {
-            height: 84vh;
-            width: 36vw;
+            width: clamp(90px, 32vw, 51vw);
+            height: clamp(277px, 83vh, 85vh);
             border-radius: 10%;
             display: table;
-            font-size: 2.6vh;
-            font-weight: 800;
+            font-size: clamp(13.5px, 2.3vh, 3.5vh);
+            font-weight: 650;
             color: #ffffff;
             text-decoration: underline;
-            padding: 5%;
+            padding: 2.5%;
             text-align: justify;
             text-justify: auto;
             align-content: center;
@@ -247,7 +234,7 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 3.5px ridge rgba(196, 170, 23, 0.767);
             grid-column-start: 2;
             grid-column-end: 2;
             grid-row-start: 3;
@@ -256,11 +243,10 @@
         /* hero anklickbar machen und dann zoom ooder größeres portrait*/
         
         .Herowrapper {
-            height: 22vh;
-            width: 18vw;
+            width: clamp(100px, 14.5vw, 19vw);
+            height: clamp(100px, 22vh, 31vh);
             display: table;
             text-align: center;
-            padding-bottom: 0.9vh;
             padding-left: 0.35vw;
             padding-right: 0.35vw;
             color: #ffffff;
@@ -280,13 +266,13 @@
         }
         
         .Hero {
-            height: 20vh;
-            width: 17.7vw;
+            width: clamp(120px, 13.5vw, 19vw);
+            height: clamp(90px, 14.5vh, 21vh);
             position: relative;
             color: rgb(247, 247, 247);
             text-decoration: underline overline;
             font-weight: bold;
-            border: ridge rgba(161, 161, 161, 0.774) 4.5px;
+            border: ridge rgba(161, 161, 161, 0.774) 2.5px;
             margin-top: 0.55vh;
             margin-bottom: 1.5vh;
             border-radius: 100%;
@@ -395,26 +381,19 @@
         }
         
         .heroName {
-            height: 3.5vh;
+            height: clamp(12.5px, 2.47vh, 3.5vh);
             width: 14vw;
             color: rgb(247, 247, 247);
-            font-size: 2.4vh;
+            font-size: clamp(15px, 2.7vh, 3.5vh);
             font-weight: 800;
             border-radius: 8%;
-            border: 4px ridge rgba(255, 255, 255, 0.507);
-            text-decoration: underline;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
         }
         
         .heroAttri {
-            height: 3.2vh;
+            height: clamp(12.5px, 2.47vh, 3.5vh);
+            font-size: clamp(11px, 2.37vh, 3.5vh);
             width: 14vw;
-            margin-top: 0.5vh;
             color: rgb(247, 247, 247);
-            border: 4px ridge rgba(255, 255, 255, 0.336);
-            font-size: 2.4vh;
             font-weight: 800;
             border-radius: 8%;
             text-decoration: underline;
@@ -424,13 +403,13 @@
         }
         
         .equipment {
-            height: 32.5vh;
+            height: clamp(84px, 30.5vh, 32.5vh);
             width: 33vw;
             border-radius: 8%;
             font-size: medium;
             font-family: Arial, Helvetica, sans-serif;
             display: grid;
-            column-gap: 3.5%;
+            column-gap: 2.5%;
             color: rgb(255, 255, 255);
             align-content: center;
             justify-content: center;
@@ -440,38 +419,41 @@
         }
         
         .tooltipBox {
-            height: 13.0vh;
-            width: 30vw;
+            height: clamp(20px, 6.5vh, 9.5vh);
+            width: 28vw;
+            font-size: clamp(11.5px, 2.3vh, 3.5vh);
+            font-weight: 650;
             border-radius: 8%;
             background-color: #1b2f53;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 1.5px ridge rgba(196, 170, 23, 0.767);
             display: flex;
         }
         
         .equipNames {
             border-radius: 10%;
-            height: 2.6vh;
-            width: 8.3vw;
-            margin-bottom: 0.5vh;
+            width: clamp(70px, 6.5vw, 9vw);
+            height: clamp(8px, 3.3vh, 4vh);
+            margin-bottom: 0.3vh;
+            padding-bottom: clamp(12px, 2.4vh, 3.5vh);
             display: flex;
             color: #e3ffe0;
-            font-size: 2.5vh;
-            font-weight: 750;
+            font-size: clamp(10.5px, 2.3vh, 3.5vh);
+            font-weight: 650;
             background-color: #1b2f53;
             align-content: center;
             justify-content: center;
             align-self: center;
             justify-self: center;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 1.5px ridge rgba(196, 170, 23, 0.767);
         }
         
         .equipClass {
-            height: 14.0vh;
-            width: 5.3vw;
+            width: clamp(30px, 4vw, 6vw);
+            height: clamp(25px, 11vh, 15vh);
             border-radius: 10%;
             margin-bottom: 0.5vh;
             display: flex;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 1.5px ridge rgba(196, 170, 23, 0.767);
             align-self: center;
             justify-self: center;
             background-repeat: no-repeat;
@@ -486,7 +468,7 @@
             border-radius: 10%;
             display: flex;
             color: #e3ffe0;
-            font-size: 2.5vh;
+            font-size: clamp(12px, 2.2vh, 3.5vh);
             font-weight: 600;
             background-color: #1b2f53;
             align-self: center;
@@ -495,20 +477,20 @@
             justify-content: center;
             text-align: center;
             text-justify: center;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 1.5px ridge rgba(196, 170, 23, 0.767);
         }
         
         .right {
             height: 42vh;
-            width: 22vw;
+            width: 18vw;
             border-radius: 10%;
             display: table;
             text-decoration: underline;
             background-color: #1b2f53;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 3.5px ridge rgba(196, 170, 23, 0.767);
             color: rgb(255, 255, 255);
-            font-size: large;
-            font-weight: 900;
+            font-size: clamp(14px, 2.2vh, 3.5vh);
+            font-weight: 750;
             align-self: center;
             justify-self: center;
             text-align: center;
@@ -521,16 +503,16 @@
         }
         
         .Qinventar {
-            height: 36vh;
-            width: 24vw;
+            height: 46vh;
+            width: 18.5vw;
             display: grid;
-            grid-template-rows: repeat(2, 10vh);
+            grid-template-rows: repeat(3, 10vh);
             row-gap: 4vh;
-            grid-template-columns: repeat(4, 6.0vw);
+            grid-template-columns: repeat(3, 6.0vw);
             justify-content: center;
             align-content: center;
             background-color: #1b2f53;
-            font-size: large;
+            font-size: clamp(12px, 2.3vh, 3.5vh);
             font-weight: 800;
             border-radius: 10%;
             color: rgb(255, 255, 255);
@@ -673,21 +655,6 @@
             height: 6vh;
             width: 12vw;
         }
-        
-        .TalenteBox {
-            height: 19vh;
-            width: 90%;
-            margin-top: 2vh;
-            border-radius: 10%;
-            color: rgb(255, 255, 255);
-            margin-left: 2%;
-            background-color: #1b2f53;
-            border: #646464a9;
-            border-style: solid;
-            border-width: 4px;
-            font-size: large;
-            font-weight: 800;
-        }
     </style>
 </head>
 
@@ -696,7 +663,7 @@
         <div class="header">
 
             <center>
-                <a href="7Dorf1.html">Abenteuer
+                <a href="7Dorf1.html " id="cl1">Abenteuer
            
                     </a>
 
@@ -751,8 +718,8 @@
 
             </center>
             <center>
-                <div class="buttonBot"> <button onclick="schmeissWeg()">Weg damit </button>
-                    <button onclick="setGold1000()">katsching </button> </div>
+                <div class="buttonBot"> <button onclick="schmeissWeg()">Ausleeren</button>
+                </div>
             </center>
 
 
@@ -832,6 +799,7 @@
                     <div value="lol" class="quest-item" id="q6"></div>
                     <div value="lol" class="quest-item" id="q7"></div>
                     <div value="lol" class="quest-item" id="q8"></div>
+                    <div value="lol" class="quest-item" id="q9"></div>
                 </div>
 
             </center>
@@ -1144,7 +1112,7 @@
 
     function compareProgressWithQuestitems() {
         const questDivs = document.querySelectorAll('.quest-item');
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 9; i++) {
             const questItemInInventar = questItemsFound[i];
             const foundQItem = questItemInInventar && allQuestItems.find(item => item.name === questItemInInventar.name);
             for (let i = 0; i < questItemsFound.length; i++) {
@@ -1396,9 +1364,9 @@
     function schmeissWeg() { // Inventar
         const AskingYou = confirm("Wirklich ALLES aus dem Inventar WEGWERFEN?!");
         if (AskingYou) {
-            localStorage.clear();
+
             inventar.length = 0;
-            inventar.length = 6; // inventar nicht künstlich vergrößern, variiable einbauen
+            inventar.length = 4; // inventar nicht künstlich vergrößern, variiable einbauen
             saveInvi();
             loadInvi();
             compareInventarWithAllItems();
@@ -1620,6 +1588,19 @@
 
     loadInvi();
     compareInventarWithAllItems();
+
+    function clickersatz(event) {
+        event.preventDefault(); // Verhindere das Standardverhalten
+        const targetId = event.target.id; // Hole die ID des angeklickten Elements
+        const targetElement = document.getElementById(targetId); // Hole das Element mit der ID
+        targetElement.click(); // Löse das Click-Event auf dem Element aus
+    }
+
+    const links = document.querySelectorAll('a'); // Wähle alle Links aus
+
+    links.forEach(function(link) {
+        link.addEventListener('touchstart', clickersatz);
+    });
 </script>
 
 
