@@ -229,8 +229,9 @@
         }
         
         .Text1 {
-            height: clamp(120px, 65vh, 91vh);
+            height: clamp(135px, 67vh, 91vh);
             width: clamp(130px, 35vw, 61vw);
+            font-size: clamp(11px, 2.3vh, 3.5vh);
             display: block;
             background-color: #27411c;
             margin-left: -2vw;
@@ -241,7 +242,6 @@
             border-radius: 8%;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             color: rgb(255, 255, 255);
-            font-size: clamp(10px, 2.3vh, 3.5vh);
             font-weight: 700;
             grid-column-start: 3;
             grid-column-end: 4;
@@ -399,28 +399,20 @@
                     Gefährlich fauchend spannt sich das grüne Mistvieh zum Angriff!<br> In Windeseile schnappst du dir einen dicken Ast um dich zu wappnen!
                 </p>
 
-
-
                 <button id="haudraufButton" class="haudraufButton">Hau drauf</button>
 
-
-
-
-
-
                 <div class="heroFightbox">
-                    <div class="coolerText" id="heroAttacke"> </div>
-                    <div class="coolerText" id="heroVerteidigung"> </div>
-                    <div id="DeinLeben">Deine Lebenspunkte </div>
+                    <p id="DeinLeben">Deine Lebenspunkte </pv>
+                        <div class="coolerText" id="heroAttacke"> </div>
+                        <div class="coolerText" id="heroVerteidigung"> </div>
+
                 </div>
 
-                <br>
-
                 <div class="enemyFightbox">
+                    <p id="GegnerLeben">Lebenspunkte d. Gegners </pv>
+                        <div class="coolerText" id="enemyAttacke"> </div>
+                        <div class="coolerText" id="enemyVerteidigung"> </div>
 
-                    <div class="coolerText" id="enemyAttacke"> </div>
-                    <div class="coolerText" id="enemyVerteidigung"> </div>
-                    <div id="GegnerLeben">Lebenspunkte d. Gegners </div>
                 </div>
 
             </center>
