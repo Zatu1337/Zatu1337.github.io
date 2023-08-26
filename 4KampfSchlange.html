@@ -230,7 +230,7 @@
         
         .Text1 {
             height: clamp(135px, 67vh, 91vh);
-            width: clamp(130px, 35vw, 61vw);
+            width: clamp(150px, 35vw, 61vw);
             font-size: clamp(11px, 2.3vh, 3.5vh);
             display: block;
             background-color: #27411c;
@@ -250,9 +250,9 @@
         }
         
         .rechts {
-            font-size: clamp(14px, 2.5vh, 3.5vh);
-            height: clamp(82px, 40vh, 69vh);
-            width: clamp(90px, 22vw, 31vw);
+            font-size: clamp(12px, 2.4vh, 3.5vh);
+            height: clamp(72px, 36vh, 69vh);
+            width: clamp(75px, 18vw, 31vw);
             margin-left: clamp(14px, 2.5vh, 3.5vh);
             align-self: center;
             justify-self: center;
@@ -352,6 +352,12 @@
             background-size: cover;
             background-repeat: round;
         }
+        
+        .coolerText {
+            height: clamp(14px, 3.5vh, 5.5vh);
+            width: auto;
+            border: 1px goldenrod ridge;
+        }
     </style>
 
 </head>
@@ -402,14 +408,14 @@
                 <button id="haudraufButton" class="haudraufButton">Hau drauf</button>
 
                 <div class="heroFightbox">
-                    <p id="DeinLeben">Deine Lebenspunkte </pv>
+                    <p id="DeinLeben" class="coolerText">Deine Lebenspunkte </pv>
                         <div class="coolerText" id="heroAttacke"> </div>
                         <div class="coolerText" id="heroVerteidigung"> </div>
 
                 </div>
 
                 <div class="enemyFightbox">
-                    <p id="GegnerLeben">Lebenspunkte d. Gegners </pv>
+                    <p id="GegnerLeben" class="coolerText">Lebenspunkte d. Gegners </pv>
                         <div class="coolerText" id="enemyAttacke"> </div>
                         <div class="coolerText" id="enemyVerteidigung"> </div>
 
