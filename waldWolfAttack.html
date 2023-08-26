@@ -21,29 +21,13 @@
 
     <style>
         html {
-            overflow-y: hidden;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            height: 100vh;
-            width: 100vw;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            display: grid;
-            grid-template-columns: 4% 31% 40% 23% 4%;
-            grid-template-rows: 5% 73% 10% 13%;
-            min-width: 300px;
-        }
-        
-        .container div {
-            padding: 5px;
-            border: 5px, solid, black;
+            font-size: clamp(14px, 2.2vh, 3.5vh);
+            overflow: hidden;
         }
         
         body {
-            height: 100vh;
-            background: lavender;
-            width: 100vw;
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
             margin: 0;
             background-image: url("https://dl.dropbox.com/s/65loah7hbyfyxm3/wald%203.jpg?dl=0");
             background-color: #27411c;
@@ -53,9 +37,23 @@
             opacity: 92%;
         }
         
+        .container {
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 4% 31% 40% 23% 4%;
+            grid-template-rows: 5% 73% 10% 13%;
+        }
+        
+        .container div {
+            padding: 5px;
+            border: 5px, solid, black;
+        }
+        
         .links {
-            height: 85vh;
-            width: 25vw;
+            width: clamp(200px, 24vw, 29vw);
+            height: clamp(150px, 89.5vh, 90vh);
             display: table;
             text-align: center;
             padding-bottom: 0.9vh;
@@ -65,12 +63,10 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
-            font-size: 2.8vh;
-            font-weight: 900;
+            font-size: clamp(14px, 2.5vh, 3.5vh);
+            font-weight: 700;
             margin-left: -2vw;
-            border-color: #97803496;
-            border-width: 4px;
-            border-style: ridge;
+            border: 2.5px ridge #97803496;
             border-radius: 8%;
             grid-column-start: 2;
             grid-column-end: 3;
@@ -85,9 +81,7 @@
             color: rgb(247, 247, 247);
             text-decoration: underline overline;
             font-weight: bold;
-            border-color: rgba(182, 182, 182, 0.845);
-            border-width: 2.5px;
-            border-style: solid;
+            border-color: ridge 1.5px rgba(182, 182, 182, 0.845);
             margin-top: 2.5vh;
             margin-bottom: 1.5vh;
             border-radius: 100%;
@@ -100,8 +94,6 @@
             position: absolute;
             height: 8.5vh;
             width: 7.0vw;
-            background-color: #d3252500;
-            border-radius: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -190,70 +182,41 @@
         }
         
         .corner-number {
-            height: 2.8vh;
+            height: 3.8vh;
             width: 2.8vw;
-            font-size: 2.5vh;
-            font-weight: 800;
-            border-color: #978034;
-            border-width: 14px;
-            border-style: ridge;
+            font-size: clamp(14.5px, 2.8vh, 4.5vh);
+            font-weight: 900;
             border-radius: 100%;
         }
         
-        .enemyLoot {
-            height: 6vh;
-            width: 75%;
-            font-size: 2.5vh;
-            font-weight: 800;
-            color: rgb(255, 247, 247);
-            align-self: center;
-            justify-self: center;
-            justify-content: center;
-            justify-items: center;
-            grid-column-start: 4;
-            grid-column-end: 5;
-            grid-row-start: 2;
-            grid-row-end: 3;
-        }
-        
         .heroName {
-            height: 3.0vh;
-            width: 14vw;
-            margin-top: 0.7vh;
+            height: 2.2vh;
+            width: 14.5vw;
             color: rgb(247, 247, 247);
-            font-size: 2.5vh;
-            font-weight: 700;
+            font-size: clamp(13px, 2.1vh, 3.5vh);
+            font-weight: 600;
             text-decoration: underline;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
         }
         
         .heroAttri {
-            height: 2.8vh;
-            width: 12vw;
+            height: 2.24vh;
+            width: 14.5vw;
             color: rgb(247, 247, 247);
-            font-size: 2.3vh;
-            font-weight: 777;
+            font-size: clamp(13px, 2.1vh, 3.5vh);
+            font-weight: 666;
             border-radius: 8%;
             text-decoration: underline;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
         }
         
         .inventar {
-            height: 28vh;
+            height: clamp(44px, 25.42vh, 33.5vh);
             width: 15.5vw;
             display: grid;
-            margin-bottom: 0.5vh;
-            margin-top: 0.5vh;
-            grid-template-rows: repeat(3, 8vh);
-            row-gap: 10px;
+            margin-bottom: 0.2vh;
+            margin-top: 0.2vh;
+            grid-template-rows: repeat(2, 8vh);
+            row-gap: 5px;
             grid-template-columns: repeat(2, 5.5vw);
-            border-color: rgb(60, 157, 92);
-            border-width: 13px;
-            border-style: none;
             justify-content: center;
             align-content: center;
             background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
@@ -262,30 +225,25 @@
         }
         
         .inventar-item {
-            height: 7.3vh;
-            width: 4.4vw;
+            height: 8.3vh;
+            width: 5vw;
+            padding: 3px;
+            margin-bottom: -7vh;
             display: flex;
-            margin-top: 2.5vh;
             font-size: larger;
             font-weight: bold;
-            align-self: center;
-            justify-self: center;
+            color: rgb(0, 0, 0);
+            align-self: flex-end;
+            justify-self: flex-end;
             text-align: center;
-            background-color: rgba(250, 235, 215, 0);
-            border-color: rgba(255, 237, 186, 0.315);
-            border-width: 5px;
-            border-style: ridge;
+            border: rgba(195, 14, 14, 0) solid 1px;
         }
-        /* Stil der Bilder innerhalb der DIV-Bereiche */
         
         .inventar-item img {
             width: 100%;
-            /* Das Bild auf die volle Breite des DIVs skalieren */
             height: 100%;
             border-radius: 100%;
-            /* Das Bild auf die volle Höhe des DIVs skalieren */
             object-fit: fill;
-            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
         }
         
         .inviWrap {
@@ -364,21 +322,20 @@
         }
         
         .Text1 {
-            width: 38vw;
-            height: 60vh;
-            margin-left: -3.5vw;
-            margin-top: 5vh;
+            width: clamp(220px, 40vw, 45vw);
+            height: clamp(310px, 88vh, 90vh);
+            margin-left: -4.5vw;
+            margin-top: 0.5vh;
             border-radius: 8%;
-            padding: 3vh;
             display: table;
             background-color: #27411c;
             align-content: center;
             align-items: flex;
-            border: ridge rgba(93, 97, 93, 0.685) 6px;
+            border: ridge rgba(93, 97, 93, 0.685) 2.5px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             color: rgb(255, 255, 255);
-            font-size: 2.5vh;
-            font-weight: 900;
+            font-size: clamp(14px, 2.5vh, 3.5vh);
+            font-weight: 733;
             grid-column-start: 3;
             grid-column-end: 4;
             grid-row-start: 2;
@@ -389,7 +346,6 @@
             height: 3vh;
             width: 32vw;
             padding: 2vh;
-            margin-bottom: 2vh;
         }
         
         .rechts {
@@ -407,12 +363,10 @@
             background-image: url("https://previews.123rf.com/images/drogatnev/drogatnev1603/drogatnev160300153/54365273-beautiful-spring-background-with-grass-and-bokeh-lights-vector-background-summer-design-green.jpg");
             background-size: 100% 100%;
             padding: 15px;
-            font-size: 2.8vh;
+            font-size: clamp(14px, 2.7vh, 3.5vh);
             font-weight: 900;
             border-radius: 8%;
-            border-color: #97803496;
-            border-width: 4px;
-            border-style: ridge;
+            border-color: #97803496 4px ridge;
             grid-column-start: 4;
             grid-column-end: 5;
             grid-row-start: 2;
@@ -423,7 +377,7 @@
             height: 24vh;
             width: 16vw;
             color: rgb(255, 0, 0);
-            margin-top: 0.5vh;
+            margin-top: 0.2vh;
             border-radius: 100%;
         }
         
@@ -504,17 +458,15 @@
         }
         
         .enemyLoot {
-            height: 6vh;
-            width: 75%;
-            font-size: 2.5vh;
+            height: clamp(92px, 55vh, 59vh);
+            width: clamp(90px, 23vw, 31vw);
+            font-size: clamp(14px, 2.5vh, 3.5vh);
             font-weight: 800;
             color: rgb(255, 247, 247);
             align-self: center;
             justify-self: center;
             justify-content: center;
             justify-items: center;
-            visibility: hidden;
-            background-color: #0bb12fd3;
             grid-column-start: 4;
             grid-column-end: 5;
             grid-row-start: 2;
@@ -522,33 +474,36 @@
         }
         
         .buttonLoot {
-            width: 80%;
-            height: 5vh;
-            font-size: 2.5vh;
+            height: clamp(15px, 22vh, 15.5vh);
+            width: clamp(33px, 28vw, 25vw);
+            padding-top: 1.3vh;
+            font-size: clamp(14px, 2.7vh, 4.5vh);
             font-weight: 600;
             align-self: center;
             justify-self: center;
             justify-content: center;
             justify-items: center;
             color: rgb(6, 4, 19);
-            background-color: #6cf830;
+            background-color: rgba(127, 255, 212, 0);
+            background-image: url("https://dl.dropbox.com/scl/fi/rddmrugpm3393et6sbk1y/green_button_plakette-removebg-preview.png?rlkey=vdrdbfwujbdz3pa9kmmrymcuy&dl=0");
+            background-size: 100% 100%;
+            border: none;
         }
         
         .haudraufButton {
-            height: 7vh;
-            width: 55%;
-            color: chocolate;
+            height: clamp(15px, 10vh, 15.5vh);
+            width: clamp(33px, 15vw, 25vw);
+            color: rgb(255, 0, 0);
             background-color: black;
+            font-size: clamp(14px, 3.5vh, 5.5vh);
             font-weight: 800;
-            text-decoration: dashed;
-            text-decoration: blue;
-            text-decoration: solid;
+            border: ridge 3px #ff0000d3;
             font-family: cursive 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         
         .lootBild {
-            width: 24vw;
-            height: 25vh;
+            height: clamp(92px, 55vh, 39vh);
+            width: clamp(90px, 23vw, 31vw);
             border-radius: 100%;
             background-image: url("https://www.axis-mundi-fundus.de/media/image/97/ff/b3/b10154800Ew9PaLAIKptnq_600x600.jpg");
             background-color: black;
@@ -707,10 +662,10 @@
 
         </div>
         <div class="Text1">
-            <center><br><br>
+            <center><br>
                 <div id="delayedText1" class="fightStart" style="visibility:hidden">
                     Geifernd und die Zähne fletschend steht dir dieses räudige Fellbüschel gegenüber! </div>
-                <br> Verteidige Dich!: <br>
+                <br><br> Verteidige Dich!: <br>
                 <div id="haudrauf"><button id="haudraufButton" class="haudraufButton">Hau druff!</button>
 
 
@@ -784,6 +739,12 @@
 
 
 <script>
+    function clickersatz() {
+        document.getElementById('haudraufButton').click(); // Löse das Click-Event aus
+    }
+
+    document.getElementById("haudraufButton").addEventListener('touchstart', clickersatz);
+
     document.getElementById("haudraufButton").addEventListener("click", attackflee);
 
     document.getElementById("GegnerLeben").innerHTML = "Dein Feind ist UNVERLETZT";
@@ -891,9 +852,9 @@
         const foundqItem = allQuestItems.find(item => item.name === itemName);
 
         if (foundqItem) {
-            const firstEmptyIndex = questItemsFound.findIndex(item => item === undefined || item.name === null);
-            if (firstEmptyIndex !== -1) {
-                questItemsFound[firstEmptyIndex] = foundqItem;
+            const firstEmptyQIndex = questItemsFound.findIndex(item => item === undefined || item.name === null);
+            if (firstEmptyQIndex !== -1) {
+                questItemsFound[firstEmptyQIndex] = foundqItem;
             } else {
                 console.log('Inventar ist voll. Es kann kein weiteres Item hinzugefügt werden.');
             }
@@ -959,7 +920,7 @@
         document.getElementById("wolfi").setAttribute("class", "lootBild");
         addToQuestInventar("Wolfstrophäe");
         saveProgress();
-        addToInventar("Wolfsfell");
+        // addToInventar('Wolfsfell');
         heroValues.Exp += 15;
         saveInvi();
 
@@ -1027,12 +988,12 @@
             document.getElementById("heroAttacke").innerHTML = "Angriff: MEISTERLICHER Schlag!";
             enemyFlee();
             enemyFlee(); //2. attacke für crit //lifecheck evtl in flee ??
-            checkEnemyLife();
+
             return;
         } else if (attack >= 5 && attack <= heroValues.Hit) {
             document.getElementById("heroAttacke").innerHTML = "Angriff: Gut angezielter Schlag!";
             enemyFlee();
-            checkEnemyLife();
+
             return;
         } else if (attack >= heroValues.Hit && attack <= 17) {
             document.getElementById("heroAttacke").innerHTML = "Angriff:  Knapp daneben is' auch vorbei";
@@ -1081,12 +1042,12 @@
             document.getElementById("enemyAttacke").innerHTML = "Angriff: MEISTERLICHER Angriff!";
             wolfValues.Lp -= 1.5 * giveHeroDmg; //garantierter treffer für crit
             flee();
-            checkYourLife();
+
             return;
         } else if (enemyAttack >= 5 && enemyAttack <= enemyHit) {
             document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Feind attackiert dich gezielt!";
             flee();
-            checkYourLife();
+
             return;
         } else if (enemyAttack >= enemyHit && enemyAttack <= 17) {
             document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Fend schwingt weit an dir vorbei!";
@@ -1175,10 +1136,10 @@
         } {
 
             loadHero();
-            showHero();
+
             loadRation();
             loadCoins();
-            showGold();
+
             console.log("Lp");
             console.log(heroValues.Lp);
             console.log("maxLp");
@@ -1188,6 +1149,28 @@
 
     }
     showinvi();
+
+    function compareInventarWithAllItems() {
+        const inventarDivs = document.querySelectorAll('.inventar-item');
+
+
+        for (let i = 0; i < 4; i++) {
+            const itemInInventar = inventar[i];
+
+            // Durchsuche die allItems-Liste nach dem gefundenen Item
+            const foundItem = itemInInventar && allItems.find(item => item.name === itemInInventar.name);
+
+            if (foundItem) {
+                console.log(`Item "${itemInInventar.name}" ist in der globalen Liste der Items vorhanden.`);
+                // Füge das Bild des gefundenen Items in das entsprechende DIV ein
+                inventarDivs[i].innerHTML = `<img src="${foundItem.image}" alt="${foundItem.name}" />`;
+            } else {
+                inventarDivs[i].innerHTML = `<img src="" alt="" />`;
+
+                console.log(`Item "${itemInInventar}" ist NICHT in der globalen Liste der Items vorhanden.`);
+            }
+        }
+    }
     compareInventarWithAllItems();
 </script>
 
