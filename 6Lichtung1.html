@@ -14,6 +14,7 @@
 
 
 
+
     <style>
         html {
             font-size: clamp(14px, 2.2vh, 3.5vh);
@@ -23,177 +24,386 @@
         body {
             width: clamp(300px, 100vw, 100vw);
             height: clamp(120px, 100vh, 100vh);
+            background: lavender;
             margin: auto auto auto auto;
-            background-image: url("https://dl.dropbox.com/s/i57t3noafl5f6bn/village1_square_by_vityar83_dbsuy7d-pre.jpg?dl=0");
+            background-image: url("https://dl.dropbox.com/s/i9atx4eoqpptsbz/2019-09-26-waldgipfel.jpg?dl=0");
+            background-position: center, center;
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-position: center center;
+            opacity: 95%;
         }
         
         .container {
-            width: clamp(300px, 100vw, 100vw);
-            height: clamp(120px, 100vh, 100vh);
+            width: clamp(300px, 99vw, 100vw);
+            height: clamp(120px, 95vh, 100vh);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             display: grid;
-            grid-template-columns: 25% 25% 25% 25%;
-            grid-template-rows: 15% 30% 30% 25%;
+            grid-template-columns: 25% 37% 13% 39%;
+            grid-template-rows: 10% 45% 35% 10%;
         }
         
-        .header {
-            width: clamp(300px, 100vw, 100vw);
-            height: clamp(12px, 4vh, 9vh);
-            color: white;
-            font-size: clamp(14px, 2.2vh, 3.5vh);
-            margin-bottom: 0.3vh;
-            background: linear-gradient(#301515, #27411c, #1b2f53);
-            background-image: url("https://dl.dropbox.com/s/ytueykwig0dzk97/holzheader2.jpg?dl=0 ");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            justify-content: space-between;
-            grid-column-start: 1;
-            grid-column-end: 5;
-            grid-row-start: 1;
-            grid-row-end: 1;
+        .container div {
+            padding: 5px;
+            border: 5px, solid, black;
         }
         
-        a {
-            height: 3vh;
-            width: 1vw;
-            position: relative;
-            padding: 2% 0 1% 1%;
-            font-size: clamp(14px, 2.7vh, 3.5vh);
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-weight: bold;
+        .links {
+            height: clamp(172px, 76vh, 55vh);
+            width: clamp(70px, 16.5vw, 34vw);
+            display: table;
+            text-align: center;
             color: #ffffff;
-            text-transform: uppercase;
-            transition: 0.5s;
-            letter-spacing: 1px;
+            border-radius: 10%;
+            background-color: #6f6e74b6;
+            background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-size: clamp(12px, 2.2vh, 3.5vh);
+            font-weight: 800;
+            margin-left: 1vw;
+            margin-right: 1.5vw;
+            margin-top: clamp(-15px, -5.2vh, -6.5vh);
+            border: solid 2.5px rgba(151, 156, 163, 0.762);
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
         }
         
-        .headerHighlight {
-            text-decoration: overline underline;
+        .inventarHead {
+            height: 9vh;
+            width: 23vw;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            align-self: center;
+            text-align: center;
+            justify-self: center;
+            font-size: 2.5vh;
         }
         
-        .headline {
+        .walletIcon {
+            height: 2.5vh;
+            width: 1.0vw;
+            margin-top: 0.3vh;
+            margin-left: -1.1vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+        
+        .walletText {
+            height: 3.3vh;
+            width: 3.0vw;
+            margin-left: -0.9vw;
+            margin-right: 1.0vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+            display: inline-block;
+        }
+        
+        .rationIcon {
+            height: 2.8vh;
+            width: 1.7vw;
+            margin-top: -0.5vh;
+            margin-left: -1.8vw;
+            margin-right: 0.3vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/qcna317ped0sk3swo42mh/marker-nahrung.PNG?rlkey=p4v13qjskk3kltd7vrpv1nlr0&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+        }
+        
+        .rationText {
+            height: 3.3vh;
+            width: 3.2vw;
+            margin-left: 0.5vw;
+            margin-right: 1.0vw;
+            font-size: 2.8vh;
+            font-weight: 777;
+            display: inline-block;
+        }
+        
+        .Hero {
+            height: 23vh;
+            width: 16vw;
+            position: relative;
+            color: rgb(247, 247, 247);
+            text-decoration: underline overline;
+            font-weight: bold;
+            border: solid rgba(182, 182, 182, 0.845)2.5px;
+            margin-top: 2.5vh;
+            margin-bottom: 1.5vh;
+            border-radius: 100%;
+            background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .avatar-corner {
+            position: absolute;
+            height: 6.5vh;
+            width: 5.8vw;
+            background-color: #7c777700;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+        }
+        
+        .iconwrapper {
+            height: 5.3vh;
+            width: 7.7vw;
+            display: inline-block;
+            background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
+            background-size: 100% 100%;
+        }
+        
+        .imgLp {
+            height: 4.7vh;
+            width: 1.8vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/x189pyk1hn12whbirwyf3/lebenspunkte.png?rlkey=32dppnf2u6a3vowc00uai8yci&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.1vh;
+            width: 3.0vw;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .top-left {
+            top: 0;
+            left: 0;
+            margin-top: -4vh;
+            margin-left: -3.6vw;
+        }
+        
+        .top-right {
+            top: 0;
+            right: 0;
+            margin-top: -4vh;
+            margin-right: -3.3vw;
+        }
+        
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            margin-bottom: -3.5vh;
+            margin-left: -3.0vw;
+        }
+        
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            margin-bottom: -3.5vh;
+            margin-right: -3.3vw;
+        }
+        
+        .corner-icon {
+            margin-left: 4px;
+            display: inline-block;
+        }
+        
+        .imgHit {
+            height: 5.8vh;
+            width: 2.8vw;
+            margin-left: -1px;
+            background-image: url("https://dl.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0https://www.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDef {
+            height: 6.3vh;
+            width: 3.0vw;
+            margin-left: -2px;
+            background-image: url("https://dl.dropbox.com/scl/fi/8hjmv1n2r25ut7f6u5tlp/schild2.png?rlkey=rz76rtkw78ospcx9y388klmct&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .imgDmg {
+            height: 6.0vh;
+            width: 3.7vw;
+            margin-left: -4px;
+            background-image: url("https://dl.dropbox.com/scl/fi/ot3uf0hm3035blizmxyap/sword_icon.png?rlkey=iobjdbq5wk13c4aib2adkb32u&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .corner-number {
+            font-size: 2.6vh;
+            font-weight: 800;
+            font-weight: bold;
+        }
+        
+        .heroName {
+            height: 3.0vh;
+            width: 13vw;
+            margin-top: 0.65vh;
+            color: rgb(247, 247, 247);
+            font-size: clamp(14px, 2.2vh, 3.5vh);
+            font-weight: 850;
+            border-radius: 8%;
+            text-decoration: underline;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .title {
+            height: clamp(15px, 2.2vh, 3.5vh);
+            width: 14vw;
+            color: rgb(247, 247, 247);
+            font-size: clamp(12x, 2.2vh, 3.5vh);
+            font-weight: 800;
+        }
+        
+        .inventar {
+            height: 30vh;
+            width: 18.5vw;
+            margin-top: 0.65vh;
+            display: grid;
+            grid-template-rows: repeat(3, 8.5vh);
+            row-gap: 10px;
+            grid-template-columns: repeat(2, 5.5vw);
+            justify-content: center;
+            align-content: center;
+            background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .inventar-item {
+            height: 6.3vh;
+            width: 4vw;
+            padding: 2px;
+            display: flex;
             color: rgb(0, 0, 0);
-            font-size: 2vh;
-            font-family: 'Courier New', Courier, monospace;
+            align-self: center;
+            justify-self: center;
+            margin-top: 17.5vh;
+            border: 2.5px ridge rgba(77, 77, 77, 0.123);
         }
-        /*Möchte hier den Background und buttons auch progressive - responsive evtl background img anpassen neue größe */
+        /* Stil der Bilder innerhalb der DIV-Bereiche */
+        
+        .inventar-item img {
+            width: 100%;
+            /* Das Bild auf die volle Breite des DIVs skalieren */
+            height: 100%;
+            /* Das Bild auf die volle Höhe des DIVs skalieren */
+            object-fit: fill;
+            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
+        }
         
         .Text1 {
-            width: clamp(90px, 46vw, 51vw);
-            height: clamp(77px, 17vh, 25vh);
-            display: block;
-            color: azure;
-            background-color: #92929400;
+            width: clamp(190px, 38vw, 51vw);
+            height: clamp(120px, 63vh, 85vh);
+            font-size: clamp(12px, 2.3vh, 2.52vh);
+            font-weight: 600;
+            border-radius: 10%;
+            display: table;
+            text-align: justify;
+            text-align: center;
+            background-color: #27411ccf;
             align-content: center;
             align-self: center;
             justify-self: center;
-            align-items: flex;
-            margin: 0 15% 5% 25%;
-            font-size: 2.9vh;
-            font-weight: 900;
-            grid-column-start: 2;
-            grid-column-end: 4;
-            grid-row-start: 4;
-            grid-row-end: 4;
-        }
-        
-        .Krämer {
-            height: 8vh;
-            width: 40%;
-            color: #003;
-            background-color: rgba(240, 248, 255, 0);
+            margin-left: 12vw;
+            color: rgb(255, 255, 255);
+            border: solid 5px rgba(151, 156, 163, 0.762);
             grid-column-start: 2;
             grid-column-end: 3;
-            grid-row-start: 3;
-            grid-row-end: 3;
-        }
-        
-        .Taverne {
-            height: 8vh;
-            width: 40%;
-            color: #003;
-            background-color: rgba(240, 248, 255, 0);
-            position: sticky;
-            grid-column-start: 3;
-            grid-column-end: 4;
-            grid-row-start: 3;
-            grid-row-end: 3;
-        }
-        
-        .Schmiede {
-            height: 3.5vh;
-            width: 8vw;
-            justify-self: end;
-            color: #003;
-            background-color: rgba(240, 248, 255, 0.3);
-            margin-right: 6vw;
-            grid-column-start: 4;
-            grid-column-end: 5;
-            grid-row-start: 4;
+            grid-row-start: 2;
             grid-row-end: 4;
         }
         
-        .SchmiedeTüre {
-            height: 24.5vh;
-            width: 4.5vw;
-            justify-self: end;
-            border: none;
-            background-color: rgba(95, 247, 65, 0);
-            margin-right: 6.5vw;
-            margin-top: 2vh;
+        .storyText {
+            color: rgb(255, 255, 255);
+            font-size: clamp(12px, 2.3vh, 2.52vh);
+            font-style: italic;
+            line-break: loose;
+        }
+        
+        a {
+            position: relative;
+            font-size: 2.5vh;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 1px;
+            width: auto;
+        }
+        
+        a span {
+            position: absolute;
+            display: block;
+        }
+        
+        .next {
+            height: clamp(92px, 55vh, 69vh);
+            width: clamp(60px, 25vw, 25vw);
+            margin-left: -2.5vw;
+            margin-top: 10vh;
+            border-radius: 8%;
+            background-image: url("https://i.pinimg.com/originals/f3/98/d1/f398d1d9f74066110e4416615f785cdb.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            border: solid 3px rgba(151, 156, 163, 0.762);
             grid-column-start: 4;
-            grid-column-end: 5;
-            grid-row-start: 3;
-            grid-row-end: 4;
-        }
-        
-        .quest {
-            height: 8vh;
-            width: 40%;
-            justify-self: center;
-            align-self: center;
-            color: #003;
-            background-color: rgba(240, 248, 255, 0);
-            margin: 0% 0% 0% 0%;
-            grid-column-start: 1;
-            grid-column-end: 2;
-            grid-row-start: 3;
-            grid-row-end: 3;
-        }
-        
-        .Arena {
-            height: 8vh;
-            width: 35%;
-            justify-self: center;
-            align-self: center;
-            color: #003;
-            background-color: rgba(240, 248, 255, 0);
-            margin-left: 72%;
-            margin-bottom: 35%;
-            grid-column-start: 3;
             grid-column-end: 4;
             grid-row-start: 2;
-            grid-row-end: 2;
+            grid-row-end: 3;
         }
         
-        button {
-            height: clamp(29.5px, 8.5vh, 12.5vh);
-            width: clamp(33px, 13vw, 16vw);
-            font-size: clamp(12.5px, 1.9vh, 2.52vh);
-            padding-bottom: clamp(5px, 1.8vh, 2.52vh);
-            padding-top: clamp(2px, 0.4vh, 1.52vh);
+        .auswahl {
+            height: clamp(15px, 22vh, 15.5vh);
+            width: clamp(33px, 28vw, 25vw);
+            font-size: clamp(12px, 2.3vh, 2.52vh);
+            font-weight: 800;
+            padding-top: 2.0vh;
+            border: none;
+            text-align: center;
             background-color: rgba(127, 255, 212, 0);
-            background-image: url("https://dl.dropbox.com/scl/fi/r20ml59gdf89m85cfood2/light_green_but-removebg-preview.png?rlkey=d73lkr4erid5faof3a1l5jziw&dl=0");
+            background-image: url("https://dl.dropbox.com/scl/fi/rddmrugpm3393et6sbk1y/green_button_plakette-removebg-preview.png?rlkey=vdrdbfwujbdz3pa9kmmrymcuy&dl=0");
+            background-size: 100% 100%;
+            background-repeat: space;
+            background-position: center;
+        }
+        
+        .cityButton {
+            height: clamp(57px, 5.5vh, 12.5vh);
+            width: clamp(83px, 15vw, 25vw);
+            font-size: clamp(11px, 1.8vh, 2.52vh);
+            color: rgb(2, 3, 4);
+            padding-bottom: clamp(8px, 1.0vh, 2.52vh);
+            text-align: center;
+            font-weight: 650;
+            background-color: rgba(127, 255, 212, 0);
+            background-image: url("https://dl.dropbox.com/scl/fi/jpuk5iw9eb4240o09j1r6/yellow_but-removebg-preview.png?rlkey=zlkf46yapyz3gmoh78ml5400z&dl=0");
             background-size: 100% 100%;
             background-repeat: space;
             background-position: center;
             border: none;
-            color: black;
-            font-weight: 666;
         }
     </style>
 
@@ -201,75 +411,110 @@
 
 <body>
 
-    <div class="container"> <audio loop src="https://dl.dropbox.com/scl/fi/o97uqz4ahyb48rfj9g219/Mall.ogg?rlkey=6ffel76bw0v31g1s10anb0l5f&dl=0" type="audio/ogg" id="citySound">
-    </audio>
-        <div class="header">
+    <div class="container">
+
+        <audio autoplay loop src="https://dl.dropbox.com/scl/fi/9kc08dgt3dr16oc6w2c9u/birds_singing-6888.mp3?rlkey=0yj7yfhl6eghszkj5auczk26r&dl=0" type="audio/mpeg" id="birdySound">
+        </audio>
+
+
+        <div class="links">
+
+
             <center>
-                <a class="headerHighlight" href="#">Abenteuer
-                               </a>
 
-                <a href="inventar.html">Inventar
-                                    </a>
 
-                <a href="Charakter.html">Charakter
-                            </a>
-                <a href="#">Reisen
-                           </a>
-                <a href="#">Help
-                            </a>
+                <div class="heroName" id="heroName"> | Lizord |(Level 1)
+
+                </div>
+                <div class="title" id="heroTitle">
+                </div>
+                <div class="Hero" id="heroAvatar">
+                    <div class="avatar-corner top-left">
+                        <div class="corner-number" id="heroLp"></div>
+                        <div class="corner-icon imgLp"></div>
+
+                    </div>
+                    <div class="avatar-corner top-right">
+                        <div class="corner-number" id="heroDmg"></div>
+                        <div class="corner-icon imgDmg"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-left">
+                        <div class="corner-number" id="heroDef"></div>
+                        <div class="corner-icon imgDef"></div>
+
+                    </div>
+                    <div class="avatar-corner bottom-right">
+                        <div class="corner-number" id="heroHit"></div>
+                        <div class="corner-icon imgHit"></div>
+
+                    </div>
+                </div>
+
             </center>
+            <center>
+                <div class="inventarHead">
+                    <div class="iconwrapper">
+                        <div class="walletText" id="wallet"></div>
+                        <div class="walletIcon"></div>
+                    </div>
+                    <span> Inventar  </span>
+                    <div class="iconwrapper">
+                        <div class="rationText" id="rations"></div>
+                        <div class="rationIcon"></div>
+                    </div>
+                </div>
+                <div class="inventar" id="invi">
 
+                    <div class="inventar-item" id="g1"> </div>
+                    <div class="inventar-item" id="g2"> </div>
+                    <div class="inventar-item" id="g3"> </div>
+                    <div class="inventar-item" id="g4"></div>
+                </div>
         </div>
-
-        <div class="quest">
-
-            <button id="Questboard" type="submit">Quest</button>
-
-        </div>
-
-        <div class="Krämer">
-            <form action="Krämer1.html">
-                <button type="submit">Krämer</button>
-            </form>
-        </div>
-        <div class="Taverne">
-            <form action="Taverne.html">
-                <button type="submit">Taverne</button>
-            </form>
-        </div>
-
-        <div class="Arena">
-            <form action="arena.html">
-                <button type="submit">Arena</button>
-            </form>
-        </div>
-
-        <div class="Schmiede">
-            <form action="schmied1.html">
-                <button id="smithy" type="submit">Schmiede</button>
-            </form>
-        </div>
-
-        <div class="SchmiedeTüre" id="schmiedeTüre">
-
-        </div>
+        </center>
 
         <div class="Text1">
-            <div class="erzählung" id="teller">
-                <div id="delayedText1" style="visibility:hidden">Nach einer gefühlten Ewigkeit verlässt du den Wald. <br>Endlich siehst du die ersten Häuser am Horizont
-                </div>
-                <div id="delayedText2" style="visibility:hidden">Als du den Rand des Dorfes erreichst, scheint es dir zuerst sehr rustikal und nicht besonders groß zu sein...</div>
-                <div id="delayedText3" style="visibility:hidden">Egal, denkst du dir - Erstmal einen saufen gehen!!!</div>
+            <div class="erzählung">
+                <p id="delayedText1">
+                    Bevor du zum Rande des Waldes in Richtung des Dorfes aufbrichst fragt dich Waldkauz Möhri:<br><br> "Willst' ned dei Trohfäh vong den Gerangel midnehm'???"
+                </p>
 
+                <center>
+                    <button id="trophäe" class="auswahl" onclick="getyors()">Trophäe: Schlangenkopf                         
+                    </center>
+                               <div class="storyText" id="delayedText3" ></div>
             </div>
+     
+
+
+
+
+             </div>
+
+
+             <div class="next">
+
+                <center>
+                    <div>
+                        <form action="7Dorf1.html">
+                            <button id="goCIty" class="cityButton">Dorf (Proksn?)</button>
+                    </form>
+            </div>
+            </center>
         </div>
     </div>
+
+
+
 </body>
+<script src="https://raw.githack.com/Zatu1337/Zatu1337.github.io/main/getname%20.js"></script>
 
 
 
 <script>
-    // welches script ist hier notwendig evtl nur tooltipfür schilder ?
+    document.getElementById("goCIty").setAttribute("disabled", true);
+
     function showText(id, delay) {
         var elem = document.getElementById(id);
         setTimeout(function() {
@@ -277,71 +522,201 @@
         }, delay * 1000)
     }
     window.onload = function() {
-            showText('delayedText1', 3);
-            showText('delayedText2', 5);
-            showText('delayedText3', 8);
-        }
-        // document.getElementById("smithy").setAttribute("disabled", true);
-    let volume;
-    document.getElementById("Questboard").setAttribute("disabled", true);
+        showText('delayedText1', 1);
 
-    function playAudioOnLoad(audioElement, volume) {
-        audioElement.volume = volume; // Das Audio-Element ist jetzt geladen und bereit, abgespielt zu werden
-        // Warte auf das Laden des Audio-Elements
+    }
+
+    function clickersatz() {
+        document.getElementById('goCIty').click(); // Löse das Click-Event aus
+    }
+
+    document.getElementById("goCIty").addEventListener('touchstart', clickersatz);
+
+    function showHero() { //rest infos 
+        getStoredName();
+        document.getElementById("heroLp").innerText = heroValues.Lp;
+        document.getElementById("heroDmg").innerText = heroValues.Dmg;
+        document.getElementById("heroDef").innerText = heroValues.Def;
+        document.getElementById("heroHit").innerText = heroValues.Hit;
+    }
+
+
+
+    function playAudioOnLoad(audioElement) {
         audioElement.addEventListener('load', () => {
             audioElement.play();
         });
 
         if (audioElement.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) {
-
             audioElement.play();
         }
     }
 
-    function keinerDa() {
-        document.getElementById("teller").innerText = "Du Klopfst an die verschlossene Türe, doch es scheint keiner zu öffnen...";
+    function playBirdSound() {
+        var birdy = document.getElementById("birdySound");
+        birdy.play();
+    };
+
+    function getyors() {
+        document.getElementById("delayedText1").innerText = "Du stopfst dir den martialischen Glücksbringer in die Hemdtasche und machst dich bereit den restlichen weg ins Dorf zu gehen.";
+        document.getElementById("goCIty").removeAttribute("disabled");
+
+        document.getElementById("delayedText3").innerText = "Stolz wie Oskar gehst du die letzten Schritte über den Waldpfad und freust dich schon auf ein warmes Bett und gutes Essen in der Dorfschenke von...'Proksn??', oder wie nannte der alte Waldkauz Möhri das Dörfchen doch Gleich? Die                    Sonne schickt ihre letzten warmen Strahlen grade über den Rand des Horizonts und erleuchtet deinen Pfad, der sich aus dem Wald hin bis zum Dorfrand erstreckt.";
+        addToQuestInventar("Schlangentrophäe");
+        saveProgress();
+        document.getElementById("trophäe").style.display = "none";
+    }
+
+    function goin() {
+
+        document.getElementById("hütte").src = "https://dl.dropbox.com/s/mk6pp9wbj8p4en1/h%C3%BCtte2.png?dl=0"
+    }
+    const inventar = [
+        undefined, undefined, undefined, undefined
+    ];
+
+    //ab hier quest zeug
+    const allItems = [{
+        name: "Rostiges Messer",
+        image: 'https://dl.dropbox.com/scl/fi/dcwjgyk1mkst5n95a6rhq/rostiges-K-chenmesser.jpg?rlkey=ylgzl0yo0ny0d0ijrfayt75us&dl=0',
+        wert: 1,
+        tooltip: "Ein großes rostiges Messer. Hat dir das nicht der Waldkauz geschenkt..?",
+        equip: 'wpnSlot',
+        Dmg: "1 - 4", // 1 bis 4
+        seltenheit: '?'
+
+
+    }];
+    const allQuestItems = [{
+            name: 'Schlangentrophäe',
+            image: 'https://dl.dropbox.com/s/2i1y7d15e24iznw/snake%20head%20loot%20.jpg?dl=0',
+            wert: "?",
+            effekt: "wer weiss?"
+        }, //  buff/ +stats
+
+        {
+            name: "Wolfstrophäe",
+            wert: "?",
+            effekt: "lockSmith"
+        }, // checkstate wörter effekt or name?
+        {
+            name: "",
+            wert: "?",
+            effekt: ""
+        },
+    ]
+
+    function saveProgress() {
+
+        let oldQuestString = JSON.stringify(questItemsFound);
+        localStorage.setItem("Progress", oldQuestString);
+    }
+    const questItemsFound = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, ]; // erste schlange..
+
+    const questItemSchlange1Position = allQuestItems.findIndex(item => item.name === 'Schlangentrophäe'); // Schlangentrophäe
+    const questItemWolf1Position = allQuestItems.findIndex(item => item.name === 'Wolfstrophäe'); // 
+    // const questItemKarte1Position = allQuestItems.findIndex(item => item.name === 'Name'); // 
+    // const questItemMetall1Position = allQuestItems.findIndex(item => item.name === 'Name'); //  
+
+    function addToQuestInventar(itemName) {
+        const foundqItem = allQuestItems.find(item => item.name === itemName);
+
+        if (foundqItem) {
+            const firstEmptyIndex = questItemsFound.findIndex(item => item === undefined || item.name === null);
+            if (firstEmptyIndex !== -1) {
+                questItemsFound[firstEmptyIndex] = foundqItem;
+            } else {
+                console.log('Inventar ist voll. Es kann kein weiteres Item hinzugefügt werden.');
+            }
+        } else {
+            console.log(`Item "${itemName}" ist NICHT in der globalen Liste der Items vorhanden.`);
+        }
+    };
+    const verpflegung = [{ // ich arbeite mit dem begriff savedMoney aus loadcoins und reichtum[0].wert!
+        name: 'Rationen',
+        image: 'https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0',
+        wert: "",
+        anzahl: ""
+
+    }];
+
+    function loadRation() {
+        const savedRationString = localStorage.getItem("Verpflegung"); // objekt wieder holen um damit zu arbeiten
+        const savedRation = JSON.parse(savedRationString);
+        document.getElementById("rations").innerHTML = savedRation;
+        verpflegung[0].anzahl = savedRation;
+
+    }
+    const reichtum = [{ // ich arbeite mit dem begriff savedMoney aus loadcoins und reichtum[0].wert!
+        name: 'Goldmünzen',
+        image: 'https://www.geiger-edelmetalle.de/media/d4/4e/29/1680794041/b659f881b1e5a2f78f09f912f211a5e5.png',
+        wert: ""
+
+    }];
+
+    function loadCoins() {
+        const savedMoneyString = localStorage.getItem("Reichtum");
+        const savedMoney = JSON.parse(savedMoneyString);
+        document.getElementById("wallet").innerText = savedMoney;
+        reichtum[0].wert = savedMoney;
 
     }
 
-    function schwarzesBrett() {
-        document.getElementById("teller").innerText = "Zur Zeit scheint es keine dringenden Aufträge aus dem Dorf zu geben, vielleicht solltest du die Taverne besuchen? ";
-    }
-    document.getElementById("smithy").addEventListener("mouseover", keinerDa);
-    document.getElementById("schmiedeTüre").addEventListener("mouseover", keinerDa);
-    document.getElementById("Questboard").addEventListener("mouseover", schwarzesBrett);
-
-
-    // handleTouchButton('#smithy');
-
-
-
-    //  handleTouchButton('#schmiedeTüre');
-
-
-
-    //  handleTouchButton('#Questboard');
-
-
-
-    let clickCount = 0;
-
-
-    function türKlopf() {
-        clickCount++; // Klickzähler erhöhen
-
-        if (clickCount === 3) {
-            const messageElement = document.getElementById("teller");
-            messageElement.textContent = "Onkel Armin ist nicht daaaa! - fiepst eine weibliche Stimme hinter der schweren Holztüre";
-            clickCount = 0;
+    function compareInventarWithAllItems() {
+        const inventarDivs = document.querySelectorAll('.inventar-item');
+        for (let i = 0; i < 4; i++) {
+            const itemInInventar = inventar[i];
+            const foundItem = itemInInventar && allItems.find(item => item.name === itemInInventar.name);
+            for (let i = 0; i < inventar.length; i++) {
+                if (inventar[i] === null) {
+                    inventar[i] = undefined;
+                }
+            }
+            if (foundItem) {
+                console.log(`Item "${itemInInventar.name}"JA`);
+                inventarDivs[i].innerHTML = `<img src="${foundItem.image}" id="${foundItem.name}" />`;
+                //    inventarDivs[i].addEventListener("mouseover", itemTooltip); // wichtig
+            } else {
+                inventarDivs[i].innerHTML = `<img src="" alt="" />`;
+                //    inventarDivs[i].addEventListener("mouseover", itemTooltip); // wichtig
+                console.log(`Item "${itemInInventar}" NEEEIN :(`);
+            }
         }
     }
-    document.getElementById("schmiedeTüre").addEventListener("click", türKlopf);
-    // handleTouchButton('#schmiedeTüre');
 
-    const villageSound = document.getElementById("citySound");
-    villageSound.play();
-    playAudioOnLoad(villageSound, 0.4); // Funktion zum Abspielen eines Audio-Elements mit einstellbarer Lautstärke, nachdem es geladen wurde
+
+    function loadInvi() {
+        loadCoins();
+
+        loadRation();
+
+        loadHero();
+        showHero();
+        const savedInventarString = localStorage.getItem('Inventar');
+
+        if (savedInventarString) {
+            const savedInventar = JSON.parse(savedInventarString);
+
+            savedInventar.forEach((item, index) => {
+                inventar[index] = item;
+            });
+            for (let i = 0; i < inventar.length; i++) {
+
+                if (inventar[i] === null) {
+                    inventar[i] = undefined;
+                }
+            }
+            console.log('Das Inventar wurde aus dem LocalStorage geladen:');
+
+        } else {
+            console.log('Es wurden keine gespeicherten Inventardaten gefunden.');
+        }
+
+
+        compareInventarWithAllItems();
+
+    }
+    loadInvi();
 </script>
-
 
 </html>
