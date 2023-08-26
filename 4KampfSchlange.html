@@ -394,20 +394,19 @@
         </div>
         <div class="Text1">
             <center>
-                <div>
-                    <p id="delayedText1" style="visibility:hidden">
-                        Gefährlich zischend spannt sich dieses grüne Mistvieh in seine S-förmige Angriffstellung um dich zu attackieren!<br> In Windeseile schnappst du dir einen dicken Ast um dich zu wappnen!
-                    </p>
-                </div>
 
-                <div id="haudrauf">
-                    <button id="haudraufButton" class="haudraufButton">Hau drauf</button>
+                <p id="delayedText1" style="visibility:hidden">
+                    Gefährlich fauchend spannt sich das grüne Mistvieh zum Angriff!<br> In Windeseile schnappst du dir einen dicken Ast um dich zu wappnen!
+                </p>
 
 
 
+                <button id="haudraufButton" class="haudraufButton">Hau drauf</button>
 
 
-                </div>
+
+
+
 
                 <div class="heroFightbox">
                     <div class="coolerText" id="heroAttacke"> </div>
@@ -476,14 +475,14 @@
 
 
     function goToLoot() {
-        document.getElementById("haudrauf").innerHTML = "";
+        document.getElementById("haudraufButton").style.visibility = "hidden";
         document.getElementById("Gegner").setAttribute("class", "lootBild");
         document.getElementById("loot").innerHTML = "<button onclick=\"window.location.href = '5waldkauzhütte.html'\" class=\"buttonLoot\" id=\"getIt\">Nimm deine Trophäe</button> ";
 
     };
 
     function respawn() {
-        document.getElementById("haudrauf").innerHTML = "RESPAWN!! ZURÜCK ZU ANFANG";
+
         document.getElementById("Hero").innerHTML = "<img src=\"https://dl.dropbox.com/s/ukqe88vvybcf3we/ankh.jpg?dl=0\" width=50px height=50px>";
     };
     let enemyHp = 21;
