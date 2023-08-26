@@ -10,23 +10,32 @@
     <title>Nich schnacken, kopp' in Nacken</title>
 
 
-
-
     <style>
-        html {
-            overflow-y: hidden;
-            overflow-x: hidden;
-        }
-        
         * {
             box-sizing: border-box;
             padding: 0;
             margin: 0;
         }
         
+        html {
+            font-size: clamp(14px, 2.2vh, 3.5vh);
+            overflow: hidden;
+        }
+        
+        body {
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
+            background: lavender;
+            background-image: url("https://dl.dropbox.com/s/1uuaw2aenozkzxj/taverne%202.jpg?dl=0");
+            background-position: center, center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
         .container {
-            width: 100vw;
-            height: 100vh;
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             display: grid;
             grid-template-columns: 5% 30% 5% 20% 5% 30% 5%;
@@ -34,8 +43,10 @@
         }
         
         .header {
-            width: auto;
-            height: 5vh;
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(12px, 4vh, 9vh);
+            color: white;
+            font-size: clamp(14px, 2.2vh, 3.5vh);
             display: block;
             text-align: center;
             background-image: url("https://dl.dropbox.com/s/0u2napy9j3yb6on/Download%20%281%29.jpg?dl=0");
@@ -49,12 +60,6 @@
             grid-row-end: 1;
         }
         
-        .headline {
-            color: rgb(0, 0, 0);
-            font-size: 2vh;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        
         .headerHighlight {
             text-decoration: overline underline;
         }
@@ -62,7 +67,7 @@
         a {
             position: relative;
             padding: 2% 0 1% 1%;
-            font-size: 2.5vh;
+            font-size: clamp(13.5px, 2.4vh, 3.5vh);
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: bold;
             color: #ffffff;
@@ -73,29 +78,18 @@
             width: 100%;
         }
         
-        body {
-            height: 100%;
-            width: 100%;
-            background: lavender;
-            background-image: url("https://dl.dropbox.com/s/1uuaw2aenozkzxj/taverne%202.jpg?dl=0");
-            background-position: center, center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-        
         .links {
-            height: 62vh;
-            width: 26.5vw;
+            width: clamp(200px, 16.5vw, 25vw);
+            height: clamp(150px, 61vh, 70vh);
             border-radius: 8%;
             margin-top: 4vh;
             margin-left: -3vw;
             display: table;
-            font-size: 2.7vh;
-            font-weight: 550;
+            font-size: clamp(13.5px, 2.3vh, 3.5vh);
+            font-weight: 630;
             color: rgb(255, 255, 255);
             background-color: #1b2f53;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 3.5px ridge rgba(196, 170, 23, 0.767);
             padding: 2%;
             grid-column-start: 2;
             grid-column-end: 4;
@@ -108,12 +102,13 @@
             width: 25vw;
             display: table;
             text-align: center;
+            margin-left: -3.5vw;
             color: rgb(243, 243, 243);
-            font-size: 2.5vh;
-            font-weight: 777;
+            font-size: clamp(13.5px, 2.4vh, 3.5vh);
+            font-weight: 666;
             font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: rgba(168, 123, 56, 0.742);
-            border: 4px ridge rgb(128, 126, 126);
+            border: 2.5px ridge rgb(128, 126, 126);
             border-radius: 100%;
             grid-column-start: 3;
             grid-column-end: 3;
@@ -124,15 +119,16 @@
         .Text2 {
             height: 12vh;
             width: 25vw;
+            margin-left: -3.5vw;
             display: table;
             text-align: center;
             align-items: center;
             color: rgb(243, 243, 243);
-            font-size: 2.5vh;
-            font-weight: 777;
+            font-size: clamp(13.5px, 2.4vh, 3.5vh);
+            font-weight: 666;
             font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: rgba(168, 123, 56, 0.742);
-            border: 4px ridge rgb(128, 126, 126);
+            border: 2.5px ridge rgb(128, 126, 126);
             border-radius: 100%;
             grid-column-start: 3;
             grid-column-end: 4;
@@ -143,15 +139,16 @@
         .Text3 {
             height: 12vh;
             width: 25vw;
+            margin-left: -3.5vw;
             display: table;
             text-align: center;
             align-items: center;
             color: rgb(243, 243, 243);
-            font-size: 2.5vh;
-            font-weight: 777;
+            font-size: clamp(13.5px, 2.4vh, 3.5vh);
+            font-weight: 666;
             font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: rgba(168, 123, 56, 0.742);
-            border: 4px ridge rgb(128, 126, 126);
+            border: 2.5px ridge rgb(128, 126, 126);
             border-radius: 100%;
             grid-column-start: 3;
             grid-column-end: 4;
@@ -162,7 +159,8 @@
         .iconwrapper {
             height: 5.3vh;
             width: 6.5vw;
-            margin-bottom: 1.8vh;
+            font-size: clamp(14px, 2.4vh, 3.5vh);
+            margin-bottom: clamp(17px, 2.9vh, 3.5vh);
             margin-top: 1.8vh;
             display: inline-block;
             background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
@@ -185,7 +183,7 @@
             width: 2.0vw;
             margin-right: 1.0vw;
             margin-left: 0.9vw;
-            font-size: 2.4vh;
+            font-size: clamp(14px, 2.2vh, 3.5vh);
             font-weight: 666;
             display: inline-block;
         }
@@ -237,17 +235,17 @@
         }
         
         .rechts {
-            height: 79vh;
-            width: 36vw;
-            font-size: 3.0vh;
+            width: clamp(200px, 36.5vw, 45vw);
+            height: clamp(180px, 79vh, 90vh);
+            font-size: clamp(14px, 2.8vh, 3.5vh);
             font-weight: 900;
             border-radius: 8%;
+            margin-right: -3.3vw;
             display: grid;
             color: rgb(255, 255, 255);
             background-color: #1b2f53;
-            border: 5px ridge rgba(196, 170, 23, 0.767);
+            border: 2.5px ridge rgba(196, 170, 23, 0.767);
             text-decoration: underline;
-            color: aliceblue;
             text-align: center;
             justify-content: center;
             align-content: center;
@@ -273,14 +271,14 @@
         }
         
         .menueKarte {
-            height: 56vh;
-            width: 32vw;
+            width: clamp(200px, 36vw, 45vw);
+            height: clamp(150px, 66vh, 90vh);
             display: flex;
             border-radius: 8%;
-            padding-left: 1.2vw;
-            padding-top: 1.2vh;
-            font-size: 2.4vh;
-            font-weight: 800;
+            padding-left: 0.3vw;
+            padding-top: 0.5vh;
+            font-size: clamp(15.5px, 2.9vh, 3.5vh);
+            font-weight: 930;
             font-family: Georgia, 'Times New Roman', Times, serif;
             text-decoration: underline;
         }
@@ -290,21 +288,22 @@
             width: 12vw;
             justify-self: center;
             text-align: center;
-            font-size: 2.5vh;
+            font-size: clamp(13.5px, 2.5vh, 3.5vh);
+            font-weight: 630;
         }
         
         .auswahl {
             margin-top: 0.7vh;
-            margin-bottom: 2.3vh;
+            margin-bottom: clamp(15.5px, 5.5vh, 9.5vh);
         }
         
         .storeTooltip {
-            height: 11.0vh;
+            height: 9.5vh;
             width: 29vw;
             display: table;
-            font-size: 2.3vh;
+            font-size: clamp(14px, 2.6vh, 3.5vh);
             font-weight: 777;
-            padding-top: 2.8vh;
+            margin-top: clamp(-18.5px, -9.5vh, -12.5vh);
             padding-left: 0.7vh;
             padding-right: 0.7vh;
             justify-self: center;
@@ -324,8 +323,9 @@
         
         .iconText {
             height: 3vh;
-            font-size: 2.3vh;
-            width: auto;
+            font-size: clamp(14px, 2.5vh, 3.5vh);
+            font-weight: 777;
+            width: 13vw;
             align-self: center;
             text-align: center;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -547,7 +547,7 @@
             <div class="storeTooltip" id="tooltipBox"> Info</div>
         </div>
 
-        <div class="Texto" id="delayedText4" style="visibility:hidden">
+        <div class="Text1" id="delayedText4" style="visibility:hidden">
 
 
             <p class="" width="75%"> <br>Aus dem hinteren Schankraum hörst du gröhlend: <i> "SAUFEN, SAUFEN, SAUFEN!!!"</i><br> </p>
@@ -577,6 +577,21 @@
 <script src="https://rawcdn.githack.com/Zatu1337/Zatu1337.github.io/44fd06e9405012057b6b28dd187f9615bb379a1f/load%20foood%20and%20moneh.js"></script>
 
 <script>
+    function clickersatz(event) {
+        event.preventDefault(); // Verhindere das Standardverhalten
+        const button = event.target;
+        button.click(); // Löse das Click-Event auf dem Button aus
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const lolButtons = document.querySelectorAll('button[value="lol"]');
+
+        lolButtons.forEach(function(button) {
+            button.addEventListener('touchstart', clickersatz);
+        });
+    });
+
+
     function tagelöhner() {
         window.location.href = "arena.html"
     }; // auf funktion mit github name im url testen..
