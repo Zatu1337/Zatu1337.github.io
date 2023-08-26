@@ -9,13 +9,14 @@
 
     <title>Document</title>
     <style>
-        * {
+        html {
+            font-size: clamp(14px, 2.2vh, 3.5vh);
             overflow: hidden;
         }
         
         body {
-            height: 100vh;
-            width: 100vw;
+            height: clamp(120px, 100vh, 100vh);
+            width: clamp(300px, 100vw, 100vw);
             background-color: rgba(144, 238, 49, 0.403);
             background-image: url("https://dl.dropbox.com/s/i9atx4eoqpptsbz/2019-09-26-waldgipfel.jpg?dl=0");
         }
@@ -26,6 +27,7 @@
         }
         
         .killCount {
+            font-size: clamp(10px, 2.0vh, 3.5vh);
             height: 14vh;
             width: 12vw;
             margin-left: 0.3vw;
@@ -37,6 +39,7 @@
         .start {
             height: 7vh;
             width: 8vw;
+            font-size: clamp(14px, 2.2vh, 3.5vh);
         }
         
         .infoWrapper {
@@ -44,7 +47,7 @@
             height: 15h;
             width: 88vw;
             color: aliceblue;
-            font-size: 2.5vh;
+            font-size: clamp(12px, 2.5vh, 3.5vh);
             font-weight: 588;
             background-color: #000000;
             margin-bottom: 3vh;
