@@ -9,6 +9,11 @@
 
 
     <style>
+        html {
+            font-size: clamp(14px, 2.2vh, 3.5vh);
+            overflow: hidden;
+        }
+        
         * {
             padding: 0;
             margin: 0;
@@ -16,7 +21,8 @@
         }
         
         body {
-            height: 100vh;
+            height: clamp(120px, 100vh, 100vh);
+            width: clamp(300px, 100vw, 100vw);
             display: flex;
             background: blue;
             background-image: url("https://dl.dropbox.com/s/65loah7hbyfyxm3/wald%203.jpg?dl=0");
@@ -154,7 +160,6 @@
             border: none;
             background-size: 300% 100%;
             border-radius: 50px;
-            moz-transition: all .4s ease-in-out;
             -o-transition: all .4s ease-in-out;
             -webkit-transition: all .4s ease-in-out;
             transition: all .4s ease-in-out;
@@ -162,7 +167,6 @@
         
         .bn632-hover:hover {
             background-position: 100% 0;
-            moz-transition: all .4s ease-in-out;
             -o-transition: all .4s ease-in-out;
             -webkit-transition: all .4s ease-in-out;
             transition: all .4s ease-in-out;
