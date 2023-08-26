@@ -12,29 +12,29 @@
 
     <style>
         html {
-            font-size: clamp(18px, 2.5vh, 3.5vh);
+            font-size: clamp(14px, 2.2vh, 3.5vh);
             overflow: hidden;
         }
         
-        .container {
-            width: clamp(300px, 100vw, 101vw);
-            height: clamp(300px, 100vh, 101vh);
-            display: grid;
-            box-sizing: border-box;
-            color: rgb(255, 255, 255);
-            grid-template-columns: 5% 10% 14% 45% 25% 2%;
-            grid-template-rows: 9% 68% 12% 11%;
-        }
-        
         body {
-            width: clamp(300px, 100vw, 101vw);
-            height: clamp(300px, 100vh, 101vh);
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
             margin: 0;
             background-image: url("https://i.pinimg.com/originals/8c/83/42/8c8342b7b3176cc8fc6c4d190ed004d0.jpg");
             background-size: 100% 100%;
             background-position: center, center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+        }
+        
+        .container {
+            width: clamp(300px, 100vw, 100vw);
+            height: clamp(120px, 100vh, 100vh);
+            display: grid;
+            box-sizing: border-box;
+            color: rgb(255, 255, 255);
+            grid-template-columns: 5% 10% 14% 45% 25% 2%;
+            grid-template-rows: 9% 68% 12% 11%;
         }
         
         .Icon {
@@ -360,7 +360,7 @@
             height: 3.5vh;
             width: 96%;
             color: rgb(247, 247, 247);
-            font-size: 2.4vh;
+            font-size: clamp(11px, 2.3vh, 3.5vh);
             font-weight: 800;
             border-radius: 8%;
             text-decoration: underline;
@@ -438,10 +438,13 @@
         
         .kampftext {
             /*  mid   */
+            width: clamp(90px, 46vw, 51vw);
+            height: clamp(267px, 77vh, 85vh);
+            margin-left: clamp(-0.3vw, -2.5vw, -3.8vw);
+            font-size: clamp(12px, 1.5vh, 2.8vh);
+            text-align: center;
             box-sizing: border-box;
-            height: 65vh;
-            width: 47vw;
-            padding: 10px;
+            padding: 6px;
             color: rgb(255, 255, 255);
             background-image: url("https://dl.dropbox.com/scl/fi/uht7l0y1aax5kef9kfp72/arenazoom.jpg?rlkey=usnkacvksw6wf7ooohtdjky0e&dl=0");
             background-size: 100% 100%;
@@ -450,13 +453,10 @@
             background-blend-mode: lighten;
             justify-content: center;
             align-content: center;
-            margin-top: 12vh;
-            margin-left: clamp(-1.5vw, -2.5vw, -3.8vw);
-            text-align: center;
+            margin-top: 5vh;
             border: 3.3px ridge #97803496;
             border-radius: 8%;
-            font-size: clamp(12px, 1.5vh, 2.8vh);
-            font-weight: 888;
+            font-weight: 777;
             grid-column-start: 4;
             grid-column-end: 5;
             grid-row-start: 2;
@@ -1298,6 +1298,14 @@
 
     };
 
+    function clickersatz() {
+        document.getElementById('fightButton').click(); // Löse das Click-Event aus
+    }
+
+
+
+    document.getElementById("leaveArenaButton").addEventListener('touchstart', clickersatz);
+    document.getElementById("healerButton").addEventListener('touchstart', clickersatz);
 
     function randomArenaMonster() {
         document.getElementById("arenaText").innerHTML = "Beide Kontrahenten haben den Sand der Arena betreten und sind bereit auf leben und Tod zu kämpfen!";
@@ -1307,7 +1315,9 @@
 
 
         document.querySelector('#fightButton').addEventListener('click', attackflee);
-        //  handleTouchButton('#fightButton');
+
+        document.getElementById("fightButton").addEventListener('touchstart', clickersatz);
+
         //   document.querySelector('#fightButton2').addEventListener('click', battleLoop);
 
         let arenaGegner = Math.floor(Math.random() * 99) + 1;
