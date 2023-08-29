@@ -49,8 +49,8 @@
         }
         
         .links {
-            height: clamp(172px, 76vh, 55vh);
-            width: clamp(70px, 16.5vw, 34vw);
+            height: clamp(152px, 86vh, 55vh);
+            width: clamp(85px, 25.5vw, 32vw);
             display: table;
             text-align: center;
             color: #ffffff;
@@ -73,24 +73,34 @@
         }
         
         .inventarHead {
-            height: 9vh;
-            width: 23vw;
+            height: 24.5vh;
+            width: 24vw;
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-content: center;
             align-items: center;
             justify-items: center;
             align-self: center;
-            text-align: center;
             justify-self: center;
             font-size: 2.5vh;
         }
         
+        .iconwrapper {
+            height: 5.8vh;
+            width: 6.0vw;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            justify-content: space-evenly;
+            background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
+            background-size: 100% 100%;
+        }
+        
         .walletIcon {
-            height: 2.5vh;
-            width: 1.0vw;
-            margin-top: 0.3vh;
-            margin-left: -1.1vw;
+            height: 1.5vh;
+            width: 0.6vw;
             background-image: url("https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -99,21 +109,16 @@
         }
         
         .walletText {
-            height: 3.3vh;
-            width: 3.0vw;
-            margin-left: -0.9vw;
-            margin-right: 1.0vw;
-            font-size: 2.8vh;
-            font-weight: 777;
+            height: 3.0vh;
+            width: 2.0vw;
+            font-size: 2.6vh;
+            font-weight: 666;
             display: inline-block;
         }
         
         .rationIcon {
-            height: 2.8vh;
-            width: 1.7vw;
-            margin-top: -0.5vh;
-            margin-left: -1.8vw;
-            margin-right: 0.3vw;
+            height: 2.3vh;
+            width: 1.2vw;
             background-image: url("https://dl.dropbox.com/scl/fi/qcna317ped0sk3swo42mh/marker-nahrung.PNG?rlkey=p4v13qjskk3kltd7vrpv1nlr0&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -122,12 +127,10 @@
         }
         
         .rationText {
-            height: 3.3vh;
-            width: 3.2vw;
-            margin-left: 0.5vw;
-            margin-right: 1.0vw;
-            font-size: 2.8vh;
-            font-weight: 777;
+            height: 3.0vh;
+            width: 2.0vw;
+            font-size: 2.6vh;
+            font-weight: 666;
             display: inline-block;
         }
         
@@ -157,14 +160,6 @@
             align-items: center;
             justify-content: center;
             font-weight: bolder;
-        }
-        
-        .iconwrapper {
-            height: 5.3vh;
-            width: 7.7vw;
-            display: inline-block;
-            background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
-            background-size: 100% 100%;
         }
         
         .imgLp {
@@ -272,18 +267,17 @@
             height: clamp(15px, 2.2vh, 3.5vh);
             width: 14vw;
             color: rgb(247, 247, 247);
-            font-size: clamp(12x, 2.2vh, 3.5vh);
-            font-weight: 800;
+            font-size: clamp(11x, 2.1vh, 3.5vh);
+            font-weight: 650;
         }
         
         .inventar {
-            height: 30vh;
-            width: 18.5vw;
-            margin-top: 0.65vh;
+            height: clamp(55px, 24vh, 33.5vh);
+            width: clamp(45px, 14vw, 23vw);
             display: grid;
-            grid-template-rows: repeat(3, 8.5vh);
-            row-gap: 10px;
-            grid-template-columns: repeat(2, 5.5vw);
+            grid-template-rows: repeat(3, 8.0vh);
+            row-gap: 5px;
+            grid-template-columns: repeat(2, 5.1vw);
             justify-content: center;
             align-content: center;
             background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
@@ -292,25 +286,20 @@
         }
         
         .inventar-item {
-            height: 6.3vh;
-            width: 4vw;
-            padding: 2px;
+            height: 6vh;
+            width: 3.8vw;
             display: flex;
             color: rgb(0, 0, 0);
             align-self: center;
             justify-self: center;
-            margin-top: 17.5vh;
-            border: 2.5px ridge rgba(77, 77, 77, 0.123);
+            margin-top: 16.5vh;
+            border: 0.5px ridge rgba(63, 44, 3, 0.178);
         }
-        /* Stil der Bilder innerhalb der DIV-Bereiche */
         
         .inventar-item img {
             width: 100%;
-            /* Das Bild auf die volle Breite des DIVs skalieren */
             height: 100%;
-            /* Das Bild auf die volle Höhe des DIVs skalieren */
             object-fit: fill;
-            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
         }
         
         .Text1 {
@@ -376,11 +365,11 @@
         }
         
         .auswahl {
-            height: clamp(15px, 22vh, 15.5vh);
-            width: clamp(33px, 28vw, 25vw);
-            font-size: clamp(12px, 2.3vh, 2.52vh);
-            font-weight: 800;
-            padding-top: 2.0vh;
+            height: clamp(32px, 11vh, 22vh);
+            width: clamp(49px, 22vw, 22vw);
+            font-size: clamp(11.5px, 2.3vh, 3.5vh);
+            padding-top: 7px;
+            font-weight: 666;
             border: none;
             text-align: center;
             background-color: rgba(127, 255, 212, 0);
@@ -395,7 +384,7 @@
             width: clamp(83px, 15vw, 25vw);
             font-size: clamp(11px, 1.8vh, 2.52vh);
             color: rgb(2, 3, 4);
-            padding-bottom: clamp(8px, 1.0vh, 2.52vh);
+            padding-bottom: clamp(10px, 1.8vh, 2.52vh);
             text-align: center;
             font-weight: 650;
             background-color: rgba(127, 255, 212, 0);
@@ -455,22 +444,23 @@
             <center>
                 <div class="inventarHead">
                     <div class="iconwrapper">
-                        <div class="walletText" id="wallet"></div>
+                        <div class="walletText" id="wallet"> </div>
                         <div class="walletIcon"></div>
                     </div>
-                    <span> Inventar  </span>
+                    <div class="inventar" id="invi">
+
+                        <div class="inventar-item" id="g1"> </div>
+                        <div class="inventar-item" id="g2"> </div>
+                        <div class="inventar-item" id="g3"> </div>
+                        <div class="inventar-item" id="g4"></div>
+                    </div>
                     <div class="iconwrapper">
-                        <div class="rationText" id="rations"></div>
+                        <div class="rationText" id="rations"> </div>
+
                         <div class="rationIcon"></div>
                     </div>
                 </div>
-                <div class="inventar" id="invi">
 
-                    <div class="inventar-item" id="g1"> </div>
-                    <div class="inventar-item" id="g2"> </div>
-                    <div class="inventar-item" id="g3"> </div>
-                    <div class="inventar-item" id="g4"></div>
-                </div>
         </div>
         </center>
 
