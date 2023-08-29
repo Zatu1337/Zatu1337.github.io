@@ -340,19 +340,17 @@
 
 
         <div class="Text1">
-
             <center>
                 <p> <i>  DU ERSCHLÄGST DIE SCHLANGE !!! </center>  In deinen Ohren rauscht noch das Adrenalin... der Waldkauz ist nun auch fast bei dir und nickt vor Ehrfurcht deines Geschickes! Er fragt dich feist grinsend warum du nackt bist
                 und reicht dir einen Leeren Kartoffelsack, damit du deine Blöße bedecken kannst, dann ein scharfes kleines Messer für den Apfel den er dir auf den Schock anbietet.
                 </p>
      
-            <div class="delay" id="delayedText1" style="visibility:hidden"> Ein wenig Moos wächst auf seinen Schultern und am Knie seiner Lederhosse leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.</i>
-        </div>
-        <div class="delay" id="delayedText2" style="visibility:hidden">"Scheedasthirbis magudda! Do hoschta abba Schweighabt o bischta Krigga?"</div>
-        <div class="delay" id="delayedText3" style="visibility:hidden"><i>Er scheint friedlich und sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura.</div></i>
+        
+        <div class="delay" id="delayedText2" style="visibility:hidden"><i> Scheedasthirbis magudda! Do hoschta abba Schweighabt o bischta Krigga? Ih moa dia a Denksdran von dei Schlangfieh! </i> </div>
+        <div class="delay" id="delayedText3" style="visibility:hidden"><i>Ein wenig Moos wächst auf seinen Schultern und am Knie seiner Lederhosse leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.. Er scheint friedlich und sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura. </div></i>
             <span>
-              <div class="delay" id="delayedText4" style="visibility:hidden">Ih moa dia a Denksdran von dei Schlangfieh, nu saufmerein dannah ghescht na Proksn oa?
-             <br>   <center>
+              <div class="delay" id="delayedText4" style="visibility:hidden">Nu saufmer eein un' dannah ghescht na Proksn oa?
+             <center>
 
             <div class="beero"> Prost!
                 
@@ -476,9 +474,8 @@
         }, delay * 1000)
     }
     window.onload = function() {
-        showText('delayedText1', 1);
-        showText('delayedText2', 4);
-        showText('delayedText3', 8);
+             showText('delayedText2', 2);
+        showText('delayedText3', 5);
         aGift();
         saveInvi();
         reichtum[0].wert += 100; // damit man sich wenigstens richtig heilen kann...
