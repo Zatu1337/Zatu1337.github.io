@@ -44,7 +44,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            }
+        }
         
         .container {
             width: clamp(300px, 99vw, 100vw);
@@ -328,10 +328,10 @@
         }
         
         .haudraufButton {
-            height: clamp(16px, 10vh, 14.5vh);
+            height: clamp(16px, 8vh, 14.5vh);
             width: clamp(33px, 15vw, 25vw);
             color: rgb(0, 0, 0);
-            font-size: clamp(12.5px, 2.8vh, 5.5vh);
+            font-size: clamp(12.5px, 2.6vh, 5.5vh);
             font-weight: 700;
             font-family: cursive 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             background-color: rgba(127, 255, 212, 0);
@@ -353,7 +353,7 @@
         
         .coolerText {
             height: clamp(13px, 3.5vh, 5.5vh);
-         width: clamp(138px, 21vw, 31vw);
+            width: clamp(138px, 21vw, 31vw);
             border: 0.5px goldenrod ridge;
         }
     </style>
@@ -406,15 +406,15 @@
                 <button id="haudraufButton" class="haudraufButton">Hau drauf</button>
 
                 <div class="heroFightbox">
-                                       <p class="coolerText" id="heroAttacke"> </p>
-                        <p class="coolerText" id="heroVerteidigung"> </p>
+                    <p class="coolerText" id="heroAttacke">Greif an! </p>
+                    <p class="coolerText" id="heroVerteidigung">Verteidige dich! </p>
 
                 </div>
 
                 <div class="enemyFightbox">
                     <p id="GegnerLeben" class="coolerText">Lebenspunkte d. Gegners </pv>
-                        <p class="coolerText" id="enemyAttacke"> </p>
-                        <p class="coolerText" id="enemyVerteidigung"> </p>
+                        <p class="coolerText" id="enemyAttacke">Feind greift an! </p>
+                        <p class="coolerText" id="enemyVerteidigung">Feind versucht sich zu verteidigen! </p>
 
                 </div>
 
@@ -451,9 +451,6 @@
         document.getElementById("heroDef").innerText = heroValues.Def;
         document.getElementById("heroHit").innerText = heroValues.Hit;
     }
-    document.getElementById("GegnerLeben").innerHTML = "Dein Feind ist UNVERLETZT";
-
-    document.getElementById("DeinLeben").innerHTML = "(Trefferpunkte) Unversehrt gehst du in den Kampf";
 
     function clickersatz() {
         document.getElementById('haudraufButton').click(); // Löse das Click-Event aus
@@ -585,12 +582,12 @@
         } else if (fleeRoll >= heroValues.Dodge && fleeRoll <= 16) {
             document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Voll auf die 12 kassiert!";
             heroValues.Lp -= takeDmg;
-         
+
             return;
         } else if (fleeRoll >= 17) {
             document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: FURCHTBAR erwischt worden! ";
             heroValues.Lp -= (takeDmg * 1.5);
-          
+
             return;
         }
     };
