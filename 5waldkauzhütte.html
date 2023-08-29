@@ -17,6 +17,8 @@
     <style>
         html {
             font-size: clamp(14px, 2.2vh, 3.5vh);
+            letter-spacing: clamp(0.1px, 0.3px, 1px);
+            line-height: clamp(12.4px, 16px, 18px);
             overflow: hidden;
         }
         
@@ -41,7 +43,7 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             display: grid;
             grid-template-columns: 25% 25% 25% 25%;
-            grid-template-rows: 10% 45% 35% 10%;
+            grid-template-rows: 10% 35% 45% 10%;
         }
         
         .h1 {
@@ -52,6 +54,7 @@
             height: clamp(72px, 55vh, 55vh);
             width: clamp(60px, 25vw, 34vw);
             display: table;
+            color: #ffffff;
             font-size: clamp(14px, 2.4vh, 3.5vh);
             font-weight: 900;
             margin-left: 1.8vw;
@@ -60,7 +63,6 @@
             padding-bottom: 0.9vh;
             padding-left: 0.35vw;
             padding-right: 0.35vw;
-            color: #ffffff;
             background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -205,8 +207,8 @@
             width: 14vw;
             margin-top: 0.5vh;
             color: rgb(247, 247, 247);
-            font-size: clamp(12px, 2.2vh, 3.5vh);
-            font-weight: 700;
+            font-size: clamp(14px, 2.2vh, 3.5vh);
+            font-weight: 800;
             border-radius: 8%;
             text-decoration: underline;
             background-size: cover;
@@ -215,21 +217,20 @@
         }
         
         .Text1 {
-            width: clamp(210px, 42vw, 61vw);
-            height: clamp(120px, 63vh, 85vh);
+            width: clamp(210px, 43vw, 61vw);
+            height: clamp(120px, 68vh, 85vh);
             font-size: clamp(10px, 2.2vh, 2.32vh);
-            font-weight: 735;
+            font-weight: 635;
             border-radius: 8%;
-            margin-left: 3.5vw;
-            padding-left: 1.5vw;
-            padding-right: 1.5vw;
+            margin-left: 3.9vw;
+            padding-left: 1.0vw;
+            padding-right: 1.0vw;
             color: rgb(255, 255, 255);
             display: table;
             text-align: justify;
             text-justify: auto;
             background-color: #27411c;
             align-content: center;
-            align-self: center;
             border: 2.5px ridge rgba(255, 255, 255, 0.507);
             grid-column-start: 2;
             grid-column-end: 4;
@@ -237,9 +238,12 @@
             grid-row-end: 4;
         }
         
-        .delay {       font-size: clamp(10px, 2.1vh, 2.32vh);
-                        font-weight: 555;
-            margin: 1.5% 1.5% 1.5% 1.5%;
+        .delay {
+            letter-spacing: clamp(0.1px, 0.3px, 1px);
+            line-height: clamp(12.4px, 16px, 18px);
+            font-size: clamp(10px, 2.1vh, 2.32vh);
+            font-weight: 655;
+            margin: 0.5% 0.5% 0.5% 0.5%;
         }
         
         a {
@@ -255,11 +259,6 @@
             width: 100%;
         }
         
-        a span {
-            position: absolute;
-            display: block;
-        }
-        
         button {
             height: clamp(15px, 22vh, 15.5vh);
             width: clamp(33px, 28vw, 25vw);
@@ -270,8 +269,6 @@
             background-size: 100% 100%;
             border: none;
         }
-        
-       
         
         .hütte {
             height: 35vh;
@@ -295,8 +292,8 @@
         }
         
         .beero {
-            height: clamp(40px, 18vh, 29vh);
-            width: clamp(55px, 14vw, 25vw);
+            height: clamp(30px, 18vh, 29vh);
+            width: clamp(50px, 14vw, 25vw);
             margin-top: clamp(5px, 1vh, 2vh);
             border-radius: 10%;
             background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQirAB5u0qdXbSut1WiOtP0P6MTEkcTnc4yBnpYh65n4i4ZYrFURgJiLhVIJh2iki2jwPg&usqp=CAU");
@@ -346,22 +343,24 @@
 
 
         <div class="Text1">
+
             <center>
-                <p> <i>  DU ERSCHLÄGST DIE SCHLANGE !!! </center> Dein Herz RAST vor Adrenalin!<br> Der Waldkauz ist nun bei dir und staunt vor Ehrfurcht! Er fragt grinsend warum du nackt bist, reicht dir einen Leeren Kartoffelsack, dann ein kleines Messer für den Apfel den er dir auf den Schock anbietet.
+                <p> <i>  DU ERSCHLÄGST DIE SCHLANGE !!! </center>  In deinen Ohren rauscht noch das Adrenalin... der Waldkauz ist nun auch fast bei dir und nickt vor Ehrfurcht deines Geschickes! Er fragt dich feist grinsend warum du nackt bist
+                und reicht dir einen Leeren Kartoffelsack, damit du deine Blöße bedecken kannst, dann ein scharfes kleines Messer für den Apfel den er dir auf den Schock anbietet.
                 </p>
-    
-            <div class="delay" id="delayedText1" style="visibility:hidden">Moos wächst auf seinen Leder-Schulterpolstern, am Knie seiner Wollhose leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.</i>
+     
+            <div class="delay" id="delayedText1" style="visibility:hidden"> Ein wenig Moos wächst auf seinen Schultern und am Knie seiner Lederhosse leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.</i>
         </div>
-        <p class="delay" id="delayedText2" style="visibility:hidden">"Scheedasthirbis magudda! Do hoschta abba Schweighabt o bischta Krigga?"</p>
-        <div class="delay" id="delayedText3" style="visibility:hidden"><i>Er scheint friedlich, sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura.</div></i>
+        <div class="delay" id="delayedText2" style="visibility:hidden">"Scheedasthirbis magudda! Do hoschta abba Schweighabt o bischta Krigga?"</div>
+        <div class="delay" id="delayedText3" style="visibility:hidden"><i>Er scheint friedlich und sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura.</div></i>
             <span>
-              <p class="delay" id="delayedText4" style="visibility:hidden">Ih moa dia a Denksdran von dei Schlangfieh, nu saufmerein dannah ghescht na Proksn oa?
-               <center>
+              <div class="delay" id="delayedText4" style="visibility:hidden">Ih moa dia a Denksdran von dei Schlangfieh, nu saufmerein dannah ghescht na Proksn oa?
+             <br>   <center>
 
             <div class="beero"> Prost!
                 
                 </div>  </center> 
-                 </p>
+                 </div>
             </span>
 
         </div>
