@@ -587,12 +587,12 @@
         } else if (fleeRoll >= heroValues.Dodge && fleeRoll <= 16) {
             document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: Voll auf die 12 kassiert!";
             heroValues.Lp -= takeDmg;
-            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte: " + heroValues.Lp;
+         
             return;
         } else if (fleeRoll >= 17) {
             document.getElementById("heroVerteidigung").innerHTML = "Verteidigung: FURCHTBAR erwischt worden! ";
             heroValues.Lp -= (takeDmg * 1.5);
-            document.getElementById("DeinLeben").innerHTML = "Deine Lebenspunkte betragen: " + heroValues.Lp;
+          
             return;
         }
     };
