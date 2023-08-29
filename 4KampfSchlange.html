@@ -510,7 +510,7 @@
 
     function checkYourLife() {
         if (heroValues.Lp <= 0 || heroValues.Lp === 0) {
-            document.getElementById("DeinLeben").innerHTML = "Du wirst (im ganzen) gefressen!";
+            
 
             updateLPDisplay();
 
@@ -596,21 +596,21 @@
         console.log("gegner greift an ");
         console.log(enemyAttackRoll);
         if (enemyAttackRoll <= 4 || enemyAttackRoll === 4) {
-            document.getElementById("enemyAttacke").innerHTML = "Angriff: MEISTERLICHER Angriff!";
+        
             enemyHp -= (1.5 * giveHeroDmg); //garantierter treffer für crit
             flee();
 
             return;
         } else if (enemyAttackRoll >= 5 && enemyAttackRoll <= enemyHit) {
-            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Feind attackiert dich gezielt!";
+    
             flee();
 
             return;
         } else if (enemyAttackRoll >= enemyHit && enemyAttackRoll <= 17) {
-            document.getElementById("enemyAttacke").innerHTML = "Angriff: Dein Fend schwingt weit an dir vorbei!";
+ 
             return;
         } else if (enemyAttackRoll >= 17) {
-            document.getElementById("enemyAttacke").innerHTML = "FURCHTBAR daneben, der Feind verletzt sich selbst in seiner Rage!";
+       
             enemyHp -= 1;
             checkEnemyLife();
             return;
@@ -628,19 +628,19 @@
         console.log("gegner weicht aus");
         console.log(enemyFleeRoll);
         if (enemyFleeRoll <= 4 || enemyFleeRoll === 4) { //evtl +1 hp... oder so
-            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Meisterlich ausgewichen - keine Ahnung wo du hingezielt hast!";
+  
             enemyHp += 1;
             return;
         } else if (enemyFleeRoll >= 5 && enemyFleeRoll <= enemyDodge) {
-            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Das Vieh duckt sich!";
+    
             return;
         } else if (enemyFleeRoll >= enemyDodge && enemyFleeRoll <= 16) {
-            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Du schlitzt den Gegner auf!";
+ 
             enemyHp -= takeHeroDmg;
             document.getElementById("GegnerLeben").innerHTML = "Vieh hat " + enemyHp + "Lebenspunkte!";
             return;
         } else if (enemyFleeRoll >= 17) {
-            document.getElementById("enemyVerteidigung").innerHTML = "Verteidigung: Voll in deine Waffe gerannt! ";
+   
             enemyHp -= (takeHeroDmg * 1.5);
             document.getElementById("GegnerLeben").innerHTML = "Vieh hat " + enemyHp + "Lebenspunkte!";
             return;
