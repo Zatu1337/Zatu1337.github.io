@@ -379,6 +379,17 @@
 
 
 <script>
+
+        function clickersatz() {
+        document.getElementById('nexto').click(); // Löse das Click-Event aus
+    }
+
+    document.getElementById("nexto").addEventListener('touchstart', clickersatz);
+    document.getElementById("nexto").addEventListener('click', goLichtung);
+
+    function goLichtung() {
+        window.location.href = "6Lichtung1.html";
+    }
     function showHero() { //rest infos 
         getStoredName();
         document.getElementById("heroLp").innerText = heroValues.Lp;
