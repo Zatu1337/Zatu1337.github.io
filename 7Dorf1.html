@@ -32,8 +32,8 @@
         }
         
         .container {
-            width: clamp(300px, 100vw, 100vw);
-            height: clamp(120px, 100vh, 100vh);
+            width: clamp(300px, 99vw, 100vw);
+            height: clamp(120px, 95vh, 100vh);
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             display: grid;
             grid-template-columns: 25% 25% 25% 25%;
@@ -42,11 +42,11 @@
         
         .header {
             width: clamp(300px, 100vw, 100vw);
-            height: clamp(16px, 7vh, 9vh);
+            height: clamp(15px, 5.5vh, 11vh);
             color: white;
-            font-size: clamp(13.5px, 2.5vh, 3.5vh);
-            margin-bottom: 0.3vh;
-            font-weight: 777;
+            font-size: clamp(14px, 2.3vh, 3.5vh);
+            padding-top: 0.5vh;
+            margin-bottom: 0.2vh;
             background: linear-gradient(#301515, #27411c, #1b2f53);
             background-image: url("https://dl.dropbox.com/s/ytueykwig0dzk97/holzheader2.jpg?dl=0 ");
             background-repeat: no-repeat;
@@ -76,13 +76,6 @@
             text-decoration: overline underline;
         }
         
-        .headline {
-            color: rgb(0, 0, 0);
-            font-size: 2vh;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        /*Möchte hier den Background und buttons auch progressive - responsive evtl background img anpassen neue größe */
-        
         .Text1 {
             width: clamp(150px, 48vw, 55vw);
             height: clamp(97px, 18vh, 25vh);
@@ -94,7 +87,7 @@
             justify-self: center;
             align-items: flex;
             margin: 0 15% 5% 25%;
-            font-size: 2.9vh;
+            font-size: clamp(12.5px, 2.5vh, 3.5vh);
             font-weight: 750;
             grid-column-start: 2;
             grid-column-end: 4;
