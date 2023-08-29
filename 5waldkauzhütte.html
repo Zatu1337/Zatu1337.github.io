@@ -16,7 +16,9 @@
 
     <style>
         html {
-            font-size: clamp(14px, 2.2vh, 3.5vh);
+            font-size: clamp(13.5px, 2.2vh, 3.5vh);
+            font-family: Arial, Helvetica, sans-serif;
+            line-break: auto;
             overflow: hidden;
         }
         
@@ -234,7 +236,7 @@
         .delay {
             font-size: clamp(10px, 2.1vh, 2.32vh);
             font-weight: 655;
-            margin: 0.2% 0.2% 0.2% 0.2%;
+            margin: 0.4% 0.4% 0.4% 0.4%;
         }
         
         a {
@@ -245,7 +247,7 @@
             color: #c50b0b;
             text-decoration: none;
             text-transform: uppercase;
-            transition: 0.5s;
+            transition: 0.2s;
             letter-spacing: 1px;
             width: 100%;
         }
@@ -283,10 +285,11 @@
         }
         
         .nextButton {
-            height: clamp(23px, 8vh, 22vh);
+            height: clamp(28px, 8vh, 22vh);
             width: clamp(43px, 18vw, 22vw);
-            font-size: clamp(12px, 2.3vh, 3.5vh);
-            font-weight: 666;
+            font-size: clamp(13px, 2.5vh, 3.5vh);
+            padding-top: 3px;
+            font-weight: 866;
             background-color: rgba(127, 255, 212, 0);
             background-image: url("https://dl.dropbox.com/scl/fi/rddmrugpm3393et6sbk1y/green_button_plakette-removebg-preview.png?rlkey=vdrdbfwujbdz3pa9kmmrymcuy&dl=0");
             background-size: 100% 100%;
@@ -334,35 +337,37 @@
 
 
         <div class="Text1">
-            <center>
-                <p> DU ERSCHLÄGST DIE SCHLANGE !!! </center> In deinen Ohren rauscht noch das Adrenalin... der Waldkauz ist nun auch fast bei dir und nickt vor Ehrfurcht deines Geschickes! Er fragt dich feist grinsend warum du nackt bist und reicht dir einen
+            <center><br>
+                <i>    DU ERSCHLÄGST DIE SCHLANGE !!! </center> In deinen Ohren rauscht noch das Adrenalin... der Waldkauz ist nun auch fast bei dir und nickt vor Ehrfurcht deines Geschickes! Er fragt dich feist grinsend warum du nackt bist und reicht dir einen
             Leeren Kartoffelsack, damit du deine Blöße bedecken kannst, dann ein scharfes kleines Messer für den Apfel den er dir auf den Schock anbietet.
-            </p>
+        </i>
 
-            <div class="delay" id="delayedText2" style="visibility:hidden"><i> Scheedasthirbis magudda! Do hoschta abba Schweighabt o bischta Krigga? Ih moa dia a Denksdran von dei Schlangfieh! </i> </div>
-            <div class="delay" id="delayedText3" style="visibility:hidden"><i>Ein wenig Moos wächst auf seinen Schultern und am Knie seiner Lederhosse leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.. Er scheint friedlich und sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura. </div></i>
+                <p class="delay" id="delayedText2" style="visibility:hidden"><i> <br>"Schee'dast'hirbis magudda! Do hoschta abba Schweighabt o bischta Krigga? Ih moa dia a Denksdran von dei Schlangfieh!" schwafelt er dir entgegen. </i> </p>
 
-                <div class="delay" id="delayedText4" style="visibility:hidden">
-                    <p> Nu saufmer eein un' dannah ghescht na Proksn oa?</p <center>
+                <div class="delay" id="delayedText3" style="visibility:hidden"><i>   <br>Ein wenig Moos wächst auf seinen Schultern und am Knie seiner Lederhosse leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.. Er scheint friedlich und sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura. </div></i>
 
-                    <div class="beero"> !
+                    <div class="delay" id="delayedText4" style="visibility:hidden">
+                        <p> Nu saufmer eein un' dannah ghescht na Proksn oa?</p>
+                        <center>
+
+                            <div class="beero"> !
+
+                            </div>
+                        </center>
+                    </div>
+
+
+                </div>
+
+
+                <div class="rechts" id="waldrand">
+                    <div class="hütte">
+
 
                     </div>
-                    </center>
-                </div>
-
-
-            </div>
-
-
-            <div class="rechts" id="waldrand">
-                <div class="hütte">
-
+                    <button class="nextButton" id="nexto"> Waldrand</button>
 
                 </div>
-                <button class="nextButton" id="nexto"> Waldrand</button>
-
-            </div>
 
 
         </div>
