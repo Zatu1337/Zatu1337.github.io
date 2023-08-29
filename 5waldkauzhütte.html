@@ -237,7 +237,6 @@
         }
         
         .delay {
-           
             font-size: clamp(10px, 2.1vh, 2.32vh);
             font-weight: 655;
             margin: 0.2% 0.2% 0.2% 0.2%;
@@ -268,8 +267,8 @@
         }
         
         .hütte {
-            height: 35vh;
-         width: clamp(18px, 20vw, 15vw);
+            height: clamp(40px, 35vh, 35vh);
+            width: clamp(12px, 20vw, 22vw);
             border: 3px ridge rgba(255, 255, 255, 0.507);
             border-radius: 8%;
             background-image: url("https://cdn.pixabay.com/photo/2018/04/06/00/25/trees-3294681_960_720.jpg");
@@ -278,8 +277,8 @@
         }
         
         .next {
-            height: clamp(52px, 42vh, 29vh);
-          width: clamp(18.5px, 20.5vw, 15vw);
+            height: clamp(52px, 42vh, 39vh);
+            width: clamp(29.5px, 20.5vw,25vw);
             font-size: clamp(12px, 2.3vh, 3.5vh);
             display: block;
             grid-column-start: 4;
@@ -346,8 +345,8 @@
                 </p>
      
         
-        <div class="delay" id="delayedText2" style="visibility:hidden"><i> Scheedasthirbis magudda! Do hoschta abba Schweighabt o bischta Krigga? Ih moa dia a Denksdran von dei Schlangfieh! </i> </div>
-        <div class="delay" id="delayedText3" style="visibility:hidden"><i>Ein wenig Moos wächst auf seinen Schultern und am Knie seiner Lederhosse leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.. Er scheint friedlich und sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura. </div></i>
+             <div class="delay" id="delayedText2" style="visibility:hidden"><i> Scheedasthirbis magudda! Do hoschta abba Schweighabt o bischta Krigga? Ih moa dia a Denksdran von dei Schlangfieh! </i> </div>
+             <div class="delay" id="delayedText3" style="visibility:hidden"><i>Ein wenig Moos wächst auf seinen Schultern und am Knie seiner Lederhosse leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.. Er scheint friedlich und sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura. </div></i>
             <span>
               <div class="delay" id="delayedText4" style="visibility:hidden">Nu saufmer eein un' dannah ghescht na Proksn oa?
              <center>
@@ -365,12 +364,12 @@
             <center>
 
                 <div class="hütte"> </div>
-                <div class="button" id="nextButton">
-                    <form action="6Lichtung1.html ">
+                    <div class="button" id="nextButton">
+                         <form action="6Lichtung1.html ">
                         <button id="lichtung">Waldesrand</button> </center>
-            </form>
+                         </form>
 
-            </div>
+                     </div>
         </div>
 
 
@@ -474,7 +473,7 @@
         }, delay * 1000)
     }
     window.onload = function() {
-             showText('delayedText2', 2);
+        showText('delayedText2', 2);
         showText('delayedText3', 5);
         aGift();
         saveInvi();
