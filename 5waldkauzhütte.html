@@ -22,7 +22,7 @@
         
         body {
             width: clamp(300px, 100vw, 100vw);
-            height: clamp(120px, 100vh, 100vh);
+            height: clamp(220px, 100vh, 100vh);
             background: lavender;
             margin: auto auto auto auto;
             background-image: url("https://dl.dropbox.com/s/65loah7hbyfyxm3/wald%203.jpg?dl=0");
@@ -37,18 +37,14 @@
         
         .container {
             width: clamp(300px, 99vw, 100vw);
-            height: clamp(120px, 95vh, 100vh);
+            height: clamp(220px, 96vh, 100vh);
             display: grid;
             grid-template-columns: 25% 25% 25% 25%;
-            grid-template-rows: 5% 15% 45% 35%;
-        }
-        
-        .h1 {
-            font-size: 2vh;
+            grid-template-rows: 5% 15% 55% 25%;
         }
         
         .links {
-            height: clamp(72px, 55vh, 55vh);
+            height: clamp(72px, 45vh, 55vh);
             width: clamp(60px, 25vw, 34vw);
             display: table;
             color: #ffffff;
@@ -190,8 +186,8 @@
             height: 3.5vh;
             width: 14vw;
             color: rgb(247, 247, 247);
-            font-size: clamp(12.5px, 2.2vh, 3.5vh);
-            font-weight: 650;
+            font-size: clamp(13.5px, 2.4vh, 3.5vh);
+            font-weight: 680;
             border-radius: 8%;
             text-decoration: underline;
             background-size: cover;
@@ -214,14 +210,14 @@
         }
         
         .Text1 {
-            width: clamp(220px, 45vw, 63vw);
+            width: clamp(180px, 43vw, 55vw);
             height: clamp(120px, 68vh, 85vh);
             font-size: clamp(11px, 2.2vh, 2.32vh);
             font-weight: 635;
             border-radius: 8%;
-            margin-left: 3.9vw;
-            padding-left: 1.0vw;
-            padding-right: 1.0vw;
+            margin-left: clamp(14px, 3.6vw, 4.32vw);
+            padding-left: 0.6vw;
+            padding-right: 0.6vw;
             color: rgb(255, 255, 255);
             display: table;
             text-align: justify;
@@ -230,7 +226,7 @@
             align-content: center;
             border: 2.5px ridge rgba(255, 255, 255, 0.507);
             grid-column-start: 2;
-            grid-column-end: 4;
+            grid-column-end: 3;
             grid-row-start: 2;
             grid-row-end: 4;
         }
@@ -254,38 +250,6 @@
             width: 100%;
         }
         
-        button {
-            height: clamp(13.5px, 14vh, 15.5vh);
-            width: clamp(18px, 14vw, 15vw);
-            font-size: clamp(12px, 2.3vh, 3.5vh);
-            font-weight: 666;
-            background-color: rgba(127, 255, 212, 0);
-            background-image: url("https://dl.dropbox.com/scl/fi/rddmrugpm3393et6sbk1y/green_button_plakette-removebg-preview.png?rlkey=vdrdbfwujbdz3pa9kmmrymcuy&dl=0");
-            background-size: 100% 100%;
-            border: none;
-        }
-        
-        .hütte {
-            height: clamp(40px, 32vh, 35vh);
-            width: clamp(12px, 20vw, 22vw);
-            border: 3px ridge rgba(255, 255, 255, 0.507);
-            border-radius: 8%;
-            background-image: url("https://cdn.pixabay.com/photo/2018/04/06/00/25/trees-3294681_960_720.jpg");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-        }
-        
-        .next {
-            height: clamp(52px, 35vh, 39vh);
-            width: clamp(29.5px, 20.5vw, 25vw);
-            font-size: clamp(12px, 2.3vh, 3.5vh);
-            display: block;
-            grid-column-start: 4;
-            grid-column-end: 4;
-            grid-row-start: 2;
-            grid-row-end: 4;
-        }
-        
         .beero {
             height: clamp(30px, 18vh, 29vh);
             width: clamp(50px, 14vw, 25vw);
@@ -295,6 +259,38 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
+        }
+        
+        .rechts {
+            height: clamp(49px, 29vh, 32vh);
+            width: clamp(49px, 19vw, 22vw);
+            border: 2.5px ridge rgba(255, 255, 255, 0.507);
+            align-self: center;
+            justify-self: center;
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        
+        .hütte {
+            height: clamp(48px, 29vh, 32vh);
+            width: clamp(48px, 19vw, 22vw);
+            border-radius: 8%;
+            background-image: url("https://cdn.pixabay.com/photo/2018/04/06/00/25/trees-3294681_960_720.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .nextButton {
+            height: clamp(23px, 8vh, 22vh);
+            width: clamp(43px, 18vw, 22vw);
+            font-size: clamp(12px, 2.3vh, 3.5vh);
+            font-weight: 666;
+            background-color: rgba(127, 255, 212, 0);
+            background-image: url("https://dl.dropbox.com/scl/fi/rddmrugpm3393et6sbk1y/green_button_plakette-removebg-preview.png?rlkey=vdrdbfwujbdz3pa9kmmrymcuy&dl=0");
+            background-size: 100% 100%;
+            border: none;
         }
     </style>
 
@@ -339,42 +335,37 @@
 
         <div class="Text1">
             <center>
-                <p> <i>  DU ERSCHLÄGST DIE SCHLANGE !!! </center>  In deinen Ohren rauscht noch das Adrenalin... der Waldkauz ist nun auch fast bei dir und nickt vor Ehrfurcht deines Geschickes! Er fragt dich feist grinsend warum du nackt bist
-                und reicht dir einen Leeren Kartoffelsack, damit du deine Blöße bedecken kannst, dann ein scharfes kleines Messer für den Apfel den er dir auf den Schock anbietet.
-                </p>
-     
-        
-             <div class="delay" id="delayedText2" style="visibility:hidden"><i> Scheedasthirbis magudda! Do hoschta abba Schweighabt o bischta Krigga? Ih moa dia a Denksdran von dei Schlangfieh! </i> </div>
-               <div class="delay" id="delayedText3" style="visibility:hidden"><i>Ein wenig Moos wächst auf seinen Schultern und am Knie seiner Lederhosse leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.. Er scheint friedlich und sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura. </div></i>
-            <span>
-              <div class="delay" id="delayedText4" style="visibility:hidden">Nu saufmer eein un' dannah ghescht na Proksn oa?
-             <center>
+                <p> DU ERSCHLÄGST DIE SCHLANGE !!! </center> In deinen Ohren rauscht noch das Adrenalin... der Waldkauz ist nun auch fast bei dir und nickt vor Ehrfurcht deines Geschickes! Er fragt dich feist grinsend warum du nackt bist und reicht dir einen
+            Leeren Kartoffelsack, damit du deine Blöße bedecken kannst, dann ein scharfes kleines Messer für den Apfel den er dir auf den Schock anbietet.
+            </p>
 
-                     <div class="beero"> Prost!
-                
-                         </div>  </center> 
-                 </div>
-            </span>
+            <div class="delay" id="delayedText2" style="visibility:hidden"><i> Scheedasthirbis magudda! Do hoschta abba Schweighabt o bischta Krigga? Ih moa dia a Denksdran von dei Schlangfieh! </i> </div>
+            <div class="delay" id="delayedText3" style="visibility:hidden"><i>Ein wenig Moos wächst auf seinen Schultern und am Knie seiner Lederhosse leuchtet eine blaue Flechte fröhlich schillernd vor sich hin.. Er scheint friedlich und sehr freundlich, doch eine Wolke verschiedener angenehmer und unangenehmer Gerüche umwölkt ihn wie eine Aura. </div></i>
 
-        </div>
+                <div class="delay" id="delayedText4" style="visibility:hidden">
+                    <p> Nu saufmer eein un' dannah ghescht na Proksn oa?</p <center>
 
+                    <div class="beero"> !
 
-        <div class="next">
-
-
-            <div class="hütte"> </div>
-
-            <div class="button" id="nextButton">
-                <form action="6Lichtung1.html ">
-                    <button id="lichtung">Waldesrand</button>
-                </form>
+                    </div>
+                    </center>
+                </div>
 
 
             </div>
+
+
+            <div class="rechts" id="waldrand">
+                <div class="hütte">
+
+
+                </div>
+                <button class="nextButton" id="nexto"> Waldrand</button>
+
+            </div>
+
+
         </div>
-
-
-    </div>
 
 
 
@@ -384,12 +375,6 @@
 
 
 <script>
-    function clickersatz() {
-        document.getElementById('nextButton').click(); // Löse das Click-Event aus
-    }
-
-    document.getElementById("nextButton").addEventListener('touchstart', clickersatz);
-
     function showHero() { //rest infos 
         getStoredName();
         document.getElementById("heroLp").innerText = heroValues.Lp;
