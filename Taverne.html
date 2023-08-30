@@ -11,20 +11,15 @@
 
 
     <style>
-        * {
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-        
         html {
-            font-size: clamp(14px, 2.2vh, 3.5vh);
+            font-size: clamp(13px, 2.2vh, 3.5vh);
             overflow: hidden;
         }
         
         body {
             width: clamp(300px, 100vw, 100vw);
             height: clamp(120px, 100vh, 100vh);
+            margin: auto auto auto auto;
             background: lavender;
             background-image: url("https://dl.dropbox.com/s/1uuaw2aenozkzxj/taverne%202.jpg?dl=0");
             background-position: center, center;
@@ -34,28 +29,28 @@
         }
         
         .container {
-            width: clamp(300px, 100vw, 100vw);
-            height: clamp(120px, 100vh, 100vh);
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            width: clamp(300px, 99vw, 100vw);
+            height: clamp(120px, 95vh, 100vh);
+            font-family: Arial, Helvetica, sans-serif;
             display: grid;
-            grid-template-columns: 5% 30% 5% 20% 5% 30% 5%;
-            grid-template-rows: 12% 3% 20% 20% 20% 15% 10%;
+            grid-template-columns: 1% 4% 25% 33% 22% 15% 1%;
+            grid-template-rows: 11% 5% 20% 20% 20% 14% 10%;
         }
         
         .header {
             width: clamp(300px, 100vw, 100vw);
-            height: clamp(12px, 4vh, 9vh);
+            height: clamp(13.5px, 5.5vh, 11vh);
             color: white;
-            font-size: clamp(14px, 2.2vh, 3.5vh);
-            display: block;
-            text-align: center;
-            background-image: url("https://dl.dropbox.com/s/0u2napy9j3yb6on/Download%20%281%29.jpg?dl=0");
+            font-size: clamp(13px, 2.3vh, 3.5vh);
+            padding-top: 0.2vh;
+            margin-bottom: 0.2vh;
+            background: linear-gradient(#301515, #27411c, #1b2f53);
+            background-image: url("https://dl.dropbox.com/s/ytueykwig0dzk97/holzheader2.jpg?dl=0 ");
             background-repeat: no-repeat;
-            background-size: cover;
-            margin-bottom: 5%;
+            background-size: 100% 100%;
             justify-content: space-between;
             grid-column-start: 1;
-            grid-column-end: 8;
+            grid-column-end: 5;
             grid-row-start: 1;
             grid-row-end: 1;
         }
@@ -67,7 +62,7 @@
         a {
             position: relative;
             padding: 2% 0 1% 1%;
-            font-size: clamp(13.5px, 2.4vh, 3.5vh);
+            font-size: clamp(12.5px, 2.4vh, 3.5vh);
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: bold;
             color: #ffffff;
@@ -83,14 +78,14 @@
             height: clamp(150px, 61vh, 70vh);
             border-radius: 8%;
             margin-top: 4vh;
-            margin-left: -3vw;
             display: table;
-            font-size: clamp(13.5px, 2.3vh, 3.5vh);
-            font-weight: 630;
+            font-size: clamp(10.5px, 2.3vh, 3.5vh);
+            font-weight: 530;
             color: rgb(255, 255, 255);
             background-color: #1b2f53;
-            border: 3.5px ridge rgba(196, 170, 23, 0.767);
-            padding: 2%;
+            border: 2.5px ridge rgba(196, 170, 23, 0.767);
+            padding: 8px;
+            padding-right: 8px;
             grid-column-start: 2;
             grid-column-end: 4;
             grid-row-start: 2;
@@ -98,60 +93,72 @@
         }
         
         .Text1 {
-            height: 12vh;
-            width: 25vw;
+            height: 14vh;
+            width: 26vw;
+            padding-top: 3px;
+            padding-bottom: 5px;
+            color: rgb(243, 243, 243);
+            font-size: clamp(12.3px, 2.3vh, 3.5vh);
+            font-weight: 626;
             display: table;
             text-align: center;
+            justify-self: center;
             margin-left: -3.5vw;
-            color: rgb(243, 243, 243);
-            font-size: clamp(13.5px, 2.4vh, 3.5vh);
-            font-weight: 666;
             font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: rgba(168, 123, 56, 0.742);
-            border: 2.5px ridge rgb(128, 126, 126);
+            border: 1.5px ridge rgb(128, 126, 126);
             border-radius: 100%;
-            grid-column-start: 3;
-            grid-column-end: 3;
+            grid-column-start: 4;
+            grid-column-end: 5;
             grid-row-start: 2;
             grid-row-end: 2;
         }
         
         .Text2 {
-            height: 12vh;
-            width: 25vw;
+            height: 14vh;
+            width: 26vw;
+            padding-top: 3px;
+            padding-bottom: 5px;
+            color: rgb(243, 243, 243);
+            font-size: clamp(12.3px, 2.3vh, 3.5vh);
+            font-weight: 626;
             margin-left: -3.5vw;
             display: table;
             text-align: center;
             align-items: center;
+            justify-self: center;
             color: rgb(243, 243, 243);
-            font-size: clamp(13.5px, 2.4vh, 3.5vh);
-            font-weight: 666;
             font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: rgba(168, 123, 56, 0.742);
-            border: 2.5px ridge rgb(128, 126, 126);
+            border: 1.5px ridge rgb(128, 126, 126);
             border-radius: 100%;
-            grid-column-start: 3;
-            grid-column-end: 4;
+            grid-column-start: 4;
+            grid-column-end: 5;
             grid-row-start: 4;
             grid-row-end: 5;
         }
         
         .Text3 {
-            height: 12vh;
-            width: 25vw;
+            height: 14vh;
+            width: 26vw;
+            padding-top: 3px;
+            padding-bottom: 5px;
+            color: rgb(243, 243, 243);
+            font-size: clamp(12.3px, 2.3vh, 3.5vh);
+            font-weight: 626;
             margin-left: -3.5vw;
             display: table;
             text-align: center;
             align-items: center;
+            justify-self: center;
+            justify-self: center;
             color: rgb(243, 243, 243);
-            font-size: clamp(13.5px, 2.4vh, 3.5vh);
-            font-weight: 666;
             font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: rgba(168, 123, 56, 0.742);
-            border: 2.5px ridge rgb(128, 126, 126);
+            border: 1.5px ridge rgb(128, 126, 126);
             border-radius: 100%;
-            grid-column-start: 3;
-            grid-column-end: 4;
+            grid-column-start: 4;
+            grid-column-end: 5;
             grid-row-start: 5;
             grid-row-end: 6;
         }
@@ -161,7 +168,7 @@
             width: 6.5vw;
             font-size: clamp(14px, 2.4vh, 3.5vh);
             margin-bottom: clamp(17px, 2.9vh, 3.5vh);
-            margin-top: 1.8vh;
+            margin-top: 1.0vh;
             display: inline-block;
             background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
             background-size: 100% 100%;
@@ -213,20 +220,21 @@
         
         .Ausgang {
             height: 12.5vh;
-            width: 5.3vw;
+            width: 8.3vw;
             color: aliceblue;
             font-size: 2.2vh;
+            font-weight: 888;
             margin-top: 9vh;
             margin-left: -2vw;
-            grid-column-start: 2;
-            grid-column-end: 2;
+            grid-column-start: 3;
+            grid-column-end: 3;
             grid-row-start: 6;
             grid-row-end: 7;
         }
         
         .getOut {
             height: 8.5vh;
-            width: 95%;
+            width: 5.57vw;
             background-color: chartreuse;
             background-image: url("https://cdn.iconscout.com/icon/free/png-512/free-exit-2668119-2214245.png?f=avif&w=256");
             background-size: cover;
@@ -238,16 +246,17 @@
             width: clamp(200px, 36.5vw, 45vw);
             height: clamp(180px, 79vh, 90vh);
             font-size: clamp(14px, 2.8vh, 3.5vh);
-            font-weight: 900;
+            font-weight: 800;
             border-radius: 8%;
-            margin-right: -3.3vw;
+            margin-right: -2.5vw;
+            padding-left: 4px;
             display: grid;
             color: rgb(255, 255, 255);
             background-color: #1b2f53;
             border: 2.5px ridge rgba(196, 170, 23, 0.767);
             text-decoration: underline;
             text-align: center;
-            justify-content: center;
+            justify-content: space-between;
             align-content: center;
             grid-column-start: 5;
             grid-column-end: 7;
@@ -260,7 +269,7 @@
             height: 3.5vh;
             width: 22vw;
             border-radius: 3%;
-            padding: 4px;
+            margin-top: -5.5vh;
             display: table;
             justify-self: center;
             align-self: center;
@@ -271,37 +280,37 @@
         }
         
         .menueKarte {
-            width: clamp(200px, 36vw, 45vw);
-            height: clamp(150px, 66vh, 90vh);
+            width: clamp(220px, 38vw, 45vw);
+            height: clamp(150px, 66vh, 80vh);
             display: flex;
             border-radius: 8%;
             padding-left: 0.3vw;
-            padding-top: 0.5vh;
-            font-size: clamp(15.5px, 2.9vh, 3.5vh);
-            font-weight: 930;
+            padding-top: 0.35vh;
+            font-size: clamp(13.2px, 2.6vh, 3.5vh);
+            font-weight: 680;
             font-family: Georgia, 'Times New Roman', Times, serif;
             text-decoration: underline;
         }
         
         .menueSpalten {
-            height: 45vh;
-            width: 12vw;
+            width: clamp(130px, 11.5vw, 25vw);
+            height: clamp(135px, 48vh, 60vh);
             justify-self: center;
             text-align: center;
-            font-size: clamp(13.5px, 2.5vh, 3.5vh);
-            font-weight: 630;
+            font-size: clamp(11.8px, 2.3vh, 3.5vh);
+            font-weight: 599;
         }
         
         .auswahl {
-            margin-top: 0.7vh;
-            margin-bottom: clamp(15.5px, 5.5vh, 9.5vh);
+            border: 1.5px ridge rgba(196, 170, 23, 0.767);
+            font-weight: 899;
         }
         
         .storeTooltip {
             height: 9.5vh;
             width: 29vw;
             display: table;
-            font-size: clamp(14px, 2.6vh, 3.5vh);
+            font-size: clamp(11px, 2.6vh, 3.5vh);
             font-weight: 777;
             margin-top: clamp(-18.5px, -9.5vh, -12.5vh);
             padding-left: 0.7vh;
@@ -316,13 +325,13 @@
         }
         
         button {
-            height: 24%;
-            width: 78%;
+            height: clamp(19px, 8.5vh, 11.5vh);
+            width: clamp(35px, 9.5vw, 14.5vw);
             margin-top: 1.2vh;
         }
         
         .iconText {
-            height: 3vh;
+            height: 2.8vh;
             font-size: clamp(14px, 2.5vh, 3.5vh);
             font-weight: 777;
             width: 13vw;
@@ -388,7 +397,7 @@
         
         .tagelöhner {
             height: 5vh;
-            color: rgb(255, 207, 111);
+            color: rgb(230, 230, 230);
             width: 12vw;
             border-radius: 8%;
             margin-top: 1.6vh;
@@ -400,15 +409,17 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            font-size: 2.5vh;
+            font-size: 2.6vh;
             font-weight: bolder;
         }
         
         .bigStory {
             height: 8.5vh;
             width: 22vw;
-            padding-left: 1.5vw;
+            padding-left: 1.2vw;
             padding-right: 0.5vw;
+            align-self: center;
+            justify-self: center;
             margin-top: 2.6vh;
             margin-bottom: 1.6vh;
             align-self: center;
@@ -419,7 +430,7 @@
             border: none;
             background-position: center;
             font-size: 2.8vh;
-            font-weight: 888;
+            font-weight: 848;
         }
     </style>
 
@@ -462,18 +473,23 @@
                     <div class="walletText" id="wallet">0</div>
                     <div class="walletIcon"></div>
                 </div>
-                <span> Inventar toggle </span>
+                <div class="iconwrapper">LP
+                    <div class="liveText" id="rations">0</div>
+                    <div class="lifeIcon"></div>
+                </div>
                 <div class="iconwrapper">
                     <div class="rationText" id="rations">0</div>
                     <div class="rationIcon"></div>
                 </div>
             </center>
+
+            <span> Inventar toggle Y/N ? </span>
         </div>
 
 
         <div class="rechts">
             <div class="menueHeadline">
-                <center> Menü à la Card Auswahl </center>
+                <center>Menü à la Card</center>
             </div>
 
             <div class="menueKarte">
@@ -481,14 +497,14 @@
 
                 <div class="menueSpalten">
                     <p class="auswahl"> |Durstlöscher| </p>
-                    <p class="iconText">Bier </p>
+                    <div class="iconText">Bier </div>
                     <button value="lol" class="bierIcon1" id="Bier">  </button>
 
                     <div class="iconwrapper">
                         <div class="walletText">1</div>
                         <div class="walletIcon"></div>
                     </div>
-                    <p class="iconText">Schnapsss' </p>
+                    <div class="iconText">Schnapsss' </div>
                     <button value="lol" class="schnapsIcon1" id="Schnaps"></button>
 
                     <div class="iconwrapper">
@@ -502,7 +518,7 @@
                 <div class="menueSpalten">
                     <p class="auswahl"> |Ausruhen| </p>
 
-                    <p class="iconText">Einzelzimmer</p>
+                    <div class="iconText">Einzelzimmer </div>
                     <button value="lol" class="sleepRoomIcon" id="Zimmer"></button>
 
 
@@ -510,7 +526,7 @@
                         <div class="walletText">5</div>
                         <div class="walletIcon"></div>
                     </div>
-                    <p class="iconText">Noble Suite</p>
+                    <div class="iconText">Noble Suite </div>
                     <button value="lol" class="sleepSuiteIcon" id="NobleSuite"></button>
 
 
@@ -524,7 +540,7 @@
                 <div class="menueSpalten">
                     <p class="auswahl"> |Proviant|</p>
 
-                    <p class="iconText">Eintopf</p>
+                    <div class="iconText">Eintopf</div>
                     <button value="lol" class="soupRationIcon1" id="Eintopf"></button>
 
                     <div class="iconwrapper">
@@ -550,7 +566,7 @@
         <div class="Text1" id="delayedText4" style="visibility:hidden">
 
 
-            <p class="" width="75%"> <br>Aus dem hinteren Schankraum hörst du gröhlend: <i> "SAUFEN, SAUFEN, SAUFEN!!!"</i><br> </p>
+            <p class="" width="75%"> <br>Aus dem hinteren Schankraum gröhlt es: <i> "SAUFEN, SAUFEN, SAUFEN!!!"</i><br> </p>
 
         </div>
 
