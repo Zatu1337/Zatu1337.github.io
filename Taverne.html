@@ -75,17 +75,15 @@
         
         .links {
             width: clamp(200px, 16.5vw, 25vw);
-            height: clamp(150px, 61vh, 70vh);
+            height: clamp(120px, 45vh, 50vh);
             border-radius: 8%;
-            margin-top: 4vh;
             display: table;
             font-size: clamp(10.5px, 2.3vh, 3.5vh);
-            font-weight: 530;
+            font-weight: 630;
             color: rgb(255, 255, 255);
             background-color: #1b2f53;
             border: 2.5px ridge rgba(196, 170, 23, 0.767);
             padding: 8px;
-            padding-right: 8px;
             grid-column-start: 2;
             grid-column-end: 4;
             grid-row-start: 2;
@@ -93,8 +91,8 @@
         }
         
         .Text1 {
-            height: 14vh;
-            width: 26vw;
+            height: clamp(23.5px, 14vh, 15.5vh);
+            width: clamp(53.5px, 26.5vw, 38.5vw);
             padding-top: 3px;
             padding-bottom: 5px;
             color: rgb(243, 243, 243);
@@ -115,8 +113,8 @@
         }
         
         .Text2 {
-            height: 14vh;
-            width: 26vw;
+            height: clamp(23.5px, 14vh, 15.5vh);
+            width: clamp(53.5px, 26.5vw, 38.5vw);
             padding-top: 3px;
             padding-bottom: 5px;
             color: rgb(243, 243, 243);
@@ -139,8 +137,8 @@
         }
         
         .Text3 {
-            height: 14vh;
-            width: 26vw;
+            height: clamp(23.5px, 14vh, 15.5vh);
+            width: clamp(53.5px, 26.5vw, 38.5vw);
             padding-top: 3px;
             padding-bottom: 5px;
             color: rgb(243, 243, 243);
@@ -164,11 +162,16 @@
         }
         
         .iconwrapper {
-            height: 5.3vh;
-            width: 6.5vw;
+            height: clamp(13.5px, 4.3vh, 5.5vh);
+            width: clamp(23.5px, 6.5vw, 8.5vw);
+            margin-top: clamp(3px, 0.4vh, 1.5vh);
+            margin-bottom: clamp(9px, 1.4vh, 2.5vh);
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            justify-content: space-evenly;
             font-size: clamp(14px, 2.4vh, 3.5vh);
-            margin-bottom: clamp(17px, 2.9vh, 3.5vh);
-            margin-top: 1.0vh;
             display: inline-block;
             background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
             background-size: 100% 100%;
@@ -228,8 +231,8 @@
             margin-left: -2vw;
             grid-column-start: 3;
             grid-column-end: 3;
-            grid-row-start: 6;
-            grid-row-end: 7;
+            grid-row-start: 5;
+            grid-row-end: 5;
         }
         
         .getOut {
@@ -244,7 +247,7 @@
         
         .rechts {
             width: clamp(200px, 36.5vw, 45vw);
-            height: clamp(180px, 79vh, 90vh);
+            height: clamp(150px, 45vh, 90vh);
             font-size: clamp(14px, 2.8vh, 3.5vh);
             font-weight: 800;
             border-radius: 8%;
@@ -281,7 +284,7 @@
         
         .menueKarte {
             width: clamp(220px, 38vw, 45vw);
-            height: clamp(150px, 66vh, 80vh);
+            height: clamp(139px, 46vh, 50vh);
             display: flex;
             border-radius: 8%;
             padding-left: 0.3vw;
@@ -307,11 +310,11 @@
         }
         
         .storeTooltip {
-            height: 9.5vh;
-            width: 29vw;
+            height: clamp(23.5px, 11vh, 15.5vh);
+            width: clamp(53.5px, 26.5vw, 38.5vw);
             display: table;
             font-size: clamp(11px, 2.6vh, 3.5vh);
-            font-weight: 777;
+            font-weight: 666;
             margin-top: clamp(-18.5px, -9.5vh, -12.5vh);
             padding-left: 0.7vh;
             padding-right: 0.7vh;
@@ -321,7 +324,11 @@
             color: rgb(255, 255, 255);
             text-align: center;
             border-radius: 8%;
-            border: 3px ridge rgba(196, 170, 23, 0.767);
+            border: 1.5px ridge rgba(196, 170, 23, 0.767);
+            grid-column-start: 5;
+            grid-column-end: 7;
+            grid-row-start: 5;
+            grid-row-end: 5;
         }
         
         button {
@@ -354,7 +361,6 @@
             background-color: #7a390048;
             background-image: url("https://cdn.pixabay.com/photo/2014/12/22/00/04/vodka-576718_1280.png");
             background-size: contain;
-            margin-top: 0.5vh;
         }
         
         .sleepRoomIcon {
@@ -373,7 +379,6 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            margin-top: 0.5vh;
         }
         
         .soupRationIcon1 {
@@ -392,16 +397,17 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            margin-top: 0.5vh;
         }
         
         .tagelöhner {
-            height: 5vh;
+            height: 4.5vh;
             color: rgb(230, 230, 230);
             width: 12vw;
             border-radius: 8%;
-            margin-top: 1.6vh;
-            margin-bottom: 1.6vh;
+            font-size: clamp(11.5px, 2.3vh, 3.5vh);
+            font-weight: 500;
+            margin-top: 1.26vh;
+            margin-bottom: 1.26vh;
             align-self: center;
             border: none;
             justify-self: center;
@@ -409,28 +415,28 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            font-size: 2.6vh;
             font-weight: bolder;
         }
         
         .bigStory {
-            height: 8.5vh;
+            height: 5.5vh;
             width: 22vw;
-            padding-left: 1.2vw;
-            padding-right: 0.5vw;
+            padding-left: 0.2vw;
+            padding-right: 0.2vw;
+            padding-bottom: 3px;
+            text-align: center;
             align-self: center;
             justify-self: center;
             margin-top: 2.6vh;
             margin-bottom: 1.6vh;
-            align-self: center;
             background-color: rgba(240, 248, 255, 0);
             background-image: url("https://dl.dropbox.com/scl/fi/53nj4sgf9jrc7nrfjohnp/plakette_3-removebg-preview-2.png?rlkey=3sjbmy8osnpdn0rhg46cyyh9t&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             border: none;
             background-position: center;
-            font-size: 2.8vh;
-            font-weight: 848;
+            font-size: clamp(13.5px, 2.6vh, 3.5vh);
+            font-weight: 800;
         }
     </style>
 
@@ -462,7 +468,7 @@
 
         <div class="links">
             <div id="delayedText1" style="visibility:hidden">
-                <i>  Komm' herein, setz dich und genieß' die berühmte Gastfreundschaft von Paroksan!<br> <br><center>  Bist du vielleicht nur ein kleiner</i> <br><button class="tagelöhner" id="getRekkt">Tagelöhner</button><br> <i>  oder suchst du etwa nach dem </i><br>
+                <i>  Komm' herein, setz dich und genieß' die berühmte Gastfreundschaft von Paroksan! <br><center>  Bist du vielleicht nur ein kleiner</i> <br><button class="tagelöhner" id="getRekkt">Tagelöhner</button><br> <i>  oder suchst du etwa nach dem </i>
                 <button class="bigStory" id="waldStory">echt großen Abenteuer?</button></center>
             </div>
 
@@ -560,9 +566,9 @@
 
 
             </div>
-            <div class="storeTooltip" id="tooltipBox"> Info</div>
-        </div>
 
+        </div>
+        <div class="storeTooltip" id="tooltipBox"> Info</div>
         <div class="Text1" id="delayedText4" style="visibility:hidden">
 
 
