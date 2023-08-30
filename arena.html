@@ -12,7 +12,7 @@
 
     <style>
         html {
-            font-size: clamp(14px, 2.2vh, 3.5vh);
+            font-size: clamp(12px, 2.2vh, 3.5vh);
             overflow: hidden;
         }
         
@@ -28,25 +28,13 @@
         }
         
         .container {
-            width: clamp(300px, 100vw, 100vw);
-            height: clamp(120px, 100vh, 100vh);
+            width: clamp(300px, 99vw, 100vw);
+            height: clamp(120px, 95vh, 100vh);
             display: grid;
             box-sizing: border-box;
             color: rgb(255, 255, 255);
             grid-template-columns: 5% 10% 14% 45% 25% 2%;
-            grid-template-rows: 9% 68% 12% 11%;
-        }
-        
-        .Icon {
-            border-color: rgb(41, 99, 226);
-            border-style: solid;
-            border-width: 5px;
-            display: inline-block;
-            background-size: contain;
-        }
-        
-        .Icon:nth-child( 1) {
-            background-image: url("");
+            grid-template-rows: 9% 48% 32% 11%;
         }
         
         .imgGastrolith {
@@ -105,22 +93,23 @@
         }
         
         .links {
-            width: clamp(200px, 22vw, 25vw);
-            height: clamp(150px, 85vh, 90vh);
+            height: clamp(172px, 68vh, 65vh);
+            width: clamp(95px, 24.5vw, 32vw);
             display: table;
             text-align: center;
-            padding-bottom: 0.9vh;
             color: #ffffff;
-            background-color: #27411c;
+            border-radius: 10%;
+            background-color: #6f6e74b6;
             background-image: url("https://dl.dropbox.com/scl/fi/noxaofxhutv9gu9uman4n/diffuse-the-rest-88-2.png?rlkey=q6ybvgowbyjkgemqt0t7m5f52&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
-            font-size: clamp(13px, 2.3vh, 2.5vh);
-            font-weight: 900;
-            margin-left: -3vw;
-            margin-top: -5vh;
-            border: 3.3px ridge #97803496;
+            font-size: clamp(12px, 2.2vh, 3.5vh);
+            font-weight: 800;
+            margin-left: clamp(-39px, -10.2vw, -12.5vw);
+            margin-right: 0.5vw;
+            margin-top: clamp(-29px, -8.5vh, -9.5vh);
+            border: solid 2.5px rgba(151, 156, 163, 0.762);
             border-radius: 8%;
             grid-column-start: 2;
             grid-column-end: 3;
@@ -129,40 +118,44 @@
         }
         
         .inviWrap {
-            height: 7vh;
-            width: 19.8vw;
+            height: clamp(92px, 25.2vh, 33.5vh);
+            width: clamp(43px, 23.7vw, 33.5vw);
         }
         
         .inventarHead {
-            height: 6vh;
-            width: 19.5vw;
+            height: clamp(92px, 25.2vh, 33.5vh);
+            width: clamp(42px, 23.5vw, 33.5vw);
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-content: center;
             align-items: center;
             justify-items: center;
             align-self: center;
-            text-align: center;
             justify-self: center;
-            font-size: 2.5vh;
+            font-size: clamp(12px, 2.2vh, 3.5vh);
         }
         
         .iconwrapper {
-            height: clamp(8px, 3.5vh, 5vh);
-            width: clamp(15px, 6vw, 9.5vw);
-            padding: 3px;
-            margin-left: 0.5vw;
-            margin-right: 0.5vw;
-            display: flex;
+            height: clamp(13.5px, 4.3vh, 5.5vh);
+            width: clamp(40.5px, 6.0vw, 8.5vw);
+            margin-top: clamp(3px, 0.4vh, 1.5vh);
+            margin-bottom: clamp(9px, 1.4vh, 2.5vh);
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            justify-content: space-evenly;
+            font-size: clamp(14px, 2.4vh, 3.5vh);
+            display: inline-block;
             background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
             background-size: 100% 100%;
         }
         
         .walletIcon {
-            height: 2.9vh;
-            width: 1.7vw;
-            margin-top: 0.8vh;
-            margin-left: -0.8vw;
+            height: clamp(14px, 2.5vh, 3.5vh);
+            width: 1.5vw;
+            align-self: center;
+            justify-self: center;
             background-image: url("https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -170,20 +163,17 @@
         }
         
         .walletText {
-            height: 3.0vh;
-            width: 1.2vw;
-            margin-top: 0.9vh;
-            margin-left: 1.0vw;
-            margin-right: 1.9vw;
-            font-size: 2.8vh;
-            font-weight: 777;
+            height: clamp(14px, 2.5vh, 3.5vh);
+            width: clamp(16px, 2.5vw, 3.5vw);
+            font-size: clamp(11.5px, 2.2vh, 3.5vh);
+            font-weight: 677;
         }
         
         .rationIcon {
-            height: 3.3vh;
+            height: clamp(14px, 2.4vh, 3.5vh);
             width: 1.9vw;
-            margin-top: 0.6vh;
-            margin-left: -0.7vw;
+            align-self: center;
+            justify-self: center;
             background-image: url("https://dl.dropbox.com/scl/fi/qcna317ped0sk3swo42mh/marker-nahrung.PNG?rlkey=p4v13qjskk3kltd7vrpv1nlr0&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -191,19 +181,16 @@
         }
         
         .rationText {
-            height: 3.3vh;
-            width: 1.2vw;
-            margin-top: 0.9vh;
-            margin-left: 0.8vw;
-            margin-right: 1.9vw;
-            font-size: 2.8vh;
-            font-weight: 777;
+            height: clamp(14px, 2.5vh, 3.5vh);
+            width: clamp(16px, 2.5vw, 3.5vw);
+            font-size: clamp(11.5px, 2.2vh, 3.5vh);
+            font-weight: 677;
         }
         
         .toggl {
-            font-size: clamp(9px, 0.5vh, 1.5vh);
-            height: clamp(15px, 0.5vh, 1.5vh);
-            margin-bottom: 1.3vh;
+            font-size: clamp(11px, 1.5vh, 1.9vh);
+            height: clamp(15px, 2.2vh, 2.7vh);
+            margin-bottom: 0.5vh;
         }
         
         .Hero {
@@ -213,9 +200,7 @@
             color: rgb(247, 247, 247);
             text-decoration: underline overline;
             font-weight: bold;
-            border-color: rgba(182, 182, 182, 0.845);
-            border-width: 2.5px;
-            border-style: solid;
+            border: 1.5px ridge rgba(182, 182, 182, 0.845);
             margin-top: 2.5vh;
             margin-bottom: 1.5vh;
             border-radius: 100%;
@@ -281,7 +266,7 @@
         .imgHit {
             height: 5.8vh;
             width: 2.8vw;
-            margin-left: -1px;
+            margin-left: -4px;
             background-image: url("https://dl.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0https://www.dropbox.com/scl/fi/se3b11ylydfytwtuat9f9/depositphotos_318054136-stock-illustration-vector-realistic-eye-ball-green-removebg-preview.png?rlkey=kv4qdot9d63o068q2m033qbn8&dl=0");
             background-size: 100% 100%;
             background-repeat: no-repeat;
@@ -345,11 +330,12 @@
         }
         
         .heroName {
-            height: 3.5vh;
+            height: clamp(12.5px, 2.6vh, 3.5vh);
             width: 96%;
             margin-top: 2vh;
+            font-size: clamp(11.5px, 2.4vh, 3.5vh);
             color: rgb(247, 247, 247);
-            font-weight: 800;
+            font-weight: 700;
             border-radius: 8%;
             text-decoration: underline;
             background-size: cover;
@@ -358,11 +344,11 @@
         }
         
         .heroAttri {
-            height: 3.5vh;
+            height: clamp(11.5px, 2.5vh, 3.5vh);
             width: 96%;
             color: rgb(247, 247, 247);
             font-size: clamp(11px, 2.3vh, 3.5vh);
-            font-weight: 800;
+            font-weight: 666;
             border-radius: 8%;
             text-decoration: underline;
             background-size: cover;
@@ -371,16 +357,12 @@
         }
         
         .inventar {
-            height: 34vh;
-            width: 16.5vw;
-            margin-top: 0.5vh;
+            height: clamp(55px, 24vh, 33.5vh);
+            width: clamp(35px, 11vw, 23vw);
             display: grid;
-            grid-template-rows: repeat(3, 8vh);
-            row-gap: 10px;
-            grid-template-columns: repeat(2, 5.5vw);
-            border-color: rgb(60, 157, 92);
-            border-width: 13px;
-            border-style: none;
+            grid-template-rows: repeat(3, 8.0vh);
+            row-gap: 5px;
+            grid-template-columns: repeat(2, 5.1vw);
             justify-content: center;
             align-content: center;
             background-image: url("https://dl.dropbox.com/scl/fi/jcdhhvbpurztga1d3q7lb/dsa.png?rlkey=24zeexxo4h5wmy0pzf66n3021&dl=0");
@@ -389,36 +371,32 @@
         }
         
         .inventar-item {
-            height: 7.3vh;
-            width: 4.4vw;
+            height: clamp(20px, 6.5vh, 8.5vh);
+            width: clamp(25px, 4.5vw, 5vw);
             display: flex;
-            margin-top: 2.5vh;
+            margin-top: clamp(11px, 2.3vh, 3.5vh);
             font-size: larger;
             font-weight: bold;
             align-self: center;
             justify-self: center;
             text-align: center;
             background-color: rgba(250, 235, 215, 0);
-            border-color: 3px ridge rgba(255, 237, 186, 0.315);
+            border-color: 1px ridge rgba(255, 237, 186, 0.315);
         }
-        /* Stil der Bilder innerhalb der DIV-Bereiche */
         
         .inventar-item img {
             width: 100%;
-            /* Das Bild auf die volle Breite des DIVs skalieren */
             height: 100%;
             border-radius: 100%;
-            /* Das Bild auf die volle Höhe des DIVs skalieren */
             object-fit: fill;
-            /* Das Bild beibehalten und den leeren Raum mit dem Hintergrund füllen */
         }
         
         .tooltip {
             height: 12.5vh;
             width: 22.5vw;
             display: flex;
-            font-size: 2.2;
-            font-weight: 555;
+            font-size: clamp(12px, 2.2vh, 3.5vh);
+            font-weight: 655;
             background-color: #504f4fe5;
             color: rgb(240, 240, 240);
             align-content: center;
@@ -427,9 +405,7 @@
             justify-items: center;
             text-align: center;
             justify-self: center;
-            border-color: rgba(228, 213, 13, 0.877);
-            border-width: 3px;
-            border-style: ridge;
+            border: 2px ridge rgba(228, 213, 13, 0.877);
             visibility: hidden;
             grid-column-start: 4;
             grid-column-end: 5;
@@ -439,10 +415,9 @@
         
         .kampftext {
             /*  mid   */
-            width: clamp(90px, 46vw, 51vw);
-            height: clamp(267px, 77vh, 85vh);
-            margin-left: clamp(-0.3vw, -2.5vw, -3.8vw);
-            font-size: clamp(11px, 1.9vh, 2.4vh);
+            width: clamp(85px, 44vw, 51vw);
+            height: clamp(235px, 65vh, 85vh);
+            font-size: clamp(11px, 2.3vh, 2.4vh);
             text-align: center;
             box-sizing: border-box;
             padding: 6px;
@@ -454,7 +429,6 @@
             background-blend-mode: lighten;
             justify-content: center;
             align-content: center;
-            margin-top: 5vh;
             border: 3.3px ridge #97803496;
             border-radius: 8%;
             font-weight: 677;
@@ -472,7 +446,7 @@
         
         .doText {
             font-size: clamp(12px, 2.5vh, 3.5vh);
-            font-weight: 590;
+            font-weight: 650;
             font-style: italic;
         }
         
@@ -493,7 +467,7 @@
             background-position: center;
             text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-size: clamp(12.5px, 2.6vh, 3.5vh);
+            font-size: clamp(12.5px, 2.6vh, 3.5vh);
             border: none;
             font-weight: 777;
         }
@@ -523,7 +497,7 @@
             border-width: 2px;
             border-style: solid;
             text-align: center;
-         font-size: clamp(11px, 2.3vh, 3.5vh);
+            font-size: clamp(11px, 2.3vh, 3.5vh);
             font-weight: 680;
         }
         
@@ -531,8 +505,10 @@
             height: 50vh;
             width: 23vw;
             color: rgba(255, 0, 0, 0.759);
+            font-size: clamp(12.5px, 2.5vh, 3.5vh);
+            font-weight: 777;
             display: table;
-            margin-right: clamp(-10px, -30px, -50px);
+            margin-right: clamp(-45px, -2.8vw, -3.8vw);
             margin-top: -3.5vh;
             box-sizing: border-box;
             text-align: center;
@@ -543,10 +519,8 @@
             background-image: url("https://dl.dropbox.com/scl/fi/y2eyom35szpoiy6ng5gj9/brick-wall-1.jpg?rlkey=odvub4gmvrwdz96e1d1lq8266&dl=0");
             background-size: contain;
             padding: 15px;
-     font-size: clamp(12.5px, 2.5vh, 3.5vh);
-            font-weight: 777;
             border-radius: 8%;
-            border: 3.3px ridge #97803496;
+            border: 2.3px ridge #97803496;
             grid-column-start: 5;
             grid-column-end: 6;
             grid-row-start: 2;
@@ -590,12 +564,10 @@
         }
         
         .monsteraAvatar {
-            height: 25vh;
-            width: 18vw;
+            height: clamp(80px, 24vh, 25vh);
+            width: clamp(75px, 16.8vw, 17vw);
+            padding: 3% 3% 3% 3%;
             border-radius: 100%;
-            border-color: rgba(182, 182, 182, 0.845);
-            border-width: 2.5px;
-            border-style: solid;
             margin-top: 2.5vh;
             margin-bottom: 1.5vh;
             position: relative;
@@ -614,21 +586,20 @@
         }
         
         .bottomLine {
-            width: clamp(110px, 24vw, 27vw);
+            width: clamp(100px, 23vw, 25vw);
             height: clamp(11vh, 21vh, 22vh);
             padding-top: 10px;
+            margin-top: 10px;
             margin-left: 2.15vw;
             background-color: #928c844f;
-            border-color: #97803496;
-            border-width: 4px;
-            border-style: ridge;
+            border: 2.5px ridge #978034fb;
             border-radius: 8%;
             text-align: center;
-              font-size: clamp(11.5px, 2.2vh, 3.5vh);
+            font-size: clamp(11.5px, 2.2vh, 3.5vh);
             grid-column-start: 5;
             grid-column-end: 6;
             grid-row-start: 3;
-            grid-row-end: 4;
+            grid-row-end: 3;
         }
         
         .nameTag {
@@ -641,7 +612,7 @@
         .btn-6 {
             height: 7.4vh;
             width: 5.8vw;
-       font-size: clamp(11px, 2.3vh, 3.5vh);
+            font-size: clamp(11px, 2.3vh, 3.5vh);
             font-weight: 750;
             padding: 3px;
             padding-bottom: 12px;
@@ -761,26 +732,21 @@
 
                     <div class="inventarHead">
                         <div class="iconwrapper">
-                            <div class="walletText" id="wallet">232</div>
+                            <div class="walletText" id="wallet">00 </div>
                             <div class="walletIcon"></div>
                         </div>
-                        Inventar
+                        <div class="inventar" id="invi">
+
+                            <div class="inventar-item" id="g1"> </div>
+                            <div class="inventar-item" id="g2"> </div>
+                            <div class="inventar-item" id="g3"> </div>
+                            <div class="inventar-item" id="g4"></div>
+                        </div>
                         <div class="iconwrapper">
-                            <div class="rationText" id="rations">123</div>
+                            <div class="rationText" id="rations"> </div>
+
                             <div class="rationIcon"></div>
                         </div>
-                    </div>
-
-
-
-                    <div class="inventar" id="invi">
-
-                        <div class="inventar-item" id="g1"> </div>
-                        <div class="inventar-item" id="g2"> </div>
-                        <div class="inventar-item" id="g3"> </div>
-                        <div class="inventar-item" id="g4"></div>
-                        <div class="inventar-item" id="g5"> </div>
-                        <div class="inventar-item" id="g6"> </div>
                     </div>
 
                 </div>
@@ -1542,7 +1508,7 @@
         } else if (fleeRoll >= heroValues.Dodge && fleeRoll <= 16) {
             document.getElementById("heroVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Voll auf die 12!" + "<br> [Gewürfelt = " + fleeRoll + " ]";;
             heroValues.Lp -= takeDmg;
-            document.getElementById("DeinLeben").innerHTML = '<div class=\"lifepointSign\"  ></div>' + "<br>Deine Lebenspunkte!";
+            document.getElementById("DeinLeben").innerHTML = '<div class=\"lifepointSign\"  ></div>' + "<br>Deine Lebenspunkte: " + heroValues.Lp;
             return;
         } else if (fleeRoll >= 17) {
             document.getElementById("heroVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>FURCHTBAR erwischt worden! " + "<br> [Gewürfelt = " + fleeRoll + " ]";;
@@ -1604,12 +1570,12 @@
         } else if (enemyFleeRoll >= enemyDodge && enemyFleeRoll <= 16) {
             document.getElementById("enemyVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Du schlitzt den Gegner auf!" + "<br> [Gewürfelt = " + enemyFleeRoll + " ]";
             enemyHp -= takeHeroDmg;
-            document.getElementById("GegnerLeben").innerHTML = '<div class=\"lifepointSign\">       </div>' + "<br>" + enemyHp + "Gegnerische Lebenspunkte!";
+            document.getElementById("GegnerLeben").innerHTML = '<div class=\"lifepointSign\">       </div>' + "<br>" + enemyHp + " gegnerische Lebenspunkte!";
             return;
         } else if (enemyFleeRoll >= 17) {
             document.getElementById("enemyVerteidigung").innerHTML = '<div class=\"defendSign\">       </div>' + "<br>Voll in deine Waffe gerannt! " + "<br> [Gewürfelt = " + enemyFleeRoll + " ]";
             enemyHp -= (takeHeroDmg * 1.5);
-            document.getElementById("GegnerLeben").innerHTML = '<div class=\"lifepointSign\">       </div>' + "<br>" + enemyHp + "Gegnerische Lebenspunkte!";
+            document.getElementById("GegnerLeben").innerHTML = '<div class=\"lifepointSign\">       </div>' + "<br>" + enemyHp + " gegnerische Lebenspunkte!";
             return;
         }
     };
