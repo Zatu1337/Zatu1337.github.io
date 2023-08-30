@@ -1417,7 +1417,8 @@
             document.getElementById("fightButton").style.visibility = "hidden";
             //  document.getElementById("fightButton2").style.visibility = "hidden";
             document.getElementById("monsterTyp").innerHTML = "<img src=\"https://media.istockphoto.com/id/1458385998/de/vektor/freih%C3%A4ndig-gezeichneter-cartoon-knochenhaufen.jpg?s=1024x1024&w=is&k=20&c=5chcPNMYixtK9pkw-xBTJ854lXJdFe3gi6BQwgZDWuQ=\" width=100px height=50px>";
-            console.log("Der Kampf is vorbei");
+               document.getElementById("monsterTyp").style.borderRadius = '100%'
+                   console.log("Der Kampf is vorbei");
             updateLPDisplay();
             randomArenaLoot();
             playWinSound();
