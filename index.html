@@ -20,6 +20,8 @@
         .header {
             width: clamp(200px, 99vw, 101vw);
             height: clamp(35px, 1.5vh, 2.5vh);
+            font-weight: 777;
+            padding-bottom: 10px;
             color: #ffffff;
             margin-bottom: clamp(30px, 4.5vh, 7.5vh);
             background-color: rgba(71, 71, 71, 0.801);
@@ -45,7 +47,7 @@
         .container {
             width: clamp(300px, 97vw, 100vw);
             height: clamp(120px, 95vh, 100vh);
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             display: grid;
             grid-template-columns: 5% 25% 50% 15% 5%;
             grid-template-rows: 5% 45% 25% 15%;
@@ -73,7 +75,7 @@
         
         #inputContainer,
         #greetingContainer {
-            display: none;
+            display: block;
         }
         
         .nmes {
@@ -171,7 +173,8 @@
         .tooltip {
             height: clamp(110px, 14vh, 15vh);
             width: clamp(125px, 14vw, 25vw);
-            font-size: clamp(12px, 2.2vh, 2.8vh);
+            font-size: clamp(12px, 2.3vh, 2.8vh);
+            font-weight: 666;
             margin-left: clamp(90px, 12.5vw, 1.5vw);
             color: blanchedalmond;
             background-color: black;
@@ -293,26 +296,34 @@
     document.getElementById("b2").setAttribute("disabled", true);
     document.getElementById("b3").setAttribute("disabled", true);
 
+
+    function greetMe(userName) {
+        const greetingMessage = document.getElementById("greetingMessage");
+
+        if (userName) {
+            greetingMessage.textContent = `Hallo, ${userName}! Willkommen zurück.`;
+            document.getElementById("b1").removeAttribute("disabled");
+            document.getElementById("b2").removeAttribute("disabled");
+            document.getElementById("b3").removeAttribute("disabled");
+        } else {
+            greetingMessage.textContent = "Hallo, Fremder! Willkommen auf unserer Website.";
+        }
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
         const inputContainer = document.getElementById("inputContainer");
-        const greetingContainer = document.getElementById("greetingContainer");
         const nameInput = document.getElementById("nameInput");
-        const greetingMessage = document.getElementById("greetingMessage");
 
         const storedName = localStorage.getItem("userName");
 
         if (storedName) {
             // Falls der Name im Local Storage vorhanden ist, zeige die Begrüßungsnachricht an
-            showGreeting(storedName);
+            greetMe(storedName);
+            inputContainer.style.display = "none"; // Verstecke das Eingabefeld
         } else {
             // Falls der Name nicht im Local Storage vorhanden ist, zeige das Input-Feld an
             inputContainer.style.display = "block";
         }
-
-
-
-        // Usage
-
 
         nameInput.addEventListener("keydown", function(event) {
             if (event.key === "Enter") {
@@ -321,55 +332,20 @@
 
                 if (userName !== "") {
                     // Speichere den Namen im Local Storage
-                    localStorage.setItem("Username", userName);
+                    localStorage.setItem("userName", userName);
 
                     inputContainer.style.display = "none";
-                    showGreeting(userName);
+                    greetMe(userName);
                     document.getElementById("b1").removeAttribute("disabled");
                     document.getElementById("b2").removeAttribute("disabled");
                     document.getElementById("b3").removeAttribute("disabled");
-
                 }
             }
         });
-
-
-        function showGreeting(name) {
-            greetingContainer.style.display = "block";
-            greetingMessage.textContent = `Hallo, ${name}! Willkommen zurück.`;
-        }
     });
 
-    function getNameToGreet() {
-        const storedName = localStorage.getItem("userName");
-        return storedName ? storedName : null;
-    }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const greetingMessage = document.getElementById("greetingMessage"); // schon oben  danach FADEEE
-
-        const storedName = getNameToGreet();
-        if (storedName) {
-            // Zeige die Begrüßungsnachricht mit dem gespeicherten Namen an
-            greetingMessage.textContent = `Hallo, ${storedName}! Willkommen zurück.`;
-        } else {
-            // Zeige eine Standard-Begrüßungsnachricht an, wenn kein Name vorhanden ist
-            greetingMessage.textContent = "Hallo, Fremder! Willkommen auf unserer Website.";
-        }
-    });
-
-    function validate() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        if (username == "Maid" || "Knight" || "Lizard" && password == "Golden" || "Silver" || "Copper") {
-            window.alert("Login successfully");
-            window.location = "2Startszene1.html"; // Redirecting to other page.
-            return false;
-        } else {
-            attempt--; // Decrementing by one.
-            alert("You have left " + attempt + " attempt;");
-        }
-    }
+    //
 
     function playAudioOnLoad(audioElement, volume) {
         audioElement.volume = volume;
@@ -564,19 +540,6 @@
         let oldHeroString = JSON.stringify(heroValues);
         localStorage.setItem("Attribute", oldHeroString);
         saveRace()
-    }
-
-    function getStoredName() { // dont wrap title in name..
-        const storedName = localStorage.getItem("Username");
-
-        if (storedName) {
-            document.getElementById("heroName").innerHTML = "| " + storedName + " |" + "(Level: " + heroValues.Level + " )";
-            document.getElementById("heroTitle").innerText = "[ " + heroValues.Title + " ]";
-        } else {
-            document.getElementById("heroName").innerHTML = "| " + "Held" + " |" + "(Level: " + heroValues.Level + " )";
-            document.getElementById("heroTitle").innerHTML = "[ " + heroValues.Title; + " ]"; // erst nach const heroTitle..
-        }
-        return storedName ? storedName : null;
     }
 
 
