@@ -1,7 +1,7 @@
 /*Hero links mit togglebarem inventar, anzeige für 4 grundwerte, gold, rationen. name titel*/
 
 .links {
-    height: clamp(152px, 86vh, 55vh);
+       height: clamp(152px, 56vh, 58vh);
     width: clamp(85px, 23.5vw, 32vw);
     display: table;
     text-align: center;
