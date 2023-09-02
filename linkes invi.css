@@ -1,7 +1,7 @@
 /*Hero links mit togglebarem inventar, anzeige für 4 grundwerte, gold, rationen. name titel*/
 
 .links {
-       height: clamp(135px, 44vh, 48vh);
+       height: clamp(145px, 48vh, 48vh);
     width: clamp(85px, 23.5vw, 32vw);
     display: table;
     text-align: center;
@@ -40,7 +40,7 @@
 }
 
 .inventar {
-    height: clamp(50px, 19.5vh, 33.5vh);
+    height: clamp(52.5px, 19.5vh, 33.5vh);
     width: clamp(40px, 12.5vw, 23vw);
     display: grid;
     grid-template-rows: repeat(3, 8.0vh);
@@ -85,7 +85,7 @@
             justify-items: center;
             text-align: center;
             justify-content: space-evenly;
-            font-size: clamp(14px, 2.4vh, 3.5vh);
+            font-size: clamp(12px, 2.4vh, 3.5vh);
             display: inline-block;
             background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
             background-size: 100% 100%;
@@ -107,8 +107,8 @@
     width: 3.0vw;
     margin-left: -0.9vw;
     margin-right: 1.0vw;
-    font-size: 2.8vh;
-    font-weight: 777;
+     font-size: clamp(13px, 2.5vh, 3.5vh);
+    font-weight: 666;
     display: inline-block;
 }
 
@@ -129,13 +129,13 @@
     width: 3.2vw;
     margin-left: 0.5vw;
     margin-right: 1.0vw;
-    font-size: 2.8vh;
-    font-weight: 777;
+      font-size: clamp(13px, 2.5vh, 3.5vh);
+    font-weight: 666;
     display: inline-block;
 }
 
 .Hero {  height: clamp(25.5px, 20.5vh, 38.5vh);
-            width: clamp(40.5px, 15.5vw, 18.5vw);
+            width: clamp(35.5px, 14.0vw, 18.5vw);
   
     position: relative;
     color: rgb(247, 247, 247);
