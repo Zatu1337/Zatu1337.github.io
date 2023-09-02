@@ -91,7 +91,8 @@
             justify-content: center;
             align-items: center;
             background-color: #1b2f53;
-            border: clamp(2.8px, 5.5px, 7px) ridge rgba(196, 170, 23, 0.767);
+            border-width: clamp(1.5px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
             grid-column-start: 1;
             grid-column-end: 2;
             grid-row-start: 2;
@@ -104,7 +105,8 @@
             border-radius: 8%;
             margin-top: clamp(2px, 0.3vh, 0.5vh);
             display: grid;
-            border: clamp(1.8px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
+            border-width: clamp(1px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
             background-color: #1b2f53;
             grid-template-rows: repeat(2, 10vh);
             row-gap: clamp(6px, 0.3vh, 0.5vh);
@@ -121,13 +123,13 @@
             height: clamp(16px, 9.5vh, 13.5vh);
             width: clamp(22px, 5.5vw, 7.5vw);
             padding: 2px;
-            margin-top: clamp(55px, 14.5vh, 16.5vh);
+            margin-top: clamp(4px, 14.5vh, 16.5vh);
             display: flex;
             color: rgb(0, 0, 0);
             align-self: center;
             justify-self: center;
             text-align: center;
-            border: ridge 0.5px rgba(195, 14, 14, 0);
+            border: ridge 0.1px rgba(195, 14, 14, 0);
         }
         
         .inventar-item img {
@@ -142,7 +144,8 @@
             display: flex;
             margin-top: clamp(1.5px, 3.5px, 5px);
             border-radius: 12%;
-            border: clamp(1.5px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
+            border-width: clamp(1.5px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
             background-color: #1b2f53;
             justify-content: center;
             align-content: center;
@@ -151,27 +154,26 @@
             align-self: center;
             text-align: center;
             justify-self: center;
-            font-size: 2.5vh;
         }
         
         .iconwrapper {
             height: clamp(13.5px, 4.3vh, 5.5vh);
             width: clamp(23.5px, 6.5vw, 8.5vw);
             margin-top: clamp(3px, 0.4vh, 1.5vh);
-            margin-bottom: clamp(9px, 1.4vh, 2.5vh);
+            margin-bottom: clamp(3px, 1.4vh, 2.5vh);
             align-content: center;
             align-items: center;
             justify-items: center;
             text-align: center;
             justify-content: space-evenly;
-            font-size: clamp(14px, 2.4vh, 3.5vh);
+            font-size: clamp(12px, 2.4vh, 3.5vh);
             display: flex;
             background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
             background-size: 100% 100%;
         }
         
         .walletIcon {
-            height: 2.5vh;
+            height: clamp(12px, 2.4vh, 3.5vh);
             width: 1.3vw;
             background-image: url("https://dl.dropbox.com/scl/fi/iw2x80tlnkuthz6cudvt8/Coin.png?rlkey=68rhbacrjtvxcawupqo3cypx1&dl=0");
             background-size: 100% 100%;
@@ -187,7 +189,7 @@
         }
         
         .rationIcon {
-            height: 3.5vh;
+            height: clamp(13px, 2.6vh, 3.5vh);
             width: 1.8vw;
             background-image: url("https://dl.dropbox.com/scl/fi/qcna317ped0sk3swo42mh/marker-nahrung.PNG?rlkey=p4v13qjskk3kltd7vrpv1nlr0&dl=0");
             background-size: 100% 100%;
@@ -204,7 +206,7 @@
         
         .mid {
             width: clamp(215px, 38vw, 51vw);
-            height: clamp(130px, 65vh, 85vh);
+            height: clamp(150px, 65vh, 75vh);
             border-radius: 10%;
             display: table;
             font-size: clamp(12.5px, 2.5vh, 3.5vh);
@@ -212,7 +214,7 @@
             color: #ffffff;
             text-decoration: underline;
             padding: 1.5% 2.5% 1.5% 2.5%;
-            margin-top: clamp(25.5px, 16.5vh, 23.5vh);
+            margin-top: clamp(65.5px, 16.5vh, 23.5vh);
             text-align: justify;
             text-justify: auto;
             align-content: center;
@@ -224,7 +226,8 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
-            border: clamp(2.0px, 4.5px, 7px) ridge rgba(196, 170, 23, 0.767);
+            border-width: clamp(1.5px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
             grid-column-start: 2;
             grid-column-end: 2;
             grid-row-start: 2;
@@ -239,9 +242,10 @@
             color: rgb(247, 247, 247);
             text-decoration: underline overline;
             font-weight: bold;
-            border: ridge rgba(161, 161, 161, 0.774) 2.5px;
-            margin-top:    clamp(1px, 1.2vh, 3.5vh);
-            margin-bottom:  clamp(1px, 1.2vh, 3.5vh);
+            border-width: clamp(1.5px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
+            margin-top: clamp(1px, 1.2vh, 3.5vh);
+            margin-bottom: clamp(1px, 1.2vh, 3.5vh);
             border-radius: 100%;
             background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
             background-size: 100% 100%;
@@ -250,8 +254,8 @@
         
         .avatar-corner {
             position: absolute;
-            height: 6.5vh;
-            width: 5.8vw;
+            height: clamp(14px, 7.2vh, 8.5vh);
+            width: clamp(22px, 6vw, 8.5vw);
             background-color: #7c777700;
             border-radius: 100%;
             display: flex;
@@ -347,31 +351,33 @@
         }
         
         .heroName {
-            height: clamp(11px, 2.67vh, 3.5vh);
+            height: clamp(11.5px, 2.47vh, 3.5vh);
             width: clamp(60px, 18vw, 23vw);
             color: rgb(247, 247, 247);
-            font-size: clamp(10.8px, 2.5vh, 3.5vh);
-            font-weight: 666;
+            font-size: clamp(13.5px, 2.5vh, 3.5vh);
+            font-weight: 747;
             border-radius: 8%;
-            margin-top: clamp(3.5px, 0.5vh, 3.5vh);
-            margin-bottom: clamp(2px, 1.5vh, 3.5vh);
+            margin-top: clamp(6px, 0.5vh, 3.5vh);
+            margin-bottom: clamp(5px, 1.5vh, 3.5vh);
         }
         
         .title {
-                height: clamp(11px, 2.67vh, 3.5vh);
-               font-size: clamp(10.6px, 2.5vh, 3.5vh);
+            height: clamp(12.5px, 2.47vh, 3.5vh);
+            font-size: clamp(11px, 2.37vh, 3.5vh);
             width: clamp(60px, 18vw, 23vw);
             color: rgb(247, 247, 247);
-            margin-top: clamp(3px, 0.5vh, 3.5vh);
-            margin-bottom: clamp(3px, 1.5vh, 3.5vh);
+            margin-top: clamp(6px, 0.5vh, 3.5vh);
+            margin-bottom: clamp(5px, 1.5vh, 3.5vh);
             font-weight: 626;
             border-radius: 8%;
             text-decoration: underline;
-      
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         
         .equipment {
-            height: clamp(40px, 35.5vh, 39.5vh);
+            height: clamp(45px, 35.5vh, 39.5vh);
             width: clamp(85px, 34.5vh, 39.5vh);
             border-radius: 8%;
             font-size: clamp(11px, 2.37vh, 3.5vh);
@@ -390,9 +396,9 @@
             border-radius: 10%;
             width: clamp(70px, 11.5vw, 19vw);
             height: clamp(11px, 2.3vh, 3vh);
-            margin-bottom:   clamp(1px, 1.2vh, 3.5vh);
-            padding-bottom: clamp(1px, 1.2vh, 3.5vh);
-            padding-top: clamp(1px, 1.2vh, 3.5vh);
+            margin-bottom: 0.3vh;
+            padding-bottom: clamp(1.5px, 1.2vh, 3.5vh);
+            padding-top: clamp(1.5px, 1.2vh, 3.5vh);
             display: flex;
             color: #e3ffe0;
             font-size: clamp(10.5px, 2.4vh, 3.5vh);
@@ -402,16 +408,18 @@
             justify-content: center;
             align-self: center;
             justify-self: center;
-            border: clamp(1px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
+            border-width: clamp(1.5px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
         }
         
         .equipClass {
-            width: clamp(15px, 8vw, 12vw);
+            width: clamp(18px, 8vw, 12vw);
             height: clamp(22px, 17vh, 21vh);
             border-radius: 10%;
-            margin-bottom: clamp(1.5px, 0.4vh, 1.5vh);
+            margin-bottom: clamp(3.5px, 0.4vh, 1.5vh);
             display: flex;
-            border: clamp(1px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
+            border-width: clamp(1.5px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
             align-self: center;
             justify-self: center;
             background-repeat: no-repeat;
@@ -428,9 +436,9 @@
             color: #e3ffe0;
             font-size: clamp(10.8px, 2.5vh, 3.5vh);
             font-weight: 600;
-            margin-bottom: clamp(1px, 0.6vh, 2.5vh);
-            padding-top: clamp(1px, 1.2vh, 3.5vh);
-            padding-bottom: clamp(1px, 1.5vh, 3.5vh);
+            margin-bottom: clamp(1.5px, 0.6vh, 2.5vh);
+            padding-top: clamp(1.5px, 1.2vh, 3.5vh);
+            padding-bottom: clamp(1.5px, 1.5vh, 3.5vh);
             background-color: #1b2f53;
             align-self: center;
             justify-self: center;
@@ -438,7 +446,8 @@
             justify-content: center;
             text-align: center;
             text-justify: center;
-            border: clamp(1px, 3.5px, 5px)ridge rgba(196, 170, 23, 0.767);
+            border-width: clamp(1.5px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
         }
         
         .tooltipBox {
@@ -449,7 +458,8 @@
             padding: 1% 2% 2% 2%;
             border-radius: 8%;
             background-color: #1b2f53;
-            border: clamp(1px, 2.5px, 5px) ridge rgba(196, 170, 23, 0.767);
+            border-width: clamp(1.5px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
             display: flex;
         }
         
@@ -460,7 +470,8 @@
             display: table;
             text-decoration: underline;
             background-color: #1b2f53;
-            border: clamp(2.5px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
+            border-width: clamp(2.5px, 3.5px, 7px);
+            border: ridge rgba(196, 170, 23, 0.767);
             color: rgb(255, 255, 255);
             font-size: clamp(14px, 2.5vh, 3.5vh);
             margin-right: clamp(-25px, -8.5vh, -12.5vh);
