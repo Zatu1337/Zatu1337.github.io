@@ -98,8 +98,8 @@
         }
         
         .inventar {
-            height: clamp(65px, 45vh, 53.5vh);
-            width: clamp(99px, 20vw, 23vw);
+            height: clamp(55px, 45vh, 53.5vh);
+            width: clamp(89px, 20vw, 23vw);
             border-radius: 8%;
             margin-top: clamp(10px, 1.3vh, 3.5vh);
             display: grid;
@@ -138,10 +138,10 @@
         }
         
         .inventarHead {
-            height: clamp(15px, 45vh, 53.5vh);
-            width: clamp(65px, 16vw, 23vw);
+                 height: clamp(15px, 11vh, 12.5vh);
+            width: clamp(65px, 21vw, 23vw);
             display: flex;
-            margin-top: 0.5vh;
+            margin-top: 0.5vh 
             border-radius: 12%;
             border: clamp(1.5px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
             background-color: #1b2f53;
@@ -358,10 +358,10 @@
             width: clamp(60px, 18vw, 23vw);
             color: rgb(247, 247, 247);
             font-size: clamp(13.5px, 2.5vh, 3.5vh);
-            font-weight: 777;
+            font-weight: 747;
             border-radius: 8%;
             margin-top: clamp(6px, 0.5vh, 3.5vh);
-            margin-bottom: clamp(10px, 1.5vh, 3.5vh);
+            margin-bottom: clamp(5px, 1.5vh, 3.5vh);
         }
         
         .title {
@@ -370,8 +370,8 @@
             width: clamp(60px, 18vw, 23vw);
             color: rgb(247, 247, 247);
             margin-top: clamp(6px, 0.5vh, 3.5vh);
-            margin-bottom: clamp(10px, 1.5vh, 3.5vh);
-            font-weight: 666;
+            margin-bottom: clamp(5px, 1.5vh, 3.5vh);
+            font-weight: 626;
             border-radius: 8%;
             text-decoration: underline;
             background-size: cover;
@@ -380,13 +380,13 @@
         }
         
         .equipment {
-            height: clamp(55px, 35.5vh, 39.5vh);
-            width: clamp(105px, 34.5vh, 39.5vh);
+            height: clamp(45px, 35.5vh, 39.5vh);
+            width: clamp(85px, 34.5vh, 39.5vh);
             border-radius: 8%;
             font-size: clamp(11px, 2.37vh, 3.5vh);
             font-family: Arial, Helvetica, sans-serif;
             display: grid;
-            column-gap: 2.5%;
+            column-gap: clamp(1%, 2.5%, 3%);
             color: rgb(255, 255, 255);
             align-content: center;
             justify-content: center;
@@ -395,22 +395,12 @@
             grid-template-columns: repeat(3, 12vw);
         }
         
-        .tooltipBox {
-            height: clamp(22px, 9.5vh, 12.5vh);
-            width: clamp(125px, 26.5vw, 29.5vw);
-            font-size: clamp(11.5px, 2.5vh, 3.5vh);
-            font-weight: 630;
-            padding: 2% 2% 2% 2%;
-            border-radius: 8%;
-            background-color: #1b2f53;
-            border: clamp(3.0px, 4.0px, 5px) ridge rgba(196, 170, 23, 0.767);
-            display: flex;
-        }
+   
         
         .equipNames {
             border-radius: 10%;
             width: clamp(70px, 11.5vw, 19vw);
-            height: clamp(10.5px, 3.0vh, 4vh);
+            height: clamp(10.8px, 3.0vh, 4vh);
             margin-bottom: 0.3vh;
             padding-bottom: clamp(3px, 1.2vh, 3.5vh);
             padding-top: clamp(3px, 1.2vh, 3.5vh);
@@ -427,8 +417,8 @@
         }
         
         .equipClass {
-            width: clamp(45px, 8vw, 12vw);
-            height: clamp(28px, 17vh, 21vh);
+            width: clamp(18px, 8vw, 12vw);
+            height: clamp(22px, 17vh, 21vh);
             border-radius: 10%;
             margin-bottom: clamp(3.5px, 0.4vh, 1.5vh);
             display: flex;
@@ -443,7 +433,7 @@
         
         .armorAttri {
             width: clamp(70px, 11.5vw, 19vw);
-            height: clamp(12px, 2.3vh, 3vh);
+            height: clamp(11px, 2.3vh, 3vh);
             border-radius: 10%;
             display: flex;
             color: #e3ffe0;
@@ -461,7 +451,17 @@
             text-justify: center;
             border: clamp(2.5px, 3.5px, 5px)ridge rgba(196, 170, 23, 0.767);
         }
-        
+             .tooltipBox {
+            height: clamp(22px, 9.5vh, 12.5vh);
+            width: clamp(125px, 26.5vw, 29.5vw);
+            font-size: clamp(11.5px, 2.5vh, 3.5vh);
+            font-weight: 630;
+            padding: 2% 2% 2% 2%;
+            border-radius: 8%;
+            background-color: #1b2f53;
+            border: clamp(3.0px, 4.0px, 5px) ridge rgba(196, 170, 23, 0.767);
+            display: flex;
+        }
         .right {
             width: clamp(140px, 24vw, 36vw);
             height: clamp(100px, 55vh, 66vh);
