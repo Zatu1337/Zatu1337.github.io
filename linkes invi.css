@@ -75,7 +75,21 @@
     border-color: yellow;
     outline: none;
 }
-
+    .iconwrapper {
+            height: clamp(13.5px, 4.3vh, 5.5vh);
+            width: clamp(23.5px, 6.5vw, 8.5vw);
+            margin-top: clamp(3px, 0.4vh, 1.5vh);
+            margin-bottom: clamp(9px, 1.4vh, 2.5vh);
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            justify-content: space-evenly;
+            font-size: clamp(14px, 2.4vh, 3.5vh);
+            display: inline-block;
+            background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
+            background-size: 100% 100%;
+        }
 .walletIcon {
     height: 2.8vh;
     width: 1.5vw;
