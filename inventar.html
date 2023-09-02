@@ -38,10 +38,11 @@
         }
         
         .header {
-            height: clamp(15px, 5.0vh, 10vh);
+            width: 100%;
+            height: clamp(13.5px, 5.0vh, 10vh);
             color: white;
-            font-size: clamp(14px, 2.8vh, 3.5vh);
-            padding-top: clamp(6px, 1.2vh, 2.5vh);
+            font-size: clamp(13px, 2.7vh, 3.5vh);
+            padding-top: clamp(2.5px, 1.2vh, 2.5vh);
             background: linear-gradient(#301515, #27411c, #1b2f53);
             background-image: url("https://dl.dropbox.com/s/ytueykwig0dzk97/holzheader2.jpg?dl=0 ");
             background-repeat: no-repeat;
@@ -58,11 +59,11 @@
         }
         
         a {
-            height: 2.3vh;
+            height: clamp(13px, 2.7vh, 3.5vh);
             width: 1vw;
             position: relative;
             padding: 2% 0 1% 1%;
-            font-size: clamp(12.5px, 2.3vh, 3.5vh);
+            font-size: clamp(12.5px, 2.6vh, 3.5vh);
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: bold;
             color: #ffffff;
@@ -98,15 +99,15 @@
         }
         
         .inventar {
-            height: clamp(55px, 45vh, 53.5vh);
+            height: clamp(40px, 45vh, 53.5vh);
             width: clamp(89px, 20vw, 23vw);
             border-radius: 8%;
-            margin-top: clamp(5px, 0.3vh, 0.5vh);
+            margin-top: clamp(2px, 0.3vh, 0.5vh);
             display: grid;
-            border: clamp(2.5px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
+            border: clamp(1.8px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
             background-color: #1b2f53;
             grid-template-rows: repeat(2, 10vh);
-            row-gap: 15px;
+            row-gap: clamp(6px, 0.3vh, 0.5vh);
             grid-template-columns: repeat(2, 5.9vw);
             justify-content: center;
             align-content: center;
@@ -117,13 +118,11 @@
         }
         
         .inventar-item {
-            height: clamp(25px, 9.5vh, 13.5vh);
-            width: clamp(18px, 5.5vw, 7.5vw);
+            height: clamp(16px, 9.5vh, 13.5vh);
+            width: clamp(22px, 5.5vw, 7.5vw);
             padding: 2px;
-            margin-top: clamp(45px, 14.5vh, 16.5vh);
+            margin-top: clamp(55px, 14.5vh, 16.5vh);
             display: flex;
-            font-size: larger;
-            font-weight: bold;
             color: rgb(0, 0, 0);
             align-self: center;
             justify-self: center;
@@ -138,7 +137,7 @@
         }
         
         .inventarHead {
-            height: clamp(15px, 11vh, 12.5vh);
+            height: clamp(13.9px, 11vh, 12.5vh);
             width: clamp(65px, 21vw, 23vw);
             display: flex;
             margin-top: clamp(1.5px, 3.5px, 5px);
@@ -205,7 +204,7 @@
         
         .mid {
             width: clamp(215px, 38vw, 51vw);
-            height: clamp(150px, 65vh, 85vh);
+            height: clamp(130px, 65vh, 85vh);
             border-radius: 10%;
             display: table;
             font-size: clamp(12.5px, 2.5vh, 3.5vh);
@@ -225,7 +224,7 @@
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: center;
-            border: clamp(2.2px, 4.5px, 7px) ridge rgba(196, 170, 23, 0.767);
+            border: clamp(2.0px, 4.5px, 7px) ridge rgba(196, 170, 23, 0.767);
             grid-column-start: 2;
             grid-column-end: 2;
             grid-row-start: 2;
@@ -234,15 +233,15 @@
         /* hero anklickbar machen und dann zoom ooder größeres portrait*/
         
         .Hero {
-            width: clamp(76px, 16.5vw, 19vw);
-            height: clamp(76px, 22.5vh, 24vh);
+            width: clamp(56px, 16.5vw, 19vw);
+            height: clamp(56px, 22.5vh, 24vh);
             position: relative;
             color: rgb(247, 247, 247);
             text-decoration: underline overline;
             font-weight: bold;
             border: ridge rgba(161, 161, 161, 0.774) 2.5px;
-            margin-top: 0.55vh;
-            margin-bottom: 1.5vh;
+            margin-top:    clamp(1px, 1.2vh, 3.5vh);
+            margin-bottom:  clamp(1px, 1.2vh, 3.5vh);
             border-radius: 100%;
             background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
             background-size: 100% 100%;
@@ -348,33 +347,31 @@
         }
         
         .heroName {
-            height: clamp(11.5px, 2.47vh, 3.5vh);
+            height: clamp(11px, 2.67vh, 3.5vh);
             width: clamp(60px, 18vw, 23vw);
             color: rgb(247, 247, 247);
-            font-size: clamp(13.5px, 2.5vh, 3.5vh);
-            font-weight: 747;
+            font-size: clamp(10.8px, 2.5vh, 3.5vh);
+            font-weight: 666;
             border-radius: 8%;
-            margin-top: clamp(6px, 0.5vh, 3.5vh);
-            margin-bottom: clamp(5px, 1.5vh, 3.5vh);
+            margin-top: clamp(3.5px, 0.5vh, 3.5vh);
+            margin-bottom: clamp(2px, 1.5vh, 3.5vh);
         }
         
         .title {
-            height: clamp(12.5px, 2.47vh, 3.5vh);
-            font-size: clamp(11px, 2.37vh, 3.5vh);
+                height: clamp(11px, 2.67vh, 3.5vh);
+               font-size: clamp(10.6px, 2.5vh, 3.5vh);
             width: clamp(60px, 18vw, 23vw);
             color: rgb(247, 247, 247);
-            margin-top: clamp(6px, 0.5vh, 3.5vh);
-            margin-bottom: clamp(5px, 1.5vh, 3.5vh);
+            margin-top: clamp(3px, 0.5vh, 3.5vh);
+            margin-bottom: clamp(3px, 1.5vh, 3.5vh);
             font-weight: 626;
             border-radius: 8%;
             text-decoration: underline;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+      
         }
         
         .equipment {
-            height: clamp(45px, 35.5vh, 39.5vh);
+            height: clamp(40px, 35.5vh, 39.5vh);
             width: clamp(85px, 34.5vh, 39.5vh);
             border-radius: 8%;
             font-size: clamp(11px, 2.37vh, 3.5vh);
@@ -393,9 +390,9 @@
             border-radius: 10%;
             width: clamp(70px, 11.5vw, 19vw);
             height: clamp(11px, 2.3vh, 3vh);
-            margin-bottom: 0.3vh;
-            padding-bottom: clamp(1.5px, 1.2vh, 3.5vh);
-            padding-top: clamp(1.5px, 1.2vh, 3.5vh);
+            margin-bottom:   clamp(1px, 1.2vh, 3.5vh);
+            padding-bottom: clamp(1px, 1.2vh, 3.5vh);
+            padding-top: clamp(1px, 1.2vh, 3.5vh);
             display: flex;
             color: #e3ffe0;
             font-size: clamp(10.5px, 2.4vh, 3.5vh);
@@ -405,16 +402,16 @@
             justify-content: center;
             align-self: center;
             justify-self: center;
-            border: clamp(1.5px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
+            border: clamp(1px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
         }
         
         .equipClass {
-            width: clamp(18px, 8vw, 12vw);
+            width: clamp(15px, 8vw, 12vw);
             height: clamp(22px, 17vh, 21vh);
             border-radius: 10%;
-            margin-bottom: clamp(3.5px, 0.4vh, 1.5vh);
+            margin-bottom: clamp(1.5px, 0.4vh, 1.5vh);
             display: flex;
-            border: clamp(1.5px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
+            border: clamp(1px, 3.5px, 5px) ridge rgba(196, 170, 23, 0.767);
             align-self: center;
             justify-self: center;
             background-repeat: no-repeat;
@@ -431,9 +428,9 @@
             color: #e3ffe0;
             font-size: clamp(10.8px, 2.5vh, 3.5vh);
             font-weight: 600;
-            margin-bottom: clamp(1.5px, 0.6vh, 2.5vh);
-            padding-top: clamp(1.5px, 1.2vh, 3.5vh);
-            padding-bottom: clamp(1.5px, 1.5vh, 3.5vh);
+            margin-bottom: clamp(1px, 0.6vh, 2.5vh);
+            padding-top: clamp(1px, 1.2vh, 3.5vh);
+            padding-bottom: clamp(1px, 1.5vh, 3.5vh);
             background-color: #1b2f53;
             align-self: center;
             justify-self: center;
@@ -441,7 +438,7 @@
             justify-content: center;
             text-align: center;
             text-justify: center;
-            border: clamp(1.5px, 3.5px, 5px)ridge rgba(196, 170, 23, 0.767);
+            border: clamp(1px, 3.5px, 5px)ridge rgba(196, 170, 23, 0.767);
         }
         
         .tooltipBox {
