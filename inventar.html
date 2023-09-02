@@ -155,11 +155,18 @@
             font-size: 2.5vh;
         }
         
-        .iconwrapper {
-            height: 5.3vh;
-            width: 8.5vw;
-            padding: 3px;
-            display: flex;
+       .iconwrapper {
+            height: clamp(13.5px, 4.3vh, 5.5vh);
+            width: clamp(23.5px, 6.5vw, 8.5vw);
+            margin-top: clamp(3px, 0.4vh, 1.5vh);
+            margin-bottom: clamp(9px, 1.4vh, 2.5vh);
+            align-content: center;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            justify-content: space-evenly;
+            font-size: clamp(14px, 2.4vh, 3.5vh);
+            display: inline-block;
             background-image: url("https://dl.dropbox.com/scl/fi/s2eqc9n24xqprh4cmrzz2/plakette2-removebg-preview.png?rlkey=50b1giqx7l6ee1e94jyhybe68&dl=0");
             background-size: 100% 100%;
         }
@@ -175,12 +182,12 @@
         }
         
         .walletText {
-            height: 3.3vh;
+                      height: clamp(14px, 3.1vh, 3.5vh);3vh;
             width: 1.8vw;
             margin-left: 0.5vw;
             margin-right: 0.3vw;
-            font-size: clamp(14px, 2.8vh, 3.5vh);
-            font-weight: 777;
+              font-size: clamp(12.5px, 2.8vh, 3.5vh);
+            font-weight: 666;
         }
         
         .rationIcon {
@@ -193,12 +200,12 @@
         }
         
         .rationText {
-            height: 3.3vh;
+            height: clamp(14px, 3.1vh, 3.5vh);
             width: 1.8vw;
             margin-left: 0.5vw;
             margin-right: 0.3vw;
-            font-size: clamp(14px, 2.8vh, 3.5vh);
-            font-weight: 777;
+            font-size: clamp(12.5px, 2.8vh, 3.5vh);
+            font-weight: 666;
         }
         
         .mid {
@@ -232,8 +239,8 @@
         /* hero anklickbar machen und dann zoom ooder größeres portrait*/
         
         .Hero {
-            width: clamp(99px, 16.5vw, 19vw);
-            height: clamp(99px, 22.5vh, 24vh);
+            width: clamp(76px, 16.5vw, 19vw);
+            height: clamp(76px, 22.5vh, 24vh);
             position: relative;
             color: rgb(247, 247, 247);
             text-decoration: underline overline;
