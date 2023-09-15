@@ -65,16 +65,18 @@
             grid-row-end: 2;
         }
         
-        .Hero {
-            height: clamp(52px, 35vh, 39vh);
-            width: clamp(60px, 18vw, 31vw);
+         .Hero {
+            height: clamp(65px, 35vh, 39vh);
+            width: clamp(60px, 20vw, 31vw);
             margin-top: 2vh;
             align-self: center;
             justify-self: center;
             border-radius: 100%;
             background-image: url("https://dl.dropbox.com/s/mimlbldehzz94sd/char3%203.jpg?dl=0");
             background-repeat: round;
-            border: 2px ridge rgba(255, 255, 255, 0.507);
+            border-color: rgba(255, 255, 255, 0.507);
+            border-width: 2px;
+            border-style: solid;
         }
         
         .Text1 {
@@ -164,7 +166,7 @@
             border-radius: 8%;
             font-size: small;
             align-content: center;
-            border: 4px ridge rgba(255, 255, 255, 0.507);
+            border: 3px ridge rgba(255, 255, 255, 0.507);
             justify-content: center;
             align-self: center;
             justify-self: center;
@@ -178,8 +180,8 @@
         button {
             height: clamp(30px, 8.5vh, 10.5vh);
             width: clamp(90px, 22vw, 31vw);
-            font-size: clamp(11px, 2.2vh, 3.5vh);
-            padding-top:8px;
+            font-size: clamp(11px, 2.5vh, 3.5vh);
+            padding-top: clamp(10px, 2.2vh, 3.5vh);
             background-color: rgba(127, 255, 212, 0);
             background-image: url("https://dl.dropbox.com/scl/fi/ozt5uwik5xetbv004iygm/red_buttn-remiew.png?rlkey=6jz2ryf10kq2ln2xwh1sbwajw&dl=0");
             background-size: 100% 100%;
