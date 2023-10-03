@@ -18,24 +18,20 @@
         }
         
         .header {
-            width: 100vw;
-            height: clamp(22px, 4.8vh, 5.8vh);
+            width: 100%;
+            height: clamp(25px, 8.8vh, 12.8vh);
             font-weight: 727;
-            color: #c3911e;
-            text-shadow: 1px #af9a25;
-            padding-bottom: clamp(8px, 1.1vh, 1.3vh);
+            padding-bottom: clamp(8px, 1.5vh, 1.8vh);
             margin-top: clamp(6px, 1.5vh, 1.8vh);
             margin-bottom: clamp(30px, 5.5vh, 11.5vh);
-            background-image: url("https://dl.dropbox.com/scl/fi/94kwdputx0v00og3za0dd/silver_banner2-removebg-preview-removebg-preview-transformed.jpg?rlkey=i5ll87h90u340nacpupoblbdy&dl=0");
-            background-size: 100% 350%;
-            background-position: center, center;
+            background-image: url("https://dl.dropbox.com/scl/fi/oa54y9wsph2x18fn7tzrh/0d1c42230aec5bebb4c515f93ea11bde-removebg-preview.png?rlkey=yct0vjc5epe26y1y7fhyzm46r&dl=0");
+            background-size: 100% 100%;
+            background-position: center;
             background-repeat: no-repeat;
             text-justify: distribute;
             text-align: right;
-            grid-column-start: 1;
-            grid-column-end: 6;
-            grid-row-start: 1;
-            grid-row-end: 1;
+            grid-column-start: 2;
+            grid-column-end: 5;
         }
         
         body {
@@ -237,6 +233,11 @@
             border-color: yellow;
             outline: none;
         }
+        
+        .headtext {
+            color: #f8bc30;
+            text-shadow: 2px 3px #6a1414;
+        }
     </style>
 
 </head>
@@ -247,11 +248,11 @@
 
         <div class="header" id="head">
             <center>
-                Entdecke dein eigenes Abenteuer auf dieser Welt!
+                <p class="headtext"> Entdecke dein eigenes Abenteuer auf dieser Welt!</p>
             </center>
-            <span>
-                <audio autoplay loop controls id="SpringSound" class="audioControls" src="https://dl.dropbox.com/scl/fi/hfo0wn5lidwlyoda7lqlz/Spring-Village.ogg?rlkey=qjeqicnq53bmpvt3b3px63up9&dl=0" type="audio/ogg">
-            </audio> </span>
+
+            <audio autoplay loop controls id="SpringSound" class="audioControls" src="https://dl.dropbox.com/scl/fi/hfo0wn5lidwlyoda7lqlz/Spring-Village.ogg?rlkey=qjeqicnq53bmpvt3b3px63up9&dl=0" type="audio/ogg">
+            </audio>
         </div>
         <div class="tooltip" id="tooltip1">
             “Es wird eine lange Reise, doch wenigstens habt ihr dann, wenn ihr alt und grau seid, etwas zu erzählen....”
