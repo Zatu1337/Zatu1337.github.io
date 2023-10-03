@@ -19,16 +19,17 @@
         
         .header {
             width: 100vw;
-            height: clamp(32px, 2.8vh, 2.5vh);
+            height: clamp(22px, 4.8vh, 5.8vh);
             font-weight: 727;
-            padding-bottom: 6px;
-            color: #b09505;
-            margin-bottom: clamp(30px, 8.5vh, 11.5vh);
+            color: #c3911e;
+            text-shadow: 1px #af9a25;
+            padding-bottom: clamp(8px, 1.1vh, 1.3vh);
+            margin-top: clamp(6px, 1.5vh, 1.8vh);
+            margin-bottom: clamp(30px, 5.5vh, 11.5vh);
             background-image: url("https://dl.dropbox.com/scl/fi/94kwdputx0v00og3za0dd/silver_banner2-removebg-preview-removebg-preview-transformed.jpg?rlkey=i5ll87h90u340nacpupoblbdy&dl=0");
-            background-size: contain;
+            background-size: 100% 350%;
             background-position: center, center;
             background-repeat: no-repeat;
-      
             text-justify: distribute;
             text-align: right;
             grid-column-start: 1;
@@ -90,7 +91,8 @@
             width: clamp(150px, 60vw, 71vw);
             height: clamp(45px, 29vh, 51vh);
             font-size: clamp(1.5vh, 3.2vh, 3.5vh);
-            display: flex;margin-top: clamp(1.5vh, 3.2vh, 3.5vh);
+            display: flex;
+            margin-top: clamp(1.5vh, 3.2vh, 3.5vh);
             align-content: center;
             justify-content: space-evenly;
             align-self: center;
@@ -135,7 +137,7 @@
         
         .char2 {
             width: clamp(60px, 15vw, 14vw);
-       height: clamp(40px, 40vh, 46vh);
+            height: clamp(40px, 40vh, 46vh);
             border: ridge #828285 3px;
             text-align: center;
             background-color: rgba(230, 23, 23, 0.377);
@@ -153,7 +155,7 @@
         
         .char3 {
             width: clamp(60px, 15vw, 14vw);
-  height: clamp(40px, 40vh, 46vh);
+            height: clamp(40px, 40vh, 46vh);
             border: ridge #828285 3px;
             background-color: rgb(35, 17, 233, 0.377);
             background-image: url("https://dl.dropboxusercontent.com/scl/fi/uw817qh1ouwbwb1mazwpu/char1-1.jpg?rlkey=42mnhczgibg2c8zpoa50tufoi&dl=0");
@@ -179,10 +181,10 @@
             width: clamp(125px, 14vw, 25vw);
             font-size: clamp(12px, 2.3vh, 2.8vh);
             font-weight: 666;
-            padding-left:clamp(12px, 2.3vh, 2.8vh);
-            padding-right:clamp(12px, 2.3vh, 2.8vh);
-            padding-top:clamp(12px, 2.3vh, 2.8vh);
-            padding-bot:clamp(12px, 2.3vh, 2.8vh);
+            padding-left: clamp(12px, 2.3vh, 2.8vh);
+            padding-right: clamp(12px, 2.3vh, 2.8vh);
+            padding-top: clamp(12px, 2.3vh, 2.8vh);
+            padding-bottom: clamp(12px, 2.3vh, 2.8vh);
             margin-left: clamp(90px, 12.5vw, 1.5vw);
             color: blanchedalmond;
             background-color: black;
@@ -227,6 +229,7 @@
         .audioControls {
             width: clamp(20px, 15vw, 101vw);
             height: clamp(45px, 1.5vh, 3.5vh);
+            margin-top: clamp(16px, 3.5vh, 4.8vh);
         }
         
         .audioControls:focus,
@@ -244,10 +247,12 @@
 
         <div class="header" id="head">
             <center>
-                <p> Entdecke dein eigenes Abenteuer auf dieser Welt.. </p>
+                Entdecke dein eigenes Abenteuer auf dieser Welt!
             </center>
-            <audio autoplay loop controls id="SpringSound" class="audioControls" src="https://dl.dropbox.com/scl/fi/hfo0wn5lidwlyoda7lqlz/Spring-Village.ogg?rlkey=qjeqicnq53bmpvt3b3px63up9&dl=0" type="audio/ogg">
-            </audio> </div>
+            <span>
+                <audio autoplay loop controls id="SpringSound" class="audioControls" src="https://dl.dropbox.com/scl/fi/hfo0wn5lidwlyoda7lqlz/Spring-Village.ogg?rlkey=qjeqicnq53bmpvt3b3px63up9&dl=0" type="audio/ogg">
+            </audio> </span>
+        </div>
         <div class="tooltip" id="tooltip1">
             “Es wird eine lange Reise, doch wenigstens habt ihr dann, wenn ihr alt und grau seid, etwas zu erzählen....”
 
