@@ -13,15 +13,15 @@
 
     <style>
         html {
-            font-size: clamp(16px, 3.1vh, 4.9vh);
+            font-size: clamp(16px, 3.8vh, 6.9vh);
             overflow: hidden;
         }
         
         .header {
             width: 100%;
             height: clamp(25px, 8.8vh, 12.8vh);
-            font-weight: 727;
-            padding-bottom: clamp(8px, 1.5vh, 1.8vh);
+            font-weight: 767;
+            padding-bottom: clamp(8px, 2.5vh, 3.8vh);
             margin-top: clamp(6px, 1.5vh, 1.8vh);
             margin-bottom: clamp(30px, 5.5vh, 11.5vh);
             background-image: url("https://dl.dropbox.com/scl/fi/oa54y9wsph2x18fn7tzrh/0d1c42230aec5bebb4c515f93ea11bde-removebg-preview.png?rlkey=yct0vjc5epe26y1y7fhyzm46r&dl=0");
@@ -235,8 +235,14 @@
         }
         
         .headtext {
+            justify-self: center;
+            align-self: center;
+            width: 100%;
+            height: clamp(22px, 6.5vh, 7.5vh);
             color: #f8bc30;
+            letter-spacing: clamp(1px, 0.1vh, 0.5vh);
             text-shadow: 2px 3px #6a1414;
+            margin-top: clamp(8px, 2.1vh, 3.5vh);
         }
     </style>
 
@@ -248,7 +254,7 @@
 
         <div class="header" id="head">
             <center>
-                <p class="headtext"> Entdecke dein eigenes Abenteuer auf dieser Welt!</p>
+                <div class="headtext"> Entdecke dein eigenes Abenteuer auf dieser Welt!</div>
             </center>
 
             <audio autoplay loop controls id="SpringSound" class="audioControls" src="https://dl.dropbox.com/scl/fi/hfo0wn5lidwlyoda7lqlz/Spring-Village.ogg?rlkey=qjeqicnq53bmpvt3b3px63up9&dl=0" type="audio/ogg">
