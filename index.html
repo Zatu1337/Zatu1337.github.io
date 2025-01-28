@@ -317,18 +317,6 @@
     document.getElementById("b3").setAttribute("disabled", false);
 
 
-    function greetMe(userName) {
-        const greetingMessage = document.getElementById("greetingMessage");
-
-        if (userName) {
-            greetingMessage.textContent = `Hallo, ${userName}! Willkommen zurück.`;
-            document.getElementById("b1").removeAttribute("disabled");
-            document.getElementById("b2").removeAttribute("disabled");
-            document.getElementById("b3").removeAttribute("disabled");
-        } else {
-            greetingMessage.textContent = "Hallo, Fremder! Willkommen auf unserer Website.";
-        }
-    }
 
     document.addEventListener("DOMContentLoaded", function() {
         const inputContainer = document.getElementById("inputContainer");
